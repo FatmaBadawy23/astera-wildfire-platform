@@ -29,24 +29,29 @@ needs real NISAR products.
 | 0.4 | Create role `astera`, database `astera_watch`, extension `postgis`, local `.env` | `SELECT PostGIS_Version();` returns a version; Python connects |
 | 0.5 | `git init`, first commit, push to the private GitHub repo `astera-wildfire-platform` | Clean `git status`; repo visible and private |
 
-## Stage D: Design system and UI mockups (Before)
+## Stage D: Design system and UI mockups (Before, design only)
 
-The logo (`frontend/public/astera-logo.jpg`) is the visual reference.
+**Design only:** no package installs, no React app, no application code, and no
+changes to `frontend/`. Every deliverable is a document or static design file in
+[`docs/design/`](design/README.md). The logo (`frontend/public/astera-logo.jpg`)
+is the visual reference. Branch: `stage-d-design`.
 
-- Vite + React + TypeScript + Tailwind + shadcn/ui scaffold.
-- **Light and dark mode**, with a header toggle that's remembered per user.
-  - Dark: space navy `#0A1028`, surfaces `#121A3D`, primary blue `#4B63B8`,
-    accent purple `#7B5CD6`, text `#F1F3FA`.
-  - Light: off-white background, the same primary blue, a darker purple accent for contrast.
-  - Exact values are sampled from the logo during this stage.
-- Headings: wide geometric uppercase font. Body and data: Inter.
-- **Data colours are separate from brand colours** and identical in both themes:
-  FIRMS active-fire points (orange/red), backscatter change (diverging blue↔red),
-  change mask (amber), **MOCK DATA** banner (yellow).
-- App shell with logo, navigation and routes for all pages: Dashboard,
-  Fire Events, Before/After, Change Detection, Data & Methodology, Assistant panel.
-- Static mockups with clearly labelled placeholder data.
-- **Gate:** `npm run build` passes, screenshots of both themes are reviewed and the look is approved.
+| Step | Work | Gate |
+|---|---|---|
+| D.0 | Branch, design-docs index, this roadmap update | Approved |
+| D.1 | Visual identity: colours sampled from the logo, name lockup, logo usage rules | Palette and logo rules approved |
+| D.2 | Design tokens; light and dark themes; fixed scientific data palette (FIRMS detection points, reference burned-area perimeters, dB change scale, change mask, no-data); source labels for Mock, Sentinel-1 (C-band), NISAR L-band and NISAR S-band, shown only for the bands a product actually provides | WCAG 2.2 AA in both themes: text contrast **and** non-text contrast (UI components, graphical objects, focus indicators) |
+| D.3 | Typography (Montserrat headings, Inter body, monospace numbers), units and number formats, accessibility rules | Approved |
+| D.4 | Scientific UI rules and wording | Approved; becomes the review checklist |
+| D.5 | Component specifications with all states | Approved |
+| D.6 | Layout: collapsible left sidebar, header, assistant panel, responsive breakpoints | Approved |
+| D.7 | Low-fidelity wireframes of every page with all UI states | Structure approved before visual design |
+| D.8 | High-fidelity mockups in light and dark: self-contained HTML/CSS with minimal vanilla JavaScript only for demonstration (theme switch, sidebar collapse, comparison slider); static map placeholders; no packages or external dependencies | Manual screenshot review by the team lead |
+| D.9 | Design QA, Stage D report, merge, `checkpoint-stage-d` | QA checklist passes; verified that no frontend files, application code, package installs, environment files or database configuration changed |
+
+Decisions: collapsible left sidebar · MapLibre in the app, static placeholder
+maps in design · Montserrat headings · no separate Data Upload page · manual
+screenshot review (no Playwright).
 
 ## Stage 1: Interfaces and contracts (Before, whole team)
 
@@ -108,9 +113,13 @@ The logo (`frontend/public/astera-logo.jpg`) is the visual reference.
 
 ## Stage 7: Frontend pages (Before)
 
-- Connect the Stage D pages to the API (Axios + TanStack Query), MapLibre maps,
-  Recharts charts, before/after comparison slider, MOCK DATA banner.
-- **Gate:** Vitest tests, `npm run build`, manual click-through.
+- Create the frontend app (Vite + React + TypeScript + Tailwind + shadcn/ui,
+  fonts bundled locally) and build the pages from the Stage D design
+  documentation and tokens in `docs/design/`.
+- Connect to the API (Axios + TanStack Query), MapLibre maps, Recharts charts,
+  before/after comparison slider, MOCK DATA banner.
+- **Gate:** Vitest tests, `npm run build`, manual click-through, and a review
+  against the Stage D scientific UI rules.
 
 ## Stage 8: Chatbot (Before)
 
