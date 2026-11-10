@@ -1,0 +1,53 @@
+# Astera Watch — backend, SAR processing and notebook environment
+#
+# Create (PowerShell, from the project root):
+#   $env:CONDA_CHANNEL_PRIORITY = "strict"
+#   conda env create -f environment.yml
+# Activate:
+#   conda activate astera
+#
+# Rules:
+# - Every package comes from conda-forge. Do NOT mix with Anaconda "defaults"
+#   and do NOT pip-install geospatial packages (GDAL, Rasterio, Fiona, PyProj,
+#   Shapely, GeoPandas, h5py): they must share one set of native libraries
+#   (GDAL, PROJ, GEOS, HDF5).
+# - Versions are pinned to minor releases that conda-forge builds together:
+#   GDAL 3.10 / PROJ 9.5 / Rasterio 1.4 / PyProj 3.7 / GeoPandas 1.0 / Shapely 2.0.
+name: astera
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11
+
+  # --- SAR and geospatial processing ---
+  - gdal=3.10            # Python bindings (osgeo) + libgdal-core
+  - libgdal-hdf5=3.10    # GDAL HDF5 driver (NISAR products are HDF5)
+  - rasterio=1.4
+  - h5py=3.12
+  - numpy=2.1
+  - scipy=1.14
+  - geopandas=1.0
+  - shapely=2.0
+  - pyproj=3.7
+  - matplotlib-base=3.9
+
+  # --- Backend API and database ---
+  - fastapi=0.115
+  - uvicorn=0.32
+  - pydantic=2.10
+  - pydantic-settings=2.6
+  - python-multipart
+  - sqlalchemy=2.0
+  - geoalchemy2=0.16     # PostGIS types for SQLAlchemy
+  - psycopg=3.2          # PostgreSQL driver
+  - alembic=1.14         # database migrations
+  - httpx=0.28           # HTTP client (FIRMS / ASF / CDSE) and API tests
+  - python-dotenv
+
+  # --- Testing ---
+  - pytest=8.3
+
+  # --- Notebooks ---
+  - jupyterlab=4.3
+  - ipykernel

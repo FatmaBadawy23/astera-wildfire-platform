@@ -1,0 +1,31 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+
+# Node / frontend
+node_modules/
+frontend/dist/
+*.log
+
+# Large / generated data — satellite files never go into Git
+data/raw/*
+data/processed/*
+data/outputs/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/outputs/.gitkeep
+# data/mock/ IS committed (small synthetic files only)
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
