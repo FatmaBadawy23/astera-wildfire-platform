@@ -14,7 +14,7 @@ wireframes and static mockups. Stage 7 builds the real frontend from these docum
 | # | Document | Contents | Status |
 |---|---|---|---|
 | 01 | [Visual identity](01-visual-identity.md) | Logo analysis, sampled colours, name lockup, logo usage rules | ⏳ D.1 |
-| 02 | [Design tokens](02-design-tokens.md) + [`tokens.json`](tokens.json) | Light/dark themes, spacing, radius, elevation, motion, scientific data palette, WCAG contrast tables | ⏳ D.2 |
+| 02 | [Design tokens](02-design-tokens.md) + [`tokens.json`](tokens.json) | Light/dark themes, spacing, radius, elevation, motion, scientific data palette, WCAG contrast tables | 🔄 D.2 |
 | 03 | [Typography & accessibility](03-typography-accessibility.md) | Fonts, type scale, units and number formats, WCAG 2.2 AA rules | ⏳ D.3 |
 | 04 | [Scientific UI rules](04-scientific-ui-rules.md) | FIRMS vs burned area, estimates, missing metadata, data-source labelling | ⏳ D.4 |
 | 05 | [Components](05-components.md) | Component specifications with all states | ⏳ D.5 |
