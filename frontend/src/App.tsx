@@ -1,14 +1,34 @@
 import { useState, type ReactNode } from "react";
+import { QueryClientProvider, type QueryClient } from "@tanstack/react-query";
 import { RouterProvider } from "react-router/dom";
 import { createAppRouter } from "@/app/router";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { DataProvider } from "@/data/DataProvider";
+import { createQueryClient } from "@/data/hooks";
+import type { Repositories } from "@/data/repositories";
 import { ThemeProvider } from "@/lib/theme/ThemeProvider";
 
-/** App-wide providers (theme, tooltips). Also used by tests around a memory router. */
-export function AppProviders({ children }: { children: ReactNode }) {
+/**
+ * App-wide providers (theme, data cache, data adapter, tooltips). Also used by tests around a memory
+ * router; tests may inject their own repositories or query client.
+ */
+export function AppProviders({
+  children,
+  repositories,
+  queryClient,
+}: {
+  children: ReactNode;
+  repositories?: Repositories;
+  queryClient?: QueryClient;
+}) {
+  const [client] = useState(() => queryClient ?? createQueryClient());
   return (
     <ThemeProvider>
-      <TooltipProvider delayDuration={300}>{children}</TooltipProvider>
+      <QueryClientProvider client={client}>
+        <DataProvider repositories={repositories}>
+          <TooltipProvider delayDuration={300}>{children}</TooltipProvider>
+        </DataProvider>
+      </QueryClientProvider>
     </ThemeProvider>
   );
 }

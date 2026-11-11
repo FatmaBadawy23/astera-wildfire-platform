@@ -339,6 +339,45 @@ async function main() {
       }
     }
 
+    // 1b. F3 development gallery /dev/science (dev builds only) + mock scenarios
+    {
+      const LIVE = `section[aria-label="Live mock query: synthetic events"]`;
+      await goto("/dev/science", theme);
+      await waitFor(`document.querySelectorAll('${LIVE} > ul > li').length === 6 && document.body.textContent.includes("Analysis allowed")`, 8000, "gallery data");
+      const g = await evaluate(`({ h1: document.querySelector("h1")?.textContent, banner: !!document.querySelector('[aria-label="Data mode notice"]'), mockFirst: [...document.querySelectorAll('ul[aria-label="Data source"]')].every((u) => u.querySelector("li")?.textContent === "MOCK DATA"), lists: document.querySelectorAll('ul[aria-label="Data source"]').length })`);
+      check(`${theme} /dev/science renders in the shell; every badge list starts with MOCK DATA`, g.h1 === "Science components (development preview)" && g.banner && g.mockFirst && g.lists > 0, JSON.stringify(g));
+      const axe = await runAxe();
+      check(`${theme} axe /dev/science`, axe.violations.length === 0, axe.violations.length ? JSON.stringify(axe.violations) : `0 violations; contrast undetermined nodes: ${axe.incompleteContrast}`);
+      judgeStops(`${theme} focus /dev/science`, await tabWalk(60));
+      await viewport(1440, 4300);
+      await sleep(300);
+      await shot(`${theme}-dev-science-full`);
+      await viewport(1440, 900);
+
+      for (const [scenario, expected] of [["error", "error"], ["empty", "empty"], ["unavailable", "unavailable"]]) {
+        await goto(`/dev/science?mockScenario=${scenario}`, theme);
+        let state;
+        try {
+          await waitFor(`document.querySelector('${LIVE} [data-state="${expected}"]') !== null`, 6000, scenario);
+          state = expected;
+        } catch {
+          state = await evaluate(`document.querySelector('${LIVE} [data-state]')?.getAttribute("data-state") ?? "none"`);
+        }
+        const axeS = await runAxe();
+        check(`${theme} mockScenario=${scenario} shows the ${expected} state; axe 0`, state === expected && axeS.violations.length === 0, `state=${state} axe=${JSON.stringify(axeS.violations)}`);
+        if (theme === "light" || scenario === "error") await shot(`${theme}-dev-science-${scenario}`);
+      }
+      await goto(`/dev/science?mockScenario=slow`, theme);
+      const loadingSeen = await evaluate(`document.querySelector('${LIVE} [data-state="loading"]') !== null`);
+      let loaded = true;
+      try {
+        await waitFor(`document.querySelectorAll('${LIVE} > ul > li').length === 6`, 6000, "slow scenario data");
+      } catch {
+        loaded = false;
+      }
+      check(`${theme} mockScenario=slow shows loading, then the data`, loadingSeen && loaded, `loadingSeen=${loadingSeen} loaded=${loaded}`);
+    }
+
     // 2. Shell at 1440: layout, Tab walk, collapse + persistence, Back/Forward
     await goto("/explorer", theme);
     await layoutCheck(`${theme} layout /explorer @1440`, { expectSidebar: 240 });
