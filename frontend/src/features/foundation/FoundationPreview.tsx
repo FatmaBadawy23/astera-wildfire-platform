@@ -1,6 +1,6 @@
 import { Download, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { LogoLockup, LogoMark } from "@/components/brand/Logo";
+import { LogoLockup, ProductMark, TeamCredit } from "@/components/brand/Logo";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { useTheme } from "@/lib/theme/ThemeProvider";
 
@@ -45,11 +45,34 @@ export function FoundationPreview() {
         </div>
 
         <Section title="Brand">
-          <div className="flex flex-wrap items-end gap-6">
-            <LogoMark size={96} />
-            <LogoMark size={44} />
-            <LogoMark size={32} />
-            <LogoLockup compact />
+          <div className="grid gap-6">
+            <div className="flex flex-wrap items-end gap-6">
+              <figure className="grid justify-items-center gap-2">
+                <ProductMark size={128} label="Astera Watch product logo, primary" />
+                <figcaption className="text-xs text-muted-foreground">C2 · 128 px</figcaption>
+              </figure>
+              <figure className="grid justify-items-center gap-2">
+                <ProductMark size={64} label="Astera Watch product logo, primary" />
+                <figcaption className="text-xs text-muted-foreground">C2 · 64 px</figcaption>
+              </figure>
+              <figure className="grid justify-items-center gap-2">
+                <ProductMark size={48} label="Astera Watch product logo, primary" />
+                <figcaption className="text-xs text-muted-foreground">C2 · 48 px</figcaption>
+              </figure>
+              <figure className="grid justify-items-center gap-2">
+                <ProductMark size={32} label="Astera Watch product logo, small" />
+                <figcaption className="text-xs text-muted-foreground">C1 · 32 px</figcaption>
+              </figure>
+              <figure className="grid justify-items-center gap-2">
+                <ProductMark size={16} label="Astera Watch product logo, small" />
+                <figcaption className="text-xs text-muted-foreground">C1 · 16 px</figcaption>
+              </figure>
+            </div>
+            <div className="flex flex-wrap items-center gap-10">
+              <LogoLockup layout="stacked" />
+              <LogoLockup layout="compact" />
+            </div>
+            <TeamCredit />
           </div>
         </Section>
 

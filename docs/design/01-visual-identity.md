@@ -5,6 +5,10 @@
 Final UI colour tokens (light/dark, contrast-checked) are defined in **D.2**
 ([02-design-tokens.md](02-design-tokens.md)). Nothing in this document modifies the logo.
 
+**Amendment 1 (Stage F):** §11 adds the separate **Astera Watch product logo** and defines its
+product-specific lockups. §6–§8 remain the rules for the **Team Astera logo** and are not changed;
+§11 borrows only the applicable layout rules from §7.
+
 ---
 
 ## 1. Source file
@@ -234,6 +238,72 @@ The sampling scripts were kept **outside the repository** to respect Stage D's
 
 | # | Item | Owner | When |
 |---|---|---|---|
-| 1 | Transparent PNG / SVG version of the badge + simplified small mark | Team (design) | Before Stage 7 |
+| 1 | Transparent PNG / SVG version of the badge + simplified small mark | Team (design) | ✔ Addressed by §11: the product now has its own SVG logo (C2) and small mark (C1). The team badge stays JPG-only and unchanged. |
 | 2 | Final light/dark UI colours with contrast checks | D.2 | Next |
 | 3 | Font sizes for the lockup variants | D.3 / D.6 | — |
+
+## 11. Amendment 1: Astera Watch product logo (Stage F)
+
+Astera Watch has its own product logo, separate from the Team Astera logo. The team logo
+(`frontend/public/astera-logo.jpg`) is **unchanged** and is used only for the team credit.
+
+### 11.1 Versions
+
+| Version | File | Shape | Use |
+|---|---|---|---|
+| **C2: primary** | `frontend/public/brand/astera-watch-mark.svg` | Circular badge with a double ring | Any display ≥ 48 px: lockups, Welcome/auth pages, about, error pages, report headers |
+| **C1: small** | `frontend/public/brand/astera-watch-mark-small.svg` | Rounded square, simplified | Below 48 px: favicon, sidebar, mobile top bar |
+
+Both versions share one monogram: a **star-satellite** at the top sends a **radar beam** whose two
+edges form the letter **"A"** (Astera); a **radar arc** forms the crossbar and a small **flame**
+sits beneath it. Meaning: satellite radar observation of wildfire-affected surfaces.
+C2's double-ring frame is inspired by the structure of the team badge, but it doesn't copy its
+lettering, star, orbit or layout.
+
+### 11.2 Colours
+
+Only colours from the team logo palette (§3.1) plus two tints:
+
+| Role | Colour | Origin |
+|---|---|---|
+| Field (radial gradient) | `#14224A` → `#070E21` | D.2 `surface-raised` (dark) → sampled background |
+| Outer ring / C1 border | `#516CA3` | Sampled (outer ring) |
+| Inner ring (C2 only) | `#445189` | Sampled (inner ring) |
+| "A" beam | `#6E90C2` | Sampled (ring highlight) |
+| Radar arcs | `#6A58B0`, tint `#8C79D6` | Sampled (purple) + lighter tint |
+| Star, flame | `#FAFCFC` / `#FFFFFF`, shading `#C9D3EC` | Sampled (white) + light tint |
+| Flame core | `#8C79D6` → `#6A58B0` | Purple |
+
+The logo contains **no orange or red**, so it can't be confused with the FIRMS
+fire-detection colour (`#D94100`) or any data colour.
+
+### 11.3 Size, clear space and themes
+
+- C2 at **≥ 48 px**, C1 below that (minimum 16 px). The app's `ProductMark` component
+  switches automatically at 48 px.
+- Clear space: at least **¼ of the mark's width** on all sides.
+- The mark carries its own navy field and is identical in light and dark themes.
+- The wordmark next to it follows the theme: "ASTERA" in the text colour, "WATCH" in the primary
+  colour, subtitle in the muted text colour (D.2 tokens).
+
+### 11.4 Product lockups
+
+§11 defines the Astera Watch lockups. They reuse the **layout rules** of §7.3 (arrangement of mark,
+name and subtitle) and the **wording and NASA/NISAR rules** of §7.1 and §7.4. They don't change
+the Team Astera identity, and the badge-specific rules of §6 and §8 (circular crop, JPG background,
+arc lettering sizes) don't apply to the product logo.
+
+| Lockup | Mark | Text |
+|---|---|---|
+| **Horizontal** | C2, 56 px | ASTERA WATCH · subtitle below |
+| **Stacked** | C2, 96 px, centred above | ASTERA WATCH · subtitle below |
+| **Compact** | C1, 32 px | Astera Watch, no subtitle |
+| **Mark only** | C2 at ≥ 48 px, C1 below | none (the mark carries the label "Astera Watch") |
+
+### 11.5 Don't
+
+- Recolour, stretch, rotate, outline or add effects to either version.
+- Add orange, red or any data-palette colour to the logo.
+- Use NASA or NISAR insignia, or anything that imitates them.
+- Use C1 at 48 px or above, or C2 below 48 px.
+- Replace the team credit's Team Astera logo with the product logo, or the reverse.
