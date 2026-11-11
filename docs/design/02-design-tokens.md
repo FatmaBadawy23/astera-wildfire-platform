@@ -1,6 +1,6 @@
 # 02: Design Tokens
 
-**Stage:** D.2 · **Status:** 🔄 in review
+**Stage:** D.2 (approved) · **Amendment 1:** Stage F0, 🔄 in review (FIRMS detection-density heatmap palette; see §13)
 **Machine-readable source:** [`tokens.json`](tokens.json) (W3C Design Tokens / DTCG format).
 Every value in this document is generated from the same data as `tokens.json`, and the two are
 cross-checked by validation test V6.
@@ -64,6 +64,11 @@ Brand colours (blue, purple) are **never** used to encode data.
 | `color.data.change-scale.increase-weak` | `#C7EAE5` | proposed | ColorBrewer BrBG 7-class (colour-blind safe) |
 | `color.data.change-scale.increase` | `#5AB4AC` | proposed | ColorBrewer BrBG 7-class (colour-blind safe) |
 | `color.data.change-scale.increase-strong` | `#01665E` | proposed | ColorBrewer BrBG 7-class (colour-blind safe) |
+| `color.data.detection-density.level-1` | `#FEEDDE` | proposed | ColorBrewer Oranges 5-class (sequential, single fire hue) |
+| `color.data.detection-density.level-2` | `#FDBE85` | proposed | ColorBrewer Oranges 5-class (sequential, single fire hue) |
+| `color.data.detection-density.level-3` | `#FD8D3C` | proposed | ColorBrewer Oranges 5-class (sequential, single fire hue) |
+| `color.data.detection-density.level-4` | `#E6550D` | proposed | ColorBrewer Oranges 5-class (sequential, single fire hue) |
+| `color.data.detection-density.level-5` | `#A63603` | proposed | ColorBrewer Oranges 5-class (sequential, single fire hue) |
 
 ### 3.1 Meanings and rules
 
@@ -75,9 +80,44 @@ Brand colours (blue, purple) are **never** used to encode data.
 | **Backscatter change (dB)** | 7-step BrBG scale (`color.data.change-scale.*`) | Post minus pre, in dB, diverging around 0. Legend: "Backscatter decrease (dB)" ← neutral → "Backscatter increase (dB)". **Neither direction is labelled "burned"**: fire effects on backscatter depend on vegetation, moisture, roughness, geometry, frequency and polarization. Legend swatches always have a 1 px `border-strong` outline and numeric labels. |
 | **Change mask** | Solid double-line boundary (`stroke.change-mask-boundary`) + `change-mask-fill` at `opacity.change-mask-fill` | An analysis output (threshold-based), **not** a confirmed burned area. The **boundary** identifies it; the fill adds meaning but is **not relied on** for visibility (composited fill contrast is only 1.03–1.93, see §8.5). |
 | **No data** | Diagonal hatch, `no-data-hatch` lines on transparent | Pixels without valid data. Never shown as "no change". |
+| **FIRMS detection density** *(Amendment 1)* | Heatmap, 5-level sequential palette `color.data.detection-density.level-1…5` | Aggregated count of FIRMS detections in the selected time window. Legend wording, exactly: **"FIRMS detection density, not burned area"**. See §3.2. |
 
 Distinguishing features never rely on colour alone (WCAG 1.4.1): **shape** (point vs line vs area),
 **line pattern** (dashed vs dotted vs solid), **pattern** (hatch) and **legend text**.
+
+### 3.2 FIRMS detection-density heatmap (Amendment 1, Stage F0)
+
+**What it represents:** the **aggregated number of FIRMS active-fire detections** per grid cell within the
+**selected time window**. Nothing else.
+
+**What it must never imply:**
+- **Not burned area.** Density is not an area burned and is never drawn as, converted to, or labelled as burned-area polygons.
+- **Not fire intensity.** Density counts detections; it doesn't use or show Fire Radiative Power (FRP) or any intensity measure.
+- **Not a confirmed fire event.** Detections are thermal anomalies; clusters are candidates for investigation.
+
+**Palette:** ColorBrewer **Oranges 5-class** (sequential, single fire hue): light = fewer detections, dark = more.
+Lightness decreases strictly from level 1 to level 5 in normal vision and in all three colour-vision
+simulations, and adjacent levels differ by ΔE ≥ 10 (§10.1).
+
+**Legend (mandatory, every time the heatmap is shown):**
+- Title, exactly: **"FIRMS detection density, not burned area"**
+- **Numeric** class breaks for all 5 levels, with the unit "detections per cell" and the selected time window (dates)
+- The FIRMS source badge
+- Each swatch has a 1 px `border-strong` outline (≥ 3:1, rows C-N) and a text label
+
+**Accessibility of the map layer itself:** against the map placeholder, the palette is below 3:1 at one end
+in each theme (rows C-D19 to C-D28: the darkest level on the dark map, the lightest levels on the light map).
+A sequential palette can't reach 3:1 against both a dark and a light background at both ends. Because the
+heatmap's information must not depend on colour contrast alone, these are **mandatory** for Stage F:
+1. The numeric legend above.
+2. A **text alternative**: an accessible table (or list) of detection counts for the visible area and time
+   window, reachable by keyboard and screen readers.
+3. Values available on hover/focus (tooltip with the count and the time window).
+
+**Zoom rule:** at low zoom the heatmap is shown; at high zoom it switches to individual detection points
+(`fire-detection`). Both are never shown at full strength at the same time, and the legend switches with them.
+Level 4 (`#E6550D`) is close to the point colour (ΔE ≈ 6.5), which is acceptable because both represent FIRMS
+detections; the legend always says which one is shown.
 
 ## 4. Source badges and banner
 
@@ -399,6 +439,16 @@ All ratios are recomputed from `tokens.json` by validation test V5.
 | C-D16 | Change-scale end step 'increase-strong' legend swatch vs surface (dark) - outline required where < 3 | `color.data.change-scale.increase-strong` → `#01665E` | `color.theme.dark.surface` → `#0B1634` | 2.60 | info | INFO |
 | C-D17 | Change-scale end step 'decrease-strong' legend swatch vs surface (light) - outline required where < 3 | `color.data.change-scale.decrease-strong` → `#8C510A` | `color.theme.light.surface` → `#FFFFFF` | 6.37 | info | INFO |
 | C-D18 | Change-scale end step 'increase-strong' legend swatch vs surface (light) - outline required where < 3 | `color.data.change-scale.increase-strong` → `#01665E` | `color.theme.light.surface` → `#FFFFFF` | 6.85 | info | INFO |
+| C-D19 | Detection-density level-1 vs map-placeholder (dark) - heatmap; see §3.2 for mitigations | `color.data.detection-density.level-1` → `#FEEDDE` | `color.theme.dark.map-placeholder` → `#141C38` | 14.67 | info | INFO |
+| C-D20 | Detection-density level-2 vs map-placeholder (dark) - heatmap; see §3.2 for mitigations | `color.data.detection-density.level-2` → `#FDBE85` | `color.theme.dark.map-placeholder` → `#141C38` | 10.28 | info | INFO |
+| C-D21 | Detection-density level-3 vs map-placeholder (dark) - heatmap; see §3.2 for mitigations | `color.data.detection-density.level-3` → `#FD8D3C` | `color.theme.dark.map-placeholder` → `#141C38` | 7.22 | info | INFO |
+| C-D22 | Detection-density level-4 vs map-placeholder (dark) - heatmap; see §3.2 for mitigations | `color.data.detection-density.level-4` → `#E6550D` | `color.theme.dark.map-placeholder` → `#141C38` | 4.53 | info | INFO |
+| C-D23 | Detection-density level-5 vs map-placeholder (dark) - heatmap; see §3.2 for mitigations | `color.data.detection-density.level-5` → `#A63603` | `color.theme.dark.map-placeholder` → `#141C38` | 2.51 | info | INFO |
+| C-D24 | Detection-density level-1 vs map-placeholder (light) - heatmap; see §3.2 for mitigations | `color.data.detection-density.level-1` → `#FEEDDE` | `color.theme.light.map-placeholder` → `#E8ECF3` | 1.04 | info | INFO |
+| C-D25 | Detection-density level-2 vs map-placeholder (light) - heatmap; see §3.2 for mitigations | `color.data.detection-density.level-2` → `#FDBE85` | `color.theme.light.map-placeholder` → `#E8ECF3` | 1.38 | info | INFO |
+| C-D26 | Detection-density level-3 vs map-placeholder (light) - heatmap; see §3.2 for mitigations | `color.data.detection-density.level-3` → `#FD8D3C` | `color.theme.light.map-placeholder` → `#E8ECF3` | 1.96 | info | INFO |
+| C-D27 | Detection-density level-4 vs map-placeholder (light) - heatmap; see §3.2 for mitigations | `color.data.detection-density.level-4` → `#E6550D` | `color.theme.light.map-placeholder` → `#E8ECF3` | 3.13 | info | INFO |
+| C-D28 | Detection-density level-5 vs map-placeholder (light) - heatmap; see §3.2 for mitigations | `color.data.detection-density.level-5` → `#A63603` | `color.theme.light.map-placeholder` → `#E8ECF3` | 5.63 | info | INFO |
 
 The light change-scale steps (`decrease-weak`, `neutral`, `increase-weak`) are near-white and the dark end
 steps are close to the dark surface, so **every legend swatch has a 1 px `border-strong` outline** (C-N rows)
@@ -522,7 +572,21 @@ the neutral centre and fall again):
 | deuteranopia | 42.4 / 76.0 / 92.8 / 96.5 / 89.4 / 66.2 / 36.9 | OK |
 | tritanopia | 40.1 / 74.3 / 92.0 / 96.5 / 90.1 / 67.8 / 39.5 | OK |
 
+### 10.1 Detection-density palette (Amendment 1): mandatory criteria
+
+Pass criteria: lightness (L*) **strictly decreasing** from level 1 to level 5, and the **smallest ΔE between
+adjacent levels ≥ 10**, in normal vision and all three simulations.
+
+| Simulation | L* level 1 → 5 | Strictly decreasing | Min adjacent ΔE | Result |
+|---|---|---|---:|---|
+| normal vision | 94.7 / 81.5 / 69.7 / 55.4 / 39.2 | yes | 22.4 | PASS |
+| protanopia | 93.9 / 78.4 / 63.8 / 47.2 / 32.4 | yes | 16.6 | PASS |
+| deuteranopia | 95.2 / 83.4 / 73.1 / 59.9 / 42.9 | yes | 13.4 | PASS |
+| tritanopia | 94.2 / 79.4 / 66.1 / 55.2 / 39.0 | yes | 22.5 | PASS |
+
 ## 11. Validation
+
+**Original D.2 validation (2026-11-10, before Amendment 1), kept unchanged as a historical record:**
 
 <!-- VALIDATION-RESULTS -->
 Validation was run on 2026-11-10 with a read-only script outside the repository, which reads only
@@ -560,6 +624,28 @@ In every case colour is supported by shape, pattern or line style **and** a text
 The BrBG change scale keeps its lightness order (dark → light → dark) in all four simulations.
 <!-- /VALIDATION-RESULTS -->
 
+**Amendment 1 re-validation (Stage F0):**
+
+<!-- AMENDMENT-1-RESULTS -->
+Run on 2026-11-11 with the same read-only, independent validator (outside the repository), extended with
+mandatory test V10 for the heatmap palette. **All mandatory tests passed.**
+
+| Test | Result |
+|---|---|
+| V1 JSON structure | ✅ PASS: 146 tokens (141 + 5 detection-density levels) |
+| V2 value formats | ✅ PASS |
+| V3 light/dark token parity | ✅ PASS: 15 / 15 |
+| V4 origins and sampled values | ✅ PASS: 9 sampled tokens, unchanged |
+| V5 contrast recomputed from JSON | ✅ PASS: **127 contrast rows** (117 original + 10 informational density rows), **0 failures**, 0 differences; FIRMS detection minimum unchanged at 3.76:1 |
+| V6 document ↔ JSON | ✅ PASS: **146 / 146 tokens documented**, 0 differences |
+| V7 data palette and band rules | ✅ PASS |
+| V8 colour-vision check (advisory) | ✅ Ran: the same 7 close pairs as in the original validation; no new close pairs |
+| **V10 detection-density palette** (new, mandatory) | ✅ PASS: 5 levels; L* strictly decreasing and minimum adjacent ΔE ≥ 10 in normal vision and all three simulations (§10.1, lowest 13.4 in deuteranopia); exact legend text present in `tokens.json` and in §3.1 and §3.2; no intensity or burned-area naming; numeric legend and text alternative required |
+| V9 scope | ✅ PASS: only the four Stage F0 files changed; no other file, tag or branch changed; nothing committed, pushed or installed at validation time |
+
+No existing token value or contrast figure changed (the only removed line in this document is the old status header).
+<!-- /AMENDMENT-1-RESULTS -->
+
 ## 12. Open items
 
 | # | Item | When |
@@ -568,3 +654,10 @@ The BrBG change scale keeps its lightness order (dark → light → dark) in all
 | 2 | Focus-not-obscured layout checks (2.4.11) and breakpoint confirmation | D.6 |
 | 3 | Transparent PNG/SVG logo (team action from D.1) | Before Stage 7 |
 | 4 | Check contrast of real basemap styles against these data colours | Stage 7 |
+
+## 13. Changelog
+
+| Version | Date | Stage | Change |
+|---|---|---|---|
+| 1.0 | 2026-11-10 | D.2 | Initial design tokens, themes, scientific palette and WCAG checks (commit `b0db3b3`) |
+| 1.1 | 2026-11-11 | F0 | **Amendment 1:** added `color.data.detection-density.level-1…5` (FIRMS detection-density heatmap, ColorBrewer Oranges 5-class), §3.1 row, §3.2, contrast rows C-D19 to C-D28, §10.1 and the Amendment 1 validation. No existing token value or contrast figure changed. |

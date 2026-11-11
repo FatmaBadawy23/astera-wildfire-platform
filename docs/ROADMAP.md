@@ -53,6 +53,74 @@ Decisions: collapsible left sidebar · MapLibre in the app, static placeholder
 maps in design · Montserrat headings · no separate Data Upload page · manual
 screenshot review (no Playwright).
 
+**Status (updated at Stage F0, 2026-11-11): Stage D closed after D.2.** The table above is kept as the
+original plan. D.3–D.9 were **not completed**; their requirements moved into Stage F, where they are
+implemented and tested in the real application:
+
+| Step | Status | Where it continues |
+|---|---|---|
+| D.0 | ✅ Completed (commit `94c86f0`) | — |
+| D.1 | ✅ Completed (commit `07553e3`) | — |
+| D.2 | ✅ Completed (commit `b0db3b3`); Amendment 1 (FIRMS detection-density palette) added in F0 | — |
+| D.3 | ↪ Transferred | F1–F2: typography, units, number formats and accessibility rules implemented and tested in code |
+| D.4 | ↪ Transferred | F3: scientific UI rules implemented as components and enforced by automated tests |
+| D.5 | ↪ Transferred | F2–F3: the implemented component library is the component specification |
+| D.6 | ↪ Transferred | F2 and F8: layout, collapsible sidebar, responsive behaviour, focus-not-obscured checks |
+| D.7 | ✖ Superseded | Replaced by the implemented pages (F2–F7) |
+| D.8 | ✖ Superseded | Static HTML mockups replaced by the real application |
+| D.9 | ↪ Transferred | F8: QA and report. No `checkpoint-stage-d` tag unless the team decides otherwise. |
+
+## Stage F: Frontend application (Before)
+
+The real React application, built now on mock data and ready for FastAPI. Branch: `stage-f-frontend`
+(from `stage-d-design`). It follows the approved visual identity (D.1) and design tokens (D.2).
+
+**Product structure:**
+1. **Welcome & Authentication:** Welcome, Login, Register, Continue as Guest. **Guest-first:** guests have
+   full access to every available feature; registration is optional. Until backend authentication exists,
+   Login/Register clearly state that **accounts are not available yet**. Authentication is never simulated,
+   and no passwords or credentials are stored in the browser.
+2. **Global Fire Explorer** (main page): map, FIRMS detection points and detection-density heatmap,
+   date-range / country / data-source filters, search, recent events.
+3. **Fire Event Details:** location, timeline, detection dates, data sources, scene metadata.
+4. **Data Availability:** pre-/post-fire scene availability by product type (NISAR GCOV, NISAR GSLC,
+   Sentinel-1), acquisition dates, polarization, coverage and quality when available; clear missing/unsuitable states.
+5. **SAR Analysis:** only after the availability check passes: before/after comparison, backscatter,
+   change map, **estimated** changed area, confidence, uncertainty and limitations.
+6. **Reports & Insights:** event summaries, charts, JSON/CSV export and browser print-to-PDF.
+7. **AI Scientific Assistant:** connected to the selected event and its available results; never invents data.
+8. **Data & Methodology:** sources, processing, assumptions and limitations.
+
+**Stack (exact versions pinned in `package-lock.json`):** React 19 + TypeScript 5.9.3 + Vite, Tailwind CSS v4
++ shadcn/ui, React Router 7, MapLibre GL JS, Recharts, Axios + TanStack Query, Vitest + Testing Library +
+axe-core. Node.js **22.20.0** is kept (no upgrade), so versions are chosen to support it.
+
+**Scientific requirements:** FIRMS detections are never shown as burned-area polygons; the heatmap shows
+**"FIRMS detection density, not burned area"** (never intensity or burned extent); every value is marked
+measured / derived / estimated / placeholder; mock data is never presented as a NASA observation; NISAR
+scene availability is never assumed (L-band and S-band shown separately, only when present); analysis runs
+only after the availability check.
+
+**Offline map:** Natural Earth 1:110m **country boundaries** (public domain), bundled as the offline
+country layer. It is **not** a detailed basemap and has no province/region boundaries; offline search and
+filtering work at **country** level only. Online basemaps are optional; the core country map and the
+synthetic event exploration work without internet.
+
+**Architecture:** feature modules; a data layer with repository interfaces and two adapters (mock now,
+FastAPI HTTP later) selected by configuration; provisional frontend types until Stage 1 contracts exist.
+
+| Step | Work | Gate |
+|---|---|---|
+| F0 | Branch, roadmap and design README updates, D.2 Amendment 1 (heatmap palette) | Validators pass; docs reviewed |
+| F1 | Scaffold, pinned dependencies, Tailwind v4 + shadcn/ui, local fonts, tokens from `tokens.json`, theme | Typecheck, lint, build, tests (tokens match `tokens.json`; theme toggle) |
+| F2 | App shell: collapsible sidebar, header, MOCK banner, routes, Welcome/Login/Register + guest flow, 404, error boundary | Route, keyboard and guest-access tests; axe: 0 violations in both themes |
+| F3 | Data layer, provisional types, synthetic fixtures, science components | Tests: mock data always labelled; "Not available" never replaced; formatters; availability rules |
+| F4 | Global Fire Explorer | Tests: filters; heatmap legend wording; no FIRMS polygons; text alternative; manual map review |
+| F5 | Event Details + Data Availability | Tests: missing/unsuitable states; no NISAR scene assumed |
+| F6 | SAR Analysis | Tests: locked without a suitable pair; estimate and uncertainty labels; Sentinel-1 never shown as NISAR |
+| F7 | Reports & Insights, AI Assistant, Data & Methodology | Tests: exports carry provenance; assistant answers "not available" instead of inventing |
+| F8 | QA, responsive and accessibility review, documentation, stage report | Full test run; manual review; PR; `checkpoint-stage-f` |
+
 ## Stage 1: Interfaces and contracts (Before, whole team)
 
 - Internal SAR data model (`SARScene`, `RasterLayer`, `ValidationReport`,
@@ -64,6 +132,8 @@ screenshot review (no Playwright).
   results, change layers, chat sessions). FIRMS points are stored as
   `active_fire_point` and never as burned area.
 - Pydantic request/response schemas for all API endpoints, documented in `docs/api.md`.
+- *(Added at Stage F0)* The Stage F provisional frontend types are an input to these contracts.
+  User accounts and authentication contracts are **planned** (not yet designed); guest access stays.
 - **Gate:** model unit tests pass and the team signs off on the contracts. Parallel work starts only after this.
 
 ## Stage 2: Mock data generator (Before)
@@ -103,6 +173,8 @@ screenshot review (no Playwright).
   `/api/data/inspect`, `/api/data/upload`, `/api/analysis/run`,
   `/api/analysis/{id}`, `/api/analysis/{id}/results`, `/api/chat`, `/health`.
 - Analysis runs as FastAPI background tasks (no extra job system).
+- *(Added at Stage F0)* Authentication endpoints and a users table are **planned** for the accounts
+  shown in Stage F; until they exist the application runs in guest mode only.
 - **Gate:** pytest against a test database; responses match the Stage 1 contracts.
 
 ## Stage 6: Data discovery modules (Before; live access optional)
@@ -111,15 +183,16 @@ screenshot review (no Playwright).
   scene search, plus a pre/post scene matcher by location and date.
 - **Gate:** tests with recorded responses; live calls only with keys.
 
-## Stage 7: Frontend pages (Before)
+## Stage 7: Frontend–API integration (Before, after Stage 5)
 
-- Create the frontend app (Vite + React + TypeScript + Tailwind + shadcn/ui,
-  fonts bundled locally) and build the pages from the Stage D design
-  documentation and tokens in `docs/design/`.
-- Connect to the API (Axios + TanStack Query), MapLibre maps, Recharts charts,
-  before/after comparison slider, MOCK DATA banner.
-- **Gate:** Vitest tests, `npm run build`, manual click-through, and a review
-  against the Stage D scientific UI rules.
+*Updated at Stage F0: the frontend application itself is built in **Stage F**.*
+
+- Switch the Stage F data layer from the mock adapter to the FastAPI adapter.
+- Replace the provisional frontend types with the Stage 1 contracts.
+- Connect backend authentication when it exists (guest access stays available).
+- Check real basemap styles against the data colours (D.2 open item).
+- **Gate:** Vitest tests against API contracts, `npm run build`, end-to-end click-through
+  with the backend, and a review against the scientific UI rules.
 
 ## Stage 8: Chatbot (Before)
 
@@ -158,8 +231,8 @@ screenshot review (no Playwright).
 
 | # | Module | Stages |
 |---|---|---|
-| 1 | Frontend dashboard and UI | D, 7 |
-| 2 | Maps, charts, before/after comparison | D, 7 |
+| 1 | Frontend dashboard and UI | D, F, 7 |
+| 2 | Maps, charts, before/after comparison | D, F, 7 |
 | 3 | Backend API and database | 5 |
 | 4 | Data ingestion and NISAR adapters | 2, 3, 6 |
 | 5 | SAR preprocessing and change detection | 4, 9 |
