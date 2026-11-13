@@ -42,7 +42,6 @@ Created the folder structure (`frontend/`, `backend/app/…`, `backend/processin
 `backend/tests/`, `notebooks/`, `data/{mock,raw,processed,outputs}/`, `docs/`) and:
 
 - `README.md`: project overview, data sources, stack, setup, scientific principles
-- `CLAUDE.md`: working rules for AI assistants (stage gates, no Docker, `conda run`, scientific integrity)
 - `docs/ROADMAP.md`: all stages (0, D, 1–11, C) with gates and team ownership
 - `environment.yml`, `.env.example`, `.gitignore`, `.gitattributes`
 - `docs/setup/`: Conda guide, PostgreSQL guide, verification scripts
@@ -116,7 +115,7 @@ Allow **~10 GB free disk space** for the Conda env, PostgreSQL and the upcoming 
 
 | File | Purpose |
 |---|---|
-| `README.md`, `CLAUDE.md`, `docs/ROADMAP.md` | Project overview, AI working rules, staged plan |
+| `README.md`, `docs/ROADMAP.md` | Project overview, staged plan |
 | `environment.yml` | Conda env definition (conda-forge only) |
 | `.env.example`, `.gitignore`, `.gitattributes` | Config template, ignore rules, line endings |
 | `docs/setup/conda-environment.md` | Python environment guide |

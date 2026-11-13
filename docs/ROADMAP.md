@@ -23,7 +23,7 @@ needs real NISAR products.
 
 | Step | Work | Gate |
 |---|---|---|
-| 0.1 | Folder structure, config files, README, CLAUDE.md, this roadmap, logo copy | Tree matches the planned structure |
+| 0.1 | Folder structure, config files, README, this roadmap, logo copy | Tree matches the planned structure |
 | 0.2 | Create Conda env `astera` from `environment.yml` | All geospatial and backend imports succeed in `astera` |
 | 0.3 | Install PostgreSQL 18 + PostGIS 3.7 ([guide](setup/postgresql-windows.md)) | Service running, `psql --version` works |
 | 0.4 | Create role `astera`, database `astera_watch`, extension `postgis`, local `.env` | `SELECT PostGIS_Version();` returns a version; Python connects |
@@ -71,6 +71,13 @@ implemented and tested in the real application:
 | D.9 | ↪ Transferred | F8: QA and report. No `checkpoint-stage-d` tag unless the team decides otherwise. |
 
 ## Stage F: Frontend application (Before)
+
+> **Status (2026-11-13):** built and in review. The product structure below is the **original plan**; it was
+> redesigned during Stage F. Implemented: Fire map (homepage), Fire Story (event details, data availability,
+> radar analysis and report in one page), Fire History & Impacts, My Places & Alerts (alerts not available yet),
+> User Guide, Help with Ask Astera (coming soon), How It Works, What's planned. There are no login pages (no
+> accounts exist) and no sidebar (header menu, and a tab bar on phones). See
+> [PROJECT_STATUS.md](PROJECT_STATUS.md) and [architecture/FRONTEND.md](architecture/FRONTEND.md).
 
 The real React application, built now on mock data and ready for FastAPI. Branch: `stage-f-frontend`
 (from `stage-d-design`). It follows the approved visual identity (D.1) and design tokens (D.2).
