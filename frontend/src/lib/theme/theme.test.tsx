@@ -14,10 +14,25 @@ function setup() {
 }
 
 describe("theme", () => {
-  it("defaults to the system preference (light in the test environment)", () => {
+  it("defaults to Light on a first visit", () => {
     setup();
     expect(document.documentElement.dataset.theme).toBe("light");
-    expect(screen.getByRole("button", { name: "Use system theme" })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("button", { name: "Light theme" })).toHaveAttribute("aria-pressed", "true");
+  });
+
+  it("defaults to Light even when the device prefers dark; 'Use system theme' then follows the device", async () => {
+    const original = window.matchMedia;
+    window.matchMedia = ((q: string) => ({ ...original(q), matches: q === "(prefers-color-scheme: dark)" })) as typeof window.matchMedia;
+    try {
+      const user = userEvent.setup();
+      setup();
+      expect(document.documentElement.dataset.theme).toBe("light");
+      await user.click(screen.getByRole("button", { name: "Use system theme" }));
+      expect(document.documentElement.dataset.theme).toBe("dark");
+      expect(window.localStorage.getItem(THEME_STORAGE_KEY)).toBe("system");
+    } finally {
+      window.matchMedia = original;
+    }
   });
 
   it("switches to dark and light, and remembers the choice", async () => {

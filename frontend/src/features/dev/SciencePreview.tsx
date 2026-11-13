@@ -165,7 +165,7 @@ export function SciencePreview() {
       description="Development only, not part of the product. Every value below is synthetic. Add ?mockScenario=error, empty, slow or unavailable to the URL to see the other states."
     >
       <div className="grid gap-6">
-        <Section title="Live mock query: synthetic events">
+        <Section title="Mock query: synthetic events">
           <LiveEvents />
         </Section>
 

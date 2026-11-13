@@ -1,57 +1,25 @@
-import type { Ref } from "react";
 import { Link } from "react-router";
-import { Bot, Menu } from "lucide-react";
 import { APP_NAME } from "@/app/nav";
 import { ProductMark } from "@/components/brand/Logo";
-import { Button } from "@/components/ui/button";
+import { HeaderNav, HelpButton, HowItWorksLink } from "./PrimaryNav";
 import { ThemeToggle } from "./ThemeToggle";
-import { MOBILE_NAV_ID } from "./MobileNav";
 
-interface HeaderProps {
-  mobile: boolean;
-  drawerOpen: boolean;
-  onOpenDrawer: () => void;
-  menuButtonRef: Ref<HTMLButtonElement>;
-}
-
-/** 56px header row of the app frame. Never overlaps content (it is a grid row, not sticky/fixed). */
-export function Header({ mobile, drawerOpen, onOpenDrawer, menuButtonRef }: HeaderProps) {
+/**
+ * 56px header row of the app frame (a grid row, never sticky/fixed, so it can't cover content).
+ * 768 px and wider: logo, the three destinations, Help, theme (1024 px and wider also "How it works"). Phones: logo and theme (the tab bar has the rest).
+ */
+export function Header({ mobile, wide }: { mobile: boolean; wide: boolean }) {
   return (
-    <header className="z-[var(--aw-z-header)] flex h-[var(--aw-size-header)] items-center gap-2 border-b border-border bg-surface px-3 sm:px-4">
-      {mobile && (
-        <>
-          <Button
-            ref={menuButtonRef}
-            variant="ghost"
-            size="icon"
-            aria-label="Open navigation menu"
-            aria-haspopup="dialog"
-            aria-expanded={drawerOpen}
-            aria-controls={drawerOpen ? MOBILE_NAV_ID : undefined}
-            onClick={onOpenDrawer}
-          >
-            <Menu aria-hidden="true" />
-          </Button>
-          <Link to="/explorer" aria-label={`${APP_NAME}, go to Explorer`} className="rounded-md p-1">
-            <ProductMark size={32} />
-          </Link>
-        </>
-      )}
-
+    <header className="z-[var(--aw-z-header)] flex h-[var(--aw-size-header)] items-center gap-2 border-b border-border bg-surface px-3 sm:px-4 md:gap-4">
+      <Link to="/" aria-label={`${APP_NAME}, go to the Fire map`} className="flex shrink-0 items-center gap-2.5 rounded-md p-1">
+        <ProductMark size={32} />
+        <span className="font-wordmark text-base font-bold text-foreground md:hidden lg:inline">{APP_NAME}</span>
+      </Link>
+      {!mobile && <HeaderNav />}
       <div className="ml-auto flex items-center gap-2">
+        {wide && <HowItWorksLink />}
+        {!mobile && <HelpButton />}
         <ThemeToggle />
-        <Button asChild variant="ghost" className="px-3">
-          <Link to="/assistant" aria-label="AI Assistant">
-            <Bot aria-hidden="true" />
-            <span className="hidden sm:inline">Assistant</span>
-          </Link>
-        </Button>
-        <div className="hidden items-center gap-1 text-sm sm:flex">
-          <span className="text-muted-foreground">Guest</span>
-          <Button asChild variant="link" className="px-2">
-            <Link to="/login">Log in</Link>
-          </Button>
-        </div>
       </div>
     </header>
   );

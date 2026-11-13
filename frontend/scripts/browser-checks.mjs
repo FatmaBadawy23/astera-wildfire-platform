@@ -12,7 +12,9 @@
  * every Tab stop (visible ≥2px indicator, ≥3:1 against the adjacent background, not obscured),
  * layout geometry (banner/header never overlap <main>), sidebar widths at 1440/1024/390, drawer focus
  * trap / Esc / navigation / resize-while-open, short-screen layout, and Login/Register storage + network
- * audit after form interaction. Exit code 1 if anything fails.
+ * audit after form interaction. Explorer (F-Explorer): real MapLibre map with software WebGL, no external
+ * requests, keyboard markers, selection/Esc, a clicked detection point, layer info and switches, filters and
+ * search, focus rings, storage, and the 390px layout. Exit code 1 if anything fails.
  */
 import { spawn } from "node:child_process";
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
@@ -179,7 +181,7 @@ async function main() {
   const browser = spawn(
     BROWSER,
     ["--headless=new", `--remote-debugging-port=${PORT}`, `--user-data-dir=${profile}`, "--no-first-run",
-      "--no-default-browser-check", "--disable-gpu", "--hide-scrollbars", "--disable-extensions", "about:blank"],
+      "--no-default-browser-check", "--disable-gpu", "--enable-unsafe-swiftshader", "--hide-scrollbars", "--disable-extensions", "about:blank"],
     { stdio: "ignore" },
   );
 
@@ -378,6 +380,258 @@ async function main() {
       check(`${theme} mockScenario=slow shows loading, then the data`, loadingSeen && loaded, `loadingSeen=${loadingSeen} loaded=${loaded}`);
     }
 
+    // 1c. Explorer page: real MapLibre map (software WebGL), markers, selection, layers, filters, detections.
+    {
+      const MAP = "[data-explorer-map]";
+      const mapReady = `!!document.querySelector('${MAP} .maplibregl-canvas') && document.querySelectorAll('[data-event-marker]').length === 6 && !!document.querySelector('${MAP}')?.dataset.zoom && document.querySelectorAll('[data-event-item]').length === 6`;
+      await viewport(1440, 900);
+      netLog = [];
+      await goto("/explorer", theme);
+      await waitFor(mapReady, 20000, "explorer map + 6 markers + 6 list items");
+      await sleep(800);
+      const external = netLog.filter((r) => !r.includes(" " + BASE) && !r.includes(" data:") && !r.includes(" blob:"));
+      netLog = null;
+      check(`${theme} explorer: map loads with no external requests (local basemap only)`, external.length === 0, external.length ? external.slice(0, 5).join(" | ") : "all requests same-origin");
+      const e0 = await evaluate(`({
+        markers: [...document.querySelectorAll('[data-event-marker]')].map((m) => m.getAttribute("aria-label")),
+        chip: document.querySelector('[data-demo-chip]')?.textContent,
+        summary: document.querySelector('[data-results-summary]')?.textContent,
+        zoom: Number(document.querySelector('${MAP}').dataset.zoom),
+        mockFirst: [...document.querySelectorAll('[data-event-item] ul[aria-label="Data source"]')].every((u) => u.querySelector("li")?.textContent === "MOCK DATA"),
+      })`);
+      check(
+        `${theme} explorer: 6 keyboard markers labelled demo + not confirmed; DEMO chip; MOCK DATA first on every card`,
+        e0.markers.every((l) => l.includes("not a confirmed wildfire") && l.includes("Demo data")) && e0.chip === "DEMO DATA · invented locations, not real fires" && e0.mockFirst && e0.summary.startsWith("Showing 6 candidate events and 612 heat detections"),
+        JSON.stringify({ chip: e0.chip, summary: e0.summary, zoom: e0.zoom, firstMarker: e0.markers[0] }),
+      );
+      const axeE = await runAxe();
+      check(`${theme} axe /explorer (map loaded)`, axeE.violations.length === 0, axeE.violations.length ? JSON.stringify(axeE.violations) : `0 violations; contrast undetermined nodes: ${axeE.incompleteContrast}`);
+      await shot(`${theme}-explorer-page-1440`);
+
+      // Keyboard (real Tab presses, each assertion logged separately): marker ring, Enter selects + zooms, Esc.
+      async function tabTo(match, max = 90) {
+        for (let i = 0; i < max; i++) {
+          await press("Tab");
+          const info = await evaluate("window.__aw.focusInfoSettled()");
+          if (info.none) return null;
+          if (match(info)) return info;
+        }
+        return null;
+      }
+      async function waitOk(expression, timeout) {
+        try {
+          await waitFor(expression, timeout);
+          return true;
+        } catch {
+          return false;
+        }
+      }
+      const ringOk = (i) => !!i && i.visible && i.ratio >= 3 && i.topmost && i.inViewport && !i.overlapsChrome;
+      const ringText = (i) => (i ? `vis=${i.visible} w=${i.width} ratio=${i.ratio} top=${i.topmost} inView=${i.inViewport}` : "not reached");
+      const marker = await tabTo((i) => i.name.startsWith("SYN-01:"));
+      check(`${theme} explorer: SYN-01 marker reached with Tab`, !!marker, marker ? marker.name : "not reached");
+      check(`${theme} explorer: marker focus ring visible, ≥3:1, not covered`, ringOk(marker), ringText(marker));
+      await press("Enter");
+      const selected = await waitOk(`new URLSearchParams(location.search).get("event") === "SYN-01" && document.querySelector('[data-event-marker="SYN-01"]').getAttribute("aria-pressed") === "true"`, 5000);
+      check(`${theme} explorer: Enter on the marker selects SYN-01 (URL + aria-pressed)`, selected, await evaluate("location.search"));
+      const zoomed = await waitOk(`Number(document.querySelector('${MAP}').dataset.zoom) >= 6`, 8000);
+      check(`${theme} explorer: map zooms to the selected event`, zoomed, `zoom ${await evaluate(`document.querySelector('${MAP}').dataset.zoom`)}`);
+      await sleep(600);
+      const card = await evaluate(`(() => { const c = [...document.querySelectorAll('[data-selection="event"]')].filter((x) => x.getClientRects().length > 0); return { visible: c.length, text: c[0]?.textContent ?? "", href: c[0]?.querySelector("a")?.getAttribute("href") ?? null }; })()`);
+      check(`${theme} explorer: exactly one visible card, says "not confirmed", Open event → /events/SYN-01`, card.visible === 1 && card.text.includes("Candidate event · not confirmed") && card.href === "/events/SYN-01", JSON.stringify({ visible: card.visible, href: card.href }));
+      await shot(`${theme}-explorer-selected-1440`);
+      const focusAfterEnter = await evaluate(`document.activeElement?.dataset?.eventMarker ?? null`);
+      await press("Escape");
+      await sleep(250);
+      const afterEscape = await evaluate(`({ event: new URLSearchParams(location.search).get("event"), card: !!document.querySelector('[data-selection]'), focus: document.activeElement?.dataset?.eventMarker ?? null })`);
+      check(`${theme} explorer: Esc clears the selection`, afterEscape.event === null && !afterEscape.card, JSON.stringify(afterEscape));
+      check(`${theme} explorer: focus stays on the marker after Enter and Esc`, focusAfterEnter === "SYN-01" && afterEscape.focus === "SYN-01", `afterEnter=${focusAfterEnter} afterEsc=${afterEscape.focus}`);
+
+      // A real detection point on the canvas (zoom ≥ 9): click it → detection card.
+      await evaluate(`(() => { const m = document.querySelector('${MAP}').__awMap; m.jumpTo({ center: [-120.62, 38.91], zoom: 10 }); return true; })()`);
+      await sleep(1200);
+      const pt = await evaluate(`(() => { const m = document.querySelector('${MAP}').__awMap; const f = m.queryRenderedFeatures({ layers: ["detection-points"] }); if (!f.length) return null; const p = m.project(f[0].geometry.coordinates); const r = m.getCanvas().getBoundingClientRect(); return { x: r.left + p.x, y: r.top + p.y, n: f.length }; })()`);
+      if (pt) for (const type of ["mouseMoved", "mousePressed", "mouseReleased"]) await cdp.send("Input.dispatchMouseEvent", { type, x: pt.x, y: pt.y, button: "left", clickCount: 1 });
+      await sleep(400);
+      const det = await evaluate(`document.querySelector('[data-selection="detection"]')?.textContent ?? null`);
+      check(`${theme} explorer: clicking a rendered detection point opens its card ("not a confirmed wildfire and not burned area", UTC time)`, !!pt && !!det && det.includes("not a confirmed wildfire and not burned area") && det.includes("UTC"), pt ? `${pt.n} points rendered; card=${!!det}` : "no detection points rendered at zoom 10");
+      await shot(`${theme}-explorer-detection-1440`);
+
+      // Layer explanations + switches.
+      await goto("/explorer", theme);
+      await waitFor(mapReady, 20000, "explorer reload");
+      const infoFocus = await tabTo((i) => i.name === "About the layer: Heat detection density");
+      check(`${theme} explorer: layer info button reached with Tab`, !!infoFocus, infoFocus ? infoFocus.name : "not reached");
+      check(`${theme} explorer: layer info focus ring visible, ≥3:1, not covered`, ringOk(infoFocus), ringText(infoFocus));
+      await press("Enter");
+      const opened = await waitOk(`!!document.querySelector('[role="dialog"]')`, 4000);
+      const pop = opened ? await evaluate(`document.querySelector('[role="dialog"]').textContent`) : "";
+      check(`${theme} explorer: Enter opens the layer explanation with "Shows" and "Does not show"`, opened && pop.includes("Shows:") && pop.includes("Does not show:"), pop.slice(0, 120));
+      const axeP = await runAxe();
+      check(`${theme} axe /explorer with layer explanation open`, axeP.violations.length === 0, JSON.stringify(axeP.violations));
+      await shot(`${theme}-explorer-layer-info-1440`);
+      await press("Escape");
+      await sleep(200);
+      const back = await evaluate(`({ dialog: !!document.querySelector('[role="dialog"]'), focus: document.activeElement?.getAttribute("aria-label") })`);
+      check(`${theme} explorer: Esc closes the explanation and returns focus to its button`, !back.dialog && back.focus === "About the layer: Heat detection density", JSON.stringify(back));
+      await clickAt("#layer-events");
+      await sleep(200);
+      const hidden = await evaluate(`[...document.querySelectorAll('[data-event-marker]')].every((m) => getComputedStyle(m).display === "none") && !document.querySelector('#layer-events').checked`);
+      await clickAt("#layer-events");
+      await sleep(200);
+      const shown = await evaluate(`document.querySelectorAll('[data-event-marker]').length === 6 && [...document.querySelectorAll('[data-event-marker]')].every((m) => getComputedStyle(m).display !== "none")`);
+      check(`${theme} explorer: "Candidate events" switch hides and shows the markers`, hidden && shown, `hidden=${hidden} shown=${shown}`);
+
+      // Country names: approved zoom tiers, no overlaps, never over points/markers/controls, above density squares.
+      const SETTLED = `(() => { const m = document.querySelector('${MAP}').__awMap; return m.loaded() && !m.isMoving() && m.areTilesLoaded(); })()`;
+      const NAMES = `(() => {
+        const ov = (a, b) => a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
+        const R = (e) => e.getBoundingClientRect();
+        const map = document.querySelector('${MAP}'); const m = map.__awMap; const box = R(map); const z = m.getZoom();
+        const max = z < 1.5 ? -1 : z < 2.5 ? 2 : z < 3.5 ? 3 : z < 4.5 ? 4 : Infinity;
+        const placed = [...document.querySelectorAll('[data-country-label][data-placed="true"]')];
+        const rects = placed.map(R);
+        let overlaps = 0; for (let i = 0; i < rects.length; i++) for (let j = i + 1; j < rects.length; j++) if (ov(rects[i], rects[j])) overlaps++;
+        const obst = [...document.querySelectorAll('[data-map-frame] [data-map-overlay]')].map(R).filter((r) => r.width > 0);
+        for (const mk of document.querySelectorAll('[data-event-marker]')) if (mk.style.display !== 'none') for (const el of [mk, ...mk.querySelectorAll('*')]) { const r = R(el); if (r.width > 0) obst.push(r); }
+        let points = 0;
+        if (z >= 9) for (const f of m.queryRenderedFeatures({ layers: ['detection-points'] })) { const p = m.project(f.geometry.coordinates); obst.push({ left: box.left + p.x - 6, right: box.left + p.x + 6, top: box.top + p.y - 6, bottom: box.top + p.y + 6 }); points++; }
+        const onDensity = placed.filter((el) => { const r = R(el); return m.queryRenderedFeatures([[r.left - box.left, r.top - box.top], [r.right - box.left, r.bottom - box.top]], { layers: ['density-fill'] }).length > 0; }).map((el) => el.textContent);
+        const layer = document.querySelector('[data-country-labels]');
+        const kids = layer ? [...layer.parentElement.children] : [];
+        const hit = rects[0] ? document.elementFromPoint((rects[0].left + rects[0].right) / 2, (rects[0].top + rects[0].bottom) / 2) : null;
+        return { zoom: +z.toFixed(2), placed: placed.length, tierOk: placed.every((el) => Number(el.dataset.minLabel) <= max), overlaps,
+          onObstacle: rects.filter((r) => obst.some((o) => ov(r, o))).length, outside: rects.filter((r) => r.left < box.left || r.right > box.right || r.top < box.top || r.bottom > box.bottom).length,
+          points, onDensity, ariaHidden: layer?.getAttribute('aria-hidden'), pointerEvents: layer ? getComputedStyle(layer).pointerEvents : null,
+          aboveCanvasBelowMarkers: !!layer && layer.previousElementSibling?.tagName === 'CANVAS' && kids.indexOf(layer) < kids.findIndex((c) => c.matches('[data-event-marker]')),
+          clickThrough: hit ? !hit.closest('[data-country-labels]') : null, font: placed[0] ? getComputedStyle(placed[0]).fontFamily.split(',')[0] : null,
+          sample: placed.slice(0, 6).map((e) => e.textContent).join(', ') };
+      })()`;
+      const namesAt = async (lon, lat, zoom) => {
+        if (zoom !== null) await evaluate(`document.querySelector('${MAP}').__awMap.jumpTo({ center: [${lon}, ${lat}], zoom: ${zoom} }), true`);
+        await sleep(300);
+        await waitFor(SETTLED, 10000, "map settled");
+        await sleep(500);
+        return evaluate(NAMES);
+      };
+      const namesOk = (s) => s.tierOk && s.overlaps === 0 && s.onObstacle === 0 && s.outside === 0;
+      const namesText = (s) => `zoom ${s.zoom}: ${s.placed} names (${s.sample}) overlaps=${s.overlaps} onObstacle=${s.onObstacle} outside=${s.outside}${s.points ? ` points=${s.points}` : ""}`;
+      await goto("/explorer", theme);
+      await waitFor(mapReady, 20000, "explorer reload (names)");
+      await waitFor(`!!document.querySelector('[data-country-labels]')`, 8000, "country names layer");
+      const world = await namesAt(0, 0, null);
+      check(`${theme} explorer names: none at world view (zoom < 1.5)`, world.placed === 0 && world.zoom < 1.5, namesText(world));
+      check(`${theme} explorer names: decorative layer above the density, below markers; hidden from screen readers; not clickable`,
+        world.ariaHidden === "true" && world.pointerEvents === "none" && world.aboveCanvasBelowMarkers, JSON.stringify({ ariaHidden: world.ariaHidden, pointerEvents: world.pointerEvents, order: world.aboveCanvasBelowMarkers }));
+      for (const [label, lon, lat, zoom] of [["1.5–2.5", -80, 15, 1.6], ["2.5–3.5", 15, 48, 2.6], ["3.5–4.5", 12, 46, 3.6], ["≥ 4.5", 21, 40, 4.6]]) {
+        const s = await namesAt(lon, lat, zoom);
+        check(`${theme} explorer names @1440 tier ${label}: names shown, tier respected, no overlaps, none on markers/controls, inside the map`, s.placed > 0 && namesOk(s) && s.clickThrough === true, namesText(s) + ` clickThrough=${s.clickThrough} font=${s.font}`);
+        if (zoom === 2.6) await shot(`${theme}-explorer-names-1440`);
+      }
+      const namesPoints = await namesAt(-120.62, 38.91, 10);
+      check(`${theme} explorer names @ zoom 10: never cover a FIRMS detection point`, namesPoints.points > 0 && namesOk(namesPoints), namesText(namesPoints));
+      const namesDensity = await namesAt(-8.02, 40.12, 4.6);
+      check(`${theme} explorer names: drawn over density squares, not hidden by them (Portugal)`, namesDensity.onDensity.length > 0 && namesOk(namesDensity), `on density: ${namesDensity.onDensity.join(", ") || "none"}; ${namesText(namesDensity)}`);
+      await shot(`${theme}-explorer-names-on-density`);
+      await namesAt(15, 48, 2.6);
+      await clickAt("#layer-borders");
+      const off = await namesAt(15, 48, null);
+      await clickAt("#layer-borders");
+      const on = await namesAt(15, 48, null);
+      check(`${theme} explorer: "Country borders and names" switch hides and shows the names`, off.placed === 0 && on.placed > 0, `off=${off.placed} on=${on.placed}`);
+
+      // Density legend in plain language.
+      const lg = await evaluate(`(() => { const l = document.querySelector('[data-density-legend]'); const d = [...document.querySelectorAll('details')].find((x) => x.querySelector('summary')?.textContent === 'Show density as a table');
+        if (d) d.open = true; const head = d ? [...d.querySelectorAll('th')].map((t) => t.textContent) : [];
+        return { text: l.textContent, rows: [...l.querySelectorAll('li')].map((li) => li.textContent), relOpen: l.querySelector('details').open, head,
+          kinds: [...document.querySelectorAll('ul[aria-label="Points and squares"] li')].length }; })()`);
+      check(`${theme} explorer legend: exact title, time window, permanent explanation, level words with ranges + unit, relative note collapsed, points vs squares, table Level column`,
+        lg.text.includes("FIRMS detection density, not burned area") && lg.text.includes("Time window:") &&
+          lg.text.includes("Stronger colours indicate more FIRMS detections within an area during the selected period. They do not show the size or intensity of a burned area.") &&
+          lg.rows.length > 0 && lg.rows.every((r, i) => r.startsWith(["Lowest", "Low", "Middle", "High", "Highest"][i]) && r.includes("detections per cell")) &&
+          !lg.relOpen && lg.kinds === 3 && lg.head.includes("Level"),
+        JSON.stringify({ rows: lg.rows, relOpen: lg.relOpen, kinds: lg.kinds, head: lg.head }));
+      const axeL = await runAxe();
+      check(`${theme} axe /explorer with names and the density table open`, axeL.violations.length === 0, axeL.violations.length ? JSON.stringify(axeL.violations) : "0 violations");
+      // The checks below start from a fresh page, as before.
+      await goto("/explorer", theme);
+      await waitFor(mapReady, 20000, "explorer reload (filters)");
+
+      // Filters and search.
+      await evaluate(`(() => { const s = [...document.querySelectorAll("select")].find((x) => x.labels[0]?.textContent === "Country"); s.value = "PRT"; s.dispatchEvent(new Event("change", { bubbles: true })); return true; })()`);
+      await waitFor(`document.querySelectorAll('[data-event-item]').length === 1 && document.querySelectorAll('[data-event-marker]').length === 1`, 5000, "country filter");
+      const country = await evaluate(`({ q: location.search, item: document.querySelector('[data-event-item]').dataset.eventItem })`);
+      await evaluate(`[...document.querySelectorAll("button")].find((b) => b.textContent.trim() === "Clear filters").click(), true`);
+      await waitFor(`document.querySelectorAll('[data-event-item]').length === 6`, 5000, "clear filters");
+      await evaluate(`document.querySelector('input[type="search"]').focus(), true`);
+      await cdp.send("Input.insertText", { text: "SYN-05" });
+      await waitFor(`document.querySelectorAll('[data-event-item]').length === 1`, 5000, "search");
+      const search = await evaluate(`({ q: new URLSearchParams(location.search).get("q"), item: document.querySelector('[data-event-item]').dataset.eventItem })`);
+      check(`${theme} explorer: country filter (PRT → SYN-03) and search (SYN-05) update list, markers and URL`, country.item === "SYN-03" && country.q.includes("country=PRT") && search.item === "SYN-05" && search.q === "SYN-05", JSON.stringify({ country, search }));
+      judgeStops(`${theme} focus /explorer page controls (filters, layers, map, list)`, await tabWalk(60));
+      const storage = await evaluate(`Object.keys(localStorage).concat(Object.keys(sessionStorage))`);
+      check(`${theme} explorer: no new storage keys`, storage.every((k) => ALLOWED_STORAGE_KEYS.includes(k)), JSON.stringify(storage));
+
+      // 1024: zoomed to SYN-01 ("Show on map"), the other events are outside the map. Only markers fully visible
+      // inside the map are Tab stops; off-map markers are skipped (tabindex -1, aria-hidden); Tab never moves the map.
+      await viewport(1024, 768);
+      await goto("/explorer", theme);
+      await waitFor(mapReady, 20000, "explorer 1024");
+      await waitFor(`[...document.querySelectorAll('[data-event-marker]')].every((m) => m.dataset.reachable !== undefined)`, 8000, "marker reach computed (world)");
+      const worldAt1024 = await evaluate(`[...document.querySelectorAll('[data-event-marker]')].map((m) => m.dataset.reachable)`);
+      await shot(`${theme}-explorer-page-1024`);
+      await evaluate(`[...document.querySelectorAll('[data-event-item="SYN-01"] button')].find((b) => b.textContent.includes("Show on map")).click(), true`);
+      await waitFor(`Number(document.querySelector('${MAP}').dataset.zoom) >= 6 && !document.querySelector('${MAP}').__awMap.isMoving()`, 10000, "zoomed to SYN-01");
+      await sleep(500);
+      await evaluate(`document.querySelector('main h1').focus(), true`);
+      await waitFor(`[...document.querySelectorAll('[data-event-marker]')].every((m) => m.dataset.reachable !== undefined)`, 8000, "marker reach computed");
+      const reach = await evaluate(`(() => {
+        const box = document.querySelector('${MAP}').getBoundingClientRect();
+        return [...document.querySelectorAll('[data-event-marker]')].map((m) => { const r = m.getBoundingClientRect();
+          return { id: m.dataset.eventMarker, tab: m.tabIndex, hidden: m.getAttribute("aria-hidden"), inside: r.left >= box.left && r.right <= box.right && r.top >= box.top && r.bottom <= box.bottom }; });
+      })()`);
+      check(`${theme} explorer @1024: markers fully inside the map are Tab stops; the others are skipped and hidden`,
+        reach.every((m) => (m.inside ? m.tab === 0 && m.hidden === null : m.tab === -1 && m.hidden === "true")) && reach.some((m) => !m.inside),
+        reach.map((m) => `${m.id}:${m.inside ? "in" : "OUT"}/tab=${m.tab}`).join(" "));
+      check(`${theme} explorer @1024: the whole world fits, so all 6 markers are reachable in the world view`, worldAt1024.length === 6 && worldAt1024.every((v) => v === "true"), worldAt1024.join(","));
+      const centreBefore = await evaluate(`document.querySelector('${MAP}').__awMap.getCenter().toArray().map((v) => v.toFixed(4)).join(",")`);
+      const markerStops = [];
+      for (let i = 0; i < 60; i++) {
+        await press("Tab");
+        const info = await evaluate("window.__aw.focusInfoSettled()");
+        if (info.none) break;
+        if (info.name.startsWith("SYN-")) markerStops.push(info);
+      }
+      const centreAfter = await evaluate(`document.querySelector('${MAP}').__awMap.getCenter().toArray().map((v) => v.toFixed(4)).join(",")`);
+      check(`${theme} explorer @1024: every marker Tab stop is visible, ≥3:1, uncovered and on screen`, markerStops.length > 0 && markerStops.every(ringOk), markerStops.map((i) => `${i.name.slice(0, 6)} ${ringText(i)}`).join("; "));
+      check(`${theme} explorer @1024: Tab through the markers does not move the map`, centreBefore === centreAfter, `${centreBefore} → ${centreAfter}`);
+      await shot(`${theme}-explorer-zoomed-1024`);
+      await viewport(1440, 900);
+
+      // Mobile 390: no horizontal scroll, world fits, card below the map, disclosures.
+      await viewport(390, 844);
+      await goto("/explorer?event=SYN-03", theme);
+      await waitFor(mapReady, 20000, "explorer mobile");
+      await sleep(800);
+      const m = await evaluate(`({ sw: document.documentElement.scrollWidth, iw: innerWidth, filtersHidden: getComputedStyle(document.querySelector('#explorer-filters')).display === "none", card: [...document.querySelectorAll('[data-selection="event"]')].filter((c) => c.getClientRects().length > 0).length, mapW: document.querySelector('${MAP}').clientWidth })`);
+      check(`${theme} explorer @390: no horizontal scroll; filters folded; selection card below the map`, m.sw <= m.iw && m.filtersHidden && m.card === 1, JSON.stringify(m));
+      await shot(`${theme}-explorer-390-selected`);
+      await goto("/explorer", theme);
+      await waitFor(mapReady, 20000, "explorer mobile world");
+      await sleep(600);
+      const worldZoom = await evaluate(`Number(document.querySelector('${MAP}').dataset.zoom)`);
+      check(`${theme} explorer @390: whole world fits the map width`, worldZoom <= 0, `zoom ${worldZoom}`);
+      await shot(`${theme}-explorer-page-390`);
+      judgeStops(`${theme} focus /explorer page @390`, await tabWalk(40));
+      const mobileWorld = await namesAt(0, 0, null);
+      const mobileNames = await namesAt(15, 48, 2.6);
+      check(`${theme} explorer names @390: none at world view; after zooming in, names without overlaps, inside the map`,
+        mobileWorld.placed === 0 && mobileNames.placed > 0 && namesOk(mobileNames), `world=${mobileWorld.placed}; ${namesText(mobileNames)}`);
+      await evaluate(`document.querySelector('[data-map-frame]').scrollIntoView({ block: "center" }), true`);
+      await shot(`${theme}-explorer-names-390`);
+      await viewport(1440, 900);
+    }
+
     // 2. Shell at 1440: layout, Tab walk, collapse + persistence, Back/Forward
     await goto("/explorer", theme);
     await layoutCheck(`${theme} layout /explorer @1440`, { expectSidebar: 240 });
@@ -393,8 +647,10 @@ async function main() {
     await shot(`${theme}-explorer-1440-collapsed`);
     const axeCollapsed = await runAxe();
     check(`${theme} axe collapsed sidebar`, axeCollapsed.violations.length === 0, JSON.stringify(axeCollapsed.violations));
+    // Mark the current document so the wait below only succeeds on the reloaded one (not before the reload starts).
+    await evaluate("window.__awBeforeReload = true");
     await cdp.send("Page.reload");
-    await waitFor("document.readyState === 'complete' && !!document.querySelector('[data-sidebar]')");
+    await waitFor("window.__awBeforeReload === undefined && document.readyState === 'complete' && !!document.querySelector('[data-sidebar]')", 10000, "reload completed");
     await sleep(200);
     await layoutCheck(`${theme} collapse remembered after reload`, { expectSidebar: 72 });
     // Tab walk from the top of the freshly loaded (still collapsed) page, not from the collapse button.

@@ -1,49 +1,22 @@
-import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { RouterProvider, createMemoryRouter } from "react-router";
 import { AppProviders } from "@/App";
 import { THEME_STORAGE_KEY } from "@/lib/theme/theme";
 import { axeViolations } from "@/test/axe";
+import { installViewport } from "@/test/viewport";
 import { routes } from "./router";
-import { NAV_ITEMS } from "./nav";
 
-// jsdom renders no CSS, so colour contrast is checked in real Edge by scripts/browser-checks.mjs.
+// jsdom renders no CSS, so colour contrast is checked in real Edge by scripts/journey-checks.mjs.
+// jsdom has no WebGL: the Fire map's MapLibre canvas is checked in the browser checks.
+vi.mock("@/features/explorer/ExplorerMap", () => ({ default: () => <div data-testid="fake-map" /> }));
 
-let width = 1440;
-const originalMatchMedia = window.matchMedia;
-const originalResizeObserver = globalThis.ResizeObserver;
+let viewport: ReturnType<typeof installViewport>;
 beforeEach(() => {
-  width = 1440;
-  Object.defineProperty(window, "matchMedia", {
-    configurable: true,
-    writable: true,
-    value: (query: string) => {
-      const min = Number(/min-width:\s*(\d+)px/.exec(query)?.[1]);
-      return {
-        get matches() {
-          return Number.isFinite(min) ? width >= min : false;
-        },
-        media: query,
-        onchange: null,
-        addEventListener: () => {},
-        removeEventListener: () => {},
-        addListener: () => {},
-        removeListener: () => {},
-        dispatchEvent: () => false,
-      };
-    },
-  });
-  globalThis.ResizeObserver ??= class {
-    observe() {}
-    unobserve() {}
-    disconnect() {}
-  } as unknown as typeof ResizeObserver;
+  viewport = installViewport(1440);
 });
-afterEach(() => {
-  Object.defineProperty(window, "matchMedia", { configurable: true, writable: true, value: originalMatchMedia });
-  globalThis.ResizeObserver = originalResizeObserver;
-});
+afterEach(() => viewport.restore());
 
 function renderAt(path: string, theme: "light" | "dark") {
   window.localStorage.setItem(THEME_STORAGE_KEY, theme);
@@ -56,26 +29,32 @@ function renderAt(path: string, theme: "light" | "dark") {
   expect(document.documentElement.dataset.theme).toBe(theme);
 }
 
-const PATHS = ["/", "/login", "/register", ...NAV_ITEMS.map((i) => i.path), "/events/E-1", "/no/such/page"];
+const PATHS = ["/", "/history", "/places", "/guide", "/how-it-works", "/planned", "/events/SYN-01", "/events/SYN-04", "/events/E-1", "/no/such/page"];
 
 describe.each(["light", "dark"] as const)("axe-core WCAG A/AA, %s theme", (theme) => {
   it.each(PATHS)("%s has no violations", async (path) => {
     renderAt(path, theme);
+    // Let the page's data load (mock repositories answer immediately in tests).
+    await screen.findAllByRole("heading", { level: 2 }).catch(() => {});
+    await new Promise((r) => setTimeout(r, 50));
     expect(await axeViolations(document.body)).toEqual([]);
   });
 
-  it("collapsed sidebar has no violations", async () => {
+  it("docked Help panel (desktop) has no violations, Guide and Ask", async () => {
     const user = userEvent.setup();
-    renderAt("/explorer", theme);
-    await user.click(screen.getByRole("button", { name: "Collapse sidebar" }));
+    renderAt("/", theme);
+    await user.click(document.querySelector<HTMLElement>("[data-help-trigger]")!);
+    expect(await axeViolations(document.body)).toEqual([]);
+    await user.click(screen.getByRole("tab", { name: "Ask Astera" }));
     expect(await axeViolations(document.body)).toEqual([]);
   });
 
-  it("open mobile drawer has no violations", async () => {
+  it("phone layout with the Help sheet open has no violations", async () => {
     const user = userEvent.setup();
-    width = 390;
-    renderAt("/explorer", theme);
-    await user.click(screen.getByRole("button", { name: "Open navigation menu" }));
+    viewport.set(390);
+    renderAt("/", theme);
+    expect(await axeViolations(document.body)).toEqual([]);
+    await user.click(document.querySelector<HTMLElement>("[data-help-trigger]")!);
     await screen.findByRole("dialog");
     expect(await axeViolations(document.body)).toEqual([]);
   });

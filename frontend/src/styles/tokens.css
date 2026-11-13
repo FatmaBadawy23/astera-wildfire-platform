@@ -1,21 +1,25 @@
 /* AUTO-GENERATED from docs/design/tokens.json by scripts/generate-tokens.mjs. Do not edit by hand. */
 :root,
 :root[data-theme="light"] {
-  --aw-color-bg: #F5F7FC;
+  --aw-color-bg: #F5F7FB;
   --aw-color-surface: #FFFFFF;
-  --aw-color-surface-raised: #FFFFFF;
-  --aw-color-text: #0B1634;
-  --aw-color-text-muted: #4A5578;
-  --aw-color-primary: #3A5594;
+  --aw-color-surface-raised: #EDF1F8;
+  --aw-color-text: #27324D;
+  --aw-color-text-muted: #58627C;
+  --aw-color-primary: #2F4275;
   --aw-color-on-primary: #FFFFFF;
-  --aw-color-accent: #5A47A3;
-  --aw-color-border-subtle: #DDE2EE;
-  --aw-color-border-strong: #7A86A8;
-  --aw-color-focus-ring: #3A5594;
+  --aw-color-accent: #5E4A9E;
+  --aw-color-border-subtle: #DCE2EE;
+  --aw-color-border-strong: #6F7B9E;
+  --aw-color-focus-ring: #2F4275;
   --aw-color-success: #15803D;
   --aw-color-warning: #A15C07;
   --aw-color-danger: #B91C1C;
-  --aw-color-map-placeholder: #E8ECF3;
+  --aw-color-map-placeholder: #A6C0D2;
+  --aw-color-text-strong: #0A1128;
+  --aw-color-map-land: #E8E1CF;
+  --aw-color-planned-bg: #EEF2FA;
+  --aw-color-map-outline: #0B1634;
   --aw-shadow-sm: 0px 1px 2px 0px #0B163414;
   --aw-shadow-md: 0px 4px 12px 0px #0B16341A;
   --aw-shadow-lg: 0px 12px 32px 0px #0B163424;
@@ -23,21 +27,25 @@
   color-scheme: light;
 }
 :root[data-theme="dark"] {
-  --aw-color-bg: #070E21;
-  --aw-color-surface: #0B1634;
-  --aw-color-surface-raised: #14224A;
-  --aw-color-text: #FAFCFC;
-  --aw-color-text-muted: #A9B4D0;
-  --aw-color-primary: #6E90C2;
-  --aw-color-on-primary: #070E21;
-  --aw-color-accent: #A393E6;
-  --aw-color-border-subtle: #1E2A52;
-  --aw-color-border-strong: #6A7AA8;
-  --aw-color-focus-ring: #9DBBF0;
+  --aw-color-bg: #0A1128;
+  --aw-color-surface: #16203A;
+  --aw-color-surface-raised: #1E2A47;
+  --aw-color-text: #CBD5E1;
+  --aw-color-text-muted: #8A93A8;
+  --aw-color-primary: #A9BEE8;
+  --aw-color-on-primary: #0A1128;
+  --aw-color-accent: #B8A6EE;
+  --aw-color-border-subtle: #24304F;
+  --aw-color-border-strong: #6B7899;
+  --aw-color-focus-ring: #A9BEE8;
   --aw-color-success: #4ADE80;
   --aw-color-warning: #FBBF24;
   --aw-color-danger: #F87171;
-  --aw-color-map-placeholder: #141C38;
+  --aw-color-map-placeholder: #3A4851;
+  --aw-color-text-strong: #FFFFFF;
+  --aw-color-map-land: #3B3A33;
+  --aw-color-planned-bg: #16203A;
+  --aw-color-map-outline: #E2E8F0;
   --aw-shadow-sm: 0px 1px 2px 0px #00000066;
   --aw-shadow-md: 0px 4px 12px 0px #00000080;
   --aw-shadow-lg: 0px 12px 32px 0px #00000099;

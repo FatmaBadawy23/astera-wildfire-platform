@@ -11,8 +11,10 @@ describe("design tokens", () => {
   });
 
   it("uses the approved sampled and data colours", () => {
-    expect(css).toContain("--aw-color-bg: #070E21;"); // dark bg, sampled (D.1)
-    expect(css).toContain("--aw-color-bg: #F5F7FC;"); // light bg
+    expect(css).toContain("--aw-color-bg: #0A1128;"); // dark main background (approved 2026-11-13)
+    expect(css).toContain("--aw-color-surface: #16203A;"); // dark cards
+    expect(css).toContain("--aw-color-primary: #A9BEE8;"); // dark primary button
+    expect(css).toContain("--aw-color-bg: #F5F7FB;"); // light background (coordinated light theme)
     expect(css).toContain("--aw-data-fire-detection: #D94100;"); // FIRMS points (D.2)
     for (let i = 1; i <= 5; i++) expect(css).toContain(`--aw-data-density-${i}: `); // provisional heatmap levels
   });

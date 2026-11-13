@@ -124,7 +124,7 @@ describe("provenance panel", () => {
 });
 
 describe("legends: exact wording", () => {
-  it("density legend: exact title, numeric classes, unit, window, FIRMS badge, provisional tag", () => {
+  it("density legend: exact title, numeric classes, unit, window, FIRMS badge, provisional note", () => {
     render(<DetectionDensityLegend classes={[[1, 2], [3, 5], [6, 9], [10, 14], [15, 20]]} window={{ start: "2026-07-01T00:00:00Z", end: "2026-08-31T23:59:59Z" }} />);
     expect(screen.getByText(LEGEND_TEXT.density, { exact: false })).toBeInTheDocument();
     expect(LEGEND_TEXT.density).toBe("FIRMS detection density, not burned area");
@@ -132,7 +132,7 @@ describe("legends: exact wording", () => {
     expect(screen.getAllByText("detections per cell")).toHaveLength(5);
     expect(screen.getByText(/2026-07-01 – 2026-08-31 \(UTC\)/)).toBeInTheDocument();
     expect(screen.getByText("FIRMS")).toBeInTheDocument();
-    expect(screen.getByText("PROVISIONAL COLOURS")).toBeInTheDocument();
+    expect(screen.getByText("Provisional colours")).toBeInTheDocument();
   });
 
   it("change scale never calls either direction 'burned'", () => {

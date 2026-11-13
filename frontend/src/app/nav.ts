@@ -1,77 +1,44 @@
-import { BookOpen, Bot, Database, FileChartColumn, Flame, Map as MapIcon, Radar, type LucideIcon } from "lucide-react";
+import { BookOpen, History, Map as MapIcon, Star, Telescope, Workflow, type LucideIcon } from "lucide-react";
 
+export const APP_NAME = "Astera Watch";
+
+/** One of the three main destinations. Help (User Guide + Ask) is a panel, not a destination. */
 export interface NavItem {
-  /** Route path. */
   path: string;
-  /** Short label for the sidebar. */
+  /** Menu label (header). */
   label: string;
+  /** Short label for the phone tab bar. */
+  shortLabel: string;
   /** Page title (h1 and browser tab). */
   title: string;
-  /** One-line purpose of the area. */
-  description: string;
-  /** Stage F step in which the page content is built. */
-  stage: "F4" | "F5" | "F6" | "F7";
   icon: LucideIcon;
 }
 
-/** The seven application areas in the sidebar (Welcome & Authentication are standalone pages). */
 export const NAV_ITEMS: readonly NavItem[] = [
-  {
-    path: "/explorer",
-    label: "Explorer",
-    title: "Global Fire Explorer",
-    description: "Map of FIRMS active-fire detections and detection density, with date, country and data-source filters, search and recent events.",
-    stage: "F4",
-    icon: MapIcon,
-  },
-  {
-    path: "/events",
-    label: "Event Details",
-    title: "Fire Event Details",
-    description: "Location, timeline, detection dates, data sources and scene metadata for a selected fire event.",
-    stage: "F5",
-    icon: Flame,
-  },
-  {
-    path: "/availability",
-    label: "Data Availability",
-    title: "Data Availability",
-    description: "Pre- and post-fire scene availability by product type (NISAR GCOV, NISAR GSLC, Sentinel-1), with clear missing and unsuitable states.",
-    stage: "F5",
-    icon: Database,
-  },
-  {
-    path: "/analysis",
-    label: "SAR Analysis",
-    title: "SAR Analysis",
-    description: "Before/after comparison, backscatter change, change map and estimated changed area, available only after the availability check passes.",
-    stage: "F6",
-    icon: Radar,
-  },
-  {
-    path: "/reports",
-    label: "Reports & Insights",
-    title: "Reports & Insights",
-    description: "Event summaries and charts, with JSON/CSV export and browser print-to-PDF.",
-    stage: "F7",
-    icon: FileChartColumn,
-  },
-  {
-    path: "/assistant",
-    label: "AI Assistant",
-    title: "AI Scientific Assistant",
-    description: "Answers questions about the selected event and its available results. It never invents data.",
-    stage: "F7",
-    icon: Bot,
-  },
-  {
-    path: "/methodology",
-    label: "Data & Methodology",
-    title: "Data & Methodology",
-    description: "Data sources, processing steps, assumptions and known limitations, including how mock data is labelled.",
-    stage: "F7",
-    icon: BookOpen,
-  },
+  { path: "/", label: "Fire map", shortLabel: "Map", title: "Fire map", icon: MapIcon },
+  { path: "/history", label: "Fire history", shortLabel: "History", title: "Fire History & Impacts", icon: History },
+  { path: "/places", label: "My places", shortLabel: "My places", title: "My Places & Alerts", icon: Star },
 ];
 
-export const APP_NAME = "Astera Watch";
+/** Secondary information pages: linked from the header's "Learn" menu, the Help panel and the page footers. */
+export interface InfoPage {
+  path: string;
+  label: string;
+  title: string;
+  icon: LucideIcon;
+}
+
+export const GUIDE_PATH = "/guide";
+export const HOW_PATH = "/how-it-works";
+export const PLANNED_PATH = "/planned";
+
+export const INFO_PAGES: readonly InfoPage[] = [
+  { path: HOW_PATH, label: "How it works", title: "How It Works", icon: Workflow },
+  { path: GUIDE_PATH, label: "User Guide", title: "User Guide", icon: BookOpen },
+  { path: PLANNED_PATH, label: "What's planned", title: "What's planned", icon: Telescope },
+];
+
+/** Address of a possible fire's Fire Story. */
+export function fireStoryPath(id: string): string {
+  return `/events/${encodeURIComponent(id)}`;
+}

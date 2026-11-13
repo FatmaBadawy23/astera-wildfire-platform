@@ -1,48 +1,20 @@
-import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { render, screen, waitFor, within } from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { RouterProvider, createMemoryRouter } from "react-router";
 import { AppProviders } from "@/App";
 import { routes } from "@/app/router";
-import { NAV_ITEMS } from "@/app/nav";
+import { installViewport } from "@/test/viewport";
 
-// --- controllable matchMedia ---
-let width = 1440;
-const originalMatchMedia = window.matchMedia;
-const originalResizeObserver = globalThis.ResizeObserver;
+vi.mock("@/features/explorer/ExplorerMap", () => ({ default: () => <div data-testid="fake-map" /> }));
+
+let viewport: ReturnType<typeof installViewport>;
 beforeEach(() => {
-  width = 1440;
-  Object.defineProperty(window, "matchMedia", {
-    configurable: true,
-    writable: true,
-    value: (query: string) => {
-      const min = Number(/min-width:\s*(\d+)px/.exec(query)?.[1]);
-      return {
-        get matches() {
-          return Number.isFinite(min) ? width >= min : false;
-        },
-        media: query,
-        onchange: null,
-        addEventListener: () => {},
-        removeEventListener: () => {},
-        addListener: () => {},
-        removeListener: () => {},
-        dispatchEvent: () => false,
-      };
-    },
-  });
-  globalThis.ResizeObserver ??= class {
-    observe() {}
-    unobserve() {}
-    disconnect() {}
-  } as unknown as typeof ResizeObserver;
+  viewport = installViewport(1440);
 });
-afterEach(() => {
-  Object.defineProperty(window, "matchMedia", { configurable: true, writable: true, value: originalMatchMedia });
-  globalThis.ResizeObserver = originalResizeObserver;
-});
+afterEach(() => viewport.restore());
 
-function renderAt(path = "/explorer") {
+function renderAt(path = "/history") {
   const router = createMemoryRouter(routes, { initialEntries: [path] });
   render(
     <AppProviders>
@@ -55,24 +27,27 @@ function renderAt(path = "/explorer") {
 /** Accessible name of the focused element (aria-label, else text). */
 function focusedName(): string {
   const el = document.activeElement as HTMLElement;
-  return el.getAttribute("aria-label") ?? el.textContent?.trim() ?? "";
+  return el.getAttribute("aria-label") ?? el.textContent?.trim().replace(/\s+/g, " ") ?? "";
 }
 
+const helpButton = () => document.querySelector<HTMLElement>("[data-help-trigger]")!;
+
 describe("keyboard: App Shell at 1440px", () => {
-  it("Tab order: skip link, banner link, header, sidebar, collapse button", async () => {
+  it("Tab order: skip link, demo bar, logo, the three destinations, How it works, Help, theme", async () => {
     const user = userEvent.setup();
     renderAt();
     const expected = [
       "Skip to main content",
-      "About mock data",
+      "What this means",
+      "Astera Watch, go to the Fire map",
+      "Fire map",
+      "Fire history",
+      "My places",
+      "How it works",
+      "Help",
       "Light theme",
       "Dark theme",
       "Use system theme",
-      "AI Assistant",
-      "Log in",
-      "Astera Watch, go to Explorer",
-      ...NAV_ITEMS.map((i) => i.label),
-      "Collapse sidebar",
     ];
     const seen: string[] = [];
     for (let i = 0; i < expected.length; i++) {
@@ -91,49 +66,51 @@ describe("keyboard: App Shell at 1440px", () => {
     expect(document.activeElement).toBe(document.getElementById("main"));
   });
 
-  it("Enter on a sidebar item navigates and focuses the new heading", async () => {
+  it("Enter on a menu item navigates and focuses the new heading", async () => {
     const user = userEvent.setup();
     const router = renderAt();
-    screen.getByRole("link", { name: "Data & Methodology" }).focus();
+    screen.getByRole("link", { name: /My places/ }).focus();
     await user.keyboard("{Enter}");
-    await waitFor(() => expect(router.state.location.pathname).toBe("/methodology"));
+    await waitFor(() => expect(router.state.location.pathname).toBe("/places"));
     await waitFor(() => expect(document.activeElement).toBe(screen.getByRole("heading", { level: 1 })));
   });
 
-  it("the collapse button works with Enter and Space and updates aria-expanded", async () => {
+  it("Help: Enter opens the docked panel and focuses its heading; Esc closes it and returns focus", async () => {
     const user = userEvent.setup();
     renderAt();
-    const toggle = screen.getByRole("button", { name: "Collapse sidebar" });
-    toggle.focus();
+    helpButton().focus();
     await user.keyboard("{Enter}");
-    expect(toggle).toHaveAttribute("aria-expanded", "false");
-    expect(toggle).toHaveAccessibleName("Expand sidebar");
-    await user.keyboard(" ");
-    expect(toggle).toHaveAttribute("aria-expanded", "true");
+    const panel = screen.getByRole("complementary", { name: "Help" });
+    await waitFor(() => expect(document.activeElement).toBe(screen.getByRole("heading", { level: 2, name: "Help" })));
+    // Tabs: arrow keys move between Guide and Ask Astera.
+    screen.getByRole("tab", { name: "Guide" }).focus();
+    await user.keyboard("{ArrowRight}");
+    expect(screen.getByRole("tab", { name: "Ask Astera" })).toHaveAttribute("aria-selected", "true");
+    await user.keyboard("{Escape}");
+    await waitFor(() => expect(panel).not.toBeInTheDocument());
+    await waitFor(() => expect(document.activeElement).toBe(helpButton()));
   });
 
-  it("collapsed: every item keeps its name and shows a tooltip on keyboard focus", async () => {
+  it("the demo bar's 'What this means' opens Help at the demo-data topic", async () => {
     const user = userEvent.setup();
-    renderAt();
-    await user.click(screen.getByRole("button", { name: "Collapse sidebar" }));
-    const nav = screen.getByRole("navigation", { name: "Main" });
-    for (const item of NAV_ITEMS) expect(within(nav).getByRole("link", { name: item.label })).toBeInTheDocument();
-
-    within(nav).getByRole("link", { name: "Explorer" }).focus();
-    await user.tab(); // keyboard focus on "Event Details"
-    expect(await screen.findByRole("tooltip")).toHaveTextContent("Event Details");
+    renderAt("/");
+    await user.click(screen.getByRole("button", { name: "What this means" }));
+    const topic = document.querySelector<HTMLDetailsElement>('[data-help-topic="demo"]')!;
+    await waitFor(() => expect(topic.open).toBe(true));
+    expect(document.activeElement).toBe(topic.querySelector("summary"));
+    expect(topic).toHaveTextContent("not NASA observations and not real fires");
   });
 });
 
-describe("keyboard: mobile drawer at 390px", () => {
-  it("opens from the keyboard, traps Tab inside, and Esc returns focus to the menu button", async () => {
+describe("keyboard: Help sheet at 390px", () => {
+  it("opens from the keyboard, traps Tab inside, and Esc returns focus to the Help tab", async () => {
     const user = userEvent.setup();
-    width = 390;
+    viewport.set(390);
     renderAt();
-    const menu = screen.getByRole("button", { name: "Open navigation menu" });
-    menu.focus();
+    const help = helpButton();
+    help.focus();
     await user.keyboard("{Enter}");
-    const dialog = await screen.findByRole("dialog", { name: "Navigation" });
+    const dialog = await screen.findByRole("dialog", { name: "Help" });
 
     for (let i = 0; i < 25; i++) {
       await user.tab();
@@ -146,6 +123,6 @@ describe("keyboard: mobile drawer at 390px", () => {
 
     await user.keyboard("{Escape}");
     await waitFor(() => expect(screen.queryByRole("dialog")).not.toBeInTheDocument());
-    await waitFor(() => expect(document.activeElement).toBe(menu));
+    await waitFor(() => expect(document.activeElement).toBe(help));
   });
 });

@@ -29,18 +29,19 @@ function LegendRow({ symbol, children }: { symbol: ReactNode; children: ReactNod
   );
 }
 
-export function FireDetectionLegendItem() {
+/** Heat-spot symbol exactly as on the map: fire-coloured dot, light ring, outer dark ring (same in both themes). */
+export function HeatSpotSymbol({ size = 18 }: { size?: number }) {
   return (
-    <LegendRow
-      symbol={
-        <svg width="28" height="20">
-          <circle cx="14" cy="10" r="4" fill="var(--aw-data-fire-detection)" stroke="var(--aw-color-bg)" strokeWidth="1" />
-        </svg>
-      }
-    >
-      {LEGEND_TEXT.fireDetection}
-    </LegendRow>
+    <svg width={size} height={size} viewBox="0 0 18 18" aria-hidden="true">
+      <circle cx="9" cy="9" r="7" fill="var(--aw-data-line-casing-dark)" />
+      <circle cx="9" cy="9" r="5.25" fill="var(--aw-data-line-casing-light)" />
+      <circle cx="9" cy="9" r="3.75" fill="var(--aw-data-fire-detection)" />
+    </svg>
   );
+}
+
+export function FireDetectionLegendItem() {
+  return <LegendRow symbol={<HeatSpotSymbol />}>{LEGEND_TEXT.fireDetection}</LegendRow>;
 }
 
 function DoubleLine({ dash, cap }: { dash: string; cap?: "round" }) {
@@ -134,10 +135,13 @@ export function ChangeScaleLegend({ limitDb = 6, className }: { limitDb?: number
 export function DetectionDensityLegend({
   classes,
   window,
+  levelNames,
   className,
 }: {
   classes: [number, number][];
   window: TimeWindow;
+  /** Optional word per level (e.g. Lowest … Highest), shown before the numeric range; level i uses levelNames[i]. */
+  levelNames?: readonly string[];
   className?: string;
 }) {
   return (
@@ -145,12 +149,7 @@ export function DetectionDensityLegend({
       <figcaption className="flex flex-wrap items-center gap-2 text-sm font-medium">
         {LEGEND_TEXT.density}
         <SourceBadge badge="firms" />
-        <span
-          className="rounded-sm px-1.5 py-0.5 text-[11px] font-semibold"
-          style={{ background: "var(--aw-badge-mock-bg)", color: "var(--aw-badge-mock-fg)" }}
-        >
-          PROVISIONAL COLOURS
-        </span>
+        <span className="rounded-sm border border-border-strong px-1.5 py-px text-[11px] font-semibold text-muted-foreground">Provisional colours</span>
       </figcaption>
       <p className="text-xs text-muted-foreground">Time window: {formatWindow(window)}</p>
       {classes.length === 0 ? (
@@ -164,6 +163,7 @@ export function DetectionDensityLegend({
                 className="h-4 w-7 shrink-0 border border-border-strong"
                 style={{ background: `var(--aw-data-density-${i + 1})` }}
               />
+              {levelNames?.[i] && <span className="w-16 shrink-0 font-medium">{levelNames[i]}</span>}
               <span className="font-mono">
                 {from === to ? formatNumber(from) : `${formatNumber(from)}–${formatNumber(to)}`}
               </span>

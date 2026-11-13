@@ -3,15 +3,18 @@ export type ResolvedTheme = "light" | "dark";
 
 export const THEME_STORAGE_KEY = "astera-theme";
 
+/** Light is Astera Watch's primary look: first visits use it (Dark and "follow the device" are choices people make). */
+export const DEFAULT_PREFERENCE: ThemePreference = "light";
+
 /** Reads the stored preference. Storage can be unavailable (private mode, blocked), so never throw. */
 export function readStoredPreference(): ThemePreference {
   try {
     const s = window.localStorage.getItem(THEME_STORAGE_KEY);
     if (s === "light" || s === "dark" || s === "system") return s;
   } catch {
-    /* storage unavailable: fall back to system */
+    /* storage unavailable: fall back to the default */
   }
-  return "system";
+  return DEFAULT_PREFERENCE;
 }
 
 export function storePreference(pref: ThemePreference): void {

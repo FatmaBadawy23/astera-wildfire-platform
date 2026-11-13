@@ -1,37 +1,22 @@
 import { useEffect, useState } from "react";
-import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { act, render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { RouterProvider, createMemoryRouter, type NonIndexRouteObject, type RouteObject } from "react-router";
 import { AppProviders } from "@/App";
 import { routes } from "@/app/router";
+import { installViewport } from "@/test/viewport";
 import { AppShell } from "./AppShell";
 import { Page } from "./Page";
 
-// --- controllable matchMedia (desktop width, so the docked sidebar is present) ---
-const originalMatchMedia = window.matchMedia;
+vi.mock("@/features/explorer/ExplorerMap", () => ({ default: () => <div data-testid="fake-map" /> }));
+
+// Desktop width, so the header menu is present.
+let viewport: ReturnType<typeof installViewport>;
 beforeEach(() => {
-  Object.defineProperty(window, "matchMedia", {
-    configurable: true,
-    writable: true,
-    value: (query: string) => {
-      const min = Number(/min-width:\s*(\d+)px/.exec(query)?.[1]);
-      return {
-        matches: Number.isFinite(min) ? 1440 >= min : false,
-        media: query,
-        onchange: null,
-        addEventListener: () => {},
-        removeEventListener: () => {},
-        addListener: () => {},
-        removeListener: () => {},
-        dispatchEvent: () => false,
-      };
-    },
-  });
+  viewport = installViewport(1440);
 });
-afterEach(() => {
-  Object.defineProperty(window, "matchMedia", { configurable: true, writable: true, value: originalMatchMedia });
-});
+afterEach(() => viewport.restore());
 
 /** A page whose h1 appears 300 ms after it mounts (stands in for a lazy/slow page). */
 function SlowPage() {
@@ -64,75 +49,78 @@ function renderAt(path: string) {
 }
 
 const h1 = () => screen.getByRole("heading", { level: 1 });
+const menu = () => within(screen.getByRole("navigation", { name: "Main" }));
+const helpButton = () => document.querySelector<HTMLElement>("[data-help-trigger]")!;
 
 describe("route focus management", () => {
   it("does not move focus on a direct URL load", () => {
-    renderAt("/reports");
-    expect(h1()).toHaveTextContent("Reports & Insights");
+    renderAt("/how-it-works");
+    expect(h1()).toHaveTextContent("How It Works");
     expect(document.activeElement).toBe(document.body);
   });
 
-  it("moves focus to the new h1 and updates the title after a sidebar link click", async () => {
+  it("moves focus to the new h1 and updates the title after a menu link click", async () => {
     const user = userEvent.setup();
-    renderAt("/explorer");
-    await user.click(screen.getByRole("link", { name: "Reports & Insights" }));
-    await waitFor(() => expect(h1()).toHaveTextContent("Reports & Insights"));
+    renderAt("/");
+    await user.click(menu().getByRole("link", { name: /Fire history/ }));
+    await waitFor(() => expect(h1()).toHaveTextContent("Fire History & Impacts"));
     expect(document.activeElement).toBe(h1());
-    await waitFor(() => expect(document.title).toBe("Reports & Insights · Astera Watch"));
+    await waitFor(() => expect(document.title).toBe("Fire History & Impacts · Astera Watch"));
   });
 
   it("handles browser Back and Forward", async () => {
     const user = userEvent.setup();
-    const router = renderAt("/explorer");
-    await user.click(screen.getByRole("link", { name: "Reports & Insights" }));
+    const router = renderAt("/");
+    await user.click(menu().getByRole("link", { name: /Fire history/ }));
     await waitFor(() => expect(document.activeElement).toBe(h1()));
 
     await act(() => router.navigate(-1));
-    await waitFor(() => expect(h1()).toHaveTextContent("Global Fire Explorer"));
+    await waitFor(() => expect(h1()).toHaveTextContent("Fire map"));
     expect(document.activeElement).toBe(h1());
-    await waitFor(() => expect(document.title).toBe("Global Fire Explorer · Astera Watch"));
+    await waitFor(() => expect(document.title).toBe("Fire map · Astera Watch"));
 
     await act(() => router.navigate(1));
-    await waitFor(() => expect(h1()).toHaveTextContent("Reports & Insights"));
+    await waitFor(() => expect(h1()).toHaveTextContent("Fire History & Impacts"));
     expect(document.activeElement).toBe(h1());
-    await waitFor(() => expect(document.title).toBe("Reports & Insights · Astera Watch"));
+    await waitFor(() => expect(document.title).toBe("Fire History & Impacts · Astera Watch"));
   });
 
-  it("moves focus after header and Welcome links", async () => {
+  it("moves focus after links from a standalone page and from the header logo", async () => {
     const user = userEvent.setup();
-    renderAt("/");
-    await user.click(screen.getByRole("link", { name: "Continue as guest" }));
-    await waitFor(() => expect(h1()).toHaveTextContent("Global Fire Explorer"));
+    renderAt("/no/such/page");
+    await user.click(screen.getByRole("link", { name: "Go to the Fire map" }));
+    await waitFor(() => expect(h1()).toHaveTextContent("Fire map"));
     expect(document.activeElement).toBe(h1());
 
-    // The header and the sidebar both have an "AI Assistant" link; use the header one.
-    await user.click(within(screen.getByRole("banner")).getByRole("link", { name: "AI Assistant" }));
-    await waitFor(() => expect(h1()).toHaveTextContent("AI Scientific Assistant"));
+    await user.click(menu().getByRole("link", { name: /My places/ }));
+    await waitFor(() => expect(h1()).toHaveTextContent("My Places & Alerts"));
+    await user.click(screen.getByRole("link", { name: "Astera Watch, go to the Fire map" }));
+    await waitFor(() => expect(h1()).toHaveTextContent("Fire map"));
     expect(document.activeElement).toBe(h1());
   });
 
   it("focuses <main> first, then the h1 when it renders late", async () => {
-    const router = renderAt("/explorer");
+    const router = renderAt("/");
     await act(() => router.navigate("/slow"));
     expect(document.activeElement).toBe(document.getElementById("main"));
     await waitFor(() => expect(screen.getByRole("heading", { level: 1, name: "Slow page" })).toBe(document.activeElement), { timeout: 2000 });
   });
 
   it("does not take focus away if the user moved focus while the h1 was loading", async () => {
-    const router = renderAt("/explorer");
+    const router = renderAt("/");
     await act(() => router.navigate("/slow"));
-    const collapse = screen.getByRole("button", { name: "Collapse sidebar" });
-    act(() => collapse.focus());
+    const help = helpButton();
+    act(() => help.focus());
     await screen.findByRole("heading", { level: 1, name: "Slow page" }, { timeout: 2000 });
-    expect(document.activeElement).toBe(collapse);
+    expect(document.activeElement).toBe(help);
   });
 
   it("does not move focus on a query-string-only change", async () => {
-    const router = renderAt("/explorer");
-    const collapse = screen.getByRole("button", { name: "Collapse sidebar" });
-    act(() => collapse.focus());
-    await act(() => router.navigate("/explorer?event=E-1"));
+    const router = renderAt("/");
+    const help = helpButton();
+    act(() => help.focus());
+    await act(() => router.navigate("/?event=E-1"));
     expect(router.state.location.search).toBe("?event=E-1");
-    expect(document.activeElement).toBe(collapse);
+    expect(document.activeElement).toBe(help);
   });
 });

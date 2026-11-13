@@ -1,62 +1,25 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { act, render, screen, waitFor, within } from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { RouterProvider, createMemoryRouter } from "react-router";
 import { AppProviders } from "@/App";
 import { routes } from "@/app/router";
 import { NAV_ITEMS } from "@/app/nav";
-import { ACTIVE_DOCKED_ITEM_SELECTOR } from "./AppShell";
-import { SIDEBAR_STORAGE_KEY } from "./useSidebarState";
+import { installViewport } from "@/test/viewport";
 
-// --- controllable matchMedia: change the "window width" and notify listeners ---
-let width = 1440;
-const listeners = new Set<() => void>();
-const originalMatchMedia = window.matchMedia;
-const originalResizeObserver = globalThis.ResizeObserver;
+// The Fire map loads MapLibre lazily; shell tests don't need it.
+vi.mock("@/features/explorer/ExplorerMap", () => ({ default: () => <div data-testid="fake-map" /> }));
 
-function resizeTo(next: number) {
-  act(() => {
-    width = next;
-    listeners.forEach((l) => l());
-  });
-}
-
+let viewport: ReturnType<typeof installViewport>;
 beforeEach(() => {
-  width = 1440;
-  listeners.clear();
-  Object.defineProperty(window, "matchMedia", {
-    configurable: true,
-    writable: true,
-    value: (query: string) => {
-      const min = Number(/min-width:\s*(\d+)px/.exec(query)?.[1]);
-      return {
-        get matches() {
-          return Number.isFinite(min) ? width >= min : false;
-        },
-        media: query,
-        onchange: null,
-        addEventListener: (_: string, l: () => void) => listeners.add(l),
-        removeEventListener: (_: string, l: () => void) => listeners.delete(l),
-        addListener: () => {},
-        removeListener: () => {},
-        dispatchEvent: () => false,
-      };
-    },
-  });
-  // Radix tooltips (collapsed sidebar) measure their trigger; jsdom has no ResizeObserver.
-  globalThis.ResizeObserver ??= class {
-    observe() {}
-    unobserve() {}
-    disconnect() {}
-  } as unknown as typeof ResizeObserver;
+  viewport = installViewport(1440);
 });
 afterEach(() => {
-  Object.defineProperty(window, "matchMedia", { configurable: true, writable: true, value: originalMatchMedia });
-  globalThis.ResizeObserver = originalResizeObserver;
+  viewport.restore();
   vi.restoreAllMocks();
 });
 
-function renderAt(path = "/explorer") {
+function renderAt(path = "/") {
   const router = createMemoryRouter(routes, { initialEntries: [path] });
   const utils = render(
     <AppProviders>
@@ -66,123 +29,107 @@ function renderAt(path = "/explorer") {
   return { router, ...utils };
 }
 
-const docked = () => document.querySelector<HTMLElement>('[data-sidebar="docked"]');
-// hidden: true — while the modal drawer is open, Radix hides the rest of the page from assistive tech.
-const menuButton = () => screen.queryByRole("button", { name: "Open navigation menu", hidden: true });
+const mainNav = () => screen.queryByRole("navigation", { name: "Main" });
+const helpButton = () => document.querySelector<HTMLElement>("[data-help-trigger]")!;
+const bottomNav = () => document.querySelector("[data-bottom-nav]");
 
-describe("responsive sidebar", () => {
-  it("1440px: docked sidebar, expanded by default, no menu button", () => {
-    renderAt();
-    expect(docked()).toHaveAttribute("data-collapsed", "false");
-    expect(menuButton()).not.toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Collapse sidebar" })).toHaveAttribute("aria-expanded", "true");
-  });
-
-  it("1440px: the collapse choice is saved and restored", async () => {
+describe("responsive shell", () => {
+  it.each([1440, 1024])("%ipx: the three destinations in the header, Help docked beside the page (not modal)", async (w) => {
     const user = userEvent.setup();
-    const first = renderAt();
-    await user.click(screen.getByRole("button", { name: "Collapse sidebar" }));
-    expect(docked()).toHaveAttribute("data-collapsed", "true");
-    expect(window.localStorage.getItem(SIDEBAR_STORAGE_KEY)).toBe("collapsed");
-    first.unmount();
+    viewport.set(w);
+    renderAt("/history");
+    const nav = mainNav()!;
+    expect(within(screen.getByRole("banner")).getByRole("navigation", { name: "Main" })).toBe(nav);
+    expect(within(nav).getAllByRole("link").map((l) => l.textContent)).toEqual(["Fire map", "Fire history", "My places"]);
+    expect(within(nav).getByRole("link", { name: /Fire history/ })).toHaveAttribute("aria-current", "page");
+    expect(bottomNav()).toBeNull();
 
-    renderAt();
-    expect(docked()).toHaveAttribute("data-collapsed", "true");
-    expect(screen.getByRole("button", { name: "Expand sidebar" })).toHaveAttribute("aria-expanded", "false");
+    await user.click(helpButton());
+    const panel = screen.getByRole("complementary", { name: "Help" });
+    expect(panel).toHaveAttribute("data-help-panel", "docked");
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(helpButton()).toHaveAttribute("aria-expanded", "true");
+    expect(helpButton()).toHaveAttribute("aria-controls", panel.id);
+    // The page stays usable next to it.
+    expect(screen.getByRole("heading", { level: 1, name: "Fire History & Impacts" })).toBeVisible();
   });
 
-  it("1024px (lg boundary): desktop mode, expanded", () => {
-    width = 1024;
-    renderAt();
-    expect(docked()).toHaveAttribute("data-collapsed", "false");
-    expect(menuButton()).not.toBeInTheDocument();
-  });
-
-  it("1023px: rail mode, collapsed by default; expanding is temporary (not saved)", async () => {
+  it("1023px (tablet): header menu stays; Help opens as a modal sheet", async () => {
     const user = userEvent.setup();
-    width = 1023;
+    viewport.set(1023);
     renderAt();
-    expect(docked()).toHaveAttribute("data-collapsed", "true");
-    await user.click(screen.getByRole("button", { name: "Expand sidebar" }));
-    expect(docked()).toHaveAttribute("data-collapsed", "false");
-    expect(window.localStorage.getItem(SIDEBAR_STORAGE_KEY)).toBeNull();
+    expect(mainNav()).toBeInTheDocument();
+    await user.click(helpButton());
+    expect(await screen.findByRole("dialog", { name: "Help" })).toHaveAttribute("data-help-panel", "sheet");
   });
 
-  it("390px: no docked sidebar; the menu button opens a drawer with all seven areas", async () => {
-    const user = userEvent.setup();
-    width = 390;
+  it("390px: a tab bar with Map, History, My places and Help; the header keeps only logo and theme", async () => {
+    viewport.set(390);
     renderAt();
-    expect(docked()).toBeNull();
-    await user.click(menuButton()!);
-    const dialog = await screen.findByRole("dialog", { name: "Navigation" });
-    for (const item of NAV_ITEMS) expect(within(dialog).getByRole("link", { name: item.label })).toBeInTheDocument();
-    expect(menuButton()).toHaveAttribute("aria-expanded", "true");
+    const tabs = bottomNav()!;
+    expect(tabs).not.toBeNull();
+    expect(within(screen.getByRole("banner")).queryByRole("navigation")).toBeNull();
+    const links = within(screen.getByRole("navigation", { name: "Main" })).getAllByRole("link");
+    expect(links.map((l) => l.textContent)).toEqual(["Map", "History", "My places"]);
+    expect(links.map((l) => l.getAttribute("href"))).toEqual(NAV_ITEMS.map((i) => i.path));
+    expect(within(tabs as HTMLElement).getByRole("button", { name: "Help" })).toBeInTheDocument();
   });
 
-  it("390px: Esc closes the drawer and focus returns to the menu button", async () => {
+  it("390px: Help opens a sheet; Esc closes it and focus returns to the Help tab", async () => {
     const user = userEvent.setup();
-    width = 390;
+    viewport.set(390);
     renderAt();
-    await user.click(menuButton()!);
-    await screen.findByRole("dialog");
+    await user.click(helpButton());
+    const dialog = await screen.findByRole("dialog", { name: "Help" });
+    expect(within(dialog).getByRole("tab", { name: "Guide", selected: true })).toBeInTheDocument();
     await user.keyboard("{Escape}");
     await waitFor(() => expect(screen.queryByRole("dialog")).not.toBeInTheDocument());
-    await waitFor(() => expect(document.activeElement).toBe(menuButton()));
+    await waitFor(() => expect(document.activeElement).toBe(helpButton()));
   });
 
-  it("390px: navigating from the drawer closes it and focuses the new page heading", async () => {
+  it("navigating from the tab bar moves focus to the new page heading", async () => {
     const user = userEvent.setup();
-    width = 390;
+    viewport.set(390);
     const { router } = renderAt();
-    await user.click(menuButton()!);
-    const dialog = await screen.findByRole("dialog");
-    await user.click(within(dialog).getByRole("link", { name: "Reports & Insights" }));
-    await waitFor(() => expect(router.state.location.pathname).toBe("/reports"));
-    await waitFor(() => expect(screen.queryByRole("dialog")).not.toBeInTheDocument());
-    await waitFor(() => expect(document.activeElement).toBe(screen.getByRole("heading", { level: 1, name: "Reports & Insights" })));
+    await user.click(screen.getByRole("link", { name: "My places" }));
+    await waitFor(() => expect(router.state.location.pathname).toBe("/places"));
+    await waitFor(() => expect(document.activeElement).toBe(screen.getByRole("heading", { level: 1, name: "My Places & Alerts" })));
   });
 
-  it("resizing 390 → 1024 with the drawer open closes it and focuses the active sidebar item", async () => {
-    const user = userEvent.setup();
-    width = 390;
-    renderAt("/analysis");
-    await user.click(menuButton()!);
-    await screen.findByRole("dialog");
-
-    resizeTo(1024);
-    await waitFor(() => expect(screen.queryByRole("dialog")).not.toBeInTheDocument());
-    expect(docked()).toHaveAttribute("data-collapsed", "false");
-    const active = document.querySelector<HTMLElement>(ACTIVE_DOCKED_ITEM_SELECTOR)!;
-    expect(active).toHaveAccessibleName("SAR Analysis");
-    await waitFor(() => expect(document.activeElement).toBe(active));
-
-    // Back to mobile: the drawer stays closed (it does not reopen by itself).
-    resizeTo(390);
-    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
-    expect(menuButton()).toHaveAttribute("aria-expanded", "false");
-  });
-
-  it("1440 → 390 → 1440 keeps the saved collapse choice", async () => {
+  it("resizing 1440 → 390 with Help open keeps it open (docked panel becomes a sheet), and back", async () => {
     const user = userEvent.setup();
     renderAt();
-    await user.click(screen.getByRole("button", { name: "Collapse sidebar" }));
-    resizeTo(390);
-    expect(docked()).toBeNull();
-    resizeTo(1440);
-    expect(docked()).toHaveAttribute("data-collapsed", "true");
+    await user.click(helpButton());
+    expect(screen.getByRole("complementary", { name: "Help" })).toBeInTheDocument();
+    viewport.resizeTo(390);
+    expect(await screen.findByRole("dialog", { name: "Help" })).toBeInTheDocument();
+    viewport.resizeTo(1440);
+    await waitFor(() => expect(screen.queryByRole("dialog")).not.toBeInTheDocument());
+    expect(screen.getByRole("complementary", { name: "Help" })).toBeInTheDocument();
   });
 
-  it("works with browser storage blocked (defaults, no crash)", async () => {
+  it("Help shows topics for the current screen and changes with the route", async () => {
     const user = userEvent.setup();
-    vi.spyOn(Storage.prototype, "getItem").mockImplementation(() => {
-      throw new Error("blocked");
-    });
-    vi.spyOn(Storage.prototype, "setItem").mockImplementation(() => {
-      throw new Error("blocked");
-    });
+    const { router } = renderAt();
+    await user.click(helpButton());
+    const panel = screen.getByRole("complementary", { name: "Help" });
+    expect(panel).toHaveTextContent("About this screen: Fire map");
+    expect(within(panel).getByText("What is a heat spot?")).toBeInTheDocument();
+    await user.click(screen.getByRole("link", { name: /My places/ }));
+    await waitFor(() => expect(router.state.location.pathname).toBe("/places"));
+    expect(screen.getByRole("complementary", { name: "Help" })).toHaveTextContent("About this screen: My Places & Alerts");
+  });
+
+  it("Ask Astera is labelled 'Coming soon', lists the chatbot's rules and offers Guide answers; there is no question box", async () => {
+    const user = userEvent.setup();
     renderAt();
-    expect(docked()).toHaveAttribute("data-collapsed", "false");
-    await user.click(screen.getByRole("button", { name: "Collapse sidebar" }));
-    expect(docked()).toHaveAttribute("data-collapsed", "true");
+    await user.click(helpButton());
+    await user.click(screen.getByRole("tab", { name: "Ask Astera" }));
+    const panel = screen.getByRole("complementary", { name: "Help" });
+    expect(within(panel).getByText("Coming soon")).toBeInTheDocument();
+    expect(within(panel).getByRole("link", { name: /Is a possible fire a real wildfire\?/ })).toHaveAttribute("href", "/guide#possible-fire");
+    expect(panel).toHaveTextContent("never give evacuation instructions");
+    expect(panel).toHaveTextContent("answer only from verified Astera Watch data and this User Guide");
+    expect(within(panel).queryByRole("textbox")).toBeNull();
   });
 });

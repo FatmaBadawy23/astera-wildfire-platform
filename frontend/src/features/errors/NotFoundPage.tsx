@@ -1,9 +1,9 @@
 import { Link, useLocation } from "react-router";
 import { LogoLockup } from "@/components/brand/Logo";
 import { Button } from "@/components/ui/button";
-import { StandaloneFrame } from "@/features/auth/AuthLayout";
+import { StandaloneFrame } from "@/components/layout/StandaloneFrame";
 
-/** Standalone 404 page (no sidebar, no MOCK banner). */
+/** Standalone 404 page (no header menu, no demo bar). */
 export function NotFoundPage() {
   const { pathname } = useLocation();
   return (
@@ -18,10 +18,7 @@ export function NotFoundPage() {
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <Button asChild>
-            <Link to="/explorer">Go to the Explorer</Link>
-          </Button>
-          <Button asChild variant="secondary">
-            <Link to="/">Back to welcome</Link>
+            <Link to="/">Go to the Fire map</Link>
           </Button>
         </div>
       </div>

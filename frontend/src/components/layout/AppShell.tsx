@@ -1,77 +1,41 @@
-import { useRef, useState } from "react";
 import { Outlet } from "react-router";
 import { getDataMode } from "@/app/env";
+import { HelpProvider, useHelp } from "@/components/help/HelpContext";
+import { HelpAside, HelpDialog } from "@/features/help/HelpPanel";
 import { cn } from "@/lib/utils";
+import { DemoBar } from "./DemoBar";
 import { Header } from "./Header";
-import { MobileNav, type DrawerCloseReason } from "./MobileNav";
-import { MockBanner } from "./MockBanner";
-import { Sidebar } from "./Sidebar";
+import { BottomNav } from "./PrimaryNav";
 import { SkipLink } from "./SkipLink";
-import { focusPageHeading } from "./useRouteFocus";
 import { useShellMode } from "./useShellMode";
-import { useSidebarState } from "./useSidebarState";
-
-/** In the docked sidebar, the link for the current page. */
-export const ACTIVE_DOCKED_ITEM_SELECTOR = '[data-sidebar="docked"] [aria-current="page"]';
 
 /**
- * App frame (D.2 layout tokens):
- *   grid rows: [MOCK banner: auto] [header: 56px] [body: minmax(0, 1fr)], height 100dvh.
- *   The body row holds the docked sidebar and <main>, each with its own scroll. Nothing overlaps <main>,
- *   so the banner and header can never cover a focused element.
+ * App frame (Stage 1 redesign):
+ *   grid rows: [demo bar: auto] [header: 56px] [body: minmax(0, 1fr)] [phone tab bar: auto], height 100dvh.
+ *   The body row holds <main> and, on desktop, the docked Help panel; each scrolls on its own. Nothing overlaps
+ *   <main>, so the bars can never cover a focused element. Below 1024 px Help is a modal sheet instead.
  *   Short screens (max-height 480px): normal page scrolling, all parts static.
  */
-export function AppShell() {
+function Frame() {
   const mode = useShellMode();
+  const { open } = useHelp();
   const isMobile = mode === "mobile";
-  const { collapsed, toggle } = useSidebarState(mode);
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const closeReason = useRef<DrawerCloseReason | null>(null);
-  const menuButtonRef = useRef<HTMLButtonElement>(null);
-  const showBanner = getDataMode() === "mock";
-
-  // The drawer only exists in mobile mode; widening the window closes it.
-  const drawerVisible = drawerOpen && isMobile;
-
-  function closeDrawer(reason: DrawerCloseReason) {
-    closeReason.current = reason;
-    setDrawerOpen(false);
-  }
-
-  function handleDrawerCloseAutoFocus(event: Event) {
-    const reason = closeReason.current;
-    closeReason.current = null;
-    if (!isMobile) {
-      // Closed because the window became wider: the menu button is gone, so focus the active sidebar item.
-      event.preventDefault();
-      setDrawerOpen(false);
-      window.setTimeout(() => document.querySelector<HTMLElement>(ACTIVE_DOCKED_ITEM_SELECTOR)?.focus(), 0);
-    } else if (reason === "navigate") {
-      // Closed by choosing a page: focus the new page's heading, not the menu button.
-      event.preventDefault();
-      window.setTimeout(() => focusPageHeading(), 0);
-    } else {
-      // Esc, close button, outside click: back to the menu button. (Without a Dialog.Trigger, Radix
-      // can't restore focus itself, so the shell does it.)
-      event.preventDefault();
-      menuButtonRef.current?.focus();
-    }
-  }
+  const docked = mode === "desktop";
+  const showDemoBar = getDataMode() === "mock";
 
   return (
     <div
       className={cn(
-        "grid h-dvh grid-rows-[auto_var(--aw-size-header)_minmax(0,1fr)] bg-background",
+        "grid h-dvh grid-rows-[auto_var(--aw-size-header)_minmax(0,1fr)_auto] bg-background",
         "[@media(max-height:480px)]:h-auto [@media(max-height:480px)]:min-h-dvh",
       )}
       data-shell-mode={mode}
     >
       <SkipLink />
-      {showBanner ? <MockBanner /> : <div />}
-      <Header mobile={isMobile} drawerOpen={drawerVisible} onOpenDrawer={() => setDrawerOpen(true)} menuButtonRef={menuButtonRef} />
+      {showDemoBar ? <DemoBar /> : <div />}
+      <Header mobile={isMobile} wide={docked} />
 
       <div className="flex min-h-0">
-        {!isMobile && <Sidebar collapsed={collapsed} onToggle={toggle} />}
         <main
           id="main"
           tabIndex={-1}
@@ -79,9 +43,19 @@ export function AppShell() {
         >
           <Outlet />
         </main>
+        {docked && open && <HelpAside />}
       </div>
 
-      <MobileNav open={drawerVisible} onClose={closeDrawer} onCloseAutoFocus={handleDrawerCloseAutoFocus} />
+      {isMobile ? <BottomNav /> : <div />}
+      {!docked && <HelpDialog />}
     </div>
+  );
+}
+
+export function AppShell() {
+  return (
+    <HelpProvider>
+      <Frame />
+    </HelpProvider>
   );
 }

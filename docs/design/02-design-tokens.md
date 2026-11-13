@@ -1,11 +1,11 @@
 # 02: Design Tokens
 
-**Stage:** D.2 (approved) · **Amendment 1:** Stage F0, 🔄 in review (FIRMS detection-density heatmap palette; see §13)
+**Stage:** D.2 (approved) · **Amendment 1:** Stage F0 (FIRMS detection-density heatmap palette) · **Amendment 2:** integrated frontend palette, natural basemap, Light default (§14)
 **Machine-readable source:** [`tokens.json`](tokens.json) (W3C Design Tokens / DTCG format).
 Every value in this document is generated from the same data as `tokens.json`, and the two are
 cross-checked by validation test V6.
 
-> Design documentation only. These tokens are implemented in code in **Stage 7**.
+> Implemented in code: `frontend/src/styles/tokens.css` is generated from `tokens.json` (`npm run tokens`).
 
 ## 1. Origins
 
@@ -23,27 +23,29 @@ Paths in `tokens.json`: `color.theme.dark.<token>` and `color.theme.light.<token
 
 | Token | Dark | Dark origin | Light | Light origin | Role |
 |---|---|---|---|---|---|
-| `bg` | `#070E21` | sampled | `#F5F7FC` | proposed | Page background |
-| `surface` | `#0B1634` | sampled | `#FFFFFF` | proposed | Cards, panels, sidebar, header |
-| `surface-raised` | `#14224A` | derived | `#FFFFFF` | proposed | Popovers, menus, active nav item |
-| `text` | `#FAFCFC` | sampled | `#0B1634` | sampled | Primary text |
-| `text-muted` | `#A9B4D0` | derived | `#4A5578` | derived | Secondary text, captions |
-| `primary` | `#6E90C2` | sampled | `#3A5594` | derived | Links, active nav text, primary button fill |
-| `on-primary` | `#070E21` | sampled | `#FFFFFF` | proposed | Text/icons on primary fill |
-| `accent` | `#A393E6` | derived | `#5A47A3` | derived | Highlights, selected-state bar |
-| `border-subtle` | `#1E2A52` | derived | `#DDE2EE` | proposed | Decorative dividers only (exempt) |
-| `border-strong` | `#6A7AA8` | derived | `#7A86A8` | derived | Input/control boundaries, legend swatch outlines |
-| `focus-ring` | `#9DBBF0` | derived | `#3A5594` | derived | Default focus indicator |
+| `bg` | `#0A1128` | derived | `#F5F7FB` | derived | Page background |
+| `surface` | `#16203A` | derived | `#FFFFFF` | proposed | Cards, panels, header |
+| `surface-raised` | `#1E2A47` | derived | `#EDF1F8` | derived | Hover and raised controls |
+| `text` | `#CBD5E1` | derived | `#27324D` | derived | Normal text |
+| `text-muted` | `#8A93A8` | derived | `#58627C` | derived | Secondary text, captions |
+| `primary` | `#A9BEE8` | derived | `#2F4275` | derived | Links, primary button fill, active nav |
+| `on-primary` | `#0A1128` | derived | `#FFFFFF` | proposed | Text/icons on primary fill |
+| `accent` | `#B8A6EE` | derived | `#5E4A9E` | derived | Highlights |
+| `border-subtle` | `#24304F` | derived | `#DCE2EE` | derived | Card edges and dividers (decorative only) |
+| `border-strong` | `#6B7899` | derived | `#6F7B9E` | derived | Input/control boundaries, legend swatch outlines |
+| `focus-ring` | `#A9BEE8` | derived | `#2F4275` | derived | Default focus indicator |
 | `success` | `#4ADE80` | proposed | `#15803D` | proposed | Success text and icons |
 | `warning` | `#FBBF24` | proposed | `#A15C07` | proposed | Warning text and icons |
 | `danger` | `#F87171` | proposed | `#B91C1C` | proposed | Error text and icons |
-| `map-placeholder` | `#141C38` | proposed | `#E8ECF3` | proposed | Map area in wireframes/mockups |
+| `map-placeholder` | `#3A4851` | derived | `#A6C0D2` | derived | Map water (shown until relief tiles load) and map container |
+| `text-strong` | `#FFFFFF` | derived | `#0A1128` | derived | Headings and key figures |
+| `map-land` | `#3B3A33` | derived | `#E8E1CF` | derived | Map land fallback under the relief raster |
+| `planned-bg` | `#16203A` | derived | `#EEF2FA` | derived | 'Planned' / 'Coming soon' badge fill (text and border: primary) |
+| `map-outline` | `#E2E8F0` | derived | `#0B1634` | derived | Density-square outlines and country borders on the map |
 
 Notes:
-- `surface-raised` in the light theme is white like `surface`; it's separated by `shadow` and `border-subtle`.
 - `border-subtle` is **decorative only** and is never the only way to identify a control.
-- `map-placeholder` is used **only in wireframes and mockups** (static placeholder maps). Real maps arrive in Stage 7.
-  Its values were adjusted so the FIRMS colour reaches ≥ 3.5:1 on every background (§3).
+- `map-placeholder`, `map-land` and `map-outline` belong to the natural basemap (§14.2). Current values: Amendment 2.
 
 ## 3. Scientific data palette
 
@@ -653,7 +655,7 @@ No existing token value or contrast figure changed (the only removed line in thi
 | 1 | Typography usage, units and number formats | D.3 |
 | 2 | Focus-not-obscured layout checks (2.4.11) and breakpoint confirmation | D.6 |
 | 3 | Transparent PNG/SVG logo (team action from D.1) | Before Stage 7 |
-| 4 | Check contrast of real basemap styles against these data colours | Stage 7 |
+| 4 | ~~Check contrast of real basemap styles against these data colours~~ Done for the Natural Earth relief basemap (§14.2) | Done |
 
 ## 13. Changelog
 
@@ -661,3 +663,75 @@ No existing token value or contrast figure changed (the only removed line in thi
 |---|---|---|---|
 | 1.0 | 2026-11-10 | D.2 | Initial design tokens, themes, scientific palette and WCAG checks (commit `accb77f`) |
 | 1.1 | 2026-11-11 | F0 | **Amendment 1:** added `color.data.detection-density.level-1…5` (FIRMS detection-density heatmap, ColorBrewer Oranges 5-class), §3.1 row, §3.2, contrast rows C-D19 to C-D28, §10.1 and the Amendment 1 validation. No existing token value or contrast figure changed. |
+| 1.2 | 2026-11-13 | F (frontend) | **Amendment 2:** theme palette (team's dark palette, coordinated Light), new theme tokens `text-strong`, `map-land`, `planned-bg`, `map-outline`; natural relief basemap and map rendering (§14.2); heat-spot double ring; Light as default theme. Proposed density ramp not applied (§14.1). Data colours unchanged. |
+
+<!-- AMENDMENT-2 -->
+## 14. Amendment 2: integrated frontend palette, natural basemap, Light default (2026-11-13)
+
+Implemented in code (Stage F frontend cycle). §2 shows the current theme values; §8 keeps the D.2 contrast record of
+the original values, and the checks for the current values are below. Data colours (§3, §4) are unchanged.
+
+### 14.1 Theme palette
+
+- **Dark** uses the team's proposed palette: background `#0A1128`, cards `#16203A`, card border `#24304F`, headings
+  `#FFFFFF`, text `#CBD5E1`, muted `#8A93A8`, primary button `#A9BEE8` with `#0A1128` text, Planned badge `#16203A`
+  fill with `#A9BEE8` text and border. Control outlines use `border-strong` `#6B7899`; the card border is decorative only.
+- **Light** is designed alongside it, not inverted: cool off-white page, white cards, navy-tinted text, deep logo blue
+  `#2F4275` for actions and focus.
+- **Light is the default** for first visits (`DEFAULT_PREFERENCE` in `src/lib/theme/theme.ts`, mirrored in `index.html`),
+  even when the device prefers dark. Dark and "Use system theme" remain one click away and the choice is remembered
+  (`localStorage` key `astera-theme`).
+- **Density colours:** the proposed ramp `#FFE0B2 #FFAB91 #FF7043 #F4511E #BF360C` was **not applied**: Middle vs High
+  differ by ΔE 6.2 (deuteranopia 5.7, tritanopia 5.9), below the V10 floor. Darkening High to fix it (`#D84315`) would make
+  it almost identical to the FIRMS point colour `#D94100` (ΔE 0.6). The provisional ramp of §3.2 stays until a new pair is
+  chosen.
+
+| Theme | Pair | Requirement | Ratio | |
+|---|---|---|---|---|
+| light | `text-strong` #0A1128 on `bg` #F5F7FB | text ≥ 4.5 | 17.42 | ✅ |
+| light | `text` #27324D on `bg` #F5F7FB | text ≥ 4.5 | 11.87 | ✅ |
+| light | `text` #27324D on `surface` #FFFFFF | text ≥ 4.5 | 12.73 | ✅ |
+| light | `text-muted` #58627C on `surface` #FFFFFF | text ≥ 4.5 | 6.08 | ✅ |
+| light | `text-muted` #58627C on `surface-raised` #EDF1F8 | text ≥ 4.5 | 5.37 | ✅ |
+| light | `primary` #2F4275 on `surface` #FFFFFF | text ≥ 4.5 | 9.74 | ✅ |
+| light | `on-primary` #FFFFFF on `primary` #2F4275 | text ≥ 4.5 | 9.74 | ✅ |
+| light | `primary` #2F4275 on `planned-bg` #EEF2FA | text ≥ 4.5 | 8.68 | ✅ |
+| light | `border-strong` #6F7B9E on `surface` #FFFFFF | non-text ≥ 3 | 4.20 | ✅ |
+| light | `focus-ring` #2F4275 on `surface` #FFFFFF | non-text ≥ 3 | 9.74 | ✅ |
+| light | `focus-ring` #2F4275 on `bg` #F5F7FB | non-text ≥ 3 | 9.08 | ✅ |
+| dark | `text-strong` #FFFFFF on `bg` #0A1128 | text ≥ 4.5 | 18.69 | ✅ |
+| dark | `text` #CBD5E1 on `bg` #0A1128 | text ≥ 4.5 | 12.59 | ✅ |
+| dark | `text` #CBD5E1 on `surface` #16203A | text ≥ 4.5 | 10.87 | ✅ |
+| dark | `text-muted` #8A93A8 on `surface` #16203A | text ≥ 4.5 | 5.24 | ✅ |
+| dark | `text-muted` #8A93A8 on `surface-raised` #1E2A47 | text ≥ 4.5 | 4.62 | ✅ |
+| dark | `primary` #A9BEE8 on `surface` #16203A | text ≥ 4.5 | 8.62 | ✅ |
+| dark | `on-primary` #0A1128 on `primary` #A9BEE8 | text ≥ 4.5 | 9.98 | ✅ |
+| dark | `primary` #A9BEE8 on `planned-bg` #16203A | text ≥ 4.5 | 8.62 | ✅ |
+| dark | `border-strong` #6B7899 on `surface` #16203A | non-text ≥ 3 | 3.67 | ✅ |
+| dark | `focus-ring` #A9BEE8 on `surface` #16203A | non-text ≥ 3 | 8.62 | ✅ |
+| dark | `focus-ring` #A9BEE8 on `bg` #0A1128 | non-text ≥ 3 | 9.98 | ✅ |
+
+### 14.2 Natural geographic basemap
+
+| Layer | Source / token | Notes |
+|---|---|---|
+| Relief and land cover | Natural Earth I with Shaded Relief and Water, 1:50m (public domain) | Web Mercator JPEG tiles, zoom 0–4, `frontend/public/basemap/relief/` (see `SOURCE.txt`). Green = vegetated, tan/brown = dry or bare, white = ice, blue = water. A long-term, generalised picture: **not current vegetation, not fire or burn-scar data**. The map key says so. |
+| Theme rendering (MapLibre raster paint) | Light: saturation −0.3, brightness 0.25–1 · Dark: saturation +0.4, brightness 0–0.42 | Muted and lifted in Light; dimmed, night-toned in Dark, with saturation raised so green, brown and blue stay distinguishable at low brightness. Fire symbols are never tinted. |
+| Water / land fallbacks | `map-placeholder`, `map-land` | Shown only until tiles load. Water = the raster's own median water colour after theme rendering. |
+| Density outlines, country borders | `map-outline` | Light `#0B1634`, Dark `#E2E8F0` (borders at 0.75 opacity). |
+| Heat spot (FIRMS point) | `data.fire-detection` + `data.line-casing-light` + `data.line-casing-dark` | Dot, 1.5 px light ring, outer dark ring (radius 7 px). Same in both themes. Beyond zoom 4 the relief raster is enlarged and looks soft; the fire symbols stay sharp. |
+| Possible-fire marker | unchanged | Dashed navy ring on a white casing. |
+
+**Measured against every 8th pixel of the rendered 8192 × 8192 raster (1,048,576 pixels per theme):**
+
+| Check | Light | Dark | Requirement |
+|---|---|---|---|
+| Heat-spot dot vs its light ring | 4.46:1 | 4.46:1 | ≥ 3 (1.4.11) |
+| Heat-spot outer edge (better of light/dark ring) vs map | ≥ 5.01:1 everywhere | ≥ 5.32:1 everywhere | ≥ 3 |
+| Fire colour vs map, colour difference ΔE (min, normal / protan / deutan / tritan) | 20.8 / 18.4 / 12.9 / 24.8 | 20.2 / 6.1 / 13.0 / 24.1 (protan ≥ 15 on 59% of pixels) | advisory; the rings carry identification |
+| Possible-fire marker (white casing or navy ring) vs map | ≥ 5.01:1 | ≥ 5.32:1 | ≥ 3 |
+| Density-square outline (`map-outline`) vs map | min 5.01:1 | min 5.32:1 (white); `#E2E8F0` min 4.32:1 | ≥ 3 |
+| Fire dot alone vs map (for reference; the rings carry the contrast) | ≥ 3:1 on 32% of pixels | ≥ 3:1 on 0% (dark map) | not relied on |
+
+The fire colour, density colours, detection values, density calculation and class breaks are unchanged.
+<!-- /AMENDMENT-2 -->

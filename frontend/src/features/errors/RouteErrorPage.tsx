@@ -3,7 +3,7 @@ import { Link, isRouteErrorResponse, useRouteError } from "react-router";
 import { APP_NAME } from "@/app/nav";
 import { LogoLockup } from "@/components/brand/Logo";
 import { Button } from "@/components/ui/button";
-import { StandaloneFrame } from "@/features/auth/AuthLayout";
+import { StandaloneFrame } from "@/components/layout/StandaloneFrame";
 
 function describe(error: unknown): string {
   if (isRouteErrorResponse(error)) return `${error.status} ${error.statusText}`;
@@ -32,8 +32,8 @@ export function RouteErrorPage() {
             Reload page
           </Button>
           <Button asChild variant="secondary">
-            <Link to="/explorer" reloadDocument>
-              Go to the Explorer
+            <Link to="/" reloadDocument>
+              Go to the Fire map
             </Link>
           </Button>
         </div>

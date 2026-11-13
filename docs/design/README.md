@@ -1,5 +1,10 @@
 # Astera Watch: Design Documentation (Stage D)
 
+> **Current implementation (2026-11-13):** the design decisions below are the Stage D record. The built frontend
+> differs: header menu instead of a sidebar, the page set in [../architecture/FRONTEND.md](../architecture/FRONTEND.md),
+> the current theme palette and natural basemap in [02-design-tokens.md](02-design-tokens.md) §14 (Amendment 2), and
+> Light as the default theme.
+
 *Wildfire Surface-Change Monitoring with NASA NISAR Radar*
 
 This folder holds the **design-only** output of Stage D: the visual identity, design

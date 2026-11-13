@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom/vitest";
 import { afterEach } from "vitest";
 import { cleanup } from "@testing-library/react";
+import { resetPlacesCache } from "@/features/places/placesStore";
 
 afterEach(() => {
   cleanup();
@@ -9,6 +10,7 @@ afterEach(() => {
   } catch {
     /* ignore */
   }
+  resetPlacesCache();
   delete document.documentElement.dataset.theme;
 });
 

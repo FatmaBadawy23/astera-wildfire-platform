@@ -11,6 +11,7 @@
   --color-surface: var(--aw-color-surface);
   --color-surface-raised: var(--aw-color-surface-raised);
   --color-foreground: var(--aw-color-text);
+  --color-foreground-strong: var(--aw-color-text-strong);
   --color-muted-foreground: var(--aw-color-text-muted);
   --color-primary: var(--aw-color-primary);
   --color-primary-foreground: var(--aw-color-on-primary);
@@ -22,6 +23,8 @@
   --color-warning: var(--aw-color-warning);
   --color-danger: var(--aw-color-danger);
   --color-map: var(--aw-color-map-placeholder);
+  --color-map-land: var(--aw-color-map-land);
+  --color-planned: var(--aw-color-planned-bg);
 
   --color-fire: var(--aw-data-fire-detection);
   --color-change-mask: var(--aw-data-change-mask-fill);
@@ -61,6 +64,7 @@
   h4 {
     font-family: var(--aw-font-family-heading);
     line-height: var(--aw-line-height-tight);
+    color: var(--aw-color-text-strong);
   }
   /* Default focus indicator: 2px ring with a 2px gap (D.2 §7). */
   :focus-visible {
@@ -75,6 +79,22 @@
       transition-duration: 0ms !important;
       scroll-behavior: auto !important;
     }
+  }
+}
+
+/* Printing a page (e.g. a Fire Story report): the whole page, without the app's menus. */
+@media print {
+  [data-shell-mode] {
+    display: block !important;
+    height: auto !important;
+  }
+  #main {
+    overflow: visible !important;
+  }
+  header,
+  [data-bottom-nav],
+  [data-help-panel] {
+    display: none !important;
   }
 }
 

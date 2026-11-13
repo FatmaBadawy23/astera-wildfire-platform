@@ -15,5 +15,7 @@ export default defineConfig({
     setupFiles: ["./src/test/setup.ts"],
     css: false,
     include: ["src/**/*.test.{ts,tsx}"],
+    // Full-page renders (e.g. the Explorer, used by shell tests) approach the 5 s default under full-suite load.
+    testTimeout: 15_000,
   },
 });
