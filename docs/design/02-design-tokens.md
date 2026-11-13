@@ -659,5 +659,5 @@ No existing token value or contrast figure changed (the only removed line in thi
 
 | Version | Date | Stage | Change |
 |---|---|---|---|
-| 1.0 | 2026-11-10 | D.2 | Initial design tokens, themes, scientific palette and WCAG checks (commit `b0db3b3`) |
+| 1.0 | 2026-11-10 | D.2 | Initial design tokens, themes, scientific palette and WCAG checks (commit `accb77f`) |
 | 1.1 | 2026-11-11 | F0 | **Amendment 1:** added `color.data.detection-density.level-1…5` (FIRMS detection-density heatmap, ColorBrewer Oranges 5-class), §3.1 row, §3.2, contrast rows C-D19 to C-D28, §10.1 and the Amendment 1 validation. No existing token value or contrast figure changed. |

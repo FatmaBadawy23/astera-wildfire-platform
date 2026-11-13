@@ -59,9 +59,9 @@ implemented and tested in the real application:
 
 | Step | Status | Where it continues |
 |---|---|---|
-| D.0 | ✅ Completed (commit `94c86f0`) | — |
-| D.1 | ✅ Completed (commit `07553e3`) | — |
-| D.2 | ✅ Completed (commit `b0db3b3`); Amendment 1 (FIRMS detection-density palette) added in F0 | — |
+| D.0 | ✅ Completed (commit `36fb5c6`) | — |
+| D.1 | ✅ Completed (commit `2f9539e`) | — |
+| D.2 | ✅ Completed (commit `accb77f`); Amendment 1 (FIRMS detection-density palette) added in F0 | — |
 | D.3 | ↪ Transferred | F1–F2: typography, units, number formats and accessibility rules implemented and tested in code |
 | D.4 | ↪ Transferred | F3: scientific UI rules implemented as components and enforced by automated tests |
 | D.5 | ↪ Transferred | F2–F3: the implemented component library is the component specification |
