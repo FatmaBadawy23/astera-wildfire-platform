@@ -23,7 +23,7 @@ needs real NISAR products.
 
 | Step | Work | Gate |
 |---|---|---|
-| 0.1 | Folder structure, config files, README, CLAUDE.md, this roadmap, logo copy | Tree matches the planned structure |
+| 0.1 | Folder structure, config files, README, this roadmap, logo copy | Tree matches the planned structure |
 | 0.2 | Create Conda env `astera` from `environment.yml` | All geospatial and backend imports succeed in `astera` |
 | 0.3 | Install PostgreSQL 18 + PostGIS 3.7 ([guide](setup/postgresql-windows.md)) | Service running, `psql --version` works |
 | 0.4 | Create role `astera`, database `astera_watch`, extension `postgis`, local `.env` | `SELECT PostGIS_Version();` returns a version; Python connects |
