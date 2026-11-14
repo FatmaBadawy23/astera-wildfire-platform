@@ -70,3 +70,20 @@ All startup and service logs are written to `C:\Users\asus\Desktop\Nasa\.astera_
    - Verify that `C:\Users\asus\Desktop\Nasa\astera-wildfire-platform\outputs\runs\latest_run.json` points to `run_20261114_025000_phase_g` and that `outputs/runs/run_20261114_025000_phase_g/checkpoints/` contains `real_unet_resnet34_phase_g.pt` and `lightgbm_phase_g.pkl`.
 3. **Uncalibrated RGB Image Rejected on Upload (`UNSUPPORTED_OPTICAL_RGB_FOR_SAR_MODEL`)**:
    - By design, the SAR models require calibrated georeferenced Sentinel-1 GeoTIFFs (`.tif`/`.tiff`) or multi-band SAR stacks (`.npz`). Ordinary 8-bit RGB `.png`/`.jpg` photos lack radar polarizations (`VV`/`VH`) and CRS metadata and are scientifically rejected. Open `http://127.0.0.1:5173/live-inference` (or click **Live SAR Inference Studio** in Research Center) and use **"Load CA_BUG_2026 Dual-Pol (VV+VH) GeoTIFF Pair"** or upload `.tif` files from `outputs/sample_uploads/`.
+
+---
+
+## 6. Running from a Fresh Clone
+
+Model checkpoints, datasets and GeoTIFFs are stored with **Git LFS** (~2 GB). Install Git LFS before cloning, or the `.pt`/`.pkl`/`.npz`/`.h5`/`.tif` files will be small pointer files and the models will not load.
+
+```powershell
+git lfs install
+git clone https://github.com/FatmaBadawy23/astera-wildfire-platform.git
+cd astera-wildfire-platform
+git lfs pull                                  # only needed if LFS was installed after cloning
+python -m pip install -r requirements.txt     # Python 3.11+ (verified with 3.13.7)
+.\RUN.bat                                     # installs Frontend_ npm packages on first run
+```
+
+`RUN.bat` works from the repository root. On first launch it runs `npm install` in `Frontend_/` automatically. To run the second frontend, run `npm install` and then `npm run dev` inside `frontend/`.
