@@ -20,7 +20,10 @@
 | Natural geographic map background (Natural Earth) | **Works** (real, public-domain context data) |
 | Fire Story: summary, known/unknown, heat-spot map and chart, radar images, radar analysis, report downloads (JSON, CSV), print | **Works**, on **demo data** (radar scenes and results are simulated) |
 | Fire History & Impacts | **Works**, on demo data. Impact information: **not available** (no impact data source) |
-| My places (save countries) | **Works**, saved in this browser only |
+| My places (save countries) | **Works**, saved in this browser only. No longer in the main menu (Research Center replaced it); reached from "Save … to My places" links and the User Guide |
+| Research Center: research projects (create, edit, delete, countries, linked possible fires) | **Works**, saved in this browser only. No example projects. See [architecture/RESEARCH_CENTER.md](architecture/RESEARCH_CENTER.md) |
+| Research Center: dataset catalog (browse, details, add to projects) | **Works** (initial draft). Real data: two Natural Earth reference maps only; the rest is labelled demo data; FIRMS, NISAR and Sentinel-1 listed as **not connected**. Links saved in this browser only |
+| Research Center: annotation, analysis, reports | **Not available yet** (description pages only) |
 | Alerts | **Not available yet** (needs accounts, live data, notifications); no sign-up is offered |
 | Ask Astera (chatbot) | **Coming soon**; the Help panel links common questions to User Guide articles |
 | User Guide, How It Works, What's planned | **Works** (static content) |
@@ -28,7 +31,8 @@
 | Live FIRMS, NISAR or Sentinel-1 data | **Not connected** |
 | Backend API, database tables | **Not built** |
 | Accounts / login | **Not built**; there are no login pages |
-| Mobile app, Research Hub | **Planned** ideas only |
+| Mobile app | **Planned** idea only |
+| Research tools: AI models, collaboration | **Planned**; no model chosen, no partnerships |
 
 ## Branches and tags
 

@@ -1,10 +1,11 @@
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
 import { getDataMode } from "@/app/env";
 import { HelpProvider, useHelp } from "@/components/help/HelpContext";
 import { HelpAside, HelpDialog } from "@/features/help/HelpPanel";
 import { cn } from "@/lib/utils";
 import { DemoBar } from "./DemoBar";
 import { Header } from "./Header";
+import { PageFooter } from "./PageFooter";
 import { BottomNav } from "./PrimaryNav";
 import { SkipLink } from "./SkipLink";
 import { useShellMode } from "./useShellMode";
@@ -22,6 +23,8 @@ function Frame() {
   const isMobile = mode === "mobile";
   const docked = mode === "desktop";
   const showDemoBar = getDataMode() === "mock";
+  // The Fire map fills the screen, so it has no page footer.
+  const isMapPage = useLocation().pathname === "/";
 
   return (
     <div
@@ -33,7 +36,7 @@ function Frame() {
     >
       <SkipLink />
       {showDemoBar ? <DemoBar /> : <div />}
-      <Header mobile={isMobile} wide={docked} />
+      <Header mobile={isMobile} />
 
       <div className="flex min-h-0">
         <main
@@ -41,7 +44,14 @@ function Frame() {
           tabIndex={-1}
           className="min-w-0 flex-1 overflow-y-auto scroll-py-4 focus:outline-none [@media(max-height:480px)]:overflow-visible"
         >
-          <Outlet />
+          {isMapPage ? (
+            <Outlet />
+          ) : (
+            <div className="flex min-h-full flex-col">
+              <Outlet />
+              <PageFooter />
+            </div>
+          )}
         </main>
         {docked && open && <HelpAside />}
       </div>

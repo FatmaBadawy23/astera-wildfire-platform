@@ -18,6 +18,10 @@ geographic context only.
 The access details in parentheses come from the planned configuration (`.env.example`, roadmap Stages 3 and 6). No
 client code exists yet, so the formats, endpoints and update frequencies must be confirmed by whoever builds Stage 6.
 
+In the app, the Research Center's **dataset catalog** (`/research/data`) lists exactly these: the two Natural Earth
+datasets as real data, the synthetic data as demo data, and FIRMS, NISAR and Sentinel-1 as sources that are not
+connected. Its definitions are in `frontend/src/data/catalog/definitions/`; keep them in step with this document.
+
 ## Synthetic demo data (in use)
 
 - File: `frontend/src/data/mock/fixtures.ts` and `detections.ts`. 6 possible fires (IDs `SYN-01` … `SYN-06`), 612

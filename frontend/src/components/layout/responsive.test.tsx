@@ -40,7 +40,7 @@ describe("responsive shell", () => {
     renderAt("/history");
     const nav = mainNav()!;
     expect(within(screen.getByRole("banner")).getByRole("navigation", { name: "Main" })).toBe(nav);
-    expect(within(nav).getAllByRole("link").map((l) => l.textContent)).toEqual(["Fire map", "Fire history", "My places"]);
+    expect(within(nav).getAllByRole("link").map((l) => l.textContent)).toEqual(["Fire map", "Fire history", "Research Center"]);
     expect(within(nav).getByRole("link", { name: /Fire history/ })).toHaveAttribute("aria-current", "page");
     expect(bottomNav()).toBeNull();
 
@@ -63,14 +63,14 @@ describe("responsive shell", () => {
     expect(await screen.findByRole("dialog", { name: "Help" })).toHaveAttribute("data-help-panel", "sheet");
   });
 
-  it("390px: a tab bar with Map, History, My places and Help; the header keeps only logo and theme", async () => {
+  it("390px: a tab bar with Map, History, Research and Help; the header keeps only logo and theme", async () => {
     viewport.set(390);
     renderAt();
     const tabs = bottomNav()!;
     expect(tabs).not.toBeNull();
     expect(within(screen.getByRole("banner")).queryByRole("navigation")).toBeNull();
     const links = within(screen.getByRole("navigation", { name: "Main" })).getAllByRole("link");
-    expect(links.map((l) => l.textContent)).toEqual(["Map", "History", "My places"]);
+    expect(links.map((l) => l.textContent)).toEqual(["Map", "History", "Research"]);
     expect(links.map((l) => l.getAttribute("href"))).toEqual(NAV_ITEMS.map((i) => i.path));
     expect(within(tabs as HTMLElement).getByRole("button", { name: "Help" })).toBeInTheDocument();
   });
@@ -91,9 +91,9 @@ describe("responsive shell", () => {
     const user = userEvent.setup();
     viewport.set(390);
     const { router } = renderAt();
-    await user.click(screen.getByRole("link", { name: "My places" }));
-    await waitFor(() => expect(router.state.location.pathname).toBe("/places"));
-    await waitFor(() => expect(document.activeElement).toBe(screen.getByRole("heading", { level: 1, name: "My Places & Alerts" })));
+    await user.click(within(screen.getByRole("navigation", { name: "Main" })).getByRole("link", { name: "Research" }));
+    await waitFor(() => expect(router.state.location.pathname).toBe("/research"));
+    await waitFor(() => expect(document.activeElement).toBe(screen.getByRole("heading", { level: 1, name: "Research Center" })));
   });
 
   it("resizing 1440 → 390 with Help open keeps it open (docked panel becomes a sheet), and back", async () => {
@@ -115,9 +115,9 @@ describe("responsive shell", () => {
     const panel = screen.getByRole("complementary", { name: "Help" });
     expect(panel).toHaveTextContent("About this screen: Fire map");
     expect(within(panel).getByText("What is a heat spot?")).toBeInTheDocument();
-    await user.click(screen.getByRole("link", { name: /My places/ }));
-    await waitFor(() => expect(router.state.location.pathname).toBe("/places"));
-    expect(screen.getByRole("complementary", { name: "Help" })).toHaveTextContent("About this screen: My Places & Alerts");
+    await user.click(within(mainNav()!).getByRole("link", { name: /Research Center/ }));
+    await waitFor(() => expect(router.state.location.pathname).toBe("/research"));
+    expect(screen.getByRole("complementary", { name: "Help" })).toHaveTextContent("About this screen: Research Center");
   });
 
   it("Ask Astera is labelled 'Coming soon', lists the chatbot's rules and offers Guide answers; there is no question box", async () => {

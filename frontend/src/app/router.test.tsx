@@ -28,6 +28,8 @@ const SHELL_ROUTES = [
   { path: "/guide", h1: "User Guide", title: "User Guide" },
   { path: "/how-it-works", h1: "How It Works", title: "How It Works" },
   { path: "/planned", h1: "What's planned", title: "What's planned" },
+  { path: "/research", h1: "Research Center", title: "Research Center" },
+  { path: "/research/models", h1: "AI models", title: "AI models · Research Center" },
 ];
 
 afterEach(() => {
@@ -95,7 +97,7 @@ describe("routes: direct URL load", () => {
 
   it("What's planned says nothing planned exists yet, including partnerships or approvals", () => {
     renderAt("/planned");
-    for (const title of ["Mobile app experience", "Alerts and notifications", "Ask Astera (chatbot)", "Research Hub"])
+    for (const title of ["Mobile app experience", "Alerts and notifications", "Ask Astera (chatbot)", "Research Center"])
       expect(screen.getByRole("heading", { level: 2, name: new RegExp(title.replace(/[()]/g, "\\$&")) })).toBeInTheDocument();
     expect(document.body).toHaveTextContent("does not mean that any partnership, review process or scientific approval is in place");
   });

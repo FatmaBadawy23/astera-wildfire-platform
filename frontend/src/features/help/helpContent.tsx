@@ -14,6 +14,7 @@ export function topicsFor(pathname: string): HelpTopic[] {
   if (pathname.startsWith("/events/")) return pick("fire-story", "radar", "analysis", "data-labels", "possible-fire", "demo");
   if (pathname === "/history") return pick("history", "analysis", "data-labels", "demo");
   if (pathname === "/places") return pick("places", "search", "demo");
+  if (pathname === "/research" || pathname.startsWith("/research/")) return pick("start", "data-labels", "demo");
   return pick("start", "heat-spot", "possible-fire", "demo");
 }
 
@@ -23,6 +24,7 @@ export function screenName(pathname: string): string {
   if (pathname.startsWith("/events/")) return "Fire Story";
   if (pathname === "/history") return "Fire History & Impacts";
   if (pathname === "/places") return "My Places & Alerts";
+  if (pathname === "/research" || pathname.startsWith("/research/")) return "Research Center";
   if (pathname === "/guide") return "User Guide";
   if (pathname === "/how-it-works") return "How It Works";
   if (pathname === "/planned") return "What's planned";

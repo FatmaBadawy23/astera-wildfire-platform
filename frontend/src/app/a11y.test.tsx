@@ -29,7 +29,7 @@ function renderAt(path: string, theme: "light" | "dark") {
   expect(document.documentElement.dataset.theme).toBe(theme);
 }
 
-const PATHS = ["/", "/history", "/places", "/guide", "/how-it-works", "/planned", "/events/SYN-01", "/events/SYN-04", "/events/E-1", "/no/such/page"];
+const PATHS = ["/", "/history", "/places", "/guide", "/how-it-works", "/planned", "/research", "/research/projects", "/research/projects/new", "/research/collaboration", "/events/SYN-01", "/events/SYN-04", "/events/E-1", "/no/such/page"];
 
 describe.each(["light", "dark"] as const)("axe-core WCAG A/AA, %s theme", (theme) => {
   it.each(PATHS)("%s has no violations", async (path) => {

@@ -1,7 +1,9 @@
-import { NavLink } from "react-router";
-import { CircleHelp } from "lucide-react";
-import { HOW_PATH, NAV_ITEMS } from "@/app/nav";
+import { useRef, useState } from "react";
+import { NavLink, useLocation } from "react-router";
+import { BookOpen, ChevronDown, CircleHelp } from "lucide-react";
+import { INFO_PAGES, NAV_ITEMS } from "@/app/nav";
 import { HELP_PANEL_ID, useHelp } from "@/components/help/HelpContext";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 
 /** The three destinations in the header (768 px and wider). Active item: aria-current + underline. */
@@ -13,7 +15,7 @@ export function HeaderNav() {
           <li key={item.path} className="flex">
             <NavLink
               to={item.path}
-              end
+              end={!item.hasSubpages}
               className={({ isActive }) =>
                 cn(
                   "flex items-center gap-2 px-3 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:-outline-offset-4",
@@ -30,20 +32,67 @@ export function HeaderNav() {
   );
 }
 
-/** Secondary information link (1024 px and wider; smaller screens reach it from Help). */
-export function HowItWorksLink() {
+/**
+ * "Learn" menu (768 px and wider): How it works, User Guide, What's planned. A small non-modal popover; Esc or an
+ * outside click closes it and returns focus to the button. Choosing a page closes it without pulling focus back,
+ * so focus goes to the new page's heading. Phones reach the same pages from Help.
+ */
+export function LearnMenu() {
+  const [open, setOpen] = useState(false);
+  const navigated = useRef(false);
+  const { pathname } = useLocation();
+  const onInfoPage = INFO_PAGES.some((p) => p.path === pathname);
   return (
-    <NavLink
-      to={HOW_PATH}
-      className={({ isActive }) =>
-        cn(
-          "inline-flex h-11 items-center rounded-md px-3 text-sm text-muted-foreground hover:bg-surface-raised hover:text-foreground",
-          isActive && "text-foreground underline underline-offset-4",
-        )
-      }
-    >
-      How it works
-    </NavLink>
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger
+        data-learn-trigger
+        className={cn(
+          "inline-flex h-11 items-center gap-1.5 rounded-md px-3 text-sm font-medium text-muted-foreground hover:bg-surface-raised hover:text-foreground",
+          (open || onInfoPage) && "text-foreground",
+          open && "bg-surface-raised",
+        )}
+      >
+        <BookOpen className="size-4" aria-hidden="true" />
+        Learn
+        <ChevronDown className={cn("size-4 transition-transform duration-[var(--aw-duration-fast)]", open && "rotate-180")} aria-hidden="true" />
+      </PopoverTrigger>
+      <PopoverContent
+        align="end"
+        className="w-64 p-1.5"
+        onCloseAutoFocus={(e) => {
+          if (navigated.current) e.preventDefault();
+          navigated.current = false;
+        }}
+      >
+        <nav aria-label="Learn">
+          <ul className="grid gap-0.5">
+            {INFO_PAGES.map((p) => {
+              const Icon = p.icon;
+              return (
+                <li key={p.path}>
+                  <NavLink
+                    to={p.path}
+                    onClick={() => {
+                      navigated.current = true;
+                      setOpen(false);
+                    }}
+                    className={({ isActive }) =>
+                      cn(
+                        "flex min-h-11 items-center gap-3 rounded-md px-3 text-sm font-medium text-foreground hover:bg-surface-raised focus-visible:-outline-offset-2",
+                        isActive && "bg-surface-raised shadow-[inset_3px_0_0_var(--aw-color-primary)]",
+                      )
+                    }
+                  >
+                    <Icon className="size-4 text-primary" aria-hidden="true" />
+                    {p.label}
+                  </NavLink>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </PopoverContent>
+    </Popover>
   );
 }
 
@@ -83,7 +132,7 @@ export function BottomNav() {
               <li key={item.path} className="flex flex-1">
                 <NavLink
                   to={item.path}
-                  end
+                  end={!item.hasSubpages}
                   className={({ isActive }) => cn(tab, isActive && "text-primary shadow-[inset_0_3px_0_var(--aw-color-primary)]")}
                 >
                   <Icon className="size-5" aria-hidden="true" />

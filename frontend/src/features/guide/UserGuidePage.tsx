@@ -4,6 +4,7 @@ import { ArrowRight, MessageCircleQuestion } from "lucide-react";
 import { HOW_PATH } from "@/app/nav";
 import { useHelp } from "@/components/help/HelpContext";
 import { NOT_NASA_TEXT, SafetyNote } from "@/components/help/SafetyNote";
+import { PageHeader } from "@/components/layout/Page";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { StatusTag } from "@/components/ui/status-tag";
 import { cn } from "@/lib/utils";
@@ -31,15 +32,11 @@ export function UserGuidePage() {
   const { openHelp } = useHelp();
   return (
     <div className="mx-auto grid w-full max-w-5xl gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[14rem_minmax(0,1fr)]">
-      <div className="grid content-start gap-3 lg:col-span-2">
-        <h1 data-page-heading tabIndex={-1} className="text-3xl font-bold">
-          User Guide
-        </h1>
-        <p className="max-w-prose text-muted-foreground">
-          How to use Astera Watch and how to read what it shows. Each article starts in everyday words; open “Technical details” for the scientific
-          background.
-        </p>
-      </div>
+      <PageHeader
+        className="content-start lg:col-span-2"
+        title="User Guide"
+        description="How to use Astera Watch and how to read what it shows. Each article starts in everyday words; open “Technical details” for the scientific background."
+      />
 
       <nav aria-label="Guide contents" className="content-start lg:sticky lg:top-4 lg:self-start">
         <ol className="grid gap-4 text-sm">

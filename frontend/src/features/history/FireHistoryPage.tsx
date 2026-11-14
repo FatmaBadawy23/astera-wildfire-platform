@@ -5,6 +5,8 @@ import { ArrowRight, MapPin } from "lucide-react";
 import { fireStoryPath } from "@/app/nav";
 import { getDataMode } from "@/app/env";
 import { SafetyNote } from "@/components/help/SafetyNote";
+import { PageHeader } from "@/components/layout/Page";
+import { Card, StatTile } from "@/components/ui/card";
 import { ProvenanceBadges } from "@/components/science/SourceBadges";
 import { CountrySearch } from "@/components/search/CountrySearch";
 import { QueryState } from "@/components/states/QueryState";
@@ -53,7 +55,7 @@ function HistoryItem({ event, analysis, demo }: { event: FireEvent; analysis: An
   const summary = analysisSummary(analysis);
   const simulated = analysis?.provenance.origin === "synthetic" && summary.hasResult;
   return (
-    <li data-history-item={event.id} className="grid gap-3 rounded-lg border border-border bg-surface p-4">
+    <Card as="li" data-history-item={event.id}>
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div className="grid gap-1">
           <h3 className="text-lg font-semibold">
@@ -90,7 +92,7 @@ function HistoryItem({ event, analysis, demo }: { event: FireEvent; analysis: An
           Show on the map<span className="sr-only"> ({event.id})</span>
         </Link>
       </div>
-    </li>
+    </Card>
   );
 }
 
@@ -139,14 +141,10 @@ export function FireHistoryPage() {
 
   return (
     <div className="mx-auto grid w-full max-w-5xl gap-6 px-4 py-8 sm:px-6">
-      <div className="grid gap-3">
-        <h1 data-page-heading tabIndex={-1} className="text-3xl font-bold">
-          Fire History & Impacts
-        </h1>
-        <p className="max-w-prose text-muted-foreground">
-          Look back at possible fires and what is known about their effects. Each one opens a Fire Story with the full details.
-        </p>
-      </div>
+      <PageHeader
+        title="Fire History & Impacts"
+        description="Look back at possible fires and what is known about their effects. Each one opens a Fire Story with the full details."
+      />
 
       <form role="search" aria-label="Filter fire history" onSubmit={(e) => e.preventDefault()} className="grid gap-3 rounded-lg border border-border bg-surface p-4 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)]">
         <CountrySearch
@@ -204,10 +202,11 @@ export function FireHistoryPage() {
               </EmptyState>
             ) : (
               <>
-                <p className="text-sm" aria-live="polite" data-history-summary>
-                  {formatNumber(shown.length)} possible fire{shown.length === 1 ? "" : "s"} · {formatNumber(totalSpots)} heat spots · {formatNumber(withResult)} with a radar
-                  surface-change result
-                </p>
+                <dl aria-live="polite" data-history-summary className="grid grid-cols-3 gap-2 sm:gap-3">
+                  <StatTile label={shown.length === 1 ? "Possible fire" : "Possible fires"} value={formatNumber(shown.length)} />
+                  <StatTile label="Heat spots" value={formatNumber(totalSpots)} />
+                  <StatTile label="With a radar surface-change result" value={formatNumber(withResult)} />
+                </dl>
                 <ul className="grid gap-3 md:grid-cols-2">
                   {shown.map((e) => (
                     <HistoryItem key={e.id} event={e} analysis={analysisById.get(e.id)} demo={demo} />

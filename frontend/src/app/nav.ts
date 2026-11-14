@@ -1,8 +1,8 @@
-import { BookOpen, History, Map as MapIcon, Star, Telescope, Workflow, type LucideIcon } from "lucide-react";
+import { BookOpen, FlaskConical, History, Map as MapIcon, Telescope, Workflow, type LucideIcon } from "lucide-react";
 
 export const APP_NAME = "Astera Watch";
 
-/** One of the three main destinations. Help (User Guide + Ask) is a panel, not a destination. */
+/** One of the three main destinations (the Learn menu and Help sit beside them). Help is a panel, not a destination. */
 export interface NavItem {
   path: string;
   /** Menu label (header). */
@@ -12,13 +12,22 @@ export interface NavItem {
   /** Page title (h1 and browser tab). */
   title: string;
   icon: LucideIcon;
+  /** The item stays highlighted on its sub-pages (e.g. /research/projects). */
+  hasSubpages?: boolean;
 }
 
 export const NAV_ITEMS: readonly NavItem[] = [
   { path: "/", label: "Fire map", shortLabel: "Map", title: "Fire map", icon: MapIcon },
   { path: "/history", label: "Fire history", shortLabel: "History", title: "Fire History & Impacts", icon: History },
-  { path: "/places", label: "My places", shortLabel: "My places", title: "My Places & Alerts", icon: Star },
+  { path: "/research", label: "Research Center", shortLabel: "Research", title: "Research Center", icon: FlaskConical, hasSubpages: true },
 ];
+
+/**
+ * My Places & Alerts: no longer a main destination (Research Center replaced it in the menus), but the page, its
+ * saved list and every "Save … to My places" action still work. Reached from those links and the User Guide.
+ */
+export const PLACES_PATH = "/places";
+export const PLACES_TITLE = "My Places & Alerts";
 
 /** Secondary information pages: linked from the header's "Learn" menu, the Help panel and the page footers. */
 export interface InfoPage {

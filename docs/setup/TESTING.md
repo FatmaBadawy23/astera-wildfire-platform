@@ -10,7 +10,7 @@ Run from `frontend/`:
 |---|---|---|
 | `npm run typecheck` | TypeScript, whole project | exit 0 |
 | `npm run lint` | ESLint (typescript-eslint, react-hooks) | exit 0, no warnings |
-| `npm test` | Vitest unit and component tests in jsdom, including **axe-core WCAG 2.2 A/AA** on every page in both themes, routing, keyboard and focus, data-layer rules, design tokens in sync with `tokens.json` | 23 files, 280 tests pass |
+| `npm test` | Vitest unit and component tests in jsdom, including **axe-core WCAG 2.2 A/AA** on every page in both themes, routing, keyboard and focus, data-layer rules, design tokens in sync with `tokens.json` | 27 files, 348 tests pass |
 | `npm run build` | Production build | Succeeds. **Known warning:** chunks over 500 kB (main ≈ 636 kB; the lazily loaded map chunk ≈ 1.08 MB is MapLibre) |
 
 `npm test` runs `node scripts/run-vitest.mjs run`. Use it instead of calling `npx vitest` directly on Windows (see
@@ -36,7 +36,9 @@ Dark at 1440, 1024 and 390 px:
 - layout: no sideways scrolling, exactly one demo label, the right menu for the screen size;
 - **axe-core WCAG A/AA including colour contrast** on every page;
 - the journeys: country search, map zoom, density squares, selecting a possible fire, Fire Story (including the
-  "no usable pair" case), Fire History, My places, User Guide, How It Works, What's planned, and Help (Guide and Ask);
+  "no usable pair" case), Fire History, My places, Research Center (labels, no controls, header fit), a research project created, opened and deleted (with the
+  confirmation dialog), the dataset catalog (groups, details, add to a project and remove), User Guide, How It Works, What's planned,
+  and Help (Guide and Ask);
 - real Tab-key focus rings;
 - a first visit opens in Light, even with a dark device setting, and the chosen theme is remembered;
 - relief tiles load and are softened per theme; heat spots are drawn with both rings over four terrain types.
@@ -44,7 +46,9 @@ Dark at 1440, 1024 and 390 px:
 It needs a development server (it reads the map through a development-only hook), and it takes several minutes.
 Every DevTools command has a time limit, so a stuck page fails a step instead of hanging the run.
 
-**Last result (2026-11-13): 278 / 280.** Both failures are the same check, in Light and Dark: over Greece it counted
+**Last result (2026-11-13, after Research Center R1): 350 / 352.** A run where a page load times out records one
+failure for that step and skips the rest of its checks, so the total can be lower; rerun once before investigating.
+Both remaining failures are the same check, in Light and Dark: over Greece it counted
 61 heat spots and 62 rings. One heat spot at the screen edge has its ring on screen but its centre just off it, so
 the strict count fails. This is a test that is too strict, not a map fault. A test-only fix is proposed but not
 applied (see [../PROJECT_STATUS.md](../PROJECT_STATUS.md)).

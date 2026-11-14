@@ -6,35 +6,27 @@ import type { ReactNode } from "react";
 import { Link } from "react-router";
 import { ArrowRight } from "lucide-react";
 import { GUIDE_PATH } from "@/app/nav";
+import { RESEARCH_PATH } from "@/features/research/capabilities";
+import { PageHeader } from "@/components/layout/Page";
 import { buttonVariants } from "@/components/ui/button";
+import { Card, CardHeader } from "@/components/ui/card";
 import { StatusTag, type StatusKind } from "@/components/ui/status-tag";
 
 function PlannedFrame({ title, status, intro, children }: { title: string; status: StatusKind; intro: string; children: ReactNode }) {
   return (
     <div className="mx-auto grid w-full max-w-3xl gap-6 px-4 py-8 sm:px-6">
-      <div className="grid gap-3">
-        <div className="flex flex-wrap items-center gap-3">
-          <h1 data-page-heading tabIndex={-1} className="text-3xl font-bold">
-            {title}
-          </h1>
-          <StatusTag status={status} />
-        </div>
-        <p className="max-w-prose text-muted-foreground">{intro}</p>
-      </div>
+      <PageHeader title={title} status={<StatusTag status={status} />} description={intro} />
       {children}
     </div>
   );
 }
 
-function Card({ title, status, children }: { title: string; status?: StatusKind; children: ReactNode }) {
+function PlannedCard({ title, status, children }: { title: string; status?: StatusKind; children: ReactNode }) {
   return (
-    <section className="grid gap-2 rounded-lg border border-border bg-surface p-5">
-      <div className="flex flex-wrap items-center gap-2">
-        <h2 className="text-lg font-semibold">{title}</h2>
-        {status && <StatusTag status={status} />}
-      </div>
+    <Card as="section" padding="lg" className="gap-2">
+      <CardHeader title={title} status={status && <StatusTag status={status} />} />
       <div className="grid gap-2 text-sm">{children}</div>
-    </section>
+    </Card>
   );
 }
 
@@ -45,10 +37,10 @@ export function PlannedFeaturesPage() {
       status="planned"
       intro="Ideas the team plans to build. None of them exists yet. Listing them here does not mean that any partnership, review process or scientific approval is in place."
     >
-      <Card title="Mobile app experience" status="planned">
+      <PlannedCard title="Mobile app experience" status="planned">
         <p>A phone-first way to follow possible fires. Today this is a design concept only; the website works on phones.</p>
-      </Card>
-      <Card title="Alerts and notifications" status="unavailable">
+      </PlannedCard>
+      <PlannedCard title="Alerts and notifications" status="unavailable">
         <p>
           Be told about heat spots near places you save. Saving places already works in this browser; alerts need accounts, live data and a way to
           send notifications.{" "}
@@ -56,8 +48,8 @@ export function PlannedFeaturesPage() {
             My Places & Alerts
           </Link>
         </p>
-      </Card>
-      <Card title="Ask Astera (chatbot)" status="soon">
+      </PlannedCard>
+      <PlannedCard title="Ask Astera (chatbot)" status="soon">
         <p>
           A chatbot that answers only from verified Astera Watch data and the User Guide, names its sources, says when data is demo, and never gives
           evacuation instructions. The{" "}
@@ -66,8 +58,15 @@ export function PlannedFeaturesPage() {
           </Link>{" "}
           is available now.
         </p>
-      </Card>
-      <Card title="Research Hub" status="planned">
+      </PlannedCard>
+      <PlannedCard title="Research Center" status="planned">
+        <p>
+          A workspace for wildfire research. The{" "}
+          <Link to={RESEARCH_PATH} className="font-medium text-primary underline underline-offset-2">
+            Research Center
+          </Link>{" "}
+          section has research projects, which work now in this browser only; its other tools don't work yet. Ideas include:
+        </p>
         <ul className="grid list-disc gap-1 pl-5">
           <li>Researcher profiles.</li>
           <li>Choosing a study area on the map by drawing its boundary, with areas filled by fire event.</li>
@@ -76,7 +75,7 @@ export function PlannedFeaturesPage() {
           <li>A library of research that has passed that review.</li>
         </ul>
         <p className="text-muted-foreground">No researcher accounts, submissions, reviewers or library exist yet.</p>
-      </Card>
+      </PlannedCard>
       <div>
         <Link to="/" className={buttonVariants()}>
           Back to the Fire map

@@ -30,8 +30,9 @@ npm ci
 npm run dev            # http://localhost:5173 on synthetic demo data; no backend or database needed
 ```
 
-Try the journey: search "Portugal", select SYN-03, open its Fire Story, open Fire history, save a country in My
-places, open Help → Ask Astera, and switch between Light and Dark.
+Try the journey: search "Portugal", select SYN-03, open its Fire Story, save its country to My places, open Fire
+history, open the Research Center, create a research project and add a dataset to it from the catalog (saved in this browser only), open Help → Ask Astera,
+and switch between Light and Dark.
 
 ## Step 4: Run the checks
 
@@ -58,6 +59,7 @@ Never commit, print or share `.env`, passwords or a full `DATABASE_URL`.
 | User Guide and Help text | `frontend/src/features/guide/guideArticles.tsx` |
 | Backend API, processing | [architecture/BACKEND.md](architecture/BACKEND.md) (skeleton only; follow roadmap Stages 1 → 5) |
 | Database schema | [architecture/DATABASE.md](architecture/DATABASE.md) (empty; schema to be designed in Stage 1) |
+| Research Center | [architecture/RESEARCH_CENTER.md](architecture/RESEARCH_CENTER.md) (projects and the dataset catalog work in this browser; next stages R4–R7 need approval) |
 
 ## Step 7: Rules that must not be broken
 

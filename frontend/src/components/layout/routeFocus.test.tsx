@@ -92,8 +92,8 @@ describe("route focus management", () => {
     await waitFor(() => expect(h1()).toHaveTextContent("Fire map"));
     expect(document.activeElement).toBe(h1());
 
-    await user.click(menu().getByRole("link", { name: /My places/ }));
-    await waitFor(() => expect(h1()).toHaveTextContent("My Places & Alerts"));
+    await user.click(menu().getByRole("link", { name: /Research Center/ }));
+    await waitFor(() => expect(h1()).toHaveTextContent("Research Center"));
     await user.click(screen.getByRole("link", { name: "Astera Watch, go to the Fire map" }));
     await waitFor(() => expect(h1()).toHaveTextContent("Fire map"));
     expect(document.activeElement).toBe(h1());

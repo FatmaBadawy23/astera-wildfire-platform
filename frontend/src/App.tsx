@@ -5,7 +5,11 @@ import { createAppRouter } from "@/app/router";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DataProvider } from "@/data/DataProvider";
 import { createQueryClient } from "@/data/hooks";
+import { CatalogProvider } from "@/data/catalog/CatalogProvider";
+import type { DatasetCatalogRepository } from "@/data/catalog/datasetRepository";
 import type { Repositories } from "@/data/repositories";
+import type { ResearchProjectRepository } from "@/data/research/projectRepository";
+import { ResearchProvider } from "@/data/research/ResearchProvider";
 import { ThemeProvider } from "@/lib/theme/ThemeProvider";
 
 /**
@@ -16,17 +20,25 @@ export function AppProviders({
   children,
   repositories,
   queryClient,
+  projectRepository,
+  catalogRepository,
 }: {
   children: ReactNode;
   repositories?: Repositories;
   queryClient?: QueryClient;
+  projectRepository?: ResearchProjectRepository;
+  catalogRepository?: DatasetCatalogRepository;
 }) {
   const [client] = useState(() => queryClient ?? createQueryClient());
   return (
     <ThemeProvider>
       <QueryClientProvider client={client}>
         <DataProvider repositories={repositories}>
-          <TooltipProvider delayDuration={300}>{children}</TooltipProvider>
+          <CatalogProvider repository={catalogRepository}>
+            <ResearchProvider repository={projectRepository}>
+              <TooltipProvider delayDuration={300}>{children}</TooltipProvider>
+            </ResearchProvider>
+          </CatalogProvider>
         </DataProvider>
       </QueryClientProvider>
     </ThemeProvider>

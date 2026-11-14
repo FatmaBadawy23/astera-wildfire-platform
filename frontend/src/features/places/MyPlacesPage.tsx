@@ -4,6 +4,8 @@ import { ArrowRight, BellOff, History, MapPin, Trash2 } from "lucide-react";
 import { getDataMode } from "@/app/env";
 import { fireStoryPath } from "@/app/nav";
 import { SafetyNote } from "@/components/help/SafetyNote";
+import { PageHeader } from "@/components/layout/Page";
+import { Card, CardHeader, StatTile } from "@/components/ui/card";
 import { CountrySearch } from "@/components/search/CountrySearch";
 import { EmptyState, LoadingState } from "@/components/states/States";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -28,14 +30,17 @@ function PlaceCard({ place, onRemove }: { place: CountryOption; onRemove: () => 
   const latest = [...(events.data ?? [])].sort((a, b) => Date.parse(b.lastDetection ?? "") - Date.parse(a.lastDetection ?? ""))[0];
 
   return (
-    <li data-place={place.iso3} className="grid gap-3 rounded-lg border border-border bg-surface p-4">
-      <div className="flex flex-wrap items-start justify-between gap-2">
-        <h3 className="text-lg font-semibold">{place.name}</h3>
-        <Button type="button" variant="ghost" size="sm" onClick={onRemove} aria-label={`Remove ${place.name}`}>
-          <Trash2 aria-hidden="true" />
-          Remove
-        </Button>
-      </div>
+    <Card as="li" data-place={place.iso3}>
+      <CardHeader
+        level={3}
+        title={place.name}
+        actions={
+          <Button type="button" variant="ghost" size="sm" onClick={onRemove} aria-label={`Remove ${place.name}`}>
+            <Trash2 aria-hidden="true" />
+            Remove
+          </Button>
+        }
+      />
       {loading ? (
         <LoadingState label={`Loading ${place.name}`} />
       ) : events.isError || detections.isError ? (
@@ -43,24 +48,26 @@ function PlaceCard({ place, onRemove }: { place: CountryOption; onRemove: () => 
       ) : nEvents === 0 && nSpots === 0 ? (
         <p className="text-sm text-muted-foreground">No possible fires or heat spots for {place.name} in the current data ({formatDayRange(WINDOW.start, WINDOW.end)}).</p>
       ) : (
-        <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
-          <dt className="text-muted-foreground">Possible fires</dt>
-          <dd className="font-semibold text-foreground-strong">{formatNumber(nEvents)}</dd>
-          <dt className="text-muted-foreground">Heat spots</dt>
-          <dd className="font-semibold text-foreground-strong">{formatNumber(nSpots)}</dd>
-          <dt className="text-muted-foreground">Period</dt>
-          <dd>{formatDayRange(WINDOW.start, WINDOW.end)}</dd>
-          {latest && (
-            <>
-              <dt className="text-muted-foreground">Most recent</dt>
-              <dd>
-                <Link to={fireStoryPath(latest.id)} className="font-medium text-primary underline underline-offset-2">
-                  {latest.id} · {latest.name}
-                </Link>
-              </dd>
-            </>
-          )}
-        </dl>
+        <div className="grid gap-2">
+          <dl className="grid grid-cols-2 gap-2">
+            <StatTile tone="inset" label="Possible fires" value={formatNumber(nEvents)} />
+            <StatTile tone="inset" label="Heat spots" value={formatNumber(nSpots)} />
+          </dl>
+          <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
+            <dt className="text-muted-foreground">Period</dt>
+            <dd>{formatDayRange(WINDOW.start, WINDOW.end)}</dd>
+            {latest && (
+              <>
+                <dt className="text-muted-foreground">Most recent</dt>
+                <dd>
+                  <Link to={fireStoryPath(latest.id)} className="font-medium text-primary underline underline-offset-2">
+                    {latest.id} · {latest.name}
+                  </Link>
+                </dd>
+              </>
+            )}
+          </dl>
+        </div>
       )}
       <div className="flex flex-wrap gap-2">
         <Link to={`/?country=${place.iso3}`} className={buttonVariants({ variant: "secondary", size: "sm" })}>
@@ -72,7 +79,7 @@ function PlaceCard({ place, onRemove }: { place: CountryOption; onRemove: () => 
           Fire history<span className="sr-only"> of {place.name}</span>
         </Link>
       </div>
-    </li>
+    </Card>
   );
 }
 
@@ -86,20 +93,13 @@ export function MyPlacesPage() {
 
   return (
     <div className="mx-auto grid w-full max-w-4xl gap-6 px-4 py-8 sm:px-6">
-      <div className="grid gap-3">
-        <h1 data-page-heading tabIndex={-1} className="text-3xl font-bold">
-          My Places & Alerts
-        </h1>
-        <p className="max-w-prose text-muted-foreground">
-          Keep an eye on the countries you care about. Your list is saved in this browser on this device only: no account, and nothing is sent
-          anywhere.
-        </p>
-      </div>
+      <PageHeader
+        title="My Places & Alerts"
+        description="Keep an eye on the countries you care about. Your list is saved in this browser on this device only: no account, and nothing is sent anywhere."
+      />
 
-      <section aria-labelledby="add-heading" className="grid gap-3 rounded-lg border border-border bg-surface p-5">
-        <h2 id="add-heading" className="text-lg font-semibold">
-          Add a place
-        </h2>
+      <Card as="section" padding="lg" aria-labelledby="add-heading">
+        <CardHeader id="add-heading" title="Add a place" />
         <CountrySearch
           index={index}
           label="Search for a country to save"
@@ -117,7 +117,7 @@ export function MyPlacesPage() {
         <p role="status" className="text-sm font-medium" data-places-message>
           {message}
         </p>
-      </section>
+      </Card>
 
       <section aria-labelledby="saved-heading" className="grid gap-3">
         <h2 id="saved-heading" className="text-xl font-semibold">
@@ -143,14 +143,13 @@ export function MyPlacesPage() {
         )}
       </section>
 
-      <section aria-labelledby="alerts-heading" className="grid gap-3 rounded-lg border border-border bg-surface p-5" data-alerts>
-        <div className="flex flex-wrap items-center gap-2">
-          <BellOff className="size-5 text-muted-foreground" aria-hidden="true" />
-          <h2 id="alerts-heading" className="text-lg font-semibold">
-            Alerts
-          </h2>
-          <StatusTag status="unavailable" />
-        </div>
+      <Card as="section" padding="lg" aria-labelledby="alerts-heading" data-alerts>
+        <CardHeader
+          id="alerts-heading"
+          title="Alerts"
+          icon={<BellOff className="size-5 text-muted-foreground" aria-hidden="true" />}
+          status={<StatusTag status="unavailable" />}
+        />
         <p className="text-sm">
           Astera Watch can't send alerts yet, so it doesn't ask for your email or phone number. How alerts would work: you choose a place, and Astera
           Watch tells you when new heat spots appear there.
@@ -163,7 +162,7 @@ export function MyPlacesPage() {
             <li>A way to send notifications.</li>
           </ul>
         </details>
-      </section>
+      </Card>
 
       <SafetyNote />
       <div>

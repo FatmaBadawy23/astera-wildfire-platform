@@ -5,7 +5,9 @@ import { getDataMode } from "@/app/env";
 import { GUIDE_PATH, PLANNED_PATH } from "@/app/nav";
 import { NOT_NASA_TEXT, SafetyNote } from "@/components/help/SafetyNote";
 import { SourceBadge } from "@/components/science/SourceBadges";
+import { PageHeader } from "@/components/layout/Page";
 import { buttonVariants } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { VALUE_KIND_DEFINITIONS } from "@/data/types";
 import { cn } from "@/lib/utils";
 
@@ -73,18 +75,14 @@ export function HowItWorksPage() {
   const demo = getDataMode() === "mock";
   return (
     <div className="mx-auto grid w-full max-w-4xl gap-8 px-4 py-8 sm:px-6">
-      <div className="grid gap-3">
-        <h1 data-page-heading tabIndex={-1} className="text-3xl font-bold">
-          How It Works
-        </h1>
-        <p className="max-w-prose text-muted-foreground">
-          From a satellite sensing heat to a radar estimate of surface change, in six steps. Open “Technical details” in any step for the method.
-        </p>
-      </div>
+      <PageHeader
+        title="How It Works"
+        description="From a satellite sensing heat to a radar estimate of surface change, in six steps. Open “Technical details” in any step for the method."
+      />
 
       <ol className="grid gap-4" aria-label="Steps">
         {STEPS.map((s, i) => (
-          <li key={s.title} className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-4 rounded-lg border border-border bg-surface p-5">
+          <Card as="li" padding="lg" key={s.title} className="grid-cols-[2.5rem_minmax(0,1fr)] gap-4">
             <span aria-hidden="true" className="grid size-10 place-items-center rounded-full border border-primary bg-planned font-heading text-lg font-bold text-primary">
               {i + 1}
             </span>
@@ -99,7 +97,7 @@ export function HowItWorksPage() {
                 <div className="grid gap-2 pb-2">{s.technical}</div>
               </details>
             </div>
-          </li>
+          </Card>
         ))}
       </ol>
 

@@ -3,11 +3,12 @@
 //   Needs `npm run dev` on http://localhost:5173 and Edge installed. No extra dependencies.
 // Covers, in Light and Dark at 1440, 1024 and 390 px: layout (no sideways scrolling, one demo label, right menu),
 // axe-core WCAG A/AA on the rendered page INCLUDING colour contrast, and the main journeys: country search → map
-// zooms → density squares → select a possible fire → Fire Story → history → My places → Help (Guide, Ask Astera).
-import { spawn } from "node:child_process";
+// zooms → density squares → select a possible fire → Fire Story → history → My places (still reachable by its links,
+// no longer in the menu) → Research Center (labels only, no controls) → Help (Guide, Ask Astera).
+import { spawn, spawnSync } from "node:child_process";
 import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { dirname, join, resolve } from "node:path";
+import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -28,11 +29,57 @@ const edgePath = EDGE.find((p) => {
   }
 });
 if (!edgePath) throw new Error("Microsoft Edge not found");
+const profileDir = mkdtempSync(join(tmpdir(), "aw-journeys-"));
 const browser = spawn(
   edgePath,
-  ["--headless=new", `--remote-debugging-port=${PORT}`, `--user-data-dir=${mkdtempSync(join(tmpdir(), "aw-journeys-"))}`, "--no-first-run", "--disable-gpu", "--enable-unsafe-swiftshader", "--hide-scrollbars", "--disable-extensions", "about:blank"],
+  ["--headless=new", `--remote-debugging-port=${PORT}`, `--user-data-dir=${profileDir}`, "--no-first-run", "--disable-gpu", "--enable-unsafe-swiftshader", "--hide-scrollbars", "--disable-extensions", "about:blank"],
   { stdio: "ignore" },
 );
+
+// Guaranteed cleanup: on Windows the spawned msedge.exe hands off to another process and exits, so browser.kill()
+// alone leaves the real headless browser running. On every exit (success, failed checks, thrown errors, Ctrl+C) close
+// the Edge processes started with THIS run's unique temporary profile, and nothing else (other Edge windows never use
+// that profile folder).
+let ws = null;
+let cleanedUp = false;
+function closeBrowser() {
+  if (cleanedUp) return;
+  cleanedUp = true;
+  try {
+    ws?.close();
+  } catch {
+    /* already closed */
+  }
+  try {
+    browser.kill();
+  } catch {
+    /* launcher already gone */
+  }
+  if (process.platform === "win32") {
+    const profileName = basename(profileDir); // aw-journeys-XXXXXX: unique per run
+    spawnSync(
+      "powershell.exe",
+      [
+        "-NoProfile",
+        "-NonInteractive",
+        "-Command",
+        `Get-CimInstance Win32_Process -Filter "Name='msedge.exe'" | Where-Object { $_.CommandLine -like '*--user-data-dir=*${profileName}*' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }`,
+      ],
+      { stdio: "ignore", timeout: 20000 },
+    );
+  }
+}
+process.on("exit", closeBrowser);
+for (const signal of ["SIGINT", "SIGTERM", "SIGBREAK", "SIGHUP"]) process.on(signal, () => process.exit(130));
+process.on("uncaughtException", (e) => {
+  console.error(e);
+  process.exit(1);
+});
+process.on("unhandledRejection", (e) => {
+  console.error(e);
+  process.exit(1);
+});
+
 for (let i = 0; i < 100; i++) {
   try {
     await fetch(`http://127.0.0.1:${PORT}/json/version`);
@@ -42,7 +89,7 @@ for (let i = 0; i < 100; i++) {
   }
 }
 const target = (await (await fetch(`http://127.0.0.1:${PORT}/json/list`)).json()).find((t) => t.type === "page");
-const ws = new WebSocket(target.webSocketDebuggerUrl);
+ws = new WebSocket(target.webSocketDebuggerUrl);
 await new Promise((r) => ws.addEventListener("open", r));
 let seq = 0;
 const pending = new Map();
@@ -257,6 +304,97 @@ for (const theme of ["light", "dark"]) {
       await axe(`${L} My places`);
     });
 
+    await step(`${L}: Research Center`, async () => {
+      for (const [path, n] of [["/research", "12b-research"], ["/research/models", "12c-research-models"]]) {
+        await open(path, theme, w, h);
+        await waitFor(`!!document.querySelector('[data-page-heading]')`);
+        await layout(`${L} ${path}`, w);
+        check(
+          `${L} ${path}: labelled not available/planned, no controls in the page`,
+          await ev(`(() => { const m = document.getElementById('main'); const t = m.textContent;
+            return (t.includes('Not available yet') || t.includes('Planned')) && !m.querySelector('form, input, textarea, select, button'); })()`),
+        );
+        await shot(`${theme}-${tag}-${n}`);
+        await axe(`${L} ${path}`);
+      }
+      check(
+        `${L}: main navigation has Research Center, not My places`,
+        await ev(`(() => { const t = [...document.querySelectorAll('nav[aria-label="Main"] a')].map(a => a.textContent.trim());
+          return t.some(x => x.startsWith('Research')) && !t.some(x => x.includes('My places')); })()`),
+      );
+      check(`${L}: header items fit without overflow`, await ev(`(() => { const hd = document.querySelector('header'); return hd.scrollWidth <= hd.clientWidth; })()`));
+    });
+
+    await step(`${L}: research project create → details → delete`, async () => {
+      const PK = "astera-watch-research-projects";
+      await open("/research/projects", theme, w, h, { places: ["PRT"] });
+      await ev(`(() => { localStorage.removeItem(${JSON.stringify(PK)}); return true; })()`);
+      await open("/research/projects", theme, w, h, { places: ["PRT"] });
+      await waitFor(`document.body.textContent.includes('No projects yet')`);
+      await layout(`${L} projects list`, w);
+      await axe(`${L} projects list (empty)`);
+      await open("/research/projects/new", theme, w, h, { places: ["PRT"] });
+      await layout(`${L} new project form`, w);
+      await axe(`${L} new project form`);
+      await ev(`(() => { const t = document.querySelector('form input[aria-required=true]');
+        Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(t, 'Browser check project');
+        t.dispatchEvent(new Event('input', { bubbles: true }));
+        [...document.querySelectorAll('form button[type=submit]')][0].click(); return true; })()`);
+      await waitFor(`location.pathname.startsWith('/research/projects/P-') && document.querySelector('h1')?.textContent === 'Browser check project'`);
+      check(`${L}: project saved in this browser`, await ev(`JSON.parse(localStorage.getItem(${JSON.stringify(PK)})).projects.length === 1`));
+      await sleep(300);
+      await layout(`${L} project details`, w);
+      await shot(`${theme}-${tag}-12d-project`);
+      await axe(`${L} project details`);
+      await ev(`(() => { [...document.querySelectorAll('main button')].find(b => b.textContent.includes('Delete project')).click(); return true; })()`);
+      await waitFor(`!!document.querySelector('[data-delete-dialog]')`);
+      await sleep(300);
+      await shot(`${theme}-${tag}-12e-delete-dialog`);
+      await axe(`${L} delete dialog`);
+      await ev(`(() => { [...document.querySelectorAll('[data-delete-dialog] button')].find(b => b.textContent.includes('Delete project')).click(); return true; })()`);
+      await waitFor(`location.pathname === '/research/projects' && document.body.textContent.includes('No projects yet')`);
+      check(
+        `${L}: project deleted after confirmation; saved places untouched`,
+        await ev(`JSON.parse(localStorage.getItem(${JSON.stringify(PK)})).projects.length === 0 && localStorage.getItem('astera-watch-places') === '["PRT"]'`),
+      );
+    });
+
+    await step(`${L}: datasets catalog → details → add to a project → remove`, async () => {
+      const PK = "astera-watch-research-projects";
+      const project = { id: "P-browser-check", title: "Dataset check", description: null, objectives: [], status: "planning",
+        studyArea: { geometry: null, bbox: null, countriesIso3: [], description: null }, period: null, linkedEventIds: [], datasetIds: [],
+        annotationIds: [], modelRunIds: [], reportIds: [], createdAt: "2026-11-14T00:00:00.000Z", updatedAt: "2026-11-14T00:00:00.000Z", storage: "browser" };
+      await open("/research/data", theme, w, h, { places: ["PRT"] });
+      await ev(`(() => { localStorage.setItem(${JSON.stringify(PK)}, ${JSON.stringify(JSON.stringify({ version: 1, projects: [project] }))}); return true; })()`);
+      await open("/research/data", theme, w, h, { places: ["PRT"] });
+      await waitFor(`document.querySelectorAll('[data-dataset]').length > 0`);
+      check(
+        `${L}: catalog separates real, demo and unconnected sources`,
+        await ev(`!!document.querySelector('[data-dataset-group="real"]') && !!document.querySelector('[data-dataset-group="demo"]') && document.querySelectorAll('[data-sources] [data-source]').length === 3 && !document.querySelector('[data-sources] a, [data-sources] button')`),
+      );
+      await layout(`${L} datasets catalog`, w);
+      await shot(`${theme}-${tag}-12f-datasets`);
+      await axe(`${L} datasets catalog`);
+      await open("/research/data/demo-heat-spots", theme, w, h, { places: ["PRT"] });
+      await waitFor(`[...document.querySelectorAll('main button')].some(b => b.textContent.includes('Add to project'))`);
+      await layout(`${L} dataset details`, w);
+      await shot(`${theme}-${tag}-12g-dataset`);
+      await axe(`${L} dataset details`);
+      await ev(`(() => { [...document.querySelectorAll('main button')].find(b => b.textContent.includes('Add to project')).click(); return true; })()`);
+      await waitFor(`document.querySelector('[data-add-message]')?.textContent.includes('Added to')`);
+      check(`${L}: dataset linked to the project (browser storage)`, await ev(`JSON.parse(localStorage.getItem(${JSON.stringify(PK)})).projects[0].datasetIds.join() === 'demo-heat-spots'`));
+      await open("/research/projects/P-browser-check", theme, w, h, { places: ["PRT"] });
+      await waitFor(`!!document.querySelector('[data-project-dataset="demo-heat-spots"] a')`);
+      await axe(`${L} project with a dataset`);
+      await ev(`(() => { document.querySelector('[data-project-dataset="demo-heat-spots"] button').click(); return true; })()`);
+      await waitFor(`!document.querySelector('[data-project-dataset="demo-heat-spots"]')`);
+      check(
+        `${L}: dataset removed; project and saved places otherwise unchanged`,
+        await ev(`(() => { const p = JSON.parse(localStorage.getItem(${JSON.stringify(PK)})).projects[0]; return p.datasetIds.length === 0 && p.title === 'Dataset check' && localStorage.getItem('astera-watch-places') === '["PRT"]'; })()`),
+      );
+      await ev(`(() => { localStorage.removeItem(${JSON.stringify(PK)}); return true; })()`);
+    });
+
     await step(`${L}: User Guide, How It Works, What's planned`, async () => {
       for (const [path, n] of [["/guide", "13-guide"], ["/how-it-works", "14-how-it-works"], ["/planned", "15-planned"]]) {
         await open(path, theme, w, h);
@@ -366,6 +504,4 @@ for (const theme of ["light", "dark"]) {
 check("no uncaught page errors", pageErrors.length === 0, pageErrors.slice(0, 5).join(" | ").slice(0, 600));
 const failed = results.filter((r) => !r.ok);
 console.log(`\n${results.length - failed.length}/${results.length} checks passed`);
-ws.close();
-browser.kill();
-process.exit(failed.length ? 1 : 0);
+process.exit(failed.length ? 1 : 0); // closeBrowser() runs on exit

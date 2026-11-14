@@ -11,14 +11,14 @@ primitives, Vitest + Testing Library + axe-core. Exact versions are in `frontend
 | `index.html` | HTML entry; an inline script applies the saved theme before first paint (default Light) |
 | `src/main.tsx`, `src/App.tsx` | React entry; `AppProviders` (theme, data, query client) and the router |
 | `src/app/` | `router.tsx` (all routes), `nav.ts` (menu items and paths), `env.ts` (data mode) |
-| `src/components/layout/` | App shell: `AppShell`, `Header`, `PrimaryNav` (header menu and phone tab bar), `DemoBar`, `ThemeToggle`, `StandaloneFrame` (404 and error pages), route focus (`useRouteFocus.ts`) |
+| `src/components/layout/` | App shell: `AppShell`, `Header`, `PrimaryNav` (header menu, Learn menu and phone tab bar), `PageFooter` (all pages except the Fire map), `Page`/`PageHeader` (page title block), `DemoBar`, `ThemeToggle`, `StandaloneFrame` (404 and error pages), route focus (`useRouteFocus.ts`) |
 | `src/components/help/` | Help panel state (`HelpContext.tsx`) and the safety note |
 | `src/components/science/` | Scientific display components: legends, source badges, value with kind and uncertainty, provenance, availability status |
 | `src/components/search/` | `CountrySearch` (accessible combobox, countries only) |
 | `src/components/states/` | Loading, empty, error and "not available yet" states; `QueryState` maps a query to them |
-| `src/components/ui/` | Small UI primitives (button, popover, tooltip, status tag) |
+| `src/components/ui/` | Small UI primitives (button, popover, tooltip, status tag, `Card`/`CardHeader`/`StatTile`) |
 | `src/data/` | Data layer (see below) |
-| `src/features/<page>/` | One folder per page: `explorer` (Fire map), `story` (Fire Story), `history`, `places`, `guide` (User Guide, How It Works, the article texts), `help` (Help panel), `planned`, `errors`, `dev` and `foundation` (development-only previews) |
+| `src/features/<page>/` | One folder per page: `explorer` (Fire map), `story` (Fire Story), `history`, `places`, `guide` (User Guide, How It Works, the article texts), `help` (Help panel), `research` (Research Center), `planned`, `errors`, `dev` and `foundation` (development-only previews) |
 | `src/lib/` | Formatting (`format.ts`), theme logic (`lib/theme/`), `cn` helper |
 | `src/styles/` | `tokens.css` (**generated**, do not edit), `globals.css` (Tailwind mapping, base styles, print styles) |
 | `src/test/` | Test setup, axe helper, viewport helper |
@@ -32,7 +32,10 @@ primitives, Vitest + Testing Library + axe-core. Exact versions are in `frontend
 | `/` | Fire map (`features/explorer/ExplorerPage.tsx`) | Homepage. Filters and selection live in the URL (`?country=`, `?event=`, `?from=`, `?to=`, `?radar=`, `?q=`) |
 | `/events/:eventId` | Fire Story (`features/story/FireStoryPage.tsx`) | Everything about one possible fire |
 | `/history` | Fire History & Impacts | Filters in the URL (`?country=`, `?radar=`, `?result=1`, `?sort=`) |
-| `/places` | My Places & Alerts | Saved countries (this browser only); alerts not available |
+| `/places` | My Places & Alerts | Saved countries (this browser only); alerts not available. Not in the main menu since R1; reached from "Save … to My places" links |
+| `/research`, `/research/{annotation,models,analysis,reports,collaboration}` | Research Center | Overview and one description page per tool that doesn't work yet; see [RESEARCH_CENTER.md](RESEARCH_CENTER.md) |
+| `/research/data`, `/research/data/:datasetId` | Dataset catalog | Works (initial draft); definitions in `src/data/catalog/` |
+| `/research/projects`, `/research/projects/new`, `/research/projects/:projectId`, `/research/projects/:projectId/edit` | Research projects | Works; saved in this browser only |
 | `/guide` | User Guide | Articles from `features/guide/guideArticles.tsx`; `#<article-id>` links |
 | `/how-it-works` | How It Works | Secondary information page |
 | `/planned` | What's planned | Future ideas; no data |
@@ -56,6 +59,7 @@ move focus on a direct load or a redirect on load.
 | Help panel (open, tab, topic) | `components/help/HelpContext.tsx` | Memory |
 | Welcome card dismissed | `ExplorerPage.tsx` | `localStorage["astera-watch-welcome-dismissed"]` |
 | Saved places (My places) | `features/places/placesStore.ts` | `localStorage["astera-watch-places"]` (ISO3 codes, up to 20). This browser only |
+| Research projects | `src/data/research/` (repository + `ResearchProvider`) | `localStorage["astera-watch-research-projects"]` (`{ version: 1, projects }`, up to 50). This browser only; a backend adapter can replace it |
 
 Every `localStorage` access is wrapped in `try/catch`, so the app also works when storage is blocked.
 

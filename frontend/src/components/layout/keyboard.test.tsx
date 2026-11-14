@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { RouterProvider, createMemoryRouter } from "react-router";
 import { AppProviders } from "@/App";
@@ -33,7 +33,7 @@ function focusedName(): string {
 const helpButton = () => document.querySelector<HTMLElement>("[data-help-trigger]")!;
 
 describe("keyboard: App Shell at 1440px", () => {
-  it("Tab order: skip link, demo bar, logo, the three destinations, How it works, Help, theme", async () => {
+  it("Tab order: skip link, demo bar, logo, the three destinations, Learn, Help, theme", async () => {
     const user = userEvent.setup();
     renderAt();
     const expected = [
@@ -42,8 +42,8 @@ describe("keyboard: App Shell at 1440px", () => {
       "Astera Watch, go to the Fire map",
       "Fire map",
       "Fire history",
-      "My places",
-      "How it works",
+      "Research Center",
+      "Learn",
       "Help",
       "Light theme",
       "Dark theme",
@@ -69,9 +69,9 @@ describe("keyboard: App Shell at 1440px", () => {
   it("Enter on a menu item navigates and focuses the new heading", async () => {
     const user = userEvent.setup();
     const router = renderAt();
-    screen.getByRole("link", { name: /My places/ }).focus();
+    within(screen.getByRole("navigation", { name: "Main" })).getByRole("link", { name: /Research Center/ }).focus();
     await user.keyboard("{Enter}");
-    await waitFor(() => expect(router.state.location.pathname).toBe("/places"));
+    await waitFor(() => expect(router.state.location.pathname).toBe("/research"));
     await waitFor(() => expect(document.activeElement).toBe(screen.getByRole("heading", { level: 1 })));
   });
 

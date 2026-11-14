@@ -25,7 +25,10 @@ heat detections, before-and-after radar images and the radar change analysis. Th
   density squares at regional zoom, individual heat spots close up, and country search.
 - **Fire Story** for each possible fire: what we know and what we don't know yet, a heat-spot timeline,
   before/after radar availability, the radar analysis (estimates with uncertainty), and JSON/CSV downloads.
-- **Fire History & Impacts**, **My Places** (saved in the browser; alerts not available yet), **User Guide**,
+- **Research Center:** research projects and a dataset catalog work (saved in this browser only; the only real
+  datasets are Natural Earth reference maps, no satellite data is connected); the other research tools are labelled
+  "Not available yet" or "Planned".
+- **Fire History & Impacts**, **My Places** (saved in the browser; alerts not available yet; no longer in the main menu), **User Guide**,
   **How It Works**, and Help with **Ask Astera** (chatbot: coming soon).
 - Light (default) and Dark themes, desktop and phone layouts, WCAG 2.2 AA checks.
 
@@ -50,6 +53,7 @@ Full setup: [docs/setup/DEVELOPMENT.md](docs/setup/DEVELOPMENT.md). Tests: [docs
 | [docs/PROJECT_STATUS.md](docs/PROJECT_STATUS.md) | What's done, demo-only, planned; known issues; open decisions |
 | [docs/architecture/OVERVIEW.md](docs/architecture/OVERVIEW.md) | How the parts fit together |
 | [docs/architecture/FRONTEND.md](docs/architecture/FRONTEND.md) · [BACKEND.md](docs/architecture/BACKEND.md) · [DATABASE.md](docs/architecture/DATABASE.md) | Each part in detail |
+| [docs/architecture/RESEARCH_CENTER.md](docs/architecture/RESEARCH_CENTER.md) | Research Center: capabilities, what each needs, plan |
 | [docs/data/DATA_SOURCES.md](docs/data/DATA_SOURCES.md) | Data sources, licences, and what each can and can't establish |
 | [docs/setup/DEVELOPMENT.md](docs/setup/DEVELOPMENT.md) · [TESTING.md](docs/setup/TESTING.md) | Setup and checks |
 | [docs/ROADMAP.md](docs/ROADMAP.md) | The staged plan and team ownership |
