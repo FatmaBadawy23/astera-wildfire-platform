@@ -1,0 +1,182 @@
+{
+  "CA_GANN_2026": {
+    "event_id": "CA_GANN_2026",
+    "collection": "modis-64A1-061",
+    "cmr_concept_id": "C2565786756-LPCLOUD",
+    "ancillary_path": "data/real/CA_GANN_2026/mcd64a1_ancillary.npz",
+    "ancillary_bytes": 22435,
+    "ancillary_sha256": "44252a9eb99016009c678d20ae9c79c304b878b7ce07a698c13d301cb0b25410",
+    "granule": [
+      {
+        "item_id": "MCD64A1.A2026213.h08v05.061.2026286121320",
+        "asset": "https://modiseuwest.blob.core.windows.net/modis-061-cogs/MCD64A1/08/05/2026213/MCD64A1.A2026213.h08v05.061.2026286121320_Burn_Date.tif",
+        "burn_start_doy": 215,
+        "burn_end_doy": 222,
+        "burned_pixels": 100968,
+        "burned_fraction": 0.1577625,
+        "checksum": "4618dba42d7d424224969a4c302303b7c1db99f4518a9ae053434f1c9ec3e1e1"
+      }
+    ],
+    "layers": {
+      "mcd_burn_mask_MCD64A1.A2026213.h08v05.061.2026286121320": {
+        "shape": [
+          800,
+          800
+        ],
+        "dtype": "uint8",
+        "finite_fraction": 1.0
+      },
+      "mcd_burn_date": {
+        "shape": [
+          800,
+          800
+        ],
+        "dtype": "int16",
+        "finite_fraction": 1.0
+      },
+      "mcd_burn_mask": {
+        "shape": [
+          800,
+          800
+        ],
+        "dtype": "uint8",
+        "finite_fraction": 1.0
+      }
+    }
+  },
+  "CA_TIMBER_2026": {
+    "event_id": "CA_TIMBER_2026",
+    "collection": "modis-64A1-061",
+    "cmr_concept_id": "C2565786756-LPCLOUD",
+    "ancillary_path": "data/real/CA_TIMBER_2026/mcd64a1_ancillary.npz",
+    "ancillary_bytes": 33551,
+    "ancillary_sha256": "4c8bc4e07f604083db3728155f4b183b8dbae542931c77209688732f3a706fbb",
+    "granule": [
+      {
+        "item_id": "MCD64A1.A2026213.h08v05.061.2026286121320",
+        "asset": "https://modiseuwest.blob.core.windows.net/modis-061-cogs/MCD64A1/08/05/2026213/MCD64A1.A2026213.h08v05.061.2026286121320_Burn_Date.tif",
+        "burn_start_doy": 219,
+        "burn_end_doy": 243,
+        "burned_pixels": 182015,
+        "burned_fraction": 0.2843984375,
+        "checksum": "99d3db724bfe779ebca04f1fa41856ddd2f283a9e01a33792103216204c648dc"
+      }
+    ],
+    "layers": {
+      "mcd_burn_mask_MCD64A1.A2026213.h08v05.061.2026286121320": {
+        "shape": [
+          800,
+          800
+        ],
+        "dtype": "uint8",
+        "finite_fraction": 1.0
+      },
+      "mcd_burn_date": {
+        "shape": [
+          800,
+          800
+        ],
+        "dtype": "int16",
+        "finite_fraction": 1.0
+      },
+      "mcd_burn_mask": {
+        "shape": [
+          800,
+          800
+        ],
+        "dtype": "uint8",
+        "finite_fraction": 1.0
+      }
+    }
+  },
+  "CA_DOME_2026": {
+    "event_id": "CA_DOME_2026",
+    "collection": "modis-64A1-061",
+    "cmr_concept_id": "C2565786756-LPCLOUD",
+    "ancillary_path": "data/real/CA_DOME_2026/mcd64a1_ancillary.npz",
+    "ancillary_bytes": 24630,
+    "ancillary_sha256": "1b47f3d4951582022adef2f3332e6ce7923d0c9ca5e71cf76a92e5386826ae42",
+    "granule": [
+      {
+        "item_id": "MCD64A1.A2026244.h08v05.061.2026314113209",
+        "asset": "https://modiseuwest.blob.core.windows.net/modis-061-cogs/MCD64A1/08/05/2026244/MCD64A1.A2026244.h08v05.061.2026314113209_Burn_Date.tif",
+        "burn_start_doy": 244,
+        "burn_end_doy": 273,
+        "burned_pixels": 39754,
+        "burned_fraction": 0.062115625,
+        "checksum": "0117c32190273404902da9567b6fefbfe3359325bb20d06f5f1d8d585ee5ec33"
+      }
+    ],
+    "layers": {
+      "mcd_burn_mask_MCD64A1.A2026244.h08v05.061.2026314113209": {
+        "shape": [
+          800,
+          800
+        ],
+        "dtype": "uint8",
+        "finite_fraction": 1.0
+      },
+      "mcd_burn_date": {
+        "shape": [
+          800,
+          800
+        ],
+        "dtype": "int16",
+        "finite_fraction": 1.0
+      },
+      "mcd_burn_mask": {
+        "shape": [
+          800,
+          800
+        ],
+        "dtype": "uint8",
+        "finite_fraction": 1.0
+      }
+    }
+  },
+  "CA_BUG_2026": {
+    "event_id": "CA_BUG_2026",
+    "collection": "modis-64A1-061",
+    "cmr_concept_id": "C2565786756-LPCLOUD",
+    "ancillary_path": "data/real/CA_BUG_2026/mcd64a1_ancillary.npz",
+    "ancillary_bytes": 37272,
+    "ancillary_sha256": "a5504ee89cb24e1704acb8af57c8327dcf4169799bfe490660d67d238cce8547",
+    "granule": [
+      {
+        "item_id": "MCD64A1.A2026213.h08v05.061.2026286121320",
+        "asset": "https://modiseuwest.blob.core.windows.net/modis-061-cogs/MCD64A1/08/05/2026213/MCD64A1.A2026213.h08v05.061.2026286121320_Burn_Date.tif",
+        "burn_start_doy": 219,
+        "burn_end_doy": 240,
+        "burned_pixels": 354720,
+        "burned_fraction": 0.55425,
+        "checksum": "3f5942a0a6a1baa8f685a14b49978a40b4f23ec4c16adefd898a93141a2334ad"
+      }
+    ],
+    "layers": {
+      "mcd_burn_mask_MCD64A1.A2026213.h08v05.061.2026286121320": {
+        "shape": [
+          800,
+          800
+        ],
+        "dtype": "uint8",
+        "finite_fraction": 1.0
+      },
+      "mcd_burn_date": {
+        "shape": [
+          800,
+          800
+        ],
+        "dtype": "int16",
+        "finite_fraction": 1.0
+      },
+      "mcd_burn_mask": {
+        "shape": [
+          800,
+          800
+        ],
+        "dtype": "uint8",
+        "finite_fraction": 1.0
+      }
+    }
+  }
+}

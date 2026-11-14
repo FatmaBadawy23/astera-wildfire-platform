@@ -1,0 +1,1755 @@
+{
+  "generated_at_utc": "2026-11-13T23:46:21.909675+00:00",
+  "acquisition_run_dir": "data/acquisitions/run_20261114_013500",
+  "authentication_status": {
+    "FIRMS_MAP_KEY": {
+      "configured": true,
+      "authenticated": true,
+      "mapkey_status": {
+        "configured": true,
+        "authenticated": true,
+        "status_code": 200,
+        "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/mapserver/mapkey_status/?MAP_KEY=<REDACTED_MAP_KEY>",
+        "status": {
+          "transaction_limit": 5000,
+          "current_transactions": 22,
+          "transaction_interval": "10 minutes"
+        }
+      }
+    },
+    "NASA_API_KEY": {
+      "configured": true,
+      "authenticated": true,
+      "status_code": 200,
+      "sanitized_url": "https://api.nasa.gov/planetary/apod?api_key=<REDACTED_NASA_API_KEY>",
+      "rate_limit_limit": "10000",
+      "rate_limit_remaining": "9997",
+      "path": "data/acquisitions/run_20261114_013500/eonet/nasa_api_status.json",
+      "bytes": 233,
+      "sha256": "ad4b8965da21d83e5aaa3eaec3716c64fabb7a053dc2906282b8a31c4fde1e43"
+    },
+    "EARTHDATA_LOGIN": {
+      "configured": false,
+      "NISAR_METADATA_DISCOVERED": true,
+      "NISAR_GRANULE_DOWNLOADED": false,
+      "NISAR_DOWNLOAD_BLOCKED": true
+    }
+  },
+  "firms_availability": {
+    "csv_path": "data/acquisitions/run_20261114_013500/firms/firms_data_availability.csv",
+    "bytes": 454,
+    "sha256": "6bfda4862a2ea59f5de2945ad730d611dc8d559d6a22f3648677d2f2d9883683",
+    "sensors": {
+      "MODIS_NRT": {
+        "min_date": "2026-09-01",
+        "max_date": "2026-11-13"
+      },
+      "MODIS_SP": {
+        "min_date": "2000-11-01",
+        "max_date": "2026-08-31"
+      },
+      "VIIRS_NOAA20_NRT": {
+        "min_date": "2026-08-01",
+        "max_date": "2026-11-13"
+      },
+      "VIIRS_NOAA20_SP": {
+        "min_date": "2018-04-01",
+        "max_date": "2026-07-31"
+      },
+      "VIIRS_NOAA21_NRT": {
+        "min_date": "2024-01-17",
+        "max_date": "2026-11-13"
+      },
+      "VIIRS_NOAA21_SP": {
+        "min_date": "2023-03-01",
+        "max_date": "2026-07-31"
+      },
+      "VIIRS_SNPP_NRT": {
+        "min_date": "2026-08-01",
+        "max_date": "2026-11-02"
+      },
+      "VIIRS_SNPP_SP": {
+        "min_date": "2012-01-20",
+        "max_date": "2026-07-31"
+      },
+      "LANDSAT_NRT": {
+        "min_date": "2022-06-20",
+        "max_date": "2026-11-13"
+      },
+      "GOES_NRT": {
+        "min_date": "2022-08-09",
+        "max_date": "2026-11-13"
+      },
+      "BA_MODIS": {
+        "min_date": "2000-11-01",
+        "max_date": "2026-08-01"
+      },
+      "BA_VIIRS": {
+        "min_date": "2012-03-01",
+        "max_date": "2026-08-01"
+      }
+    }
+  },
+  "firms_egypt_smoke_test": {
+    "source": "VIIRS_NOAA20_NRT",
+    "bbox": [
+      24.0,
+      21.0,
+      37.0,
+      32.0
+    ],
+    "date_str": null,
+    "days_range": 3,
+    "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA20_NRT/24.000,21.000,37.000,32.000/3",
+    "status_code": 200,
+    "bytes": 14992,
+    "sha256": "854353a6905bfb38d5beb0a0446f38e12a4d12ca00cb6f4e211067ee25659be2",
+    "csv_path": "data/acquisitions/run_20261114_013500/firms/firms_egypt_noaa20_nrt.csv",
+    "record_count": 179,
+    "summary": {
+      "total_hotspots": 179,
+      "high_confidence_hotspots": 1,
+      "nominal_confidence_hotspots": 171,
+      "low_confidence_hotspots": 7,
+      "first_detection_utc": "2026-11-11T11:06:00Z",
+      "last_detection_utc": "2026-11-13T10:30:00Z",
+      "max_frp_mw": 14.58,
+      "mean_frp_mw": 1.92,
+      "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+    },
+    "geojson_path": "data/acquisitions/run_20261114_013500/firms/firms_egypt_noaa20_nrt.geojson",
+    "geojson_bytes": 104552,
+    "geojson_sha256": "e988a1bad7a2b9315c1188e092b5c6473da1246001a217a0565ab3c3dabe44b7"
+  },
+  "firms_wildfire_events": {
+    "CA_GANN_2026": {
+      "event_id": "CA_GANN_2026",
+      "fire_name": "Gann Fire",
+      "reported_start": "2026-08-03",
+      "aoi_bbox": [
+        -120.8253,
+        38.0411,
+        -120.6427,
+        38.1849
+      ],
+      "query_bbox_buffered": [
+        -120.865,
+        38.001,
+        -120.603,
+        38.225
+      ],
+      "sources_queried": [
+        "VIIRS_NOAA20_NRT",
+        "VIIRS_SNPP_NRT",
+        "VIIRS_NOAA21_NRT",
+        "MODIS_SP"
+      ],
+      "windows_queried": [
+        "2026-08-03",
+        "2026-08-08",
+        "2026-08-13"
+      ],
+      "queries": [
+        {
+          "source": "VIIRS_NOAA20_NRT",
+          "bbox": [
+            -120.865,
+            38.001,
+            -120.603,
+            38.225
+          ],
+          "date_str": "2026-08-03",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA20_NRT/-120.865,38.001,-120.603,38.225/5/2026-08-03",
+          "status_code": 200,
+          "bytes": 34850,
+          "sha256": "6331dcef7af9f3d057be361ae0a63055a4f4cd4b7dcca07020cad3fc95da1011",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_GANN_2026_VIIRS_NOAA20_NRT_2026-08-03_5d.csv",
+          "record_count": 407,
+          "summary": {
+            "total_hotspots": 407,
+            "high_confidence_hotspots": 84,
+            "nominal_confidence_hotspots": 292,
+            "low_confidence_hotspots": 31,
+            "first_detection_utc": "2026-08-04T09:09:00Z",
+            "last_detection_utc": "2026-08-06T10:13:00Z",
+            "max_frp_mw": 655.43,
+            "mean_frp_mw": 36.8,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA20_NRT",
+          "bbox": [
+            -120.865,
+            38.001,
+            -120.603,
+            38.225
+          ],
+          "date_str": "2026-08-08",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA20_NRT/-120.865,38.001,-120.603,38.225/5/2026-08-08",
+          "status_code": 200,
+          "bytes": 122,
+          "sha256": "2b11a44667d05367ecf77651b95fd3d34c545c7ec154856094b91245e41ae697",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_GANN_2026_VIIRS_NOAA20_NRT_2026-08-08_5d.csv",
+          "record_count": 0,
+          "summary": {
+            "total_hotspots": 0,
+            "high_confidence_hotspots": 0,
+            "nominal_confidence_hotspots": 0,
+            "low_confidence_hotspots": 0,
+            "first_detection_utc": null,
+            "last_detection_utc": null,
+            "max_frp_mw": 0.0,
+            "mean_frp_mw": 0.0,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA20_NRT",
+          "bbox": [
+            -120.865,
+            38.001,
+            -120.603,
+            38.225
+          ],
+          "date_str": "2026-08-13",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA20_NRT/-120.865,38.001,-120.603,38.225/5/2026-08-13",
+          "status_code": 200,
+          "bytes": 291,
+          "sha256": "dc9c94285b4580fb12b390e86d3bd9d1187222c24c418bc5ac4dddcbad3e4264",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_GANN_2026_VIIRS_NOAA20_NRT_2026-08-13_5d.csv",
+          "record_count": 2,
+          "summary": {
+            "total_hotspots": 2,
+            "high_confidence_hotspots": 0,
+            "nominal_confidence_hotspots": 2,
+            "low_confidence_hotspots": 0,
+            "first_detection_utc": "2026-08-16T10:26:00Z",
+            "last_detection_utc": "2026-08-16T10:26:00Z",
+            "max_frp_mw": 1.65,
+            "mean_frp_mw": 1.52,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_SNPP_NRT",
+          "bbox": [
+            -120.865,
+            38.001,
+            -120.603,
+            38.225
+          ],
+          "date_str": "2026-08-03",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_SNPP_NRT/-120.865,38.001,-120.603,38.225/5/2026-08-03",
+          "status_code": 200,
+          "bytes": 19200,
+          "sha256": "6f7fa64cde2aab526417b9bc2b499a1a37761465df761956b10905ce8a0bd804",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_GANN_2026_VIIRS_SNPP_NRT_2026-08-03_5d.csv",
+          "record_count": 232,
+          "summary": {
+            "total_hotspots": 232,
+            "high_confidence_hotspots": 96,
+            "nominal_confidence_hotspots": 108,
+            "low_confidence_hotspots": 28,
+            "first_detection_utc": "2026-08-04T20:14:00Z",
+            "last_detection_utc": "2026-08-06T21:16:00Z",
+            "max_frp_mw": 187.09,
+            "mean_frp_mw": 35.49,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_SNPP_NRT",
+          "bbox": [
+            -120.865,
+            38.001,
+            -120.603,
+            38.225
+          ],
+          "date_str": "2026-08-08",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_SNPP_NRT/-120.865,38.001,-120.603,38.225/5/2026-08-08",
+          "status_code": 200,
+          "bytes": 122,
+          "sha256": "2b11a44667d05367ecf77651b95fd3d34c545c7ec154856094b91245e41ae697",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_GANN_2026_VIIRS_SNPP_NRT_2026-08-08_5d.csv",
+          "record_count": 0,
+          "summary": {
+            "total_hotspots": 0,
+            "high_confidence_hotspots": 0,
+            "nominal_confidence_hotspots": 0,
+            "low_confidence_hotspots": 0,
+            "first_detection_utc": null,
+            "last_detection_utc": null,
+            "max_frp_mw": 0.0,
+            "mean_frp_mw": 0.0,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_SNPP_NRT",
+          "bbox": [
+            -120.865,
+            38.001,
+            -120.603,
+            38.225
+          ],
+          "date_str": "2026-08-13",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_SNPP_NRT/-120.865,38.001,-120.603,38.225/5/2026-08-13",
+          "status_code": 200,
+          "bytes": 205,
+          "sha256": "ff6190f9b0ab14660ef5b267f195b1197ffe9e76ef198ca4d580deeb6da90d39",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_GANN_2026_VIIRS_SNPP_NRT_2026-08-13_5d.csv",
+          "record_count": 1,
+          "summary": {
+            "total_hotspots": 1,
+            "high_confidence_hotspots": 0,
+            "nominal_confidence_hotspots": 1,
+            "low_confidence_hotspots": 0,
+            "first_detection_utc": "2026-08-16T10:09:00Z",
+            "last_detection_utc": "2026-08-16T10:09:00Z",
+            "max_frp_mw": 1.21,
+            "mean_frp_mw": 1.21,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA21_NRT",
+          "bbox": [
+            -120.865,
+            38.001,
+            -120.603,
+            38.225
+          ],
+          "date_str": "2026-08-03",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA21_NRT/-120.865,38.001,-120.603,38.225/5/2026-08-03",
+          "status_code": 200,
+          "bytes": 18091,
+          "sha256": "ba384807611cbeb4197871f7f8a65be8b1a37afbd0b60cb61baa00556dcd2acb",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_GANN_2026_VIIRS_NOAA21_NRT_2026-08-03_5d.csv",
+          "record_count": 214,
+          "summary": {
+            "total_hotspots": 214,
+            "high_confidence_hotspots": 44,
+            "nominal_confidence_hotspots": 133,
+            "low_confidence_hotspots": 37,
+            "first_detection_utc": "2026-08-04T09:56:00Z",
+            "last_detection_utc": "2026-08-05T20:59:00Z",
+            "max_frp_mw": 331.87,
+            "mean_frp_mw": 30.66,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA21_NRT",
+          "bbox": [
+            -120.865,
+            38.001,
+            -120.603,
+            38.225
+          ],
+          "date_str": "2026-08-08",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA21_NRT/-120.865,38.001,-120.603,38.225/5/2026-08-08",
+          "status_code": 200,
+          "bytes": 122,
+          "sha256": "2b11a44667d05367ecf77651b95fd3d34c545c7ec154856094b91245e41ae697",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_GANN_2026_VIIRS_NOAA21_NRT_2026-08-08_5d.csv",
+          "record_count": 0,
+          "summary": {
+            "total_hotspots": 0,
+            "high_confidence_hotspots": 0,
+            "nominal_confidence_hotspots": 0,
+            "low_confidence_hotspots": 0,
+            "first_detection_utc": null,
+            "last_detection_utc": null,
+            "max_frp_mw": 0.0,
+            "mean_frp_mw": 0.0,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA21_NRT",
+          "bbox": [
+            -120.865,
+            38.001,
+            -120.603,
+            38.225
+          ],
+          "date_str": "2026-08-13",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA21_NRT/-120.865,38.001,-120.603,38.225/5/2026-08-13",
+          "status_code": 200,
+          "bytes": 122,
+          "sha256": "2b11a44667d05367ecf77651b95fd3d34c545c7ec154856094b91245e41ae697",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_GANN_2026_VIIRS_NOAA21_NRT_2026-08-13_5d.csv",
+          "record_count": 0,
+          "summary": {
+            "total_hotspots": 0,
+            "high_confidence_hotspots": 0,
+            "nominal_confidence_hotspots": 0,
+            "low_confidence_hotspots": 0,
+            "first_detection_utc": null,
+            "last_detection_utc": null,
+            "max_frp_mw": 0.0,
+            "mean_frp_mw": 0.0,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "MODIS_SP",
+          "bbox": [
+            -120.865,
+            38.001,
+            -120.603,
+            38.225
+          ],
+          "date_str": "2026-08-03",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/MODIS_SP/-120.865,38.001,-120.603,38.225/5/2026-08-03",
+          "status_code": 200,
+          "bytes": 5883,
+          "sha256": "edda404a9ddb9e15ef380841290895d9e7a447eb887414abdf598ac7f775f1ba",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_GANN_2026_MODIS_SP_2026-08-03_5d.csv",
+          "record_count": 70,
+          "summary": {
+            "total_hotspots": 70,
+            "high_confidence_hotspots": 53,
+            "nominal_confidence_hotspots": 15,
+            "low_confidence_hotspots": 2,
+            "first_detection_utc": "2026-08-04T03:44:00Z",
+            "last_detection_utc": "2026-08-05T22:29:00Z",
+            "max_frp_mw": 2830.1,
+            "mean_frp_mw": 193.8,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "MODIS_SP",
+          "bbox": [
+            -120.865,
+            38.001,
+            -120.603,
+            38.225
+          ],
+          "date_str": "2026-08-08",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/MODIS_SP/-120.865,38.001,-120.603,38.225/5/2026-08-08",
+          "status_code": 200,
+          "bytes": 127,
+          "sha256": "b335277b53c6ffb4476f76ef457d775527f70fe5287310a46db6301d06266520",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_GANN_2026_MODIS_SP_2026-08-08_5d.csv",
+          "record_count": 0,
+          "summary": {
+            "total_hotspots": 0,
+            "high_confidence_hotspots": 0,
+            "nominal_confidence_hotspots": 0,
+            "low_confidence_hotspots": 0,
+            "first_detection_utc": null,
+            "last_detection_utc": null,
+            "max_frp_mw": 0.0,
+            "mean_frp_mw": 0.0,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "MODIS_SP",
+          "bbox": [
+            -120.865,
+            38.001,
+            -120.603,
+            38.225
+          ],
+          "date_str": "2026-08-13",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/MODIS_SP/-120.865,38.001,-120.603,38.225/5/2026-08-13",
+          "status_code": 200,
+          "bytes": 127,
+          "sha256": "b335277b53c6ffb4476f76ef457d775527f70fe5287310a46db6301d06266520",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_GANN_2026_MODIS_SP_2026-08-13_5d.csv",
+          "record_count": 0,
+          "summary": {
+            "total_hotspots": 0,
+            "high_confidence_hotspots": 0,
+            "nominal_confidence_hotspots": 0,
+            "low_confidence_hotspots": 0,
+            "first_detection_utc": null,
+            "last_detection_utc": null,
+            "max_frp_mw": 0.0,
+            "mean_frp_mw": 0.0,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        }
+      ],
+      "combined_csv": {
+        "path": "data/acquisitions/run_20261114_013500/firms/CA_GANN_2026_combined_hotspots.csv",
+        "bytes": 105089,
+        "sha256": "5494f2eb6b60f585a3a4e11ad62850a4048088db12d3ca977bf4f357dbba425c",
+        "deduplicated_record_count": 926
+      },
+      "hotspots_geojson": {
+        "path": "data/acquisitions/run_20261114_013500/firms/CA_GANN_2026_hotspots.geojson",
+        "bytes": 536444,
+        "sha256": "4de72e18f120ab54ac81c490aead78ae9d7ac2d3d1e275d488bcc2da23d18125"
+      },
+      "strict_aoi_summary": {
+        "total_hotspots": 921,
+        "high_confidence_hotspots": 277,
+        "nominal_confidence_hotspots": 546,
+        "low_confidence_hotspots": 98,
+        "first_detection_utc": "2026-08-04T03:44:00Z",
+        "last_detection_utc": "2026-08-06T10:13:00Z",
+        "max_frp_mw": 2830.1,
+        "mean_frp_mw": 47.02,
+        "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+      },
+      "buffered_aoi_summary": {
+        "total_hotspots": 926,
+        "high_confidence_hotspots": 277,
+        "nominal_confidence_hotspots": 551,
+        "low_confidence_hotspots": 98,
+        "first_detection_utc": "2026-08-04T03:44:00Z",
+        "last_detection_utc": "2026-08-16T10:26:00Z",
+        "max_frp_mw": 2830.1,
+        "mean_frp_mw": 46.8,
+        "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+      }
+    },
+    "CA_TIMBER_2026": {
+      "event_id": "CA_TIMBER_2026",
+      "fire_name": "Timber Fire",
+      "reported_start": "2026-08-09",
+      "aoi_bbox": [
+        -121.7571,
+        36.1391,
+        -121.5789,
+        36.2829
+      ],
+      "query_bbox_buffered": [
+        -121.797,
+        36.099,
+        -121.539,
+        36.323
+      ],
+      "sources_queried": [
+        "VIIRS_NOAA20_NRT",
+        "VIIRS_SNPP_NRT",
+        "VIIRS_NOAA21_NRT",
+        "MODIS_SP"
+      ],
+      "windows_queried": [
+        "2026-08-09",
+        "2026-08-14",
+        "2026-08-19"
+      ],
+      "queries": [
+        {
+          "source": "VIIRS_NOAA20_NRT",
+          "bbox": [
+            -121.797,
+            36.099,
+            -121.539,
+            36.323
+          ],
+          "date_str": "2026-08-09",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA20_NRT/-121.797,36.099,-121.539,36.323/5/2026-08-09",
+          "status_code": 200,
+          "bytes": 21008,
+          "sha256": "cb30e42867bbcd0b7be061c7aaf7c5a573085cb010a65068c0afc0c57c22ad2c",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_TIMBER_2026_VIIRS_NOAA20_NRT_2026-08-09_5d.csv",
+          "record_count": 244,
+          "summary": {
+            "total_hotspots": 244,
+            "high_confidence_hotspots": 23,
+            "nominal_confidence_hotspots": 218,
+            "low_confidence_hotspots": 3,
+            "first_detection_utc": "2026-08-09T09:17:00Z",
+            "last_detection_utc": "2026-08-13T21:04:00Z",
+            "max_frp_mw": 130.01,
+            "mean_frp_mw": 15.35,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA20_NRT",
+          "bbox": [
+            -121.797,
+            36.099,
+            -121.539,
+            36.323
+          ],
+          "date_str": "2026-08-14",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA20_NRT/-121.797,36.099,-121.539,36.323/5/2026-08-14",
+          "status_code": 200,
+          "bytes": 3029,
+          "sha256": "01528fcb671ab58d1ac266af2401b280d3dd49ce18d3e5f3e01fdeef9f12671e",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_TIMBER_2026_VIIRS_NOAA20_NRT_2026-08-14_5d.csv",
+          "record_count": 34,
+          "summary": {
+            "total_hotspots": 34,
+            "high_confidence_hotspots": 0,
+            "nominal_confidence_hotspots": 30,
+            "low_confidence_hotspots": 4,
+            "first_detection_utc": "2026-08-14T20:44:00Z",
+            "last_detection_utc": "2026-08-18T21:10:00Z",
+            "max_frp_mw": 22.91,
+            "mean_frp_mw": 5.42,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA20_NRT",
+          "bbox": [
+            -121.797,
+            36.099,
+            -121.539,
+            36.323
+          ],
+          "date_str": "2026-08-19",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA20_NRT/-121.797,36.099,-121.539,36.323/5/2026-08-19",
+          "status_code": 200,
+          "bytes": 25940,
+          "sha256": "a7546f431fd9e5387b2922fc1dc10aedf19af6387861c05449bc99a1779784db",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_TIMBER_2026_VIIRS_NOAA20_NRT_2026-08-19_5d.csv",
+          "record_count": 304,
+          "summary": {
+            "total_hotspots": 304,
+            "high_confidence_hotspots": 14,
+            "nominal_confidence_hotspots": 282,
+            "low_confidence_hotspots": 8,
+            "first_detection_utc": "2026-08-19T09:30:00Z",
+            "last_detection_utc": "2026-08-23T21:16:00Z",
+            "max_frp_mw": 90.22,
+            "mean_frp_mw": 11.81,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_SNPP_NRT",
+          "bbox": [
+            -121.797,
+            36.099,
+            -121.539,
+            36.323
+          ],
+          "date_str": "2026-08-09",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_SNPP_NRT/-121.797,36.099,-121.539,36.323/5/2026-08-09",
+          "status_code": 200,
+          "bytes": 20050,
+          "sha256": "8a98e2f1abf50994d9b9139682770407683d9cdb8c2a574f561644b7517f870b",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_TIMBER_2026_VIIRS_SNPP_NRT_2026-08-09_5d.csv",
+          "record_count": 240,
+          "summary": {
+            "total_hotspots": 240,
+            "high_confidence_hotspots": 13,
+            "nominal_confidence_hotspots": 218,
+            "low_confidence_hotspots": 9,
+            "first_detection_utc": "2026-08-09T10:41:00Z",
+            "last_detection_utc": "2026-08-13T20:44:00Z",
+            "max_frp_mw": 117.29,
+            "mean_frp_mw": 11.41,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_SNPP_NRT",
+          "bbox": [
+            -121.797,
+            36.099,
+            -121.539,
+            36.323
+          ],
+          "date_str": "2026-08-14",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_SNPP_NRT/-121.797,36.099,-121.539,36.323/5/2026-08-14",
+          "status_code": 200,
+          "bytes": 3285,
+          "sha256": "43234755effc9b1cb586af0600beebbd65901408cdc293872950f6a74840ece7",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_TIMBER_2026_VIIRS_SNPP_NRT_2026-08-14_5d.csv",
+          "record_count": 38,
+          "summary": {
+            "total_hotspots": 38,
+            "high_confidence_hotspots": 1,
+            "nominal_confidence_hotspots": 36,
+            "low_confidence_hotspots": 1,
+            "first_detection_utc": "2026-08-14T20:25:00Z",
+            "last_detection_utc": "2026-08-18T20:49:00Z",
+            "max_frp_mw": 28.09,
+            "mean_frp_mw": 4.66,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_SNPP_NRT",
+          "bbox": [
+            -121.797,
+            36.099,
+            -121.539,
+            36.323
+          ],
+          "date_str": "2026-08-19",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_SNPP_NRT/-121.797,36.099,-121.539,36.323/5/2026-08-19",
+          "status_code": 200,
+          "bytes": 24399,
+          "sha256": "c2862626c686c76cb6e3b2e9c213a4509ddf836a0f2fb6a87b41a8f214666396",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_TIMBER_2026_VIIRS_SNPP_NRT_2026-08-19_5d.csv",
+          "record_count": 292,
+          "summary": {
+            "total_hotspots": 292,
+            "high_confidence_hotspots": 14,
+            "nominal_confidence_hotspots": 268,
+            "low_confidence_hotspots": 10,
+            "first_detection_utc": "2026-08-19T09:11:00Z",
+            "last_detection_utc": "2026-08-23T20:57:00Z",
+            "max_frp_mw": 129.73,
+            "mean_frp_mw": 10.35,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA21_NRT",
+          "bbox": [
+            -121.797,
+            36.099,
+            -121.539,
+            36.323
+          ],
+          "date_str": "2026-08-09",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA21_NRT/-121.797,36.099,-121.539,36.323/5/2026-08-09",
+          "status_code": 200,
+          "bytes": 17927,
+          "sha256": "0db8332c95a07743dd854b634fc9cedfb465067ec300cdd0909a575edbcca0d6",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_TIMBER_2026_VIIRS_NOAA21_NRT_2026-08-09_5d.csv",
+          "record_count": 209,
+          "summary": {
+            "total_hotspots": 209,
+            "high_confidence_hotspots": 8,
+            "nominal_confidence_hotspots": 192,
+            "low_confidence_hotspots": 9,
+            "first_detection_utc": "2026-08-09T10:04:00Z",
+            "last_detection_utc": "2026-08-13T21:50:00Z",
+            "max_frp_mw": 133.68,
+            "mean_frp_mw": 14.23,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA21_NRT",
+          "bbox": [
+            -121.797,
+            36.099,
+            -121.539,
+            36.323
+          ],
+          "date_str": "2026-08-14",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA21_NRT/-121.797,36.099,-121.539,36.323/5/2026-08-14",
+          "status_code": 200,
+          "bytes": 3927,
+          "sha256": "5d17febd6125bf70075f886e01af392cb2e6f915a944571f29b05117fc25dc01",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_TIMBER_2026_VIIRS_NOAA21_NRT_2026-08-14_5d.csv",
+          "record_count": 45,
+          "summary": {
+            "total_hotspots": 45,
+            "high_confidence_hotspots": 4,
+            "nominal_confidence_hotspots": 41,
+            "low_confidence_hotspots": 0,
+            "first_detection_utc": "2026-08-14T21:29:00Z",
+            "last_detection_utc": "2026-08-18T21:55:00Z",
+            "max_frp_mw": 28.46,
+            "mean_frp_mw": 6.38,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA21_NRT",
+          "bbox": [
+            -121.797,
+            36.099,
+            -121.539,
+            36.323
+          ],
+          "date_str": "2026-08-19",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA21_NRT/-121.797,36.099,-121.539,36.323/5/2026-08-19",
+          "status_code": 200,
+          "bytes": 26906,
+          "sha256": "7da502e5d407758fc93a9681afcb521d3c859ad9bfa6b9f990a41d1d5ed94f54",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_TIMBER_2026_VIIRS_NOAA21_NRT_2026-08-19_5d.csv",
+          "record_count": 315,
+          "summary": {
+            "total_hotspots": 315,
+            "high_confidence_hotspots": 20,
+            "nominal_confidence_hotspots": 282,
+            "low_confidence_hotspots": 13,
+            "first_detection_utc": "2026-08-19T10:15:00Z",
+            "last_detection_utc": "2026-08-23T22:01:00Z",
+            "max_frp_mw": 571.6,
+            "mean_frp_mw": 13.67,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "MODIS_SP",
+          "bbox": [
+            -121.797,
+            36.099,
+            -121.539,
+            36.323
+          ],
+          "date_str": "2026-08-09",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/MODIS_SP/-121.797,36.099,-121.539,36.323/5/2026-08-09",
+          "status_code": 200,
+          "bytes": 4195,
+          "sha256": "c4002b1c48c3bd0d12d7138ac4f393da07254435496d726516830165fa41de21",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_TIMBER_2026_MODIS_SP_2026-08-09_5d.csv",
+          "record_count": 50,
+          "summary": {
+            "total_hotspots": 50,
+            "high_confidence_hotspots": 24,
+            "nominal_confidence_hotspots": 22,
+            "low_confidence_hotspots": 4,
+            "first_detection_utc": "2026-08-09T12:22:00Z",
+            "last_detection_utc": "2026-08-13T04:40:00Z",
+            "max_frp_mw": 316.8,
+            "mean_frp_mw": 61.75,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "MODIS_SP",
+          "bbox": [
+            -121.797,
+            36.099,
+            -121.539,
+            36.323
+          ],
+          "date_str": "2026-08-14",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/MODIS_SP/-121.797,36.099,-121.539,36.323/5/2026-08-14",
+          "status_code": 200,
+          "bytes": 676,
+          "sha256": "a0d6b6f2543247f442b0734fc854114af4970900fa91695c77fea2c3eb245c74",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_TIMBER_2026_MODIS_SP_2026-08-14_5d.csv",
+          "record_count": 7,
+          "summary": {
+            "total_hotspots": 7,
+            "high_confidence_hotspots": 0,
+            "nominal_confidence_hotspots": 3,
+            "low_confidence_hotspots": 4,
+            "first_detection_utc": "2026-08-14T23:16:00Z",
+            "last_detection_utc": "2026-08-18T22:32:00Z",
+            "max_frp_mw": 150.0,
+            "mean_frp_mw": 31.21,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "MODIS_SP",
+          "bbox": [
+            -121.797,
+            36.099,
+            -121.539,
+            36.323
+          ],
+          "date_str": "2026-08-19",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/MODIS_SP/-121.797,36.099,-121.539,36.323/5/2026-08-19",
+          "status_code": 200,
+          "bytes": 6464,
+          "sha256": "82221a234d4f0006de2ef6c63f3d336fd039cc45cf4801c7f08656d66e28f6b6",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_TIMBER_2026_MODIS_SP_2026-08-19_5d.csv",
+          "record_count": 78,
+          "summary": {
+            "total_hotspots": 78,
+            "high_confidence_hotspots": 48,
+            "nominal_confidence_hotspots": 27,
+            "low_confidence_hotspots": 3,
+            "first_detection_utc": "2026-08-19T12:09:00Z",
+            "last_detection_utc": "2026-08-23T16:37:00Z",
+            "max_frp_mw": 330.8,
+            "mean_frp_mw": 56.73,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        }
+      ],
+      "combined_csv": {
+        "path": "data/acquisitions/run_20261114_013500/firms/CA_TIMBER_2026_combined_hotspots.csv",
+        "bytes": 211713,
+        "sha256": "c7b44b1ee49aa36e3ccc9e591cdf3e3e54112cb659836bf6ad9fc4892b5d2af1",
+        "deduplicated_record_count": 1856
+      },
+      "hotspots_geojson": {
+        "path": "data/acquisitions/run_20261114_013500/firms/CA_TIMBER_2026_hotspots.geojson",
+        "bytes": 1079661,
+        "sha256": "5a879c5be71013cf14a44fbe0b88878fe8e249432c3f78fa48be9d4ec7c75ae7"
+      },
+      "strict_aoi_summary": {
+        "total_hotspots": 1849,
+        "high_confidence_hotspots": 169,
+        "nominal_confidence_hotspots": 1612,
+        "low_confidence_hotspots": 68,
+        "first_detection_utc": "2026-08-09T09:17:00Z",
+        "last_detection_utc": "2026-08-23T22:01:00Z",
+        "max_frp_mw": 571.6,
+        "mean_frp_mw": 15.53,
+        "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+      },
+      "buffered_aoi_summary": {
+        "total_hotspots": 1856,
+        "high_confidence_hotspots": 169,
+        "nominal_confidence_hotspots": 1619,
+        "low_confidence_hotspots": 68,
+        "first_detection_utc": "2026-08-09T09:17:00Z",
+        "last_detection_utc": "2026-08-23T22:01:00Z",
+        "max_frp_mw": 571.6,
+        "mean_frp_mw": 15.49,
+        "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+      }
+    },
+    "CA_DOME_2026": {
+      "event_id": "CA_DOME_2026",
+      "fire_name": "Dome Fire",
+      "reported_start": "2026-09-21",
+      "aoi_bbox": [
+        -119.7037,
+        37.5401,
+        -119.5223,
+        37.6839
+      ],
+      "query_bbox_buffered": [
+        -119.744,
+        37.5,
+        -119.482,
+        37.724
+      ],
+      "sources_queried": [
+        "VIIRS_NOAA20_NRT",
+        "VIIRS_SNPP_NRT",
+        "VIIRS_NOAA21_NRT",
+        "MODIS_NRT"
+      ],
+      "windows_queried": [
+        "2026-09-21",
+        "2026-09-26",
+        "2026-10-01"
+      ],
+      "queries": [
+        {
+          "source": "VIIRS_NOAA20_NRT",
+          "bbox": [
+            -119.744,
+            37.5,
+            -119.482,
+            37.724
+          ],
+          "date_str": "2026-09-21",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA20_NRT/-119.744,37.500,-119.482,37.724/5/2026-09-21",
+          "status_code": 200,
+          "bytes": 37334,
+          "sha256": "9d5a0fd08f70f06419519f04cbc7552286a7ceb597a8a2fbe2ca9d62ccc10d91",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_DOME_2026_VIIRS_NOAA20_NRT_2026-09-21_5d.csv",
+          "record_count": 438,
+          "summary": {
+            "total_hotspots": 438,
+            "high_confidence_hotspots": 29,
+            "nominal_confidence_hotspots": 404,
+            "low_confidence_hotspots": 5,
+            "first_detection_utc": "2026-09-21T09:11:00Z",
+            "last_detection_utc": "2026-09-25T20:57:00Z",
+            "max_frp_mw": 116.53,
+            "mean_frp_mw": 13.22,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA20_NRT",
+          "bbox": [
+            -119.744,
+            37.5,
+            -119.482,
+            37.724
+          ],
+          "date_str": "2026-09-26",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA20_NRT/-119.744,37.500,-119.482,37.724/5/2026-09-26",
+          "status_code": 200,
+          "bytes": 31369,
+          "sha256": "6203c9b61cc8e07ef3350aa6a448b02a83e7445db74ad2a12635d5529017e185",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_DOME_2026_VIIRS_NOAA20_NRT_2026-09-26_5d.csv",
+          "record_count": 367,
+          "summary": {
+            "total_hotspots": 367,
+            "high_confidence_hotspots": 15,
+            "nominal_confidence_hotspots": 337,
+            "low_confidence_hotspots": 15,
+            "first_detection_utc": "2026-09-26T09:17:00Z",
+            "last_detection_utc": "2026-09-30T21:04:00Z",
+            "max_frp_mw": 274.53,
+            "mean_frp_mw": 14.43,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA20_NRT",
+          "bbox": [
+            -119.744,
+            37.5,
+            -119.482,
+            37.724
+          ],
+          "date_str": "2026-10-01",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA20_NRT/-119.744,37.500,-119.482,37.724/5/2026-10-01",
+          "status_code": 200,
+          "bytes": 34921,
+          "sha256": "b02d7dd2279d17614518ab70e1fdcf812ffba69eb86a4b9e9729abfafa947d08",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_DOME_2026_VIIRS_NOAA20_NRT_2026-10-01_5d.csv",
+          "record_count": 409,
+          "summary": {
+            "total_hotspots": 409,
+            "high_confidence_hotspots": 35,
+            "nominal_confidence_hotspots": 354,
+            "low_confidence_hotspots": 20,
+            "first_detection_utc": "2026-10-01T09:26:00Z",
+            "last_detection_utc": "2026-10-05T21:12:00Z",
+            "max_frp_mw": 390.76,
+            "mean_frp_mw": 17.58,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_SNPP_NRT",
+          "bbox": [
+            -119.744,
+            37.5,
+            -119.482,
+            37.724
+          ],
+          "date_str": "2026-09-21",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_SNPP_NRT/-119.744,37.500,-119.482,37.724/5/2026-09-21",
+          "status_code": 200,
+          "bytes": 32413,
+          "sha256": "f032135f05f43fef0af71e7f303dfec40203a147f1384504b64b22e61bd39d67",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_DOME_2026_VIIRS_SNPP_NRT_2026-09-21_5d.csv",
+          "record_count": 389,
+          "summary": {
+            "total_hotspots": 389,
+            "high_confidence_hotspots": 17,
+            "nominal_confidence_hotspots": 361,
+            "low_confidence_hotspots": 11,
+            "first_detection_utc": "2026-09-21T10:34:00Z",
+            "last_detection_utc": "2026-09-25T20:40:00Z",
+            "max_frp_mw": 90.5,
+            "mean_frp_mw": 12.16,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_SNPP_NRT",
+          "bbox": [
+            -119.744,
+            37.5,
+            -119.482,
+            37.724
+          ],
+          "date_str": "2026-09-26",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_SNPP_NRT/-119.744,37.500,-119.482,37.724/5/2026-09-26",
+          "status_code": 200,
+          "bytes": 28548,
+          "sha256": "63cc31437e98240c4bdefcfddb43a474e0d444677e9a9ac7852e6daa9af48499",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_DOME_2026_VIIRS_SNPP_NRT_2026-09-26_5d.csv",
+          "record_count": 342,
+          "summary": {
+            "total_hotspots": 342,
+            "high_confidence_hotspots": 26,
+            "nominal_confidence_hotspots": 308,
+            "low_confidence_hotspots": 8,
+            "first_detection_utc": "2026-09-26T08:58:00Z",
+            "last_detection_utc": "2026-09-30T20:46:00Z",
+            "max_frp_mw": 198.87,
+            "mean_frp_mw": 17.35,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_SNPP_NRT",
+          "bbox": [
+            -119.744,
+            37.5,
+            -119.482,
+            37.724
+          ],
+          "date_str": "2026-10-01",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_SNPP_NRT/-119.744,37.500,-119.482,37.724/5/2026-10-01",
+          "status_code": 200,
+          "bytes": 28370,
+          "sha256": "413d5d47755566ca72399d91110df6f2f3e1cdaaabe755e778bdbb0244c795a4",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_DOME_2026_VIIRS_SNPP_NRT_2026-10-01_5d.csv",
+          "record_count": 339,
+          "summary": {
+            "total_hotspots": 339,
+            "high_confidence_hotspots": 26,
+            "nominal_confidence_hotspots": 299,
+            "low_confidence_hotspots": 14,
+            "first_detection_utc": "2026-10-01T09:07:00Z",
+            "last_detection_utc": "2026-10-05T20:51:00Z",
+            "max_frp_mw": 325.61,
+            "mean_frp_mw": 18.73,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA21_NRT",
+          "bbox": [
+            -119.744,
+            37.5,
+            -119.482,
+            37.724
+          ],
+          "date_str": "2026-09-21",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA21_NRT/-119.744,37.500,-119.482,37.724/5/2026-09-21",
+          "status_code": 200,
+          "bytes": 45542,
+          "sha256": "382bc22342c281a0d04496eadde7a161fda9ce1cb18a67d2a51af31425620573",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_DOME_2026_VIIRS_NOAA21_NRT_2026-09-21_5d.csv",
+          "record_count": 536,
+          "summary": {
+            "total_hotspots": 536,
+            "high_confidence_hotspots": 29,
+            "nominal_confidence_hotspots": 498,
+            "low_confidence_hotspots": 9,
+            "first_detection_utc": "2026-09-21T09:56:00Z",
+            "last_detection_utc": "2026-09-25T21:44:00Z",
+            "max_frp_mw": 88.39,
+            "mean_frp_mw": 11.37,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA21_NRT",
+          "bbox": [
+            -119.744,
+            37.5,
+            -119.482,
+            37.724
+          ],
+          "date_str": "2026-09-26",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA21_NRT/-119.744,37.500,-119.482,37.724/5/2026-09-26",
+          "status_code": 200,
+          "bytes": 33491,
+          "sha256": "4ea551ba13c4037f7ad6d5035efd7106faa0ce576d6f3338ca74b2cc3ab4a327",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_DOME_2026_VIIRS_NOAA21_NRT_2026-09-26_5d.csv",
+          "record_count": 393,
+          "summary": {
+            "total_hotspots": 393,
+            "high_confidence_hotspots": 26,
+            "nominal_confidence_hotspots": 361,
+            "low_confidence_hotspots": 6,
+            "first_detection_utc": "2026-09-26T10:04:00Z",
+            "last_detection_utc": "2026-09-30T21:50:00Z",
+            "max_frp_mw": 234.62,
+            "mean_frp_mw": 18.25,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA21_NRT",
+          "bbox": [
+            -119.744,
+            37.5,
+            -119.482,
+            37.724
+          ],
+          "date_str": "2026-10-01",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA21_NRT/-119.744,37.500,-119.482,37.724/5/2026-10-01",
+          "status_code": 200,
+          "bytes": 29585,
+          "sha256": "309bb4f772962106a8480e73af3343bbeda5cc0274eea399d9231dd0a8828a62",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_DOME_2026_VIIRS_NOAA21_NRT_2026-10-01_5d.csv",
+          "record_count": 347,
+          "summary": {
+            "total_hotspots": 347,
+            "high_confidence_hotspots": 19,
+            "nominal_confidence_hotspots": 317,
+            "low_confidence_hotspots": 11,
+            "first_detection_utc": "2026-10-01T10:11:00Z",
+            "last_detection_utc": "2026-10-05T21:55:00Z",
+            "max_frp_mw": 613.89,
+            "mean_frp_mw": 28.77,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "MODIS_NRT",
+          "bbox": [
+            -119.744,
+            37.5,
+            -119.482,
+            37.724
+          ],
+          "date_str": "2026-09-21",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/MODIS_NRT/-119.744,37.500,-119.482,37.724/5/2026-09-21",
+          "status_code": 200,
+          "bytes": 9554,
+          "sha256": "75a7912b6e48ecf9d59fb9269055716155704b666d97d8205f96217cfe4dd86c",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_DOME_2026_MODIS_NRT_2026-09-21_5d.csv",
+          "record_count": 106,
+          "summary": {
+            "total_hotspots": 106,
+            "high_confidence_hotspots": 63,
+            "nominal_confidence_hotspots": 38,
+            "low_confidence_hotspots": 5,
+            "first_detection_utc": "2026-09-21T11:45:00Z",
+            "last_detection_utc": "2026-09-25T23:39:00Z",
+            "max_frp_mw": 656.34,
+            "mean_frp_mw": 68.01,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "MODIS_NRT",
+          "bbox": [
+            -119.744,
+            37.5,
+            -119.482,
+            37.724
+          ],
+          "date_str": "2026-09-26",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/MODIS_NRT/-119.744,37.500,-119.482,37.724/5/2026-09-26",
+          "status_code": 200,
+          "bytes": 7597,
+          "sha256": "b873cd66dcf9edcb03ca55032a6220936063fe408e3273cba987dd0b32074ebd",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_DOME_2026_MODIS_NRT_2026-09-26_5d.csv",
+          "record_count": 84,
+          "summary": {
+            "total_hotspots": 84,
+            "high_confidence_hotspots": 44,
+            "nominal_confidence_hotspots": 31,
+            "low_confidence_hotspots": 9,
+            "first_detection_utc": "2026-09-26T03:49:00Z",
+            "last_detection_utc": "2026-09-30T23:33:00Z",
+            "max_frp_mw": 970.52,
+            "mean_frp_mw": 93.53,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "MODIS_NRT",
+          "bbox": [
+            -119.744,
+            37.5,
+            -119.482,
+            37.724
+          ],
+          "date_str": "2026-10-01",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/MODIS_NRT/-119.744,37.500,-119.482,37.724/5/2026-10-01",
+          "status_code": 200,
+          "bytes": 7364,
+          "sha256": "885f61669a809e1d44c09c9720fb331e5ce3f35e7f9e9c61d8241223e888a5fa",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_DOME_2026_MODIS_NRT_2026-10-01_5d.csv",
+          "record_count": 82,
+          "summary": {
+            "total_hotspots": 82,
+            "high_confidence_hotspots": 45,
+            "nominal_confidence_hotspots": 31,
+            "low_confidence_hotspots": 6,
+            "first_detection_utc": "2026-10-01T03:47:00Z",
+            "last_detection_utc": "2026-10-05T23:26:00Z",
+            "max_frp_mw": 2408.42,
+            "mean_frp_mw": 115.29,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        }
+      ],
+      "combined_csv": {
+        "path": "data/acquisitions/run_20261114_013500/firms/CA_DOME_2026_combined_hotspots.csv",
+        "bytes": 438891,
+        "sha256": "20f01f9161e15963ab4df43f50437f3a8d8e1107b4d621d72b92d6b5741640ce",
+        "deduplicated_record_count": 3832
+      },
+      "hotspots_geojson": {
+        "path": "data/acquisitions/run_20261114_013500/firms/CA_DOME_2026_hotspots.geojson",
+        "bytes": 2222121,
+        "sha256": "199ae6f895472db5a9eccc4ae005e947bb3aa9a8136a6dbaa219654ff670e559"
+      },
+      "strict_aoi_summary": {
+        "total_hotspots": 3832,
+        "high_confidence_hotspots": 374,
+        "nominal_confidence_hotspots": 3339,
+        "low_confidence_hotspots": 119,
+        "first_detection_utc": "2026-09-21T09:11:00Z",
+        "last_detection_utc": "2026-10-05T23:26:00Z",
+        "max_frp_mw": 2408.42,
+        "mean_frp_mw": 21.68,
+        "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+      },
+      "buffered_aoi_summary": {
+        "total_hotspots": 3832,
+        "high_confidence_hotspots": 374,
+        "nominal_confidence_hotspots": 3339,
+        "low_confidence_hotspots": 119,
+        "first_detection_utc": "2026-09-21T09:11:00Z",
+        "last_detection_utc": "2026-10-05T23:26:00Z",
+        "max_frp_mw": 2408.42,
+        "mean_frp_mw": 21.68,
+        "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+      }
+    },
+    "CA_BUG_2026": {
+      "event_id": "CA_BUG_2026",
+      "fire_name": "Bug Fire",
+      "reported_start": "2026-08-08",
+      "aoi_bbox": [
+        -119.9806,
+        39.7581,
+        -119.7934,
+        39.9019
+      ],
+      "query_bbox_buffered": [
+        -120.021,
+        39.718,
+        -119.753,
+        39.942
+      ],
+      "sources_queried": [
+        "VIIRS_NOAA20_NRT",
+        "VIIRS_SNPP_NRT",
+        "VIIRS_NOAA21_NRT",
+        "MODIS_SP"
+      ],
+      "windows_queried": [
+        "2026-08-08",
+        "2026-08-13",
+        "2026-08-18"
+      ],
+      "queries": [
+        {
+          "source": "VIIRS_NOAA20_NRT",
+          "bbox": [
+            -120.021,
+            39.718,
+            -119.753,
+            39.942
+          ],
+          "date_str": "2026-08-08",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA20_NRT/-120.021,39.718,-119.753,39.942/5/2026-08-08",
+          "status_code": 200,
+          "bytes": 42809,
+          "sha256": "1b30807d3838c718b3044a963c19440a6d4f41acc9a755a26c8bd7cb3460bd23",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_BUG_2026_VIIRS_NOAA20_NRT_2026-08-08_5d.csv",
+          "record_count": 502,
+          "summary": {
+            "total_hotspots": 502,
+            "high_confidence_hotspots": 97,
+            "nominal_confidence_hotspots": 381,
+            "low_confidence_hotspots": 24,
+            "first_detection_utc": "2026-08-09T09:15:00Z",
+            "last_detection_utc": "2026-08-12T21:25:00Z",
+            "max_frp_mw": 130.67,
+            "mean_frp_mw": 13.61,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA20_NRT",
+          "bbox": [
+            -120.021,
+            39.718,
+            -119.753,
+            39.942
+          ],
+          "date_str": "2026-08-13",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA20_NRT/-120.021,39.718,-119.753,39.942/5/2026-08-13",
+          "status_code": 200,
+          "bytes": 877,
+          "sha256": "1001facaecf5bcd7fdac55ada095eb459c7bb859075e161b47c4f3d130c87721",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_BUG_2026_VIIRS_NOAA20_NRT_2026-08-13_5d.csv",
+          "record_count": 9,
+          "summary": {
+            "total_hotspots": 9,
+            "high_confidence_hotspots": 0,
+            "nominal_confidence_hotspots": 9,
+            "low_confidence_hotspots": 0,
+            "first_detection_utc": "2026-08-13T09:41:00Z",
+            "last_detection_utc": "2026-08-15T09:05:00Z",
+            "max_frp_mw": 5.91,
+            "mean_frp_mw": 2.51,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA20_NRT",
+          "bbox": [
+            -120.021,
+            39.718,
+            -119.753,
+            39.942
+          ],
+          "date_str": "2026-08-18",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA20_NRT/-120.021,39.718,-119.753,39.942/5/2026-08-18",
+          "status_code": 200,
+          "bytes": 122,
+          "sha256": "2b11a44667d05367ecf77651b95fd3d34c545c7ec154856094b91245e41ae697",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_BUG_2026_VIIRS_NOAA20_NRT_2026-08-18_5d.csv",
+          "record_count": 0,
+          "summary": {
+            "total_hotspots": 0,
+            "high_confidence_hotspots": 0,
+            "nominal_confidence_hotspots": 0,
+            "low_confidence_hotspots": 0,
+            "first_detection_utc": null,
+            "last_detection_utc": null,
+            "max_frp_mw": 0.0,
+            "mean_frp_mw": 0.0,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_SNPP_NRT",
+          "bbox": [
+            -120.021,
+            39.718,
+            -119.753,
+            39.942
+          ],
+          "date_str": "2026-08-08",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_SNPP_NRT/-120.021,39.718,-119.753,39.942/5/2026-08-08",
+          "status_code": 200,
+          "bytes": 33456,
+          "sha256": "69640d7e4d4d2a2f09270cffc6b705eb9439949674d8b34735e4942ecb83bf61",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_BUG_2026_VIIRS_SNPP_NRT_2026-08-08_5d.csv",
+          "record_count": 402,
+          "summary": {
+            "total_hotspots": 402,
+            "high_confidence_hotspots": 44,
+            "nominal_confidence_hotspots": 317,
+            "low_confidence_hotspots": 41,
+            "first_detection_utc": "2026-08-09T08:58:00Z",
+            "last_detection_utc": "2026-08-12T21:04:00Z",
+            "max_frp_mw": 392.0,
+            "mean_frp_mw": 23.25,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_SNPP_NRT",
+          "bbox": [
+            -120.021,
+            39.718,
+            -119.753,
+            39.942
+          ],
+          "date_str": "2026-08-13",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_SNPP_NRT/-120.021,39.718,-119.753,39.942/5/2026-08-13",
+          "status_code": 200,
+          "bytes": 3263,
+          "sha256": "2ff1240010b1fb203b43c7e26edcefa5996df38d53587b3c6184cdc487146227",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_BUG_2026_VIIRS_SNPP_NRT_2026-08-13_5d.csv",
+          "record_count": 38,
+          "summary": {
+            "total_hotspots": 38,
+            "high_confidence_hotspots": 0,
+            "nominal_confidence_hotspots": 38,
+            "low_confidence_hotspots": 0,
+            "first_detection_utc": "2026-08-13T09:22:00Z",
+            "last_detection_utc": "2026-08-13T11:04:00Z",
+            "max_frp_mw": 4.37,
+            "mean_frp_mw": 1.82,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_SNPP_NRT",
+          "bbox": [
+            -120.021,
+            39.718,
+            -119.753,
+            39.942
+          ],
+          "date_str": "2026-08-18",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_SNPP_NRT/-120.021,39.718,-119.753,39.942/5/2026-08-18",
+          "status_code": 200,
+          "bytes": 623,
+          "sha256": "3ed851d77c4e226279a4a0df5d81f75d80b17de144bb79c13cb383af8629390f",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_BUG_2026_VIIRS_SNPP_NRT_2026-08-18_5d.csv",
+          "record_count": 6,
+          "summary": {
+            "total_hotspots": 6,
+            "high_confidence_hotspots": 3,
+            "nominal_confidence_hotspots": 3,
+            "low_confidence_hotspots": 0,
+            "first_detection_utc": "2026-08-19T22:14:00Z",
+            "last_detection_utc": "2026-08-19T22:14:00Z",
+            "max_frp_mw": 52.77,
+            "mean_frp_mw": 43.79,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA21_NRT",
+          "bbox": [
+            -120.021,
+            39.718,
+            -119.753,
+            39.942
+          ],
+          "date_str": "2026-08-08",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA21_NRT/-120.021,39.718,-119.753,39.942/5/2026-08-08",
+          "status_code": 200,
+          "bytes": 42920,
+          "sha256": "f0265694e40a7c3c6a70b10d1d6b89bec04990afb40bc21cca79937c07c50ae0",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_BUG_2026_VIIRS_NOAA21_NRT_2026-08-08_5d.csv",
+          "record_count": 506,
+          "summary": {
+            "total_hotspots": 506,
+            "high_confidence_hotspots": 64,
+            "nominal_confidence_hotspots": 371,
+            "low_confidence_hotspots": 71,
+            "first_detection_utc": "2026-08-09T10:02:00Z",
+            "last_detection_utc": "2026-08-12T20:27:00Z",
+            "max_frp_mw": 231.91,
+            "mean_frp_mw": 19.58,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA21_NRT",
+          "bbox": [
+            -120.021,
+            39.718,
+            -119.753,
+            39.942
+          ],
+          "date_str": "2026-08-13",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA21_NRT/-120.021,39.718,-119.753,39.942/5/2026-08-13",
+          "status_code": 200,
+          "bytes": 1406,
+          "sha256": "1b93b0ebb5e426a855c0f5e3d717f90455c3aa8a8258b1b9f0b84a1d417d093d",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_BUG_2026_VIIRS_NOAA21_NRT_2026-08-13_5d.csv",
+          "record_count": 15,
+          "summary": {
+            "total_hotspots": 15,
+            "high_confidence_hotspots": 0,
+            "nominal_confidence_hotspots": 15,
+            "low_confidence_hotspots": 0,
+            "first_detection_utc": "2026-08-13T08:45:00Z",
+            "last_detection_utc": "2026-08-13T10:28:00Z",
+            "max_frp_mw": 4.53,
+            "mean_frp_mw": 2.76,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "VIIRS_NOAA21_NRT",
+          "bbox": [
+            -120.021,
+            39.718,
+            -119.753,
+            39.942
+          ],
+          "date_str": "2026-08-18",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/VIIRS_NOAA21_NRT/-120.021,39.718,-119.753,39.942/5/2026-08-18",
+          "status_code": 200,
+          "bytes": 122,
+          "sha256": "2b11a44667d05367ecf77651b95fd3d34c545c7ec154856094b91245e41ae697",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_BUG_2026_VIIRS_NOAA21_NRT_2026-08-18_5d.csv",
+          "record_count": 0,
+          "summary": {
+            "total_hotspots": 0,
+            "high_confidence_hotspots": 0,
+            "nominal_confidence_hotspots": 0,
+            "low_confidence_hotspots": 0,
+            "first_detection_utc": null,
+            "last_detection_utc": null,
+            "max_frp_mw": 0.0,
+            "mean_frp_mw": 0.0,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "MODIS_SP",
+          "bbox": [
+            -120.021,
+            39.718,
+            -119.753,
+            39.942
+          ],
+          "date_str": "2026-08-08",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/MODIS_SP/-120.021,39.718,-119.753,39.942/5/2026-08-08",
+          "status_code": 200,
+          "bytes": 15732,
+          "sha256": "8c306b7d41aee25835b0649109b20ef890eea7bde19b0b2c87426883f6172bf2",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_BUG_2026_MODIS_SP_2026-08-08_5d.csv",
+          "record_count": 193,
+          "summary": {
+            "total_hotspots": 193,
+            "high_confidence_hotspots": 127,
+            "nominal_confidence_hotspots": 57,
+            "low_confidence_hotspots": 9,
+            "first_detection_utc": "2026-08-09T03:43:00Z",
+            "last_detection_utc": "2026-08-12T12:36:00Z",
+            "max_frp_mw": 1187.2,
+            "mean_frp_mw": 179.51,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "MODIS_SP",
+          "bbox": [
+            -120.021,
+            39.718,
+            -119.753,
+            39.942
+          ],
+          "date_str": "2026-08-13",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/MODIS_SP/-120.021,39.718,-119.753,39.942/5/2026-08-13",
+          "status_code": 200,
+          "bytes": 458,
+          "sha256": "eac3147502db0990b3cead7efbf3f40064497a666dc96de347178fe1c2f66c81",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_BUG_2026_MODIS_SP_2026-08-13_5d.csv",
+          "record_count": 4,
+          "summary": {
+            "total_hotspots": 4,
+            "high_confidence_hotspots": 2,
+            "nominal_confidence_hotspots": 2,
+            "low_confidence_hotspots": 0,
+            "first_detection_utc": "2026-08-13T04:41:00Z",
+            "last_detection_utc": "2026-08-14T23:17:00Z",
+            "max_frp_mw": 90.9,
+            "mean_frp_mw": 37.92,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        },
+        {
+          "source": "MODIS_SP",
+          "bbox": [
+            -120.021,
+            39.718,
+            -119.753,
+            39.942
+          ],
+          "date_str": "2026-08-18",
+          "days_range": 5,
+          "sanitized_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/<REDACTED_MAP_KEY>/MODIS_SP/-120.021,39.718,-119.753,39.942/5/2026-08-18",
+          "status_code": 200,
+          "bytes": 205,
+          "sha256": "8b2b98262bd5481f0848b9a9577367af1e375a5329469f21414d7b118d775273",
+          "csv_path": "data/acquisitions/run_20261114_013500/firms/CA_BUG_2026_MODIS_SP_2026-08-18_5d.csv",
+          "record_count": 1,
+          "summary": {
+            "total_hotspots": 1,
+            "high_confidence_hotspots": 1,
+            "nominal_confidence_hotspots": 0,
+            "low_confidence_hotspots": 0,
+            "first_detection_utc": "2026-08-19T23:10:00Z",
+            "last_detection_utc": "2026-08-19T23:10:00Z",
+            "max_frp_mw": 21.4,
+            "mean_frp_mw": 21.4,
+            "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+          }
+        }
+      ],
+      "combined_csv": {
+        "path": "data/acquisitions/run_20261114_013500/firms/CA_BUG_2026_combined_hotspots.csv",
+        "bytes": 190117,
+        "sha256": "804a274fe82301015251f236303adfe4526e6aed4fb36181fa8f621e932d0f00",
+        "deduplicated_record_count": 1676
+      },
+      "hotspots_geojson": {
+        "path": "data/acquisitions/run_20261114_013500/firms/CA_BUG_2026_hotspots.geojson",
+        "bytes": 969157,
+        "sha256": "496112d0c118b08c819db6afdc2750a1c21ab7b8ca836528a54ca0ed0f2fec1a"
+      },
+      "strict_aoi_summary": {
+        "total_hotspots": 887,
+        "high_confidence_hotspots": 202,
+        "nominal_confidence_hotspots": 597,
+        "low_confidence_hotspots": 88,
+        "first_detection_utc": "2026-08-09T19:45:00Z",
+        "last_detection_utc": "2026-08-12T21:25:00Z",
+        "max_frp_mw": 1187.2,
+        "mean_frp_mw": 45.09,
+        "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+      },
+      "buffered_aoi_summary": {
+        "total_hotspots": 1676,
+        "high_confidence_hotspots": 338,
+        "nominal_confidence_hotspots": 1193,
+        "low_confidence_hotspots": 145,
+        "first_detection_utc": "2026-08-09T03:43:00Z",
+        "last_detection_utc": "2026-08-19T23:10:00Z",
+        "max_frp_mw": 1187.2,
+        "mean_frp_mw": 36.58,
+        "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+      }
+    }
+  },
+  "eonet_wildfire_cross_check": {
+    "summer_2026_query": {
+      "url": "https://eonet.gsfc.nasa.gov/api/v3/events?category=wildfires&status=all&start=2026-07-15&end=2026-10-31&limit=100",
+      "status_code": 200,
+      "path": "data/acquisitions/run_20261114_013500/eonet/eonet_wildfires_aug_sep_2026.json",
+      "bytes": 69503,
+      "sha256": "a2fd1c9036b00b85b5bf6b2417ea31adf42855586d27ad3c32f4cc5a084d4724",
+      "total_events_returned": 100,
+      "west_coast_us_matches_count": 0,
+      "west_coast_us_matches_sample": []
+    },
+    "recent_active_query": {
+      "url": "https://eonet.gsfc.nasa.gov/api/v3/events?category=wildfires&limit=25",
+      "status_code": 200,
+      "path": "data/acquisitions/run_20261114_013500/eonet/eonet_wildfires_recent.json",
+      "bytes": 17264,
+      "sha256": "fe911088af3000ea9369090e824914d053eca84c2f1519a810eef7238ee66863",
+      "total_events_returned": 25
+    }
+  },
+  "nisar_discovery_and_auth_gate": {
+    "path": "data/acquisitions/run_20261114_013500/nisar_metadata/nisar_discovery_and_auth_gate.json",
+    "bytes": 294767,
+    "sha256": "19796d86fd2a78c385c22693c74ce6609a3d40a15f4bf4a14d1f87353e095cb1",
+    "NISAR_METADATA_DISCOVERED": true,
+    "NISAR_GRANULE_DOWNLOADED": false,
+    "NISAR_DOWNLOAD_BLOCKED": true
+  },
+  "satellite_raster_inventories": {
+    "sentinel1_rtc": "data/acquisitions/run_20261114_013500/sentinel1/sentinel1_inventory.json",
+    "sentinel2_l2a": "data/acquisitions/run_20261114_013500/sentinel2/sentinel2_inventory.json",
+    "modis_mcd64a1": "data/acquisitions/run_20261114_013500/modis/mcd64a1_inventory.json"
+  }
+}

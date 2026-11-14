@@ -1,0 +1,77 @@
+{
+  "upload_id": "upl_e8a45a1e50",
+  "filename": "pre_fire_vh_db.tif",
+  "role": "pre_fire",
+  "file_format": "GEOTIFF",
+  "file_size_bytes": 1590850,
+  "sha256": "bf689e25688dafa1df34b3ea25bab2cf7462f686982f32b1a0448f1ac53f4f86",
+  "created_at_utc": "2026-11-14T04:18:50.600083+00:00",
+  "is_valid": true,
+  "valid_for_sar_inference": true,
+  "validation_status": "VALID_GEOTIFF",
+  "error_code": null,
+  "scientific_explanation": "Georeferenced GeoTIFF (800\u00d7800 px, 1 band, CRS=EPSG:32611, resolution=20.0 m, 72.81% valid pixels, scale=decibels_db).",
+  "sensor": "Sentinel-1 C-band RTC",
+  "acquisition_date": "2024-07-12",
+  "matched_event_id": null,
+  "crs": "EPSG:32611",
+  "transform": [
+    20.0,
+    0.0,
+    244920.0,
+    0.0,
+    -20.0,
+    4420880.0
+  ],
+  "bounds": [
+    244920.0,
+    4404880.0,
+    260920.0,
+    4420880.0
+  ],
+  "bounds_wgs84": [
+    -119.98369,
+    39.755668,
+    -119.790916,
+    39.904296
+  ],
+  "width": 800,
+  "height": 800,
+  "band_count": 1,
+  "bands": [
+    "Pre-fire Sentinel-1 RTC VH gamma-0 (dB)"
+  ],
+  "dtypes": [
+    "float32"
+  ],
+  "polarizations": [
+    "VH"
+  ],
+  "radiometric_scale": "decibels_db",
+  "resolution_m": 20.0,
+  "nodata": -9999.0,
+  "valid_pixel_percentage": 72.81,
+  "band_statistics": [
+    {
+      "band_index": 1,
+      "description": "Pre-fire Sentinel-1 RTC VH gamma-0 (dB)",
+      "dtype": "float32",
+      "valid_pixels": 466000,
+      "valid_percentage": 72.81,
+      "min": -29.7052,
+      "max": -0.3098,
+      "mean": -19.4491,
+      "std": 2.515
+    }
+  ],
+  "compatible_models": [
+    "log_ratio",
+    "unet",
+    "lightgbm"
+  ],
+  "warnings": [
+    "Single-band SAR GeoTIFF uploaded: directly supports Log_Ratio_Baseline; UNet_ResNet34 and LightGBM_Pixel_Spatial require dual-polarization (VV + VH) or a known event stack."
+  ],
+  "preview_url": "/api/analysis/uploads/upl_e8a45a1e50/preview.png",
+  "local_path": "outputs/uploads/upl_e8a45a1e50/pre_fire_vh_db.tif"
+}

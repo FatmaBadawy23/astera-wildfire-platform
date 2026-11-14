@@ -1,0 +1,60 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event_id": "CA_DOME_2026",
+        "fire_name": "Dome Fire",
+        "native_crs": "EPSG:32611",
+        "bounds_utm": [
+          261360.0,
+          4157980.0,
+          277360.0,
+          4173980.0
+        ],
+        "bounds_wgs84": [
+          -119.706177,
+          37.537948,
+          -119.520034,
+          37.686026
+        ],
+        "split": "VAL",
+        "include_in_training": true,
+        "primary_model": "unet",
+        "predicted_burned_area_km2": 29.4804,
+        "dnbr_reference_burned_area_km2": 16.9712,
+        "dnbr_usgs_027_burned_area_km2": 4.8868,
+        "mcd64a1_burned_area_km2": 13.8568,
+        "firms_hotspots_count": 3832
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -119.706177,
+              37.537948
+            ],
+            [
+              -119.520034,
+              37.537948
+            ],
+            [
+              -119.520034,
+              37.686026
+            ],
+            [
+              -119.706177,
+              37.686026
+            ],
+            [
+              -119.706177,
+              37.537948
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

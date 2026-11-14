@@ -1,0 +1,922 @@
+{
+  "CA_GANN_2026": {
+    "event_id": "CA_GANN_2026",
+    "crs": "EPSG:32610",
+    "bounds_utm": [
+      690640.0,
+      4212780.0,
+      706640.0,
+      4228780.0
+    ],
+    "water_pixels_in_valid_mask": 0,
+    "all_rasters_valid_and_aligned": true,
+    "layers": {
+      "pre_fire_vh_db": {
+        "file": "pre_fire_vh_db.tif",
+        "exists": true,
+        "size_bytes": 2196038,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          690640.0,
+          0.0,
+          -20.0,
+          4228780.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -32.9759,
+        "max_valid_value": 7.6242,
+        "aligned_to_event_grid": true
+      },
+      "post_fire_vh_db": {
+        "file": "post_fire_vh_db.tif",
+        "exists": true,
+        "size_bytes": 2195035,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          690640.0,
+          0.0,
+          -20.0,
+          4228780.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -31.4781,
+        "max_valid_value": 2.2611,
+        "aligned_to_event_grid": true
+      },
+      "delta_vh_db": {
+        "file": "delta_vh_db.tif",
+        "exists": true,
+        "size_bytes": 2284267,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          690640.0,
+          0.0,
+          -20.0,
+          4228780.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -20.7861,
+        "max_valid_value": 10.6141,
+        "aligned_to_event_grid": true
+      },
+      "burn_probability": {
+        "file": "burn_probability.tif",
+        "exists": true,
+        "size_bytes": 2102349,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          690640.0,
+          0.0,
+          -20.0,
+          4228780.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": 0.2664,
+        "max_valid_value": 0.9837,
+        "aligned_to_event_grid": true
+      },
+      "predicted_burn_mask": {
+        "file": "predicted_burn_mask.tif",
+        "exists": true,
+        "size_bytes": 14901,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          690640.0,
+          0.0,
+          -20.0,
+          4228780.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "uint8",
+        "nodata": 255.0,
+        "min_valid_value": 0.0,
+        "max_valid_value": 1.0,
+        "aligned_to_event_grid": true
+      },
+      "dnbr_reference": {
+        "file": "dnbr_reference.tif",
+        "exists": true,
+        "size_bytes": 2220660,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          690640.0,
+          0.0,
+          -20.0,
+          4228780.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -0.3008,
+        "max_valid_value": 0.6365,
+        "aligned_to_event_grid": true
+      },
+      "mcd64a1_reference": {
+        "file": "mcd64a1_reference.tif",
+        "exists": true,
+        "size_bytes": 11785,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          690640.0,
+          0.0,
+          -20.0,
+          4228780.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "int16",
+        "nodata": -1.0,
+        "min_valid_value": 0.0,
+        "max_valid_value": 220.0,
+        "aligned_to_event_grid": true
+      },
+      "valid_land_mask": {
+        "file": "valid_land_mask.tif",
+        "exists": true,
+        "size_bytes": 12132,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          690640.0,
+          0.0,
+          -20.0,
+          4228780.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "uint8",
+        "nodata": 255.0,
+        "min_valid_value": 0.0,
+        "max_valid_value": 1.0,
+        "aligned_to_event_grid": true
+      }
+    }
+  },
+  "CA_TIMBER_2026": {
+    "event_id": "CA_TIMBER_2026",
+    "crs": "EPSG:32610",
+    "bounds_utm": [
+      611720.0,
+      4000180.0,
+      627720.0,
+      4016180.0
+    ],
+    "water_pixels_in_valid_mask": 0,
+    "all_rasters_valid_and_aligned": true,
+    "layers": {
+      "pre_fire_vh_db": {
+        "file": "pre_fire_vh_db.tif",
+        "exists": true,
+        "size_bytes": 2198476,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          611720.0,
+          0.0,
+          -20.0,
+          4016180.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -33.0235,
+        "max_valid_value": 1.2769,
+        "aligned_to_event_grid": true
+      },
+      "post_fire_vh_db": {
+        "file": "post_fire_vh_db.tif",
+        "exists": true,
+        "size_bytes": 2199577,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          611720.0,
+          0.0,
+          -20.0,
+          4016180.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -33.3545,
+        "max_valid_value": 1.2418,
+        "aligned_to_event_grid": true
+      },
+      "delta_vh_db": {
+        "file": "delta_vh_db.tif",
+        "exists": true,
+        "size_bytes": 2295403,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          611720.0,
+          0.0,
+          -20.0,
+          4016180.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -13.3156,
+        "max_valid_value": 10.8296,
+        "aligned_to_event_grid": true
+      },
+      "burn_probability": {
+        "file": "burn_probability.tif",
+        "exists": true,
+        "size_bytes": 1733762,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          611720.0,
+          0.0,
+          -20.0,
+          4016180.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": 0.0,
+        "max_valid_value": 1.0,
+        "aligned_to_event_grid": true
+      },
+      "predicted_burn_mask": {
+        "file": "predicted_burn_mask.tif",
+        "exists": true,
+        "size_bytes": 89190,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          611720.0,
+          0.0,
+          -20.0,
+          4016180.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "uint8",
+        "nodata": 255.0,
+        "min_valid_value": 0.0,
+        "max_valid_value": 1.0,
+        "aligned_to_event_grid": true
+      },
+      "dnbr_reference": {
+        "file": "dnbr_reference.tif",
+        "exists": true,
+        "size_bytes": 1712162,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          611720.0,
+          0.0,
+          -20.0,
+          4016180.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -0.236,
+        "max_valid_value": 1.2191,
+        "aligned_to_event_grid": true
+      },
+      "mcd64a1_reference": {
+        "file": "mcd64a1_reference.tif",
+        "exists": true,
+        "size_bytes": 16821,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          611720.0,
+          0.0,
+          -20.0,
+          4016180.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "int16",
+        "nodata": -1.0,
+        "min_valid_value": 0.0,
+        "max_valid_value": 242.0,
+        "aligned_to_event_grid": true
+      },
+      "valid_land_mask": {
+        "file": "valid_land_mask.tif",
+        "exists": true,
+        "size_bytes": 20786,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          611720.0,
+          0.0,
+          -20.0,
+          4016180.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "uint8",
+        "nodata": 255.0,
+        "min_valid_value": 0.0,
+        "max_valid_value": 1.0,
+        "aligned_to_event_grid": true
+      }
+    }
+  },
+  "CA_DOME_2026": {
+    "event_id": "CA_DOME_2026",
+    "crs": "EPSG:32611",
+    "bounds_utm": [
+      261360.0,
+      4157980.0,
+      277360.0,
+      4173980.0
+    ],
+    "water_pixels_in_valid_mask": 0,
+    "all_rasters_valid_and_aligned": true,
+    "layers": {
+      "pre_fire_vh_db": {
+        "file": "pre_fire_vh_db.tif",
+        "exists": true,
+        "size_bytes": 2191012,
+        "crs": "EPSG:32611",
+        "transform": [
+          20.0,
+          0.0,
+          261360.0,
+          0.0,
+          -20.0,
+          4173980.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -29.0402,
+        "max_valid_value": -0.6167,
+        "aligned_to_event_grid": true
+      },
+      "post_fire_vh_db": {
+        "file": "post_fire_vh_db.tif",
+        "exists": true,
+        "size_bytes": 2189729,
+        "crs": "EPSG:32611",
+        "transform": [
+          20.0,
+          0.0,
+          261360.0,
+          0.0,
+          -20.0,
+          4173980.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -28.0991,
+        "max_valid_value": -1.1067,
+        "aligned_to_event_grid": true
+      },
+      "delta_vh_db": {
+        "file": "delta_vh_db.tif",
+        "exists": true,
+        "size_bytes": 2298251,
+        "crs": "EPSG:32611",
+        "transform": [
+          20.0,
+          0.0,
+          261360.0,
+          0.0,
+          -20.0,
+          4173980.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -10.6527,
+        "max_valid_value": 9.5837,
+        "aligned_to_event_grid": true
+      },
+      "burn_probability": {
+        "file": "burn_probability.tif",
+        "exists": true,
+        "size_bytes": 2156245,
+        "crs": "EPSG:32611",
+        "transform": [
+          20.0,
+          0.0,
+          261360.0,
+          0.0,
+          -20.0,
+          4173980.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": 0.2716,
+        "max_valid_value": 0.9364,
+        "aligned_to_event_grid": true
+      },
+      "predicted_burn_mask": {
+        "file": "predicted_burn_mask.tif",
+        "exists": true,
+        "size_bytes": 24481,
+        "crs": "EPSG:32611",
+        "transform": [
+          20.0,
+          0.0,
+          261360.0,
+          0.0,
+          -20.0,
+          4173980.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "uint8",
+        "nodata": 255.0,
+        "min_valid_value": 0.0,
+        "max_valid_value": 1.0,
+        "aligned_to_event_grid": true
+      },
+      "dnbr_reference": {
+        "file": "dnbr_reference.tif",
+        "exists": true,
+        "size_bytes": 2253282,
+        "crs": "EPSG:32611",
+        "transform": [
+          20.0,
+          0.0,
+          261360.0,
+          0.0,
+          -20.0,
+          4173980.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -0.2321,
+        "max_valid_value": 1.0535,
+        "aligned_to_event_grid": true
+      },
+      "mcd64a1_reference": {
+        "file": "mcd64a1_reference.tif",
+        "exists": true,
+        "size_bytes": 11829,
+        "crs": "EPSG:32611",
+        "transform": [
+          20.0,
+          0.0,
+          261360.0,
+          0.0,
+          -20.0,
+          4173980.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "int16",
+        "nodata": -1.0,
+        "min_valid_value": 0.0,
+        "max_valid_value": 272.0,
+        "aligned_to_event_grid": true
+      },
+      "valid_land_mask": {
+        "file": "valid_land_mask.tif",
+        "exists": true,
+        "size_bytes": 19032,
+        "crs": "EPSG:32611",
+        "transform": [
+          20.0,
+          0.0,
+          261360.0,
+          0.0,
+          -20.0,
+          4173980.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "uint8",
+        "nodata": 255.0,
+        "min_valid_value": 0.0,
+        "max_valid_value": 1.0,
+        "aligned_to_event_grid": true
+      }
+    }
+  },
+  "CA_BUG_2026": {
+    "event_id": "CA_BUG_2026",
+    "crs": "EPSG:32611",
+    "bounds_utm": [
+      244920.0,
+      4404880.0,
+      260920.0,
+      4420880.0
+    ],
+    "water_pixels_in_valid_mask": 0,
+    "all_rasters_valid_and_aligned": true,
+    "layers": {
+      "pre_fire_vh_db": {
+        "file": "pre_fire_vh_db.tif",
+        "exists": true,
+        "size_bytes": 1590850,
+        "crs": "EPSG:32611",
+        "transform": [
+          20.0,
+          0.0,
+          244920.0,
+          0.0,
+          -20.0,
+          4420880.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -29.7052,
+        "max_valid_value": -0.3098,
+        "aligned_to_event_grid": true
+      },
+      "post_fire_vh_db": {
+        "file": "post_fire_vh_db.tif",
+        "exists": true,
+        "size_bytes": 1587849,
+        "crs": "EPSG:32611",
+        "transform": [
+          20.0,
+          0.0,
+          244920.0,
+          0.0,
+          -20.0,
+          4420880.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -31.3405,
+        "max_valid_value": 0.3043,
+        "aligned_to_event_grid": true
+      },
+      "delta_vh_db": {
+        "file": "delta_vh_db.tif",
+        "exists": true,
+        "size_bytes": 1653219,
+        "crs": "EPSG:32611",
+        "transform": [
+          20.0,
+          0.0,
+          244920.0,
+          0.0,
+          -20.0,
+          4420880.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -14.0929,
+        "max_valid_value": 11.3835,
+        "aligned_to_event_grid": true
+      },
+      "burn_probability": {
+        "file": "burn_probability.tif",
+        "exists": true,
+        "size_bytes": 1621155,
+        "crs": "EPSG:32611",
+        "transform": [
+          20.0,
+          0.0,
+          244920.0,
+          0.0,
+          -20.0,
+          4420880.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": 0.2842,
+        "max_valid_value": 0.9924,
+        "aligned_to_event_grid": true
+      },
+      "predicted_burn_mask": {
+        "file": "predicted_burn_mask.tif",
+        "exists": true,
+        "size_bytes": 16963,
+        "crs": "EPSG:32611",
+        "transform": [
+          20.0,
+          0.0,
+          244920.0,
+          0.0,
+          -20.0,
+          4420880.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "uint8",
+        "nodata": 255.0,
+        "min_valid_value": 0.0,
+        "max_valid_value": 1.0,
+        "aligned_to_event_grid": true
+      },
+      "dnbr_reference": {
+        "file": "dnbr_reference.tif",
+        "exists": true,
+        "size_bytes": 1698662,
+        "crs": "EPSG:32611",
+        "transform": [
+          20.0,
+          0.0,
+          244920.0,
+          0.0,
+          -20.0,
+          4420880.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -0.1395,
+        "max_valid_value": 0.6508,
+        "aligned_to_event_grid": true
+      },
+      "mcd64a1_reference": {
+        "file": "mcd64a1_reference.tif",
+        "exists": true,
+        "size_bytes": 20427,
+        "crs": "EPSG:32611",
+        "transform": [
+          20.0,
+          0.0,
+          244920.0,
+          0.0,
+          -20.0,
+          4420880.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "int16",
+        "nodata": -1.0,
+        "min_valid_value": 0.0,
+        "max_valid_value": 229.0,
+        "aligned_to_event_grid": true
+      },
+      "valid_land_mask": {
+        "file": "valid_land_mask.tif",
+        "exists": true,
+        "size_bytes": 5444,
+        "crs": "EPSG:32611",
+        "transform": [
+          20.0,
+          0.0,
+          244920.0,
+          0.0,
+          -20.0,
+          4420880.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "uint8",
+        "nodata": 255.0,
+        "min_valid_value": 0.0,
+        "max_valid_value": 1.0,
+        "aligned_to_event_grid": true
+      }
+    }
+  }
+}

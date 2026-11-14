@@ -1,0 +1,59 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event_id": "CA_GANN_2026",
+        "fire_name": "Gann Fire",
+        "native_crs": "EPSG:32610",
+        "bounds_utm": [
+          690640.0,
+          4212780.0,
+          706640.0,
+          4228780.0
+        ],
+        "bounds_wgs84": [
+          -120.827502,
+          38.039185,
+          -120.640672,
+          38.186794
+        ],
+        "split": "TRAIN",
+        "primary_model": "unet",
+        "predicted_burned_area_km2": 32.5484,
+        "dnbr_reference_burned_area_km2": 36.3032,
+        "dnbr_usgs_027_burned_area_km2": 16.784,
+        "mcd64a1_burned_area_km2": 36.0568,
+        "firms_hotspots_count": 926
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -120.827502,
+              38.039185
+            ],
+            [
+              -120.640672,
+              38.039185
+            ],
+            [
+              -120.640672,
+              38.186794
+            ],
+            [
+              -120.827502,
+              38.186794
+            ],
+            [
+              -120.827502,
+              38.039185
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

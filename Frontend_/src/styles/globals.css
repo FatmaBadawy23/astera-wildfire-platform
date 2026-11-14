@@ -1,0 +1,112 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "./tokens.css";
+
+/* Dark mode follows the data-theme attribute set by the theme script / ThemeProvider. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Map approved design tokens (docs/design/tokens.json → tokens.css) to Tailwind utilities. */
+@theme inline {
+  --color-background: var(--aw-color-bg);
+  --color-surface: var(--aw-color-surface);
+  --color-surface-raised: var(--aw-color-surface-raised);
+  --color-foreground: var(--aw-color-text);
+  --color-foreground-strong: var(--aw-color-text-strong);
+  --color-muted-foreground: var(--aw-color-text-muted);
+  --color-primary: var(--aw-color-primary);
+  --color-primary-foreground: var(--aw-color-on-primary);
+  --color-accent: var(--aw-color-accent);
+  --color-border: var(--aw-color-border-subtle);
+  --color-border-strong: var(--aw-color-border-strong);
+  --color-ring: var(--aw-color-focus-ring);
+  --color-success: var(--aw-color-success);
+  --color-warning: var(--aw-color-warning);
+  --color-danger: var(--aw-color-danger);
+  --color-map: var(--aw-color-map-placeholder);
+  --color-map-land: var(--aw-color-map-land);
+  --color-planned: var(--aw-color-planned-bg);
+
+  --color-fire: var(--aw-data-fire-detection);
+  --color-change-mask: var(--aw-data-change-mask-fill);
+  --color-no-data: var(--aw-data-no-data-hatch);
+  --color-density-1: var(--aw-data-density-1);
+  --color-density-2: var(--aw-data-density-2);
+  --color-density-3: var(--aw-data-density-3);
+  --color-density-4: var(--aw-data-density-4);
+  --color-density-5: var(--aw-data-density-5);
+
+  --font-heading: var(--aw-font-family-heading);
+  --font-sans: var(--aw-font-family-body);
+  --font-mono: var(--aw-font-family-mono);
+
+  --radius-sm: var(--aw-radius-sm);
+  --radius-md: var(--aw-radius-md);
+  --radius-lg: var(--aw-radius-lg);
+  --radius-xl: var(--aw-radius-xl);
+
+  --shadow-sm: var(--aw-shadow-sm);
+  --shadow-md: var(--aw-shadow-md);
+  --shadow-lg: var(--aw-shadow-lg);
+}
+
+@layer base {
+  html,
+  body {
+    background-color: var(--aw-color-bg);
+    color: var(--aw-color-text);
+    font-family: var(--aw-font-family-body);
+    font-size: var(--aw-font-size-base);
+    line-height: var(--aw-line-height-normal);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--aw-font-family-heading);
+    line-height: var(--aw-line-height-tight);
+    color: var(--aw-color-text-strong);
+  }
+  /* Default focus indicator: 2px ring with a 2px gap (D.2 §7). */
+  :focus-visible {
+    outline: var(--aw-focus-width) solid var(--aw-color-focus-ring);
+    outline-offset: var(--aw-focus-offset);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0ms !important;
+      transition-duration: 0ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Printing a page (e.g. a Fire Story report): the whole page, without the app's menus. */
+@media print {
+  [data-shell-mode] {
+    display: block !important;
+    height: auto !important;
+  }
+  #main {
+    overflow: visible !important;
+  }
+  header,
+  [data-bottom-nav],
+  [data-help-panel] {
+    display: none !important;
+  }
+}
+
+@layer components {
+  .font-wordmark {
+    font-family: var(--aw-font-family-heading);
+    letter-spacing: var(--aw-letter-spacing-wordmark);
+    text-transform: uppercase;
+  }
+  .caps-heading {
+    font-family: var(--aw-font-family-heading);
+    letter-spacing: var(--aw-letter-spacing-caps-heading);
+    text-transform: uppercase;
+  }
+}

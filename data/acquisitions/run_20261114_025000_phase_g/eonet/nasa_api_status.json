@@ -1,0 +1,8 @@
+{
+  "configured": true,
+  "authenticated": true,
+  "status_code": 200,
+  "sanitized_url": "https://api.nasa.gov/planetary/apod?api_key=<REDACTED_NASA_API_KEY>",
+  "rate_limit_limit": "10000",
+  "rate_limit_remaining": "9997"
+}

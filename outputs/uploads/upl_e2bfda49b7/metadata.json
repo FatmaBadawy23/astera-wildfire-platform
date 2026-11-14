@@ -1,0 +1,57 @@
+{
+  "upload_id": "upl_e2bfda49b7",
+  "filename": "optical_sentinel2_rgb.tif",
+  "role": "pre",
+  "file_format": "OPTICAL_RGB_GEOTIFF",
+  "file_size_bytes": 3450,
+  "sha256": "22281d372ba418885c0ea73f214a0b29fa6607cefd5929be6fdaeefc97d91aa6",
+  "created_at_utc": "2026-11-14T03:50:50.329614+00:00",
+  "is_valid": false,
+  "valid_for_sar_inference": false,
+  "validation_status": "REJECTED_NON_GEOSPATIAL_RGB",
+  "error_code": "UNSUPPORTED_OPTICAL_RGB_FOR_SAR_MODEL",
+  "scientific_explanation": "Uploaded GeoTIFF 'optical_sentinel2_rgb.tif' is a 3-band uint8 optical RGB raster without calibrated SAR radar polarizations (VV/VH) or backscatter (dB / gamma0). Optical RGB bands cannot be fed into SAR models (UNet_ResNet34, LightGBM_Pixel_Spatial, Log_Ratio_Baseline, CUSUM_Temporal).",
+  "acquisition_date": null,
+  "crs": "EPSG:4326",
+  "bounds": [
+    -121.9,
+    39.9936,
+    -121.8936,
+    40.0
+  ],
+  "bounds_wgs84": [
+    -121.9,
+    39.9936,
+    -121.8936,
+    40.0
+  ],
+  "width": 32,
+  "height": 32,
+  "band_count": 3,
+  "bands": [
+    "RGB_Channel_1",
+    "RGB_Channel_2",
+    "RGB_Channel_3"
+  ],
+  "dtypes": [
+    "uint8",
+    "uint8",
+    "uint8"
+  ],
+  "polarizations": [],
+  "resolution_m": null,
+  "nodata": null,
+  "valid_pixel_percentage": 0.0,
+  "compatible_models": [],
+  "incompatible_models_reasons": {
+    "unet": "Requires 5-channel calibrated SAR dB input [vv_pre_db, vh_pre_db, vv_post_db, vh_post_db, delta_vh_db].",
+    "lightgbm": "Requires 10-feature calibrated dual-pol SAR dB input.",
+    "log_ratio": "Requires calibrated pre-fire and post-fire SAR backscatter (VH or VV).",
+    "cusum": "Requires >= 3 co-registered multi-temporal SAR VH dB scenes."
+  },
+  "warnings": [
+    "Detected 3-band uint8 RGB optical raster (Band_1, Band_2, Band_3).",
+    "Sentinel-1/NISAR SAR GeoTIFF (float32 dB or calibrated linear gamma0/sigma0) is required."
+  ],
+  "preview_url": null
+}

@@ -1,0 +1,70 @@
+{
+  "execution_date": "2026-11-13 16:37:02",
+  "global_samples_generated": 43,
+  "sample_limit": 10000,
+  "held_out_test_event": "WA_SPOKANE_2026",
+  "models": {
+    "Log_Ratio_Baseline": {
+      "train_f1": 0.3196,
+      "val_f1": 0.3066,
+      "test_f1": 0.2824,
+      "test_iou": 0.1644,
+      "test_precision": 0.3017,
+      "test_recall": 0.2654,
+      "test_specificity": 0.981,
+      "test_area_error_pct": -12.03,
+      "training_time_sec": 0.0
+    },
+    "LightGBM_Pixel_Spatial": {
+      "train_f1": 0.9889,
+      "val_f1": 0.9838,
+      "test_f1": 0.9758,
+      "test_iou": 0.9528,
+      "test_precision": 0.9621,
+      "test_recall": 0.9899,
+      "test_specificity": 0.9988,
+      "test_area_error_pct": 2.89,
+      "training_time_sec": 2.4,
+      "top_features": [
+        [
+          "ratio_diff",
+          679.0
+        ],
+        [
+          "local_mean_ratio_hv",
+          465.0
+        ],
+        [
+          "hh_post_db",
+          280.0
+        ],
+        [
+          "hh_pre_db",
+          257.0
+        ],
+        [
+          "local_std_ratio_hv",
+          224.0
+        ]
+      ]
+    },
+    "UNet_ResNet34": {
+      "val_f1": 0.1747,
+      "val_iou": 0.0957,
+      "test_f1": 0.1079,
+      "test_iou": 0.0571,
+      "test_precision": 0.0571,
+      "test_recall": 1.0,
+      "test_specificity": 0.0709,
+      "test_area_error_pct": 1652.78,
+      "training_time_sec": 92.75,
+      "best_epoch": 8
+    },
+    "CUSUM_Temporal": {
+      "test_f1": 0.148,
+      "test_iou": 0.0799,
+      "test_precision": 0.0822,
+      "test_recall": 0.7376
+    }
+  }
+}

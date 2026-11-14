@@ -1,0 +1,60 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event_id": "CA_TIMBER_2026",
+        "fire_name": "Timber Fire",
+        "native_crs": "EPSG:32610",
+        "bounds_utm": [
+          611720.0,
+          4000180.0,
+          627720.0,
+          4016180.0
+        ],
+        "bounds_wgs84": [
+          -121.758257,
+          36.137928,
+          -121.57786,
+          36.284119
+        ],
+        "split": "TRAIN",
+        "include_in_training": false,
+        "primary_model": "log_ratio",
+        "predicted_burned_area_km2": 54.178,
+        "dnbr_reference_burned_area_km2": 50.1544,
+        "dnbr_usgs_027_burned_area_km2": 28.3768,
+        "mcd64a1_burned_area_km2": 51.4452,
+        "firms_hotspots_count": 1856
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.758257,
+              36.137928
+            ],
+            [
+              -121.57786,
+              36.137928
+            ],
+            [
+              -121.57786,
+              36.284119
+            ],
+            [
+              -121.758257,
+              36.284119
+            ],
+            [
+              -121.758257,
+              36.137928
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

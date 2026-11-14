@@ -1,0 +1,4124 @@
+{
+  "type": "FeatureCollection",
+  "name": "EGYPT_SMOKE_TEST_firms_active_fire_hotspots",
+  "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies (375 m / 1 km) and are used for ignition confirmation and temporal progression, never as pixel-level burn masks.",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.01557,
+          22.49639
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "1106",
+        "acq_datetime_utc": "2026-11-11T11:06:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.04,
+        "brightness_k": 335.48,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.01931,
+          22.49688
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "1106",
+        "acq_datetime_utc": "2026-11-11T11:06:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 4.54,
+        "brightness_k": 335.13,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.01688,
+          27.16839
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "1106",
+        "acq_datetime_utc": "2026-11-11T11:06:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "l",
+        "confidence_normalized": "LOW",
+        "frp_mw": 1.06,
+        "brightness_k": 330.76,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.12632,
+          28.33157
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "1108",
+        "acq_datetime_utc": "2026-11-11T11:08:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.8,
+        "brightness_k": 332.44,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.20171,
+          29.01448
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "1108",
+        "acq_datetime_utc": "2026-11-11T11:08:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.78,
+        "brightness_k": 336.03,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.20493,
+          29.01837
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "1108",
+        "acq_datetime_utc": "2026-11-11T11:08:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "l",
+        "confidence_normalized": "LOW",
+        "frp_mw": 2.95,
+        "brightness_k": 332.34,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.31837,
+          29.6911
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "1108",
+        "acq_datetime_utc": "2026-11-11T11:08:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 4.03,
+        "brightness_k": 333.34,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.32238,
+          29.69169
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "1108",
+        "acq_datetime_utc": "2026-11-11T11:08:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 4.03,
+        "brightness_k": 340.92,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.0914,
+          29.80424
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "1108",
+        "acq_datetime_utc": "2026-11-11T11:08:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "l",
+        "confidence_normalized": "LOW",
+        "frp_mw": 1.84,
+        "brightness_k": 331.7,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.65594,
+          30.01489
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "1108",
+        "acq_datetime_utc": "2026-11-11T11:08:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 4.0,
+        "brightness_k": 337.3,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.52197,
+          30.31036
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "1108",
+        "acq_datetime_utc": "2026-11-11T11:08:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 14.58,
+        "brightness_k": 343.21,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.77843,
+          30.32099
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "1108",
+        "acq_datetime_utc": "2026-11-11T11:08:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 3.36,
+        "brightness_k": 335.1,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.81442,
+          31.12067
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "1108",
+        "acq_datetime_utc": "2026-11-11T11:08:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 3.74,
+        "brightness_k": 344.24,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.8427,
+          31.17348
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "1108",
+        "acq_datetime_utc": "2026-11-11T11:08:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 3.07,
+        "brightness_k": 331.64,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.02917,
+          31.45667
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "1108",
+        "acq_datetime_utc": "2026-11-11T11:08:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.55,
+        "brightness_k": 334.42,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.01673,
+          31.85713
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "1108",
+        "acq_datetime_utc": "2026-11-11T11:08:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 4.5,
+        "brightness_k": 337.28,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.02198,
+          31.85774
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "1108",
+        "acq_datetime_utc": "2026-11-11T11:08:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.75,
+        "brightness_k": 331.62,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.33461,
+          25.9935
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.21,
+        "brightness_k": 301.83,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9418,
+          26.02836
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.11,
+        "brightness_k": 309.08,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.96998,
+          26.25513
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.35,
+        "brightness_k": 311.87,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.85135,
+          26.55588
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.49,
+        "brightness_k": 314.05,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.84711,
+          26.55647
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.19,
+        "brightness_k": 307.65,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.32014,
+          26.65803
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.81,
+        "brightness_k": 301.93,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.15541,
+          26.96873
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.48,
+        "brightness_k": 296.62,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.29325,
+          27.09099
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.5,
+        "brightness_k": 296.53,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.01216,
+          27.16928
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.4,
+        "brightness_k": 321.29,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.01422,
+          27.17059
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.58,
+        "brightness_k": 317.58,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.00957,
+          27.1712
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.66,
+        "brightness_k": 299.26,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.16775,
+          27.25849
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.81,
+        "brightness_k": 305.81,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.57893,
+          27.66556
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.75,
+        "brightness_k": 304.44,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.66381,
+          27.66951
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.83,
+        "brightness_k": 306.53,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.58052,
+          27.81108
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.62,
+        "brightness_k": 322.38,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.06933,
+          28.84951
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.72,
+        "brightness_k": 316.1,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.17868,
+          28.86844
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.65,
+        "brightness_k": 305.39,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.07886,
+          28.9236
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.05,
+        "brightness_k": 314.87,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.18224,
+          28.96252
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 3.18,
+        "brightness_k": 333.53,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.20096,
+          29.01586
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.2,
+        "brightness_k": 302.45,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.20158,
+          29.01949
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.87,
+        "brightness_k": 306.99,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.17167,
+          29.0494
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.86,
+        "brightness_k": 305.86,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.43794,
+          29.52777
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.58,
+        "brightness_k": 297.51,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.27847,
+          29.63074
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.52,
+        "brightness_k": 296.38,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.35849,
+          29.65619
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.59,
+        "brightness_k": 304.68,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.32151,
+          29.69281
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.67,
+        "brightness_k": 329.62,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.31706,
+          29.69342
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.67,
+        "brightness_k": 306.28,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.31879,
+          29.69412
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.76,
+        "brightness_k": 328.92,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.20688,
+          29.7017
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.48,
+        "brightness_k": 298.51,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.3242,
+          29.74853
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.54,
+        "brightness_k": 298.6,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.21448,
+          29.7511
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.73,
+        "brightness_k": 308.27,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.34148,
+          29.76123
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.63,
+        "brightness_k": 297.8,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.21313,
+          29.76923
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.92,
+        "brightness_k": 302.52,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.14925,
+          29.79946
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.18,
+        "brightness_k": 302.78,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.08958,
+          29.80392
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.65,
+        "brightness_k": 302.3,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.09021,
+          29.80744
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.65,
+        "brightness_k": 320.18,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.08566,
+          29.80806
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.65,
+        "brightness_k": 304.22,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.30648,
+          29.82167
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.25,
+        "brightness_k": 304.91,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.308,
+          29.82485
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.2,
+        "brightness_k": 311.75,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.3071,
+          29.82532
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.25,
+        "brightness_k": 305.73,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.9464,
+          29.8543
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.53,
+        "brightness_k": 307.64,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.53246,
+          29.91945
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.98,
+        "brightness_k": 300.92,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.46616,
+          29.9264
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.13,
+        "brightness_k": 308.77,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.78681,
+          29.98213
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.49,
+        "brightness_k": 316.9,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.22619,
+          30.36715
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.68,
+        "brightness_k": 309.56,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.9185,
+          30.50636
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.77,
+        "brightness_k": 315.34,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.9181,
+          30.50724
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.84,
+        "brightness_k": 313.2,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.08587,
+          30.53311
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.36,
+        "brightness_k": 300.71,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.36486,
+          30.67007
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.12,
+        "brightness_k": 305.29,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.36601,
+          30.67187
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.8,
+        "brightness_k": 308.18,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.85135,
+          30.70107
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.43,
+        "brightness_k": 319.02,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.72341,
+          30.70402
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.67,
+        "brightness_k": 297.19,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.85201,
+          30.70443
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.43,
+        "brightness_k": 298.45,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.84788,
+          30.70502
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.43,
+        "brightness_k": 306.06,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.77434,
+          30.72255
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.72,
+        "brightness_k": 304.16,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.77499,
+          30.72591
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.93,
+        "brightness_k": 308.42,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.77564,
+          30.72926
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.93,
+        "brightness_k": 303.44,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.10493,
+          30.77177
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.13,
+        "brightness_k": 302.05,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.26698,
+          30.81617
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.46,
+        "brightness_k": 297.3,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.02232,
+          30.81769
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.31,
+        "brightness_k": 306.02,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.46835,
+          30.8239
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.07,
+        "brightness_k": 298.02,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.66785,
+          30.84061
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.19,
+        "brightness_k": 295.06,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.46363,
+          30.88296
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.49,
+        "brightness_k": 309.66,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.34053,
+          30.89887
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.36,
+        "brightness_k": 309.13,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.75834,
+          31.02761
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.92,
+        "brightness_k": 298.51,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.74592,
+          31.02899
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.83,
+        "brightness_k": 307.18,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.75067,
+          31.03256
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.73,
+        "brightness_k": 300.2,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.80288,
+          31.11767
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.72,
+        "brightness_k": 302.36,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.83991,
+          31.14214
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.07,
+        "brightness_k": 297.56,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.84177,
+          31.17448
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.89,
+        "brightness_k": 311.97,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.84069,
+          31.17553
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.75,
+        "brightness_k": 311.54,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.07261,
+          31.18653
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.43,
+        "brightness_k": 308.24,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.12733,
+          31.3348
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.12,
+        "brightness_k": 303.96,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.89475,
+          31.91588
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.77,
+        "brightness_k": 300.02,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.89543,
+          31.91918
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-11",
+        "acq_time": "2333",
+        "acq_datetime_utc": "2026-11-11T23:33:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.8,
+        "brightness_k": 302.82,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.36633,
+          30.67281
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "113",
+        "acq_datetime_utc": "2026-11-12T01:13:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.84,
+        "brightness_k": 296.73,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.36817,
+          30.67459
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "113",
+        "acq_datetime_utc": "2026-11-12T01:13:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.0,
+        "brightness_k": 295.98,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.46809,
+          30.82977
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "113",
+        "acq_datetime_utc": "2026-11-12T01:13:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.86,
+        "brightness_k": 296.4,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.98409,
+          22.47718
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "1047",
+        "acq_datetime_utc": "2026-11-12T10:47:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "h",
+        "confidence_normalized": "HIGH",
+        "frp_mw": 7.51,
+        "brightness_k": 367.0,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.98867,
+          22.47809
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "1047",
+        "acq_datetime_utc": "2026-11-12T10:47:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 7.51,
+        "brightness_k": 337.54,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.98306,
+          22.48152
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "1047",
+        "acq_datetime_utc": "2026-11-12T10:47:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 7.51,
+        "brightness_k": 350.38,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.40619,
+          22.71518
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "1047",
+        "acq_datetime_utc": "2026-11-12T10:47:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "l",
+        "confidence_normalized": "LOW",
+        "frp_mw": 3.87,
+        "brightness_k": 334.58,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.32293,
+          29.69008
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "1047",
+        "acq_datetime_utc": "2026-11-12T10:47:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "l",
+        "confidence_normalized": "LOW",
+        "frp_mw": 1.98,
+        "brightness_k": 331.36,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.08923,
+          29.80517
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "1047",
+        "acq_datetime_utc": "2026-11-12T10:47:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 4.3,
+        "brightness_k": 334.64,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.8249,
+          30.20088
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "1047",
+        "acq_datetime_utc": "2026-11-12T10:47:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.36,
+        "brightness_k": 331.43,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.33004,
+          30.3926
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "1047",
+        "acq_datetime_utc": "2026-11-12T10:47:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.93,
+        "brightness_k": 332.04,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.21767,
+          30.56241
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "1047",
+        "acq_datetime_utc": "2026-11-12T10:47:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.73,
+        "brightness_k": 330.79,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.85241,
+          30.70073
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "1047",
+        "acq_datetime_utc": "2026-11-12T10:47:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 3.69,
+        "brightness_k": 338.94,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.8145,
+          31.12043
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "1047",
+        "acq_datetime_utc": "2026-11-12T10:47:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 4.03,
+        "brightness_k": 336.73,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.26744,
+          26.09441
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "1049",
+        "acq_datetime_utc": "2026-11-12T10:49:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 4.04,
+        "brightness_k": 338.67,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.88379,
+          27.05872
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "1049",
+        "acq_datetime_utc": "2026-11-12T10:49:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.82,
+        "brightness_k": 335.5,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.01448,
+          27.16836
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "1049",
+        "acq_datetime_utc": "2026-11-12T10:49:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.84,
+        "brightness_k": 337.25,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.94236,
+          27.38189
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "1049",
+        "acq_datetime_utc": "2026-11-12T10:49:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 9.04,
+        "brightness_k": 339.45,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.43739,
+          29.52749
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.63,
+        "brightness_k": 303.24,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.35655,
+          29.65604
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.42,
+        "brightness_k": 298.45,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.316,
+          29.69101
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.12,
+        "brightness_k": 302.08,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.21303,
+          29.75172
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.57,
+        "brightness_k": 310.07,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.14553,
+          29.80016
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.63,
+        "brightness_k": 305.62,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.14446,
+          29.80023
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.95,
+        "brightness_k": 306.18,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.09184,
+          29.80523
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.43,
+        "brightness_k": 307.54,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.09087,
+          29.80565
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.98,
+        "brightness_k": 315.34,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.08648,
+          29.80574
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.43,
+        "brightness_k": 318.07,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.08553,
+          29.8062
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.33,
+        "brightness_k": 311.12,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.30466,
+          29.82424
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.3,
+        "brightness_k": 313.3,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.94538,
+          29.85332
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.24,
+        "brightness_k": 309.34,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.86922,
+          29.85333
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.67,
+        "brightness_k": 301.79,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.86271,
+          29.85389
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.24,
+        "brightness_k": 305.1,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.22582,
+          30.36663
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.99,
+        "brightness_k": 309.32,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.58349,
+          30.39312
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.75,
+        "brightness_k": 302.98,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.96081,
+          30.52061
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.6,
+        "brightness_k": 297.84,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.08439,
+          30.53301
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.11,
+        "brightness_k": 295.4,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.08654,
+          30.53424
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.98,
+        "brightness_k": 298.23,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.49059,
+          30.53649
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.89,
+        "brightness_k": 312.71,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.49115,
+          30.54224
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.64,
+        "brightness_k": 296.95,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.36249,
+          30.67004
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.32,
+        "brightness_k": 308.08,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.36196,
+          30.67008
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.38,
+        "brightness_k": 307.32,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.72335,
+          30.70119
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.55,
+        "brightness_k": 310.73,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.71819,
+          30.7015
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.55,
+        "brightness_k": 327.53,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.85242,
+          30.70293
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.41,
+        "brightness_k": 298.17,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.84803,
+          30.70339
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.25,
+        "brightness_k": 315.87,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.77381,
+          30.72396
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.85,
+        "brightness_k": 305.41,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.66614,
+          30.8409
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.24,
+        "brightness_k": 295.06,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.46202,
+          30.87986
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.04,
+        "brightness_k": 301.42,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.45798,
+          30.88017
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.04,
+        "brightness_k": 300.41,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.46018,
+          30.88106
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.68,
+        "brightness_k": 315.3,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.84042,
+          30.99714
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.52,
+        "brightness_k": 299.26,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.74946,
+          31.03104
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.13,
+        "brightness_k": 311.59,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.74549,
+          31.03134
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.13,
+        "brightness_k": 314.02,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.81296,
+          31.12104
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.83,
+        "brightness_k": 302.84,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.80907,
+          31.12133
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.83,
+        "brightness_k": 310.01,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.07388,
+          31.18387
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.21,
+        "brightness_k": 301.37,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.07296,
+          31.1858
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.45,
+        "brightness_k": 305.32,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.15623,
+          31.31021
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.08,
+        "brightness_k": 301.08,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.67752,
+          31.84343
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.32,
+        "brightness_k": 299.79,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.89553,
+          31.91816
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2311",
+        "acq_datetime_utc": "2026-11-12T23:11:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.38,
+        "brightness_k": 311.54,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.3359,
+          25.99342
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2313",
+        "acq_datetime_utc": "2026-11-12T23:13:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.88,
+        "brightness_k": 296.19,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.27701,
+          27.08408
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2313",
+        "acq_datetime_utc": "2026-11-12T23:13:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.32,
+        "brightness_k": 310.65,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.01167,
+          27.16943
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2313",
+        "acq_datetime_utc": "2026-11-12T23:13:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 3.24,
+        "brightness_k": 321.96,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.07935,
+          28.92495
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2313",
+        "acq_datetime_utc": "2026-11-12T23:13:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.62,
+        "brightness_k": 303.01,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.07822,
+          28.92619
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2313",
+        "acq_datetime_utc": "2026-11-12T23:13:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.21,
+        "brightness_k": 304.68,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.18229,
+          28.96123
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-12",
+        "acq_time": "2313",
+        "acq_datetime_utc": "2026-11-12T23:13:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.18,
+        "brightness_k": 307.47,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.2297,
+          30.36767
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "52",
+        "acq_datetime_utc": "2026-11-13T00:52:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.26,
+        "brightness_k": 299.01,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.58214,
+          30.39427
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "52",
+        "acq_datetime_utc": "2026-11-13T00:52:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.1,
+        "brightness_k": 303.33,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.58154,
+          30.3944
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "52",
+        "acq_datetime_utc": "2026-11-13T00:52:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.73,
+        "brightness_k": 302.94,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.91953,
+          30.50709
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "52",
+        "acq_datetime_utc": "2026-11-13T00:52:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.59,
+        "brightness_k": 299.73,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.96386,
+          30.51507
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "52",
+        "acq_datetime_utc": "2026-11-13T00:52:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.73,
+        "brightness_k": 308.48,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.96616,
+          30.51851
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "52",
+        "acq_datetime_utc": "2026-11-13T00:52:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.75,
+        "brightness_k": 305.01,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.49221,
+          30.54121
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "52",
+        "acq_datetime_utc": "2026-11-13T00:52:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.5,
+        "brightness_k": 307.53,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.36572,
+          30.66996
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "52",
+        "acq_datetime_utc": "2026-11-13T00:52:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.87,
+        "brightness_k": 325.91,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.97747,
+          30.70479
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "52",
+        "acq_datetime_utc": "2026-11-13T00:52:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.35,
+        "brightness_k": 295.75,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.98091,
+          30.70814
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "52",
+        "acq_datetime_utc": "2026-11-13T00:52:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.41,
+        "brightness_k": 298.94,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.46795,
+          30.8248
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "52",
+        "acq_datetime_utc": "2026-11-13T00:52:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.46,
+        "brightness_k": 296.37,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.46959,
+          30.82503
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "52",
+        "acq_datetime_utc": "2026-11-13T00:52:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.5,
+        "brightness_k": 296.19,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.62068,
+          30.85644
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "52",
+        "acq_datetime_utc": "2026-11-13T00:52:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.66,
+        "brightness_k": 296.34,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.7563,
+          31.02927
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "52",
+        "acq_datetime_utc": "2026-11-13T00:52:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.92,
+        "brightness_k": 302.61,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.75614,
+          31.03015
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "52",
+        "acq_datetime_utc": "2026-11-13T00:52:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 1.62,
+        "brightness_k": 307.75,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.75009,
+          31.03106
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "52",
+        "acq_datetime_utc": "2026-11-13T00:52:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 0.92,
+        "brightness_k": 299.43,
+        "daynight": "N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.01488,
+          27.16953
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "1028",
+        "acq_datetime_utc": "2026-11-13T10:28:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "l",
+        "confidence_normalized": "LOW",
+        "frp_mw": 1.87,
+        "brightness_k": 331.89,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.85066,
+          30.70176
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "1030",
+        "acq_datetime_utc": "2026-11-13T10:30:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 2.26,
+        "brightness_k": 330.55,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.10894,
+          30.77529
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "1030",
+        "acq_datetime_utc": "2026-11-13T10:30:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 12.73,
+        "brightness_k": 351.83,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.11416,
+          30.77668
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "1030",
+        "acq_datetime_utc": "2026-11-13T10:30:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "l",
+        "confidence_normalized": "LOW",
+        "frp_mw": 12.73,
+        "brightness_k": 356.21,
+        "daynight": "D"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.81376,
+          31.12237
+        ]
+      },
+      "properties": {
+        "event_id": "EGYPT_SMOKE_TEST",
+        "acq_date": "2026-11-13",
+        "acq_time": "1030",
+        "acq_datetime_utc": "2026-11-13T10:30:00Z",
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "confidence": "n",
+        "confidence_normalized": "NOMINAL",
+        "frp_mw": 3.9,
+        "brightness_k": 333.54,
+        "daynight": "D"
+      }
+    }
+  ]
+}

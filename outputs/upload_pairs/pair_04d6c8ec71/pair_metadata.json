@@ -1,0 +1,62 @@
+{
+  "pair_id": "pair_04d6c8ec71",
+  "pre_upload_id": "upl_e235e8bf50",
+  "post_upload_id": "upl_e0c4dff002",
+  "pre_filename": "CA_BUG_2026_sentinel1_pre_dualpol_vv_vh_db.tif",
+  "post_filename": "CA_BUG_2026_sentinel1_post_dualpol_vv_vh_db.tif",
+  "pre_date": "2024-07-12",
+  "post_date": "2024-08-05",
+  "area_name": "CA_BUG_2026 (Park Fire (Held-Out TEST))",
+  "compatible": true,
+  "status": "SUITABLE",
+  "checks": {
+    "crs_match": true,
+    "pre_crs": "EPSG:32611",
+    "post_crs": "EPSG:32611",
+    "spatial_overlap_percent": 100.0,
+    "dimensions_match": true,
+    "transform_match": true,
+    "resolution_match": true,
+    "date_order_valid": true,
+    "co_registered": false,
+    "dual_polarization_available": true
+  },
+  "target_grid": {
+    "crs": "EPSG:32611",
+    "width": 800,
+    "height": 800,
+    "resolution_m": 20.0,
+    "bounds": [
+      244920.0,
+      4404880.0,
+      260920.0,
+      4420880.0
+    ],
+    "bounds_wgs84": [
+      -119.98369,
+      39.755668,
+      -119.790916,
+      39.904296
+    ],
+    "transform": [
+      20.0,
+      0.0,
+      244920.0,
+      0.0,
+      -20.0,
+      4420880.0
+    ]
+  },
+  "pre_local_path": "outputs/uploads/upl_e235e8bf50/CA_BUG_2026_sentinel1_pre_dualpol_vv_vh_db.tif",
+  "post_local_path": "outputs/uploads/upl_e0c4dff002/CA_BUG_2026_sentinel1_post_dualpol_vv_vh_db.tif",
+  "matched_event_id": "CA_BUG_2026",
+  "compatible_models": [
+    "unet",
+    "lightgbm",
+    "log_ratio",
+    "cusum"
+  ],
+  "reasons": [],
+  "warnings": [],
+  "created_at_utc": "2026-11-14T04:18:11.880628+00:00"
+}

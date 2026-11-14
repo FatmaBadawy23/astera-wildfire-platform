@@ -1,0 +1,89 @@
+{
+  "upload_id": "upl_469d06f025",
+  "filename": "custom_site_post_dualpol.tif",
+  "role": "post",
+  "file_format": "GEOTIFF",
+  "file_size_bytes": 19030,
+  "sha256": "7985a3c611ebaee6193b92c0eadf9be862e90945deac1bee13326693ba2df159",
+  "created_at_utc": "2026-11-14T03:50:50.398100+00:00",
+  "is_valid": true,
+  "valid_for_sar_inference": true,
+  "validation_status": "VALID_GEOTIFF",
+  "error_code": null,
+  "scientific_explanation": "Georeferenced GeoTIFF (48\u00d748 px, 2 bands, CRS=EPSG:4326, resolution=19.48 m, 100.0% valid pixels, scale=decibels_db).",
+  "sensor": "Sentinel-1 C-band RTC",
+  "acquisition_date": "2024-08-12",
+  "matched_event_id": null,
+  "crs": "EPSG:4326",
+  "transform": [
+    0.0002,
+    0.0,
+    -121.92,
+    0.0,
+    -0.0002,
+    40.02
+  ],
+  "bounds": [
+    -121.92,
+    40.010400000000004,
+    -121.9104,
+    40.02
+  ],
+  "bounds_wgs84": [
+    -121.92,
+    40.0104,
+    -121.9104,
+    40.02
+  ],
+  "width": 48,
+  "height": 48,
+  "band_count": 2,
+  "bands": [
+    "VV_dB",
+    "VH_dB"
+  ],
+  "dtypes": [
+    "float32",
+    "float32"
+  ],
+  "polarizations": [
+    "VV",
+    "VH"
+  ],
+  "radiometric_scale": "decibels_db",
+  "resolution_m": 19.48,
+  "nodata": -9999.0,
+  "valid_pixel_percentage": 100.0,
+  "band_statistics": [
+    {
+      "band_index": 1,
+      "description": "VV_dB",
+      "dtype": "float32",
+      "valid_pixels": 2304,
+      "valid_percentage": 100.0,
+      "min": -15.2803,
+      "max": -7.0118,
+      "mean": -10.4682,
+      "std": 1.3739
+    },
+    {
+      "band_index": 2,
+      "description": "VH_dB",
+      "dtype": "float32",
+      "valid_pixels": 2304,
+      "valid_percentage": 100.0,
+      "min": -23.8245,
+      "max": -13.3497,
+      "mean": -17.2895,
+      "std": 1.9828
+    }
+  ],
+  "compatible_models": [
+    "unet",
+    "lightgbm",
+    "log_ratio"
+  ],
+  "warnings": [],
+  "preview_url": "/api/analysis/uploads/upl_469d06f025/preview.png",
+  "local_path": "outputs/uploads/upl_469d06f025/custom_site_post_dualpol.tif"
+}
