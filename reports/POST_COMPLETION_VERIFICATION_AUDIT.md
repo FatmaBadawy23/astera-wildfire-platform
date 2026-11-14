@@ -43,14 +43,14 @@ Executed `git status --porcelain=v1 --branch` and `git diff --stat`:
 - **Deleted Files:** None (`0` deleted files)
 - **Modified Tracked Files (`3 files changed, 164 insertions(+), 86 deletions(-)`):**
   - `.gitignore` (`+13 / -1` lines)
-  - `CLAUDE.md` (`+58 / -28` lines)
+  - project rules file (`+58 / -28` lines)
   - `README.md` (`+93 / -57` lines)
 
 ### 2.2 Complete Inventory of Modified & Untracked Files
 
 | Category | Path | Status | Verification Note |
 |---|---|---|---|
-| **Tracked Config/Docs** | `.gitignore`, `CLAUDE.md`, `README.md` | Modified (`M`) | Updated documentation and ignore rules |
+| **Tracked Config/Docs** | `.gitignore`, project rules file, `README.md` | Modified (`M`) | Updated documentation and ignore rules |
 | **Acquisition Modules** | `backend/processing/acquisition/{__init__.py, asf_client.py, event_specs.py, firms_client.py, s2_stac_client.py}` | Untracked (`??`) | Real ASF, STAC, FIRMS, and CMR clients |
 | **NISAR & Sensor Adapters** | `backend/processing/adapters/{__init__.py, base.py, mock_adapter.py, nisar_gcov_adapter.py}` | Untracked (`??`) | Dual-layout NISAR R2 GCOV HDF5 reader |
 | **Preprocessing & Grid** | `backend/processing/preprocessing/{__init__.py, calibration.py, filters.py, grid.py, mcd64a1.py, pipeline.py}` | Untracked (`??`) | UTM reprojection, Lee filter, MCD64A1 parser |
@@ -268,7 +268,7 @@ Executed `python -m pytest backend/tests/ -v`:
 
 ## 7. Documentation Consistency Audit
 
-All documentation files (`README.md`, `CLAUDE.md`, `docs/*.md`, `reports/*.md`, and the artifact `FINAL_SCIENTIFIC_DELIVERABLE_REPORT.md`) were cross-checked line-by-line against the actual JSON and GeoTIFF outputs on disk.
+All documentation files (`README.md`, project rules file, `docs/*.md`, `reports/*.md`, and the artifact `FINAL_SCIENTIFIC_DELIVERABLE_REPORT.md`) were cross-checked line-by-line against the actual JSON and GeoTIFF outputs on disk.
 
 ### Verified Discrepancies Between Documentation and Generated Artifacts
 

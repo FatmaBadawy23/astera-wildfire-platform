@@ -30,7 +30,7 @@
 | **Repository Root** | `C:\Users\asus\Desktop\Nasa\astera-wildfire-platform` | `C:\Users\asus\Desktop\Nasa\astera-wildfire-platform` | `VERIFIED` |
 | **Current Git Branch** | `feature/sar-ml-pipeline` | `feature/sar-ml-pipeline` | `VERIFIED` |
 | **Current HEAD Commit** | `a9e1265` (*"Implement real SAR data pipeline, ML models, and validation reports"*) | `fd3eaeb6c48ba437c8752f0858cef9bdecfe128f` (`Add Stage 0 report`) | **`DISCREPANCY_FOUND`** |
-| **Modified Tracked Files (`git status --short`)** | `12` modified tracked files | **`3` modified tracked files:** `M .gitignore`, `M CLAUDE.md`, `M README.md` | **`DISCREPANCY_FOUND`** |
+| **Modified Tracked Files (`git status --short`)** | `12` modified tracked files | **`3` modified tracked files:** `M .gitignore`, `M` project rules file, `M README.md` | **`DISCREPANCY_FOUND`** |
 | **Untracked Entries (`git status --short`)** | `32` untracked files/directories | **`48` untracked porcelain entries** (`140` individual untracked files via `git status --porcelain -uall`) | **`DISCREPANCY_FOUND`** |
 | **Deleted Files** | `0` | **`0`** | `VERIFIED` |
 | **Python & Package Versions** | Python `3.13.7`, PyTorch `2.11.0+cpu`, LightGBM `4.6.0`, Rasterio `1.5.0`, `h5py 3.16.0`, `asf_search 12.0.1` | Python `3.13.7`, PyTorch `2.11.0+cpu` (`CUDA: False`), LightGBM `4.6.0`, Rasterio `1.5.0`, `h5py 3.16.0`, `asf_search 12.0.1` | `VERIFIED` |

@@ -14,7 +14,7 @@
 - **HEAD Commit:** `fd3eaeb6c48ba437c8752f0858cef9bdecfe128f` (*"Fix CUSUM collapse and upgrade mock generator to spatially correlated Perlin noise"*)
 - **Staged Files:** `0`
 - **Deleted Files:** `0`
-- **Modified Tracked Files (`3`):** `.gitignore`, `CLAUDE.md`, `README.md`
+- **Modified Tracked Files (`3`):** `.gitignore`, project rules file, `README.md`
 - **Untracked Directories & Modules:**
   - `backend/app/` (`main.py`, `api/endpoints.py`, `schemas/api_schemas.py`, `services/analysis_service.py`)
   - `backend/processing/acquisition/` (`asf_client.py`, `event_specs.py`, `firms_client.py`, `planetary_computer.py`)

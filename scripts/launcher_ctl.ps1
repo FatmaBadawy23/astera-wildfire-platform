@@ -203,12 +203,12 @@ function Find-PythonInterpreter {
         }
     }
 
-    # Fallback: verified system Python (skip MSYS2 or Conda base per CLAUDE.md)
+    # Fallback: verified system Python (skip MSYS2 or Conda base)
     $allPy = Get-Command python.exe -All -ErrorAction SilentlyContinue
     foreach ($item in $allPy) {
         $src = $item.Source
         if ($src -and $src -notmatch "msys" -and $src -notmatch "\\(anaconda3|miniconda3)\\python\.exe$" -and $src -notmatch "WindowsApps") {
-            return @{ Path = $src; EnvRoot = (Split-Path -Parent $src); IsVenv = $false; Source = "System Python ($src; no .venv directory needed per CLAUDE.md)" }
+            return @{ Path = $src; EnvRoot = (Split-Path -Parent $src); IsVenv = $false; Source = "System Python ($src; no .venv directory needed)" }
         }
     }
 

@@ -15,7 +15,7 @@
 - `C:\Users\asus\Desktop\Nasa\STOP.bat` and `C:\Users\asus\Desktop\Nasa\astera-wildfire-platform\STOP.bat`: Delegate to `astera-wildfire-platform\scripts\launcher_ctl.ps1 -Action Stop`.
 - `C:\Users\asus\Desktop\Nasa\astera-wildfire-platform\scripts\preflight_check.py`: Added Python pre-flight verifier checking required packages (`fastapi`, `uvicorn`, `pydantic`, `torch`, `lightgbm`, `rasterio`, `numpy`, `scipy`, `matplotlib`, `PIL`, `shapely`, `pyproj`), active run pointer (`outputs/runs/latest_run.json` -> `run_20261114_025000_phase_g`), dataset manifest, model comparison report, `real_unet_resnet34_phase_g.pt`, and `lightgbm_phase_g.pkl`.
 - `C:\Users\asus\Desktop\Nasa\astera-wildfire-platform\scripts\launcher_ctl.ps1`:
-  - Uses `C:\Program Files\Python313\python.exe` (Python 3.13.7; skipping MSYS2/Conda `base` per `CLAUDE.md`) and `Node.js v22.19.0` / `npm 10.9.3`.
+  - Uses `C:\Program Files\Python313\python.exe` (Python 3.13.7; skipping MSYS2/Conda `base`) and `Node.js v22.19.0` / `npm 10.9.3`.
   - Runs FastAPI (`uvicorn backend.app.main:app --host 127.0.0.1 --port 8000`) and `Frontend_` Vite (`npm.cmd run dev -- --host 127.0.0.1 --port 5173`, using `Frontend_\package.json` `"dev": "vite"` with `--cwd` set to `C:\Users\asus\Desktop\Nasa\astera-wildfire-platform\Frontend_`) in persistent minimized console windows wrapped by `scripts\launch_service_window.py`.
   - Records PIDs, ports, `frontend_dir`, and log paths in `C:\Users\asus\Desktop\Nasa\.astera_runtime\launcher_state.json`.
   - Polls `http://127.0.0.1:8000/api/health`, `/api/models/available`, `http://127.0.0.1:5173/`, and proxied `http://127.0.0.1:5173/api/health`.

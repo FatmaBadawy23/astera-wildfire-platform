@@ -27,7 +27,7 @@
 - **Architecture Integrity:** Fully preserved the two-tier architectural separation:
   - `backend/processing/`: Reusable, headless scientific SAR processing library.
   - `backend/app/`: FastAPI web services, REST endpoints, and schemas.
-- **Existing Files:** Zero deletion or destructive rewriting of existing documentation (`README.md`, `CLAUDE.md`, `docs/ROADMAP.md`, `docs/setup/*`).
+- **Existing Files:** Zero deletion or destructive rewriting of existing documentation (`README.md`, project rules file, `docs/ROADMAP.md`, `docs/setup/*`).
 - **Git Hygiene:** Isolated all changes inside a feature branch (`feature/sar-ml-pipeline`).
 
 ---

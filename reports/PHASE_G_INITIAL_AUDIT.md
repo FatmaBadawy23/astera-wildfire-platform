@@ -238,7 +238,7 @@ There are no frontend tests, because there is no frontend.
   `outputs/runs/latest_run.previous_run_20261114_013500.json` before the pointer moves.
 - The Gann / Dome / Bug split is fixed. TEST (Bug) is never used for selection.
 - One TRAIN event is not evidence of multi-event generalisation, and every report says so.
-- `CLAUDE.md` asks for approval before installing software. The Phase G brief requires a frontend
+- The project rules file asks for approval before installing software. The Phase G brief requires a frontend
   build, lint, and type check, and no frontend exists, so building one requires local npm packages
   in `frontend/node_modules`. Nothing is installed globally. Every added package is listed in the
   frontend report.

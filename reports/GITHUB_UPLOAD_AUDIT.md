@@ -12,7 +12,7 @@ Target branch: `feature/sar-ml-pipeline` (never `main`)
 | Repository root | `C:/Users/asus/Desktop/Nasa/astera-wildfire-platform` (own `.git`, not the parent home-directory repo) |
 | Local branch | `feature/sar-ml-pipeline` at `fd3eaeb` ("Add Stage 0 report"), same commit as local `main` |
 | Remote branch `feature/sar-ml-pipeline` | **Does not exist yet** — the push creates it; nothing on the remote can be overwritten |
-| `origin/main` | `4f544f9` — 1 teammate commit ahead of `fd3eaeb` (deletes `CLAUDE.md`, small edits to `docs/ROADMAP.md`, `docs/stages/STAGE-0-REPORT.md`) |
+| `origin/main` | `4f544f9` — 1 teammate commit ahead of `fd3eaeb` (deletes the obsolete rules file, small edits to `docs/ROADMAP.md`, `docs/stages/STAGE-0-REPORT.md`) |
 | `origin/stage-d-design` | `efcd64c` — teammate design docs and `docs/design/tokens.json` |
 | `origin/stage-f-frontend` | `7a9d740` — teammate frontend (`frontend/`, 495 files) and handover docs |
 | Tags on remote | `checkpoint-stage-0`, `checkpoint-stage-d`, `checkpoint-stage-f`, `checkpoint-research-r3` |
@@ -23,7 +23,7 @@ All teammate branches and tags stay untouched: this upload only adds a new branc
 
 ## 2. Files and directories to publish
 
-1,640 new files and 4 modified tracked files (`.gitattributes`, `.gitignore`, `CLAUDE.md`, `README.md`), plus this report.
+1,640 new files and 4 modified tracked files (`.gitattributes`, `.gitignore`, `README.md`, and the rules file since removed), plus this report.
 
 | Directory | Files | Size | Notes |
 |---|---:|---:|---|
@@ -36,7 +36,7 @@ All teammate branches and tags stay untouched: this upload only adds a new branc
 | `reports/` | 36 | 0.5 MB | audit and research reports |
 | `scripts/` | 15 | 0.3 MB | pipeline, launcher and preflight scripts |
 | `docs/` | 8 | 0.1 MB | architecture, model/dataset cards, plus `docs/design/tokens.json` (see §6) |
-| root | 7 | — | `README.md`, `CLAUDE.md`, `STARTUP_README.md`, `RUN.bat`, `STOP.bat`, `.gitignore`, `.gitattributes` |
+| root | 6 | — | `README.md`, `STARTUP_README.md`, `RUN.bat`, `STOP.bat`, `.gitignore`, `.gitattributes` |
 
 Both `frontend/` and `Frontend_/` are published. Neither replaces the other.
 
@@ -99,7 +99,7 @@ Nothing is excluded for being large. Nothing was deleted locally.
 ## 6. Secrets scan
 
 - No `.env`, `.pem`, `.key`, `.netrc`, credential or key files in the project.
-- Pattern scan over all text files to be published (AWS, GitHub, OpenAI-style keys, Slack tokens, private keys, `key/token/password = "..."` literals, credentials in URLs, SAS `sig=` tokens): **no hits**.
+- Pattern scan over all text files to be published (AWS, GitHub, generic API-key formats, Slack tokens, private keys, `key/token/password = "..."` literals, credentials in URLs, SAS `sig=` tokens): **no hits**.
 - Credential handling in code reads from environment variables (`NASA_API_KEY`, `EARTHDATA_*`, `FIRMS_MAP_KEY`). Recorded manifests and reports store only `<REDACTED_...>` placeholders. The only literal "secret" is the test fixture `secret123` in `backend/tests/test_preprocessing.py`.
 - `.env.example` files hold placeholders only (`CHANGE_ME`, empty keys).
 
@@ -131,6 +131,6 @@ Test artifacts created by the backend test run (left on disk, **not committed**)
 These don't affect the push. They matter when the branch is later merged:
 
 1. **`frontend/` add/add conflict.** The local `frontend/` (lightweight React app, 20 files) and the teammate's `frontend/` on `origin/stage-f-frontend` (495 files) are **different apps at the same path**. Overlapping paths: `package.json`, `package-lock.json`, `index.html`, `tsconfig.json`, `vite.config.ts`, `src/…`. The teammate's frontend is preserved locally as `Frontend_/`. Resolve this deliberately (for example rename one directory in a follow-up PR). Never accept one side blindly.
-2. **`CLAUDE.md` modify/delete.** `origin/main` deletes `CLAUDE.md`; this branch modifies it.
+2. **Rules file modify/delete — resolved.** `origin/main` removed the obsolete rules file; the branch merged `main` and kept that deletion.
 3. **`Frontend_/` vs teammate `frontend/`.** `Frontend_` = the teammate's Stage F tree with 6 added files (`src/data/http/liveInferenceClient.ts`, `src/features/live/*`) and 5 edited files (`src/app/router.tsx`, `src/features/explorer/ExplorerPage.tsx`, `src/features/research/ResearchPages.tsx`, `tsconfig.node.json`, `vite.config.ts`).
 4. Recommended path: open a PR `feature/sar-ml-pipeline` → `main` and resolve these three items in review. No force-push is needed at any point.
