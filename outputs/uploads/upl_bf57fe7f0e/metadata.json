@@ -1,0 +1,41 @@
+{
+  "upload_id": "upl_bf57fe7f0e",
+  "filename": "optical_rgb_test.png",
+  "role": "pre",
+  "file_format": "RGB_DISPLAY_IMAGE",
+  "file_size_bytes": 185,
+  "sha256": "69fbba01cbfd5b9c2c863a4c3d01a855fca48c2e6d6efba405664dbfb8209251",
+  "created_at_utc": "2026-11-14T03:21:35.951508+00:00",
+  "is_valid": false,
+  "valid_for_sar_inference": false,
+  "validation_status": "REJECTED_NON_GEOSPATIAL_RGB",
+  "error_code": "UNSUPPORTED_OPTICAL_RGB_FOR_SAR_MODEL",
+  "scientific_explanation": "Ordinary 3-band 8-bit RGB images (PNG/JPEG) contain uncalibrated display color values (0\u2013255) without radar polarizations (VV/VH), calibrated backscatter (gamma0/sigma0 in dB), or a Coordinate Reference System (CRS). The trained UNet_ResNet34 (5-channel SAR dB) and LightGBM_Pixel_Spatial (10-feature SAR dB) models require calibrated georeferenced SAR GeoTIFF (.tif/.tiff) or multi-band SAR (.npz) inputs.",
+  "crs": null,
+  "bounds": null,
+  "bounds_wgs84": null,
+  "width": 64,
+  "height": 64,
+  "band_count": 3,
+  "bands": [
+    "RGB_Channel_1",
+    "RGB_Channel_2",
+    "RGB_Channel_3"
+  ],
+  "polarizations": [],
+  "resolution_m": null,
+  "nodata": null,
+  "valid_pixel_percentage": 0.0,
+  "compatible_models": [],
+  " incompatible_models_reasons": {
+    "unet": "Requires 5-channel calibrated SAR dB input [vv_pre_db, vh_pre_db, vv_post_db, vh_post_db, delta_vh_db].",
+    "lightgbm": "Requires 10-feature calibrated dual-pol SAR dB input.",
+    "log_ratio": "Requires calibrated pre-fire and post-fire SAR backscatter (VH or VV).",
+    "cusum": "Requires >= 3 co-registered multi-temporal SAR VH dB scenes."
+  },
+  "warnings": [
+    "No Coordinate Reference System (CRS) or affine geotransform present.",
+    "RGB optical channels cannot be substituted for microwave C-band/L-band SAR polarizations."
+  ],
+  "preview_url": null
+}

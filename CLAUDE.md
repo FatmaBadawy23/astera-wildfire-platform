@@ -1,7 +1,11 @@
 # CLAUDE.md: guidance for AI assistants working in this repo
 
-Project: **Astera Watch**, Wildfire Surface-Change Monitoring with NASA NISAR Radar.
+Project: **Astera Watch**, a NISAR-ready wildfire surface-change platform.
 Team Astera (six students), NASA Space Apps Challenge. Full roadmap: `docs/ROADMAP.md`.
+
+Current scientific status: real Sentinel-1/Sentinel-2/MCD64A1 cross-sensor prototype.
+NISAR GCOV was not acquired because Earthdata Login credentials were unavailable. Never
+describe the current metrics as NISAR results. See `reports/REAL_DATA_RESULTS.md`.
 
 ## Working rules (mandatory)
 
@@ -14,25 +18,20 @@ Team Astera (six students), NASA Space Apps Challenge. Full roadmap: `docs/ROADM
 
 ## Environment
 
-- OS: Windows. Python: Conda env **`astera`** (Python 3.11, conda-forge only).
-- **Always run project Python through the env:**
+- OS: Windows. **Verified current interpreter: system Python 3.13.7.**
+- The Conda env **`astera` does not currently exist** in this workspace. Do not create
+  or activate it without explicit approval. The commands used for the real-data run are:
   ```powershell
-  conda run -n astera python <script.py>
-  conda run -n astera pytest
-  conda run -n astera uvicorn app.main:app --reload
+  python scripts/acquire_real_data.py --event all
+  python scripts/build_real_dataset.py
+  python scripts/run_real_pipeline.py --epochs 8
+  python -m pytest -q
   ```
-  or from a terminal where `conda activate astera` has been run.
-  If `conda` is not on PATH, use `& "$env:USERPROFILE\anaconda3\Scripts\conda.exe" run -n astera ...`.
-- **Never call `...\envs\astera\python.exe` directly** without activation. The
-  PostGIS installer set machine-wide `GDAL_DATA` / `PROJ_LIB` pointing at
-  PostgreSQL's folders. Only Conda activation (which `conda run` does) replaces
-  them with the env's own GDAL/PROJ data. Do not delete those machine variables:
-  PostGIS needs them.
-- **Never** use the MSYS2 Python on PATH (`C:\msys64\...`) or the Conda `base` env
-  (it has a broken package; leave it untouched).
-- Never `pip install` geospatial packages (GDAL, Rasterio, PyProj, Shapely,
-  GeoPandas, h5py) into `astera`. Change `environment.yml` and update the env instead.
-- Verify the env any time with `conda run -n astera python docs/setup/verify_env.py`.
+- Do not replace or upgrade the existing Python environment. Install only missing
+  dependencies, and only with approval.
+- Do not use the MSYS2 Python or the Conda `base` env.
+- The PostGIS installer may set machine-wide `GDAL_DATA` / `PROJ_LIB` pointing at
+  PostgreSQL's folders. Do not delete those variables; PostGIS needs them.
 - Database: local **PostgreSQL 18 + PostGIS 3.7**, service `postgresql-x64-18`,
   database `astera_watch`, connection in `.env` (`DATABASE_URL`). `psql` is not on
   PATH: use `& "C:\Program Files\PostgreSQL\18\bin\psql.exe"`. Never print or
@@ -54,8 +53,11 @@ Team Astera (six students), NASA Space Apps Challenge. Full roadmap: `docs/ROADM
 
 - Do not fabricate NASA data, metadata or results. Missing values become `null`
   plus a validation warning, never guessed defaults.
-- The real NISAR file structure is **not yet verified**. Mark NISAR-specific
-  assumptions with `# NISAR-INTEGRATION` and keep HDF5 paths in config.
+- The real NISAR GCOV structure is verified in `reports/PHASE1_DATA_RESEARCH.md`.
+  Keep HDF5 paths in config and mark unresolved NISAR integration work with
+  `# NISAR-INTEGRATION`.
+- NISAR acquisition requires Earthdata Login. Read credentials only from environment
+  variables or `.netrc`; never print, log, or commit them.
 - Keep GCOV (covariance) and GSLC (complex) processing separate.
 - No universal backscatter thresholds. Do not transfer Sentinel-1 C-band
   thresholds to NISAR L/S-band.

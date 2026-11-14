@@ -1,0 +1,59 @@
+{
+  "pair_id": "pair_8fb8e351ef",
+  "pre_upload_id": "upl_eb6d64a96e",
+  "post_upload_id": "upl_feead6ae21",
+  "pre_filename": "pre_fire_vh_db.tif",
+  "post_filename": "post_fire_vh_db.tif",
+  "pre_date": "2024-07-12",
+  "post_date": "2024-08-05",
+  "area_name": "CA_BUG_2026 (Park Fire (Held-Out TEST))",
+  "compatible": true,
+  "status": "SUITABLE",
+  "checks": {
+    "crs_match": true,
+    "pre_crs": "EPSG:32611",
+    "post_crs": "EPSG:32611",
+    "spatial_overlap_percent": 100.0,
+    "dimensions_match": true,
+    "transform_match": true,
+    "resolution_match": true,
+    "date_order_valid": true,
+    "co_registered": false,
+    "dual_polarization_available": false
+  },
+  "target_grid": {
+    "crs": "EPSG:32611",
+    "width": 800,
+    "height": 800,
+    "resolution_m": 20.0,
+    "bounds": [
+      244920.0,
+      4404880.0,
+      260920.0,
+      4420880.0
+    ],
+    "bounds_wgs84": [
+      -119.98369,
+      39.755668,
+      -119.790916,
+      39.904296
+    ],
+    "transform": [
+      20.0,
+      0.0,
+      244920.0,
+      0.0,
+      -20.0,
+      4420880.0
+    ]
+  },
+  "pre_local_path": "outputs/uploads/upl_eb6d64a96e/pre_fire_vh_db.tif",
+  "post_local_path": "outputs/uploads/upl_feead6ae21/post_fire_vh_db.tif",
+  "matched_event_id": null,
+  "compatible_models": [
+    "log_ratio"
+  ],
+  "reasons": [],
+  "warnings": [],
+  "created_at_utc": "2026-11-14T04:24:09.241989+00:00"
+}

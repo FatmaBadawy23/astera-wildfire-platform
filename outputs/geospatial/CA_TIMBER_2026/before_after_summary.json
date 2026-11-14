@@ -1,0 +1,689 @@
+{
+  "event_id": "CA_TIMBER_2026",
+  "fire_name": "Timber Fire",
+  "state_region": "Monterey County, California",
+  "split": "TRAIN",
+  "include_in_training": false,
+  "is_nisar": false,
+  "data_origin": "CROSS_SENSOR_PROTOTYPE",
+  "before_after_verification": {
+    "temporal_verification": {
+      "reported_ignition_date": "2026-08-09",
+      "s1_pre_dates": [
+        "2026-08-07"
+      ],
+      "s1_post_dates": [
+        "2026-08-31",
+        "2026-09-12"
+      ],
+      "s2_pre_date": "2026-07-27",
+      "s2_post_date": "2026-08-26",
+      "pre_strictly_before_or_at_ignition": true,
+      "post_after_ignition": true
+    },
+    "spatial_grid_verification": {
+      "crs": "EPSG:32610",
+      "resolution_m": 20.0,
+      "dimensions_hw": [
+        800,
+        800
+      ],
+      "bounds_utm": [
+        611720.0,
+        4000180.0,
+        627720.0,
+        4016180.0
+      ],
+      "all_layers_co_registered": true
+    },
+    "geometry_and_polarization_verification": {
+      "sensor": "Sentinel-1 C-band RTC (gamma-0)",
+      "polarizations_verified": [
+        "VV",
+        "VH"
+      ],
+      "pre_relative_orbits": [
+        "35"
+      ],
+      "post_relative_orbits": [
+        "35"
+      ],
+      "shared_orbit_geometry": true
+    }
+  },
+  "radiometric_change_summary": {
+    "burned_region": {
+      "vh_pre_db_mean": -13.9766,
+      "vh_post_db_mean": -13.9634,
+      "delta_vh_db_mean": 0.0132,
+      "delta_vv_db_mean": 0.3955,
+      "dnbr_mean": 0.3219
+    },
+    "unburned_region": {
+      "vh_pre_db_mean": -13.8756,
+      "vh_post_db_mean": -14.0242,
+      "delta_vh_db_mean": -0.1486,
+      "delta_vv_db_mean": -0.1156,
+      "dnbr_mean": 0.0451
+    }
+  },
+  "primary_model": "log_ratio",
+  "area_estimates": {
+    "primary_model_burned_area": {
+      "crs": "EPSG:32610",
+      "pixel_width_m": 20.0,
+      "pixel_height_m": 20.0,
+      "pixel_area_m2": 400.0,
+      "total_aoi_pixels": 640000,
+      "valid_observation_pixels": 468105,
+      "invalid_masked_pixels": 171895,
+      "valid_coverage_percent": 73.14,
+      "total_aoi_area_km2": 256.0,
+      "total_aoi_area_ha": 25600.0,
+      "valid_observation_area_km2": 187.242,
+      "valid_observation_area_ha": 18724.2,
+      "burned_pixels": 123893,
+      "burned_area_km2": 49.5572,
+      "burned_area_ha": 4955.72,
+      "burned_percent_of_valid_area": 26.47,
+      "burned_percent_of_total_aoi": 19.36,
+      "burned_area_km2_ci95": [
+        48.2981,
+        51.0275
+      ],
+      "threshold_sensitivity_km2_range": [
+        41.0744,
+        59.046
+      ]
+    },
+    "by_model": {
+      "log_ratio": {
+        "crs": "EPSG:32610",
+        "pixel_width_m": 20.0,
+        "pixel_height_m": 20.0,
+        "pixel_area_m2": 400.0,
+        "total_aoi_pixels": 640000,
+        "valid_observation_pixels": 468105,
+        "invalid_masked_pixels": 171895,
+        "valid_coverage_percent": 73.14,
+        "total_aoi_area_km2": 256.0,
+        "total_aoi_area_ha": 25600.0,
+        "valid_observation_area_km2": 187.242,
+        "valid_observation_area_ha": 18724.2,
+        "burned_pixels": 123893,
+        "burned_area_km2": 49.5572,
+        "burned_area_ha": 4955.72,
+        "burned_percent_of_valid_area": 26.47,
+        "burned_percent_of_total_aoi": 19.36,
+        "burned_area_km2_ci95": [
+          48.2981,
+          51.0275
+        ],
+        "threshold_sensitivity_km2_range": [
+          41.0744,
+          59.046
+        ]
+      },
+      "all_burned": {
+        "crs": "EPSG:32610",
+        "pixel_width_m": 20.0,
+        "pixel_height_m": 20.0,
+        "pixel_area_m2": 400.0,
+        "total_aoi_pixels": 640000,
+        "valid_observation_pixels": 468105,
+        "invalid_masked_pixels": 171895,
+        "valid_coverage_percent": 73.14,
+        "total_aoi_area_km2": 256.0,
+        "total_aoi_area_ha": 25600.0,
+        "valid_observation_area_km2": 187.242,
+        "valid_observation_area_ha": 18724.2,
+        "burned_pixels": 468105,
+        "burned_area_km2": 187.242,
+        "burned_area_ha": 18724.2,
+        "burned_percent_of_valid_area": 100.0,
+        "burned_percent_of_total_aoi": 73.14,
+        "burned_area_km2_ci95": [
+          187.242,
+          187.242
+        ],
+        "threshold_sensitivity_km2_range": [
+          187.242,
+          187.242
+        ]
+      }
+    },
+    "sentinel2_dnbr_reference": {
+      "crs": "EPSG:32610",
+      "pixel_width_m": 20.0,
+      "pixel_height_m": 20.0,
+      "pixel_area_m2": 400.0,
+      "total_aoi_pixels": 640000,
+      "valid_observation_pixels": 468105,
+      "invalid_masked_pixels": 171895,
+      "valid_coverage_percent": 73.14,
+      "total_aoi_area_km2": 256.0,
+      "total_aoi_area_ha": 25600.0,
+      "valid_observation_area_km2": 187.242,
+      "valid_observation_area_ha": 18724.2,
+      "burned_pixels": 125386,
+      "burned_area_km2": 50.1544,
+      "burned_area_ha": 5015.44,
+      "burned_percent_of_valid_area": 26.79,
+      "burned_percent_of_total_aoi": 19.59,
+      "burned_area_km2_ci95": [
+        38.2162,
+        62.4155
+      ],
+      "threshold_sensitivity_km2_range": [
+        46.5116,
+        56.7
+      ]
+    },
+    "nasa_mcd64a1_reference": {
+      "crs": "EPSG:32610",
+      "pixel_width_m": 20.0,
+      "pixel_height_m": 20.0,
+      "pixel_area_m2": 400.0,
+      "total_aoi_pixels": 640000,
+      "valid_observation_pixels": 468105,
+      "invalid_masked_pixels": 171895,
+      "valid_coverage_percent": 73.14,
+      "total_aoi_area_km2": 256.0,
+      "total_aoi_area_ha": 25600.0,
+      "valid_observation_area_km2": 187.242,
+      "valid_observation_area_ha": 18724.2,
+      "burned_pixels": 128613,
+      "burned_area_km2": 51.4452,
+      "burned_area_ha": 5144.52,
+      "burned_percent_of_valid_area": 27.48,
+      "burned_percent_of_total_aoi": 20.1,
+      "burned_area_km2_ci95": [
+        39.1339,
+        62.0641
+      ],
+      "threshold_sensitivity_km2_range": [
+        51.4452,
+        51.4452
+      ]
+    }
+  },
+  "independent_validation": {
+    "models": {
+      "log_ratio": {
+        "vs_sentinel2_dnbr": {
+          "true_positives": 33614,
+          "false_positives": 90279,
+          "false_negatives": 91772,
+          "true_negatives": 252440,
+          "total_pixels": 468105,
+          "prevalence": 0.2679,
+          "precision": 0.2713,
+          "recall": 0.2681,
+          "f1_score": 0.2697,
+          "iou": 0.1559,
+          "dice": 0.2697,
+          "specificity": 0.7366,
+          "false_positive_rate": 0.2634,
+          "false_negative_rate": 0.7319,
+          "predicted_area_km2": 49.557,
+          "reference_area_km2": 50.154,
+          "area_error_percent": -1.19,
+          "roc_auc": 0.4713,
+          "pr_auc": 0.2803
+        },
+        "vs_nasa_mcd64a1_qa_filtered": {
+          "true_positives": 33733,
+          "false_positives": 90160,
+          "false_negatives": 94880,
+          "true_negatives": 249332,
+          "total_pixels": 468105,
+          "prevalence": 0.2748,
+          "precision": 0.2723,
+          "recall": 0.2623,
+          "f1_score": 0.2672,
+          "iou": 0.1542,
+          "dice": 0.2672,
+          "specificity": 0.7344,
+          "false_positive_rate": 0.2656,
+          "false_negative_rate": 0.7377,
+          "predicted_area_km2": 49.557,
+          "reference_area_km2": 51.445,
+          "area_error_percent": -3.67,
+          "roc_auc": 0.4664,
+          "pr_auc": 0.2817
+        },
+        "vs_nasa_mcd64a1_500m_block_reconciled": {
+          "block_resolution_m": 500,
+          "block_size_px": 25,
+          "valid_500m_blocks": 777,
+          "fractional_burn_mae": 0.3862,
+          "fractional_burn_rmse": 0.4421,
+          "fractional_burn_pearson_r": -0.0331,
+          "block_classification_metrics": {
+            "true_positives": 3,
+            "false_positives": 0,
+            "false_negatives": 228,
+            "true_negatives": 546,
+            "total_pixels": 777,
+            "prevalence": 0.2973,
+            "precision": 1.0,
+            "recall": 0.013,
+            "f1_score": 0.0256,
+            "iou": 0.013,
+            "dice": 0.0256,
+            "specificity": 1.0,
+            "false_positive_rate": 0.0,
+            "false_negative_rate": 0.987,
+            "predicted_area_km2": 0.75,
+            "reference_area_km2": 57.75,
+            "area_error_percent": -98.7
+          }
+        }
+      },
+      "all_burned": {
+        "vs_sentinel2_dnbr": {
+          "true_positives": 125386,
+          "false_positives": 342719,
+          "false_negatives": 0,
+          "true_negatives": 0,
+          "total_pixels": 468105,
+          "prevalence": 0.2679,
+          "precision": 0.2679,
+          "recall": 1.0,
+          "f1_score": 0.4225,
+          "iou": 0.2679,
+          "dice": 0.4225,
+          "specificity": 0.0,
+          "false_positive_rate": 1.0,
+          "false_negative_rate": 0.0,
+          "predicted_area_km2": 187.242,
+          "reference_area_km2": 50.154,
+          "area_error_percent": 273.33,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "vs_nasa_mcd64a1_qa_filtered": {
+          "true_positives": 128613,
+          "false_positives": 339492,
+          "false_negatives": 0,
+          "true_negatives": 0,
+          "total_pixels": 468105,
+          "prevalence": 0.2748,
+          "precision": 0.2748,
+          "recall": 1.0,
+          "f1_score": 0.4311,
+          "iou": 0.2748,
+          "dice": 0.4311,
+          "specificity": 0.0,
+          "false_positive_rate": 1.0,
+          "false_negative_rate": 0.0,
+          "predicted_area_km2": 187.242,
+          "reference_area_km2": 51.445,
+          "area_error_percent": 263.96,
+          "roc_auc": null,
+          "pr_auc": null
+        },
+        "vs_nasa_mcd64a1_500m_block_reconciled": {
+          "block_resolution_m": 500,
+          "block_size_px": 25,
+          "valid_500m_blocks": 777,
+          "fractional_burn_mae": 0.7083,
+          "fractional_burn_rmse": 0.8309,
+          "fractional_burn_pearson_r": 0.0,
+          "block_classification_metrics": {
+            "true_positives": 231,
+            "false_positives": 546,
+            "false_negatives": 0,
+            "true_negatives": 0,
+            "total_pixels": 777,
+            "prevalence": 0.2973,
+            "precision": 0.2973,
+            "recall": 1.0,
+            "f1_score": 0.4583,
+            "iou": 0.2973,
+            "dice": 0.4583,
+            "specificity": 0.0,
+            "false_positive_rate": 1.0,
+            "false_negative_rate": 0.0,
+            "predicted_area_km2": 194.25,
+            "reference_area_km2": 57.75,
+            "area_error_percent": 236.36
+          }
+        }
+      }
+    },
+    "sentinel2_dnbr_vs_nasa_mcd64a1": {
+      "true_positives": 103383,
+      "false_positives": 22003,
+      "false_negatives": 25230,
+      "true_negatives": 317489,
+      "total_pixels": 468105,
+      "prevalence": 0.2748,
+      "precision": 0.8245,
+      "recall": 0.8038,
+      "f1_score": 0.814,
+      "iou": 0.6864,
+      "dice": 0.814,
+      "specificity": 0.9352,
+      "false_positive_rate": 0.0648,
+      "false_negative_rate": 0.1962,
+      "predicted_area_km2": 50.154,
+      "reference_area_km2": 51.445,
+      "area_error_percent": -2.51,
+      "block_reconciled_500m": {
+        "block_resolution_m": 500,
+        "block_size_px": 25,
+        "valid_500m_blocks": 777,
+        "fractional_burn_mae": 0.0961,
+        "fractional_burn_rmse": 0.2251,
+        "fractional_burn_pearson_r": 0.8586,
+        "block_classification_metrics": {
+          "true_positives": 192,
+          "false_positives": 24,
+          "false_negatives": 39,
+          "true_negatives": 522,
+          "total_pixels": 777,
+          "prevalence": 0.2973,
+          "precision": 0.8889,
+          "recall": 0.8312,
+          "f1_score": 0.8591,
+          "iou": 0.7529,
+          "dice": 0.8591,
+          "specificity": 0.956,
+          "false_positive_rate": 0.044,
+          "false_negative_rate": 0.1688,
+          "predicted_area_km2": 54.0,
+          "reference_area_km2": 57.75,
+          "area_error_percent": -6.49
+        }
+      }
+    },
+    "mcd64a1_ancillary_summary": {
+      "product": "MCD64A1.061",
+      "concept_id": "C2565786756-LPCLOUD",
+      "doi": "10.5067/MODIS/MCD64A1.061",
+      "native_resolution_m": 500.0,
+      "grid_pixel_area_m2": 400.0,
+      "total_pixels": 640000,
+      "valid_pixels": 640000,
+      "burned_pixels": 182015,
+      "unmapped_pixels": 0,
+      "water_pixels": 0,
+      "burned_fraction_of_valid": 0.2843984375,
+      "burned_area_km2": 72.806,
+      "burned_area_ha": 7280.6,
+      "valid_area_km2": 256.0,
+      "burn_doy_min": 219,
+      "burn_doy_max": 242,
+      "burn_doy_median": 235.0,
+      "uncertainty_days_mean": 4.715,
+      "uncertainty_days_median": 5.0,
+      "uncertainty_days_max": 10.0,
+      "qa_summary": {
+        "land_fraction": 0.8321,
+        "valid_data_fraction": 0.8295,
+        "high_quality_land_fraction": 0.8295,
+        "contextual_relabeled_burned_fraction": 0.0177,
+        "qa_filtered_burned_pixels": 182015,
+        "qa_filtered_burned_area_km2": 72.806
+      },
+      "mapping_window": {
+        "first_day_min": 190,
+        "last_day_max": 267
+      }
+    }
+  },
+  "nisar_gcov_candidates": {
+    "validated_collection_concept_id": "C3622241360-ASF",
+    "provisional_collection_concept_id": "C2854338529-ASF",
+    "granules_discovered": 31,
+    "validated_granules_discovered": 1,
+    "provisional_granules_discovered": 30,
+    "matched_pairs_count": 3,
+    "primary_pair": {
+      "orbit_direction": "DESCENDING",
+      "track": 42,
+      "frame": 70,
+      "same_geometry_verified": true,
+      "polarization": "HHHH+HVHV",
+      "maturity_status": "PROVISIONAL->PROVISIONAL",
+      "pre_fire_maturity_status": "PROVISIONAL",
+      "post_fire_maturity_status": "PROVISIONAL",
+      "crid": "P05023",
+      "post_fire_crid": "P05023",
+      "validated_post_fire_crid": "P05036",
+      "combined_size_gb": 11.98,
+      "harmony_subset_pair_estimated_mb": 5.12,
+      "pre_fire_granule": {
+        "granule_name": "NISAR_L2_PR_GCOV_026_042_D_070_4005_DHDH_A_20260723T025640_20260723T025715_P05023_N_F_J_001",
+        "sensor": "NISAR_L",
+        "product_type": "GCOV",
+        "acquisition_time": "2026-07-23T02:56:40.000Z",
+        "polarization": "HHHH+HVHV",
+        "flight_direction": "DESCENDING",
+        "track": 42,
+        "frame": 70,
+        "download_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_026_042_D_070_4005_DHDH_A_20260723T025640_20260723T025715_P05023_N_F_J_001/NISAR_L2_PR_GCOV_026_042_D_070_4005_DHDH_A_20260723T025640_20260723T025715_P05023_N_F_J_001.h5",
+        "file_size_mb": 6126.01,
+        "wkt_geometry": "38.04614 -122.09216 35.93424 -122.87097 35.25745 -120.19153 37.34955 -119.34184 38.04614 -122.09216",
+        "crid": "P05023",
+        "maturity_status": "PROVISIONAL",
+        "end_time": "2026-07-23T02:57:15.999Z",
+        "concept_id": "G4260298818-ASF",
+        "collection_concept_id": "C2854338529-ASF",
+        "collection_short_name": "NISAR_L2_GCOV_PROVISIONAL_V1"
+      },
+      "post_fire_granule": {
+        "granule_name": "NISAR_L2_PR_GCOV_030_042_D_070_4005_DHDH_A_20260909T025638_20260909T025713_P05023_N_F_J_001",
+        "sensor": "NISAR_L",
+        "product_type": "GCOV",
+        "acquisition_time": "2026-09-09T02:56:38.000Z",
+        "polarization": "HHHH+HVHV",
+        "flight_direction": "DESCENDING",
+        "track": 42,
+        "frame": 70,
+        "download_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_030_042_D_070_4005_DHDH_A_20260909T025638_20260909T025713_P05023_N_F_J_001/NISAR_L2_PR_GCOV_030_042_D_070_4005_DHDH_A_20260909T025638_20260909T025713_P05023_N_F_J_001.h5",
+        "file_size_mb": 6141.48,
+        "wkt_geometry": "38.07127 -122.08318 35.95942 -122.86244 35.28298 -120.18423 37.37335 -119.32781 38.07127 -122.08318",
+        "crid": "P05023",
+        "maturity_status": "PROVISIONAL",
+        "end_time": "2026-09-09T02:57:13.999Z",
+        "concept_id": "G4311256123-ASF",
+        "collection_concept_id": "C2854338529-ASF",
+        "collection_short_name": "NISAR_L2_GCOV_PROVISIONAL_V1"
+      },
+      "validated_post_fire_granule": {
+        "granule_name": "NISAR_L2_PR_GCOV_034_042_D_070_4005_DHDH_A_20261027T025639_20261027T025714_P05036_N_F_J_001",
+        "sensor": "NISAR_L",
+        "product_type": "GCOV",
+        "acquisition_time": "2026-10-27T02:56:39.000Z",
+        "polarization": "HHHH+HVHV",
+        "flight_direction": "DESCENDING",
+        "track": 42,
+        "frame": 70,
+        "download_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_V1/NISAR_L2_PR_GCOV_034_042_D_070_4005_DHDH_A_20261027T025639_20261027T025714_P05036_N_F_J_001/NISAR_L2_PR_GCOV_034_042_D_070_4005_DHDH_A_20261027T025639_20261027T025714_P05036_N_F_J_001.h5",
+        "file_size_mb": 6134.17,
+        "wkt_geometry": "38.06355 -122.08711 35.95168 -122.8662 35.27507 -120.18724 37.36626 -119.33399 38.06355 -122.08711",
+        "crid": "P05036",
+        "maturity_status": "VALIDATED_SCIENCE",
+        "end_time": "2026-10-27T02:57:14.999Z",
+        "concept_id": "G4406466150-ASF",
+        "collection_concept_id": "C3622241360-ASF",
+        "collection_short_name": "NISAR_L2_GCOV_V1"
+      },
+      "harmony_subset_urls": {
+        "pre_fire": "https://harmony.earthdata.nasa.gov/C2854338529-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4260298818-ASF&subset=lat(36.137928:36.284119)&subset=lon(-121.758257:-121.577860)&crs=EPSG%3A32610&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+        "post_fire_immediate": "https://harmony.earthdata.nasa.gov/C2854338529-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4311256123-ASF&subset=lat(36.137928:36.284119)&subset=lon(-121.758257:-121.577860)&crs=EPSG%3A32610&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+        "post_fire_validated": "https://harmony.earthdata.nasa.gov/C3622241360-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4406466150-ASF&subset=lat(36.137928:36.284119)&subset=lon(-121.758257:-121.577860)&crs=EPSG%3A32610&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor"
+      }
+    },
+    "alternate_pairs": [
+      {
+        "orbit_direction": "DESCENDING",
+        "track": 143,
+        "frame": 70,
+        "same_geometry_verified": true,
+        "polarization": "HHHH+HVHV",
+        "maturity_status": "PROVISIONAL->PROVISIONAL",
+        "pre_fire_maturity_status": "PROVISIONAL",
+        "post_fire_maturity_status": "PROVISIONAL",
+        "crid": "P05023",
+        "post_fire_crid": "P05023",
+        "validated_post_fire_crid": "P05023",
+        "combined_size_gb": 6.31,
+        "harmony_subset_pair_estimated_mb": 5.12,
+        "pre_fire_granule": {
+          "granule_name": "NISAR_L2_PR_GCOV_025_143_D_070_4005_DHDH_A_20260718T030500_20260718T030522_P05023_N_P_J_001",
+          "sensor": "NISAR_L",
+          "product_type": "GCOV",
+          "acquisition_time": "2026-07-18T03:05:00.000Z",
+          "polarization": "HHHH+HVHV",
+          "flight_direction": "DESCENDING",
+          "track": 143,
+          "frame": 70,
+          "download_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_025_143_D_070_4005_DHDH_A_20260718T030500_20260718T030522_P05023_N_P_J_001/NISAR_L2_PR_GCOV_025_143_D_070_4005_DHDH_A_20260718T030500_20260718T030522_P05023_N_P_J_001.h5",
+          "file_size_mb": 3222.54,
+          "wkt_geometry": "38.01603 -124.17412 36.66734 -124.67617 35.9587 -121.8795 37.2934 -121.32748 38.01603 -124.17412",
+          "crid": "P05023",
+          "maturity_status": "PROVISIONAL",
+          "end_time": "2026-07-18T03:05:22.999Z",
+          "concept_id": "G4254388906-ASF",
+          "collection_concept_id": "C2854338529-ASF",
+          "collection_short_name": "NISAR_L2_GCOV_PROVISIONAL_V1"
+        },
+        "post_fire_granule": {
+          "granule_name": "NISAR_L2_PR_GCOV_029_143_D_070_4005_DHDH_A_20260904T030458_20260904T030520_P05023_N_P_J_001",
+          "sensor": "NISAR_L",
+          "product_type": "GCOV",
+          "acquisition_time": "2026-09-04T03:04:58.000Z",
+          "polarization": "HHHH+HVHV",
+          "flight_direction": "DESCENDING",
+          "track": 143,
+          "frame": 70,
+          "download_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_029_143_D_070_4005_DHDH_A_20260904T030458_20260904T030520_P05023_N_P_J_001/NISAR_L2_PR_GCOV_029_143_D_070_4005_DHDH_A_20260904T030458_20260904T030520_P05023_N_P_J_001.h5",
+          "file_size_mb": 3242.29,
+          "wkt_geometry": "38.04745 -124.16169 36.69881 -124.66418 35.98985 -121.86649 37.32469 -121.31476 38.04745 -124.16169",
+          "crid": "P05023",
+          "maturity_status": "PROVISIONAL",
+          "end_time": "2026-09-04T03:05:20.999Z",
+          "concept_id": "G4299870055-ASF",
+          "collection_concept_id": "C2854338529-ASF",
+          "collection_short_name": "NISAR_L2_GCOV_PROVISIONAL_V1"
+        },
+        "validated_post_fire_granule": {
+          "granule_name": "NISAR_L2_PR_GCOV_032_143_D_070_4005_DHDH_A_20261010T030458_20261010T030521_P05023_N_P_J_001",
+          "sensor": "NISAR_L",
+          "product_type": "GCOV",
+          "acquisition_time": "2026-10-10T03:04:58.000Z",
+          "polarization": "HHHH+HVHV",
+          "flight_direction": "DESCENDING",
+          "track": 143,
+          "frame": 70,
+          "download_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_032_143_D_070_4005_DHDH_A_20261010T030458_20261010T030521_P05023_N_P_J_001/NISAR_L2_PR_GCOV_032_143_D_070_4005_DHDH_A_20261010T030458_20261010T030521_P05023_N_P_J_001.h5",
+          "file_size_mb": 3358.81,
+          "wkt_geometry": "38.05355 -124.16088 36.64624 -124.68487 35.93782 -121.88887 37.3307 -121.31336 38.05355 -124.16088",
+          "crid": "P05023",
+          "maturity_status": "PROVISIONAL",
+          "end_time": "2026-10-10T03:05:21.999Z",
+          "concept_id": "G4359659208-ASF",
+          "collection_concept_id": "C2854338529-ASF",
+          "collection_short_name": "NISAR_L2_GCOV_PROVISIONAL_V1"
+        },
+        "harmony_subset_urls": {
+          "pre_fire": "https://harmony.earthdata.nasa.gov/C2854338529-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4254388906-ASF&subset=lat(36.137928:36.284119)&subset=lon(-121.758257:-121.577860)&crs=EPSG%3A32610&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+          "post_fire_immediate": "https://harmony.earthdata.nasa.gov/C2854338529-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4299870055-ASF&subset=lat(36.137928:36.284119)&subset=lon(-121.758257:-121.577860)&crs=EPSG%3A32610&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+          "post_fire_validated": "https://harmony.earthdata.nasa.gov/C2854338529-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4359659208-ASF&subset=lat(36.137928:36.284119)&subset=lon(-121.758257:-121.577860)&crs=EPSG%3A32610&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor"
+        }
+      },
+      {
+        "orbit_direction": "ASCENDING",
+        "track": 135,
+        "frame": 20,
+        "same_geometry_verified": true,
+        "polarization": "HHHH+HVHV",
+        "maturity_status": "PROVISIONAL->PROVISIONAL",
+        "pre_fire_maturity_status": "PROVISIONAL",
+        "post_fire_maturity_status": "PROVISIONAL",
+        "crid": "P05023",
+        "post_fire_crid": "P05023",
+        "validated_post_fire_crid": "P05023",
+        "combined_size_gb": 10.99,
+        "harmony_subset_pair_estimated_mb": 5.12,
+        "pre_fire_granule": {
+          "granule_name": "NISAR_L2_PR_GCOV_025_135_A_020_4005_DHDH_A_20260717T131718_20260717T131753_P05023_N_F_J_001",
+          "sensor": "NISAR_L",
+          "product_type": "GCOV",
+          "acquisition_time": "2026-07-17T13:17:18.000Z",
+          "polarization": "HHHH+HVHV",
+          "flight_direction": "ASCENDING",
+          "track": 135,
+          "frame": 20,
+          "download_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_025_135_A_020_4005_DHDH_A_20260717T131718_20260717T131753_P05023_N_F_J_001/NISAR_L2_PR_GCOV_025_135_A_020_4005_DHDH_A_20260717T131718_20260717T131753_P05023_N_F_J_001.h5",
+          "file_size_mb": 5625.0,
+          "wkt_geometry": "35.94419 -119.98873 38.05548 -120.77055 37.35711 -123.52688 35.26454 -122.67858 35.94419 -119.98873",
+          "crid": "P05023",
+          "maturity_status": "PROVISIONAL",
+          "end_time": "2026-07-17T13:17:53.999Z",
+          "concept_id": "G4254738142-ASF",
+          "collection_concept_id": "C2854338529-ASF",
+          "collection_short_name": "NISAR_L2_GCOV_PROVISIONAL_V1"
+        },
+        "post_fire_granule": {
+          "granule_name": "NISAR_L2_PR_GCOV_029_135_A_020_4005_DHDH_A_20260903T131716_20260903T131751_P05023_N_F_J_001",
+          "sensor": "NISAR_L",
+          "product_type": "GCOV",
+          "acquisition_time": "2026-09-03T13:17:16.000Z",
+          "polarization": "HHHH+HVHV",
+          "flight_direction": "ASCENDING",
+          "track": 135,
+          "frame": 20,
+          "download_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_029_135_A_020_4005_DHDH_A_20260903T131716_20260903T131751_P05023_N_F_J_001/NISAR_L2_PR_GCOV_029_135_A_020_4005_DHDH_A_20260903T131716_20260903T131751_P05023_N_F_J_001.h5",
+          "file_size_mb": 5624.36,
+          "wkt_geometry": "35.91389 -119.97929 38.02527 -120.76047 37.32721 -123.51544 35.23455 -122.66775 35.91389 -119.97929",
+          "crid": "P05023",
+          "maturity_status": "PROVISIONAL",
+          "end_time": "2026-09-03T13:17:51.999Z",
+          "concept_id": "G4299171281-ASF",
+          "collection_concept_id": "C2854338529-ASF",
+          "collection_short_name": "NISAR_L2_GCOV_PROVISIONAL_V1"
+        },
+        "validated_post_fire_granule": {
+          "granule_name": "NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001",
+          "sensor": "NISAR_L",
+          "product_type": "GCOV",
+          "acquisition_time": "2026-10-21T13:17:16.000Z",
+          "polarization": "HHHH+HVHV",
+          "flight_direction": "ASCENDING",
+          "track": 135,
+          "frame": 20,
+          "download_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001.h5",
+          "file_size_mb": 5624.59,
+          "wkt_geometry": "35.89647 -119.972 38.00753 -120.75433 37.31008 -123.50708 35.21736 -122.65984 35.89647 -119.972",
+          "crid": "P05023",
+          "maturity_status": "PROVISIONAL",
+          "end_time": "2026-10-21T13:17:51.999Z",
+          "concept_id": "G4385054823-ASF",
+          "collection_concept_id": "C2854338529-ASF",
+          "collection_short_name": "NISAR_L2_GCOV_PROVISIONAL_V1"
+        },
+        "harmony_subset_urls": {
+          "pre_fire": "https://harmony.earthdata.nasa.gov/C2854338529-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4254738142-ASF&subset=lat(36.137928:36.284119)&subset=lon(-121.758257:-121.577860)&crs=EPSG%3A32610&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+          "post_fire_immediate": "https://harmony.earthdata.nasa.gov/C2854338529-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4299171281-ASF&subset=lat(36.137928:36.284119)&subset=lon(-121.758257:-121.577860)&crs=EPSG%3A32610&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+          "post_fire_validated": "https://harmony.earthdata.nasa.gov/C2854338529-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4385054823-ASF&subset=lat(36.137928:36.284119)&subset=lon(-121.758257:-121.577860)&crs=EPSG%3A32610&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor"
+        }
+      }
+    ]
+  },
+  "geospatial_products": {
+    "pre_vh_db": "outputs/geospatial/CA_TIMBER_2026/pre_vh_db.tif",
+    "post_vh_db": "outputs/geospatial/CA_TIMBER_2026/post_vh_db.tif",
+    "delta_vh_db": "outputs/geospatial/CA_TIMBER_2026/delta_vh_db.tif",
+    "burn_prob": "outputs/geospatial/CA_TIMBER_2026/burn_prob.tif",
+    "burn_mask": "outputs/geospatial/CA_TIMBER_2026/burn_mask.tif",
+    "valid_mask": "outputs/geospatial/CA_TIMBER_2026/valid_mask.tif",
+    "dnbr": "outputs/geospatial/CA_TIMBER_2026/dnbr.tif",
+    "mcd64a1_burn_date": "outputs/geospatial/CA_TIMBER_2026/mcd64a1_burn_date.tif",
+    "aoi_boundary_geojson": "outputs/geospatial/CA_TIMBER_2026/aoi_boundary.geojson",
+    "before_after_overview_png": "outputs/geospatial/CA_TIMBER_2026/before_after_overview.png"
+  }
+}

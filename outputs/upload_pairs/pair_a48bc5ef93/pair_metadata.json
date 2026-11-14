@@ -1,0 +1,62 @@
+{
+  "pair_id": "pair_a48bc5ef93",
+  "pre_upload_id": "upl_cbc8e83b1a",
+  "post_upload_id": "upl_a01f78202e",
+  "pre_filename": "CA_DOME_2026_sentinel1_pre_dualpol_vv_vh_db.tif",
+  "post_filename": "CA_DOME_2026_sentinel1_post_dualpol_vv_vh_db.tif",
+  "pre_date": "2024-07-17",
+  "post_date": "2024-08-22",
+  "area_name": "CA_DOME_2026 (Borel Fire (Validation VAL))",
+  "compatible": true,
+  "status": "SUITABLE",
+  "checks": {
+    "crs_match": true,
+    "pre_crs": "EPSG:32611",
+    "post_crs": "EPSG:32611",
+    "spatial_overlap_percent": 100.0,
+    "dimensions_match": true,
+    "transform_match": true,
+    "resolution_match": true,
+    "date_order_valid": true,
+    "co_registered": false,
+    "dual_polarization_available": true
+  },
+  "target_grid": {
+    "crs": "EPSG:32611",
+    "width": 800,
+    "height": 800,
+    "resolution_m": 20.0,
+    "bounds": [
+      261360.0,
+      4157980.0,
+      277360.0,
+      4173980.0
+    ],
+    "bounds_wgs84": [
+      -119.706177,
+      37.537948,
+      -119.520034,
+      37.686026
+    ],
+    "transform": [
+      20.0,
+      0.0,
+      261360.0,
+      0.0,
+      -20.0,
+      4173980.0
+    ]
+  },
+  "pre_local_path": "outputs/uploads/upl_cbc8e83b1a/CA_DOME_2026_sentinel1_pre_dualpol_vv_vh_db.tif",
+  "post_local_path": "outputs/uploads/upl_a01f78202e/CA_DOME_2026_sentinel1_post_dualpol_vv_vh_db.tif",
+  "matched_event_id": "CA_DOME_2026",
+  "compatible_models": [
+    "unet",
+    "lightgbm",
+    "log_ratio",
+    "cusum"
+  ],
+  "reasons": [],
+  "warnings": [],
+  "created_at_utc": "2026-11-14T04:38:29.171987+00:00"
+}

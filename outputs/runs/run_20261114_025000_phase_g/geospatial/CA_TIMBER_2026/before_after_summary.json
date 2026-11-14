@@ -1,0 +1,779 @@
+{
+  "event_id": "CA_TIMBER_2026",
+  "run_id": "run_20261114_025000_phase_g",
+  "fire_name": "Timber Fire",
+  "state_region": "Monterey County, California",
+  "split": "TRAIN",
+  "include_in_training": false,
+  "is_nisar": false,
+  "data_origin": "CROSS_SENSOR_PROTOTYPE",
+  "bounds_wgs84": [
+    -121.758257,
+    36.137928,
+    -121.57786,
+    36.284119
+  ],
+  "water_pixels_excluded_scl6": 110276,
+  "water_pixels_remaining_in_valid": 0,
+  "firms_active_fire_summary": {
+    "total_hotspots": 1856,
+    "high_confidence_hotspots": 169,
+    "nominal_confidence_hotspots": 1619,
+    "low_confidence_hotspots": 68,
+    "first_detection_utc": "2026-08-09T09:17:00Z",
+    "last_detection_utc": "2026-08-23T22:01:00Z",
+    "max_frp_mw": 571.6,
+    "mean_frp_mw": 15.49,
+    "scientific_disclaimer": "FIRMS active fire hotspots represent instantaneous thermal anomalies and are never used as pixel-level burned-area ground truth."
+  },
+  "before_after_verification": {
+    "temporal_verification": {
+      "reported_ignition_date": "2026-08-09",
+      "s1_pre_dates": [
+        "2026-08-07"
+      ],
+      "s1_post_dates": [
+        "2026-08-31",
+        "2026-09-12"
+      ],
+      "s2_pre_date": "2026-07-27",
+      "s2_post_date": "2026-08-26",
+      "pre_strictly_before_or_at_ignition": true,
+      "post_after_ignition": true
+    },
+    "spatial_grid_verification": {
+      "crs": "EPSG:32610",
+      "resolution_m": 20.0,
+      "dimensions_hw": [
+        800,
+        800
+      ],
+      "bounds_utm": [
+        611720.0,
+        4000180.0,
+        627720.0,
+        4016180.0
+      ],
+      "all_layers_co_registered": true
+    },
+    "geometry_and_polarization_verification": {
+      "sensor": "Sentinel-1 C-band RTC (gamma-0)",
+      "polarizations_verified": [
+        "VV",
+        "VH"
+      ],
+      "pre_relative_orbits": [
+        "35"
+      ],
+      "post_relative_orbits": [
+        "35"
+      ],
+      "shared_orbit_geometry": true
+    }
+  },
+  "sar_change_statistics": {
+    "vh_pre_mean_db": -13.9027,
+    "vh_post_mean_db": -14.0166,
+    "delta_vh_mean_db": -0.1139,
+    "delta_vh_std_db": 2.0252,
+    "delta_vh_p10_db": -2.6714,
+    "delta_vh_p90_db": 2.4479
+  },
+  "burn_probability_summary": {
+    "model": "log_ratio",
+    "threshold": -1.2,
+    "mean_probability_valid": 0.5172,
+    "median_probability_valid": 0.529,
+    "p90_probability_valid": 0.9353,
+    "max_probability_valid": 1.0,
+    "min_probability_valid": 0.0
+  },
+  "primary_model": "log_ratio",
+  "area_estimates": {
+    "primary_model_burned_area": {
+      "crs": "EPSG:32610",
+      "pixel_width_m": 20.0,
+      "pixel_height_m": 20.0,
+      "pixel_area_m2": 400.0,
+      "total_aoi_pixels": 640000,
+      "valid_observation_pixels": 468105,
+      "invalid_masked_pixels": 171895,
+      "valid_coverage_percent": 73.14,
+      "total_aoi_area_km2": 256.0,
+      "total_aoi_area_ha": 25600.0,
+      "valid_observation_area_km2": 187.242,
+      "valid_observation_area_ha": 18724.2,
+      "burned_pixels": 135445,
+      "burned_area_km2": 54.178,
+      "burned_area_ha": 5417.8,
+      "burned_percent_of_valid_area": 28.93,
+      "burned_percent_of_total_aoi": 21.16,
+      "burned_area_km2_ci95": [
+        52.9948,
+        55.8428
+      ],
+      "threshold_sensitivity_km2_range": [
+        46.4344,
+        62.6392
+      ]
+    },
+    "by_model": {
+      "log_ratio": {
+        "crs": "EPSG:32610",
+        "pixel_width_m": 20.0,
+        "pixel_height_m": 20.0,
+        "pixel_area_m2": 400.0,
+        "total_aoi_pixels": 640000,
+        "valid_observation_pixels": 468105,
+        "invalid_masked_pixels": 171895,
+        "valid_coverage_percent": 73.14,
+        "total_aoi_area_km2": 256.0,
+        "total_aoi_area_ha": 25600.0,
+        "valid_observation_area_km2": 187.242,
+        "valid_observation_area_ha": 18724.2,
+        "burned_pixels": 135445,
+        "burned_area_km2": 54.178,
+        "burned_area_ha": 5417.8,
+        "burned_percent_of_valid_area": 28.93,
+        "burned_percent_of_total_aoi": 21.16,
+        "burned_area_km2_ci95": [
+          52.9948,
+          55.8428
+        ],
+        "threshold_sensitivity_km2_range": [
+          46.4344,
+          62.6392
+        ]
+      },
+      "all_burned": {
+        "crs": "EPSG:32610",
+        "pixel_width_m": 20.0,
+        "pixel_height_m": 20.0,
+        "pixel_area_m2": 400.0,
+        "total_aoi_pixels": 640000,
+        "valid_observation_pixels": 468105,
+        "invalid_masked_pixels": 171895,
+        "valid_coverage_percent": 73.14,
+        "total_aoi_area_km2": 256.0,
+        "total_aoi_area_ha": 25600.0,
+        "valid_observation_area_km2": 187.242,
+        "valid_observation_area_ha": 18724.2,
+        "burned_pixels": 468105,
+        "burned_area_km2": 187.242,
+        "burned_area_ha": 18724.2,
+        "burned_percent_of_valid_area": 100.0,
+        "burned_percent_of_total_aoi": 73.14,
+        "burned_area_km2_ci95": [
+          187.242,
+          187.242
+        ],
+        "threshold_sensitivity_km2_range": [
+          187.242,
+          187.242
+        ]
+      }
+    },
+    "sentinel2_dnbr_reference": {
+      "crs": "EPSG:32610",
+      "pixel_width_m": 20.0,
+      "pixel_height_m": 20.0,
+      "pixel_area_m2": 400.0,
+      "total_aoi_pixels": 640000,
+      "valid_observation_pixels": 468105,
+      "invalid_masked_pixels": 171895,
+      "valid_coverage_percent": 73.14,
+      "total_aoi_area_km2": 256.0,
+      "total_aoi_area_ha": 25600.0,
+      "valid_observation_area_km2": 187.242,
+      "valid_observation_area_ha": 18724.2,
+      "burned_pixels": 125386,
+      "burned_area_km2": 50.1544,
+      "burned_area_ha": 5015.44,
+      "burned_percent_of_valid_area": 26.79,
+      "burned_percent_of_total_aoi": 19.59,
+      "burned_area_km2_ci95": [
+        38.2162,
+        62.4155
+      ],
+      "threshold_sensitivity_km2_range": [
+        46.5116,
+        56.7
+      ]
+    },
+    "sentinel2_dnbr_usgs_027_reference": {
+      "crs": "EPSG:32610",
+      "pixel_width_m": 20.0,
+      "pixel_height_m": 20.0,
+      "pixel_area_m2": 400.0,
+      "total_aoi_pixels": 640000,
+      "valid_observation_pixels": 468105,
+      "invalid_masked_pixels": 171895,
+      "valid_coverage_percent": 73.14,
+      "total_aoi_area_km2": 256.0,
+      "total_aoi_area_ha": 25600.0,
+      "valid_observation_area_km2": 187.242,
+      "valid_observation_area_ha": 18724.2,
+      "burned_pixels": 70942,
+      "burned_area_km2": 28.3768,
+      "burned_area_ha": 2837.68,
+      "burned_percent_of_valid_area": 15.16,
+      "burned_percent_of_total_aoi": 11.08,
+      "burned_area_km2_ci95": [
+        20.1543,
+        36.9334
+      ],
+      "threshold_sensitivity_km2_range": [
+        25.9672,
+        30.9336
+      ]
+    },
+    "nasa_mcd64a1_reference": {
+      "crs": "EPSG:32610",
+      "pixel_width_m": 20.0,
+      "pixel_height_m": 20.0,
+      "pixel_area_m2": 400.0,
+      "total_aoi_pixels": 640000,
+      "valid_observation_pixels": 468105,
+      "invalid_masked_pixels": 171895,
+      "valid_coverage_percent": 73.14,
+      "total_aoi_area_km2": 256.0,
+      "total_aoi_area_ha": 25600.0,
+      "valid_observation_area_km2": 187.242,
+      "valid_observation_area_ha": 18724.2,
+      "burned_pixels": 128613,
+      "burned_area_km2": 51.4452,
+      "burned_area_ha": 5144.52,
+      "burned_percent_of_valid_area": 27.48,
+      "burned_percent_of_total_aoi": 20.1,
+      "burned_area_km2_ci95": [
+        39.1339,
+        62.0641
+      ],
+      "threshold_sensitivity_km2_range": [
+        51.4452,
+        51.4452
+      ]
+    }
+  },
+  "independent_validation": {
+    "models": {
+      "log_ratio": {
+        "vs_sentinel2_dnbr": {
+          "true_positives": 37511,
+          "false_positives": 97934,
+          "false_negatives": 87875,
+          "true_negatives": 244785,
+          "total_pixels": 468105,
+          "prevalence": 0.2679,
+          "precision": 0.2769,
+          "recall": 0.2992,
+          "f1_score": 0.2876,
+          "iou": 0.168,
+          "dice": 0.2876,
+          "specificity": 0.7142,
+          "false_positive_rate": 0.2858,
+          "false_negative_rate": 0.7008,
+          "predicted_area_km2": 54.178,
+          "reference_area_km2": 50.154,
+          "area_error_percent": 8.02,
+          "roc_auc": 0.4876,
+          "pr_auc": 0.2842
+        },
+        "vs_sentinel2_dnbr_usgs_027": {
+          "true_positives": 23120,
+          "false_positives": 112325,
+          "false_negatives": 47822,
+          "true_negatives": 284838,
+          "total_pixels": 468105,
+          "prevalence": 0.1516,
+          "precision": 0.1707,
+          "recall": 0.3259,
+          "f1_score": 0.224,
+          "iou": 0.1262,
+          "dice": 0.224,
+          "specificity": 0.7172,
+          "false_positive_rate": 0.2828,
+          "false_negative_rate": 0.6741,
+          "predicted_area_km2": 54.178,
+          "reference_area_km2": 28.377,
+          "area_error_percent": 90.92
+        },
+        "vs_nasa_mcd64a1_qa_filtered": {
+          "true_positives": 37675,
+          "false_positives": 97770,
+          "false_negatives": 90938,
+          "true_negatives": 241722,
+          "total_pixels": 468105,
+          "prevalence": 0.2748,
+          "precision": 0.2782,
+          "recall": 0.2929,
+          "f1_score": 0.2854,
+          "iou": 0.1664,
+          "dice": 0.2854,
+          "specificity": 0.712,
+          "false_positive_rate": 0.288,
+          "false_negative_rate": 0.7071,
+          "predicted_area_km2": 54.178,
+          "reference_area_km2": 51.445,
+          "area_error_percent": 5.31,
+          "roc_auc": 0.483,
+          "pr_auc": 0.2858
+        },
+        "vs_nasa_mcd64a1_500m_block_reconciled": {
+          "block_resolution_m": 500,
+          "block_size_px": 25,
+          "valid_500m_blocks": 777,
+          "fractional_burn_mae": 0.3915,
+          "fractional_burn_rmse": 0.4371,
+          "fractional_burn_pearson_r": 0.0325,
+          "block_classification_metrics": {
+            "true_positives": 8,
+            "false_positives": 1,
+            "false_negatives": 223,
+            "true_negatives": 545,
+            "total_pixels": 777,
+            "prevalence": 0.2973,
+            "precision": 0.8889,
+            "recall": 0.0346,
+            "f1_score": 0.0667,
+            "iou": 0.0345,
+            "dice": 0.0667,
+            "specificity": 0.9982,
+            "false_positive_rate": 0.0018,
+            "false_negative_rate": 0.9654,
+            "predicted_area_km2": 2.25,
+            "reference_area_km2": 57.75,
+            "area_error_percent": -96.1
+          }
+        }
+      },
+      "all_burned": {
+        "vs_sentinel2_dnbr": {
+          "true_positives": 125386,
+          "false_positives": 342719,
+          "false_negatives": 0,
+          "true_negatives": 0,
+          "total_pixels": 468105,
+          "prevalence": 0.2679,
+          "precision": 0.2679,
+          "recall": 1.0,
+          "f1_score": 0.4225,
+          "iou": 0.2679,
+          "dice": 0.4225,
+          "specificity": 0.0,
+          "false_positive_rate": 1.0,
+          "false_negative_rate": 0.0,
+          "predicted_area_km2": 187.242,
+          "reference_area_km2": 50.154,
+          "area_error_percent": 273.33
+        },
+        "vs_sentinel2_dnbr_usgs_027": {
+          "true_positives": 70942,
+          "false_positives": 397163,
+          "false_negatives": 0,
+          "true_negatives": 0,
+          "total_pixels": 468105,
+          "prevalence": 0.1516,
+          "precision": 0.1516,
+          "recall": 1.0,
+          "f1_score": 0.2632,
+          "iou": 0.1516,
+          "dice": 0.2632,
+          "specificity": 0.0,
+          "false_positive_rate": 1.0,
+          "false_negative_rate": 0.0,
+          "predicted_area_km2": 187.242,
+          "reference_area_km2": 28.377,
+          "area_error_percent": 559.84
+        },
+        "vs_nasa_mcd64a1_qa_filtered": {
+          "true_positives": 128613,
+          "false_positives": 339492,
+          "false_negatives": 0,
+          "true_negatives": 0,
+          "total_pixels": 468105,
+          "prevalence": 0.2748,
+          "precision": 0.2748,
+          "recall": 1.0,
+          "f1_score": 0.4311,
+          "iou": 0.2748,
+          "dice": 0.4311,
+          "specificity": 0.0,
+          "false_positive_rate": 1.0,
+          "false_negative_rate": 0.0,
+          "predicted_area_km2": 187.242,
+          "reference_area_km2": 51.445,
+          "area_error_percent": 263.96
+        },
+        "vs_nasa_mcd64a1_500m_block_reconciled": {
+          "block_resolution_m": 500,
+          "block_size_px": 25,
+          "valid_500m_blocks": 777,
+          "fractional_burn_mae": 0.7083,
+          "fractional_burn_rmse": 0.8309,
+          "fractional_burn_pearson_r": 0.0,
+          "block_classification_metrics": {
+            "true_positives": 231,
+            "false_positives": 546,
+            "false_negatives": 0,
+            "true_negatives": 0,
+            "total_pixels": 777,
+            "prevalence": 0.2973,
+            "precision": 0.2973,
+            "recall": 1.0,
+            "f1_score": 0.4583,
+            "iou": 0.2973,
+            "dice": 0.4583,
+            "specificity": 0.0,
+            "false_positive_rate": 1.0,
+            "false_negative_rate": 0.0,
+            "predicted_area_km2": 194.25,
+            "reference_area_km2": 57.75,
+            "area_error_percent": 236.36
+          }
+        }
+      }
+    },
+    "sentinel2_dnbr_vs_nasa_mcd64a1": {
+      "true_positives": 103383,
+      "false_positives": 22003,
+      "false_negatives": 25230,
+      "true_negatives": 317489,
+      "total_pixels": 468105,
+      "prevalence": 0.2748,
+      "precision": 0.8245,
+      "recall": 0.8038,
+      "f1_score": 0.814,
+      "iou": 0.6864,
+      "dice": 0.814,
+      "specificity": 0.9352,
+      "false_positive_rate": 0.0648,
+      "false_negative_rate": 0.1962,
+      "predicted_area_km2": 50.154,
+      "reference_area_km2": 51.445,
+      "area_error_percent": -2.51,
+      "block_reconciled_500m": {
+        "block_resolution_m": 500,
+        "block_size_px": 25,
+        "valid_500m_blocks": 777,
+        "fractional_burn_mae": 0.0961,
+        "fractional_burn_rmse": 0.2251,
+        "fractional_burn_pearson_r": 0.8586,
+        "block_classification_metrics": {
+          "true_positives": 192,
+          "false_positives": 24,
+          "false_negatives": 39,
+          "true_negatives": 522,
+          "total_pixels": 777,
+          "prevalence": 0.2973,
+          "precision": 0.8889,
+          "recall": 0.8312,
+          "f1_score": 0.8591,
+          "iou": 0.7529,
+          "dice": 0.8591,
+          "specificity": 0.956,
+          "false_positive_rate": 0.044,
+          "false_negative_rate": 0.1688,
+          "predicted_area_km2": 54.0,
+          "reference_area_km2": 57.75,
+          "area_error_percent": -6.49
+        }
+      }
+    },
+    "mcd64a1_ancillary_summary": {
+      "product": "MCD64A1.061",
+      "concept_id": "C2565786756-LPCLOUD",
+      "doi": "10.5067/MODIS/MCD64A1.061",
+      "native_resolution_m": 500.0,
+      "grid_pixel_area_m2": 400.0,
+      "total_pixels": 640000,
+      "valid_pixels": 640000,
+      "burned_pixels": 182015,
+      "unmapped_pixels": 0,
+      "water_pixels": 0,
+      "burned_fraction_of_valid": 0.2843984375,
+      "burned_area_km2": 72.806,
+      "burned_area_ha": 7280.6,
+      "valid_area_km2": 256.0,
+      "burn_doy_min": 219,
+      "burn_doy_max": 242,
+      "burn_doy_median": 235.0,
+      "uncertainty_days_mean": 4.715,
+      "uncertainty_days_median": 5.0,
+      "uncertainty_days_max": 10.0,
+      "qa_summary": {
+        "land_fraction": 0.8321,
+        "valid_data_fraction": 0.8295,
+        "shortened_mapping_period_fraction": 0.0,
+        "high_quality_land_fraction": 0.8295,
+        "contextual_relabeled_burned_fraction": 0.0177,
+        "qa_filtered_burned_pixels": 182015,
+        "qa_filtered_burned_area_km2": 72.806
+      },
+      "mapping_window": {
+        "first_day_min": 190,
+        "last_day_max": 267
+      }
+    }
+  },
+  "geospatial_products": {
+    "pre_fire_vh_db": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/pre_fire_vh_db.tif",
+    "post_fire_vh_db": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/post_fire_vh_db.tif",
+    "delta_vh_db": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/delta_vh_db.tif",
+    "burn_probability": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/burn_probability.tif",
+    "predicted_burn_mask": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/predicted_burn_mask.tif",
+    "dnbr_reference": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/dnbr_reference.tif",
+    "mcd64a1_reference": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/mcd64a1_reference.tif",
+    "valid_land_mask": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/valid_land_mask.tif",
+    "pre_vh_db": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/pre_vh_db.tif",
+    "post_vh_db": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/post_vh_db.tif",
+    "burn_prob": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/burn_prob.tif",
+    "burn_mask": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/burn_mask.tif",
+    "dnbr": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/dnbr.tif",
+    "mcd64a1_burn_date": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/mcd64a1_burn_date.tif",
+    "valid_mask": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/valid_mask.tif",
+    "aoi_boundary_geojson": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/aoi_boundary.geojson",
+    "firms_hotspots_geojson": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/firms_hotspots.geojson",
+    "before_after_overview_png": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/before_after_overview.png"
+  },
+  "web_overlay_pngs": {
+    "pre_fire_vh_db": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/layers/pre_fire_vh_db.png",
+    "post_fire_vh_db": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/layers/post_fire_vh_db.png",
+    "delta_vh_db": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/layers/delta_vh_db.png",
+    "burn_probability": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/layers/burn_probability.png",
+    "predicted_burn_mask": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/layers/predicted_burn_mask.png",
+    "dnbr_reference": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/layers/dnbr_reference.png",
+    "mcd64a1_reference": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/layers/mcd64a1_reference.png",
+    "valid_land_mask": "outputs/runs/run_20261114_025000_phase_g/geospatial/CA_TIMBER_2026/layers/valid_land_mask.png"
+  },
+  "raster_quality_audit": {
+    "event_id": "CA_TIMBER_2026",
+    "crs": "EPSG:32610",
+    "bounds_utm": [
+      611720.0,
+      4000180.0,
+      627720.0,
+      4016180.0
+    ],
+    "water_pixels_in_valid_mask": 0,
+    "all_rasters_valid_and_aligned": true,
+    "layers": {
+      "pre_fire_vh_db": {
+        "file": "pre_fire_vh_db.tif",
+        "exists": true,
+        "size_bytes": 2198476,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          611720.0,
+          0.0,
+          -20.0,
+          4016180.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -33.0235,
+        "max_valid_value": 1.2769,
+        "aligned_to_event_grid": true
+      },
+      "post_fire_vh_db": {
+        "file": "post_fire_vh_db.tif",
+        "exists": true,
+        "size_bytes": 2199577,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          611720.0,
+          0.0,
+          -20.0,
+          4016180.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -33.3545,
+        "max_valid_value": 1.2418,
+        "aligned_to_event_grid": true
+      },
+      "delta_vh_db": {
+        "file": "delta_vh_db.tif",
+        "exists": true,
+        "size_bytes": 2295403,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          611720.0,
+          0.0,
+          -20.0,
+          4016180.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -13.3156,
+        "max_valid_value": 10.8296,
+        "aligned_to_event_grid": true
+      },
+      "burn_probability": {
+        "file": "burn_probability.tif",
+        "exists": true,
+        "size_bytes": 1733762,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          611720.0,
+          0.0,
+          -20.0,
+          4016180.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": 0.0,
+        "max_valid_value": 1.0,
+        "aligned_to_event_grid": true
+      },
+      "predicted_burn_mask": {
+        "file": "predicted_burn_mask.tif",
+        "exists": true,
+        "size_bytes": 89190,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          611720.0,
+          0.0,
+          -20.0,
+          4016180.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "uint8",
+        "nodata": 255.0,
+        "min_valid_value": 0.0,
+        "max_valid_value": 1.0,
+        "aligned_to_event_grid": true
+      },
+      "dnbr_reference": {
+        "file": "dnbr_reference.tif",
+        "exists": true,
+        "size_bytes": 1712162,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          611720.0,
+          0.0,
+          -20.0,
+          4016180.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "float32",
+        "nodata": -9999.0,
+        "min_valid_value": -0.236,
+        "max_valid_value": 1.2191,
+        "aligned_to_event_grid": true
+      },
+      "mcd64a1_reference": {
+        "file": "mcd64a1_reference.tif",
+        "exists": true,
+        "size_bytes": 16821,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          611720.0,
+          0.0,
+          -20.0,
+          4016180.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "int16",
+        "nodata": -1.0,
+        "min_valid_value": 0.0,
+        "max_valid_value": 242.0,
+        "aligned_to_event_grid": true
+      },
+      "valid_land_mask": {
+        "file": "valid_land_mask.tif",
+        "exists": true,
+        "size_bytes": 20786,
+        "crs": "EPSG:32610",
+        "transform": [
+          20.0,
+          0.0,
+          611720.0,
+          0.0,
+          -20.0,
+          4016180.0
+        ],
+        "dimensions_hw": [
+          800,
+          800
+        ],
+        "resolution_m": [
+          20.0,
+          20.0
+        ],
+        "dtype": "uint8",
+        "nodata": 255.0,
+        "min_valid_value": 0.0,
+        "max_valid_value": 1.0,
+        "aligned_to_event_grid": true
+      }
+    }
+  }
+}

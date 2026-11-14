@@ -1,0 +1,89 @@
+{
+  "upload_id": "upl_cbc8e83b1a",
+  "filename": "CA_DOME_2026_sentinel1_pre_dualpol_vv_vh_db.tif",
+  "role": "pre_fire",
+  "file_format": "GEOTIFF",
+  "file_size_bytes": 4308942,
+  "sha256": "5056c2e2f838f59c7e465d1d9dd52ad2012c78a6083658617e59d5553cc121f1",
+  "created_at_utc": "2026-11-14T04:38:28.563034+00:00",
+  "is_valid": true,
+  "valid_for_sar_inference": true,
+  "validation_status": "VALID_GEOTIFF",
+  "error_code": null,
+  "scientific_explanation": "Georeferenced GeoTIFF (800\u00d7800 px, 2 bands, CRS=EPSG:32611, resolution=20.0 m, 95.02% valid pixels, scale=decibels_db).",
+  "sensor": "Sentinel-1 RTC C-band",
+  "acquisition_date": "2024-07-17",
+  "matched_event_id": "CA_DOME_2026",
+  "crs": "EPSG:32611",
+  "transform": [
+    20.0,
+    0.0,
+    261360.0,
+    0.0,
+    -20.0,
+    4173980.0
+  ],
+  "bounds": [
+    261360.0,
+    4157980.0,
+    277360.0,
+    4173980.0
+  ],
+  "bounds_wgs84": [
+    -119.706177,
+    37.537948,
+    -119.520034,
+    37.686026
+  ],
+  "width": 800,
+  "height": 800,
+  "band_count": 2,
+  "bands": [
+    "VV_dB",
+    "VH_dB"
+  ],
+  "dtypes": [
+    "float32",
+    "float32"
+  ],
+  "polarizations": [
+    "VV",
+    "VH"
+  ],
+  "radiometric_scale": "decibels_db",
+  "resolution_m": 20.0,
+  "nodata": -9999.0,
+  "valid_pixel_percentage": 95.02,
+  "band_statistics": [
+    {
+      "band_index": 1,
+      "description": "VV_dB",
+      "dtype": "float32",
+      "valid_pixels": 608150,
+      "valid_percentage": 95.02,
+      "min": -23.6916,
+      "max": 8.8948,
+      "mean": -9.2383,
+      "std": 2.3032
+    },
+    {
+      "band_index": 2,
+      "description": "VH_dB",
+      "dtype": "float32",
+      "valid_pixels": 608150,
+      "valid_percentage": 95.02,
+      "min": -29.0402,
+      "max": -0.6167,
+      "mean": -14.6296,
+      "std": 2.3238
+    }
+  ],
+  "compatible_models": [
+    "unet",
+    "lightgbm",
+    "log_ratio"
+  ],
+  "warnings": [],
+  "preview_url": "/api/analysis/uploads/upl_cbc8e83b1a/preview.png",
+  "local_path": "outputs/uploads/upl_cbc8e83b1a/CA_DOME_2026_sentinel1_pre_dualpol_vv_vh_db.tif"
+}

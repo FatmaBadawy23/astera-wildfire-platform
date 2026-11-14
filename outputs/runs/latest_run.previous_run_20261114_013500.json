@@ -1,0 +1,10 @@
+{
+  "run_id": "run_20261114_013500",
+  "generated_at_utc": "2026-11-13T23:50:52.806838+00:00",
+  "acquisition_dir": "data/acquisitions/run_20261114_013500",
+  "output_run_dir": "outputs/runs/run_20261114_013500",
+  "acquisition_manifest_path": "data/acquisitions/run_20261114_013500/manifests/acquisition_manifest.json",
+  "dataset_manifest_path": "data/acquisitions/run_20261114_013500/dataset/dataset_manifest.json",
+  "model_comparison_path": "outputs/runs/run_20261114_013500/evaluation/real_model_comparison.json",
+  "comprehensive_validation_path": "outputs/runs/run_20261114_013500/evaluation/comprehensive_validation_report.json"
+}

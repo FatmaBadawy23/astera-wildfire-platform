@@ -1,0 +1,2028 @@
+{
+  "generated_at": "2026-11-13T21:08:53.233776+00:00",
+  "project": "Astera Watch \u2014 NISAR Wildfire Monitoring & Burned-Area Intelligence Platform",
+  "project_maturity_status": {
+    "CROSS_SENSOR_PROTOTYPE": true,
+    "NISAR_DATA_DISCOVERED": true,
+    "NISAR_PREPROCESSING_VALIDATED": true,
+    "NISAR_DATA_ACQUIRED": false,
+    "NISAR_CHANGE_ANALYSIS_COMPLETED": false,
+    "NISAR_MODEL_EVALUATED": false
+  },
+  "environment": {
+    "earthdata_login_configured": false,
+    "free_disk_space_gb": 12.53
+  },
+  "status_summary": {
+    "PROCESSED": 28,
+    "BLOCKED_AUTH": 12,
+    "BLOCKED_STORAGE": 12
+  },
+  "total_registry_entries": 52,
+  "entries": [
+    {
+      "dataset_name": "Sentinel-1 Radiometrically Terrain Corrected (RTC) Backscatter",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-1",
+      "endpoint_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/7/26/IW/DV/S1C_IW_GRDH_1SDV_20260726T140658_20260726T140723_008715_011453_9894/measurement/iw-vh.rtc.tiff",
+      "collection_id": "sentinel-1-rtc",
+      "granule_or_scene_id": "S1C_IW_GRDH_1SDV_20260726T140658_20260726T140723_008715_011453_rtc",
+      "sensor": "SENTINEL-1C C-band SAR (5.405 GHz)",
+      "product_version": "RTC Gamma0 (VV, VH) Orbit 42 descending",
+      "acquisition_timestamp": "2026-07-26T14:07:11.382189Z",
+      "event_id": "CA_GANN_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          690640.0,
+          4212780.0,
+          706640.0,
+          4228780.0
+        ],
+        "center_lon": -120.734,
+        "center_lat": 38.113,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "PRE_FIRE_PRIMARY",
+      "local_file_path": "data/real/CA_GANN_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26207283,
+      "sha256_checksum": "51331e60cbdd788129eb2c930509aef885e1e7002b8f6078c363adbde26266d0",
+      "band_checksums": {
+        "vv": "8dcf60978fb336ffef7de7355c322189830e2666866cf37f34d02cc7fb1378e1",
+        "vh": "26c0acdf850247bae3d2abc330d1a4c6f20738f93da63e6bded3017f06589de0"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-1 Radiometrically Terrain Corrected (RTC) Backscatter",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-1",
+      "endpoint_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/8/7/IW/DV/S1C_IW_GRDH_1SDV_20260807T140659_20260807T140724_008890_011A28_8CFF/measurement/iw-vh.rtc.tiff",
+      "collection_id": "sentinel-1-rtc",
+      "granule_or_scene_id": "S1C_IW_GRDH_1SDV_20260807T140659_20260807T140724_008890_011A28_rtc",
+      "sensor": "SENTINEL-1C C-band SAR (5.405 GHz)",
+      "product_version": "RTC Gamma0 (VV, VH) Orbit 42 descending",
+      "acquisition_timestamp": "2026-08-07T14:07:11.891913Z",
+      "event_id": "CA_GANN_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          690640.0,
+          4212780.0,
+          706640.0,
+          4228780.0
+        ],
+        "center_lon": -120.734,
+        "center_lat": 38.113,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "TEMPORAL_STEP_T1",
+      "local_file_path": "data/real/CA_GANN_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26207283,
+      "sha256_checksum": "51331e60cbdd788129eb2c930509aef885e1e7002b8f6078c363adbde26266d0",
+      "band_checksums": {
+        "vv": "4016a45776844f236217ec54c8f657f2afe1ceb639a1b9e2fb468f4a1ea16490",
+        "vh": "86472ef30f6fb740d7b554e517ac19259b273b6393b06edeb1731cfbf112af19"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-1 Radiometrically Terrain Corrected (RTC) Backscatter",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-1",
+      "endpoint_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/8/19/IW/DV/S1C_IW_GRDH_1SDV_20260819T140700_20260819T140725_009065_011FE8_4A16/measurement/iw-vh.rtc.tiff",
+      "collection_id": "sentinel-1-rtc",
+      "granule_or_scene_id": "S1C_IW_GRDH_1SDV_20260819T140700_20260819T140725_009065_011FE8_rtc",
+      "sensor": "SENTINEL-1C C-band SAR (5.405 GHz)",
+      "product_version": "RTC Gamma0 (VV, VH) Orbit 42 descending",
+      "acquisition_timestamp": "2026-08-19T14:07:12.770531Z",
+      "event_id": "CA_GANN_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          690640.0,
+          4212780.0,
+          706640.0,
+          4228780.0
+        ],
+        "center_lon": -120.734,
+        "center_lat": 38.113,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_PRIMARY",
+      "local_file_path": "data/real/CA_GANN_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26207283,
+      "sha256_checksum": "51331e60cbdd788129eb2c930509aef885e1e7002b8f6078c363adbde26266d0",
+      "band_checksums": {
+        "vv": "e82bbba2d0d512efecbc9504e688a79de4419bd229e9f0aaf258128080958ef6",
+        "vh": "573c7138574c815b3612d32d5f888e4cd5c3fcc372bc519810029a70160f085c"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-1 Radiometrically Terrain Corrected (RTC) Backscatter",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-1",
+      "endpoint_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/8/31/IW/DV/S1C_IW_GRDH_1SDV_20260831T140700_20260831T140725_009240_0125C1_C274/measurement/iw-vh.rtc.tiff",
+      "collection_id": "sentinel-1-rtc",
+      "granule_or_scene_id": "S1C_IW_GRDH_1SDV_20260831T140700_20260831T140725_009240_0125C1_rtc",
+      "sensor": "SENTINEL-1C C-band SAR (5.405 GHz)",
+      "product_version": "RTC Gamma0 (VV, VH) Orbit 42 descending",
+      "acquisition_timestamp": "2026-08-31T14:07:13.244101Z",
+      "event_id": "CA_GANN_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          690640.0,
+          4212780.0,
+          706640.0,
+          4228780.0
+        ],
+        "center_lon": -120.734,
+        "center_lat": 38.113,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_TEMPORAL_T3",
+      "local_file_path": "data/real/CA_GANN_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26207283,
+      "sha256_checksum": "51331e60cbdd788129eb2c930509aef885e1e7002b8f6078c363adbde26266d0",
+      "band_checksums": {
+        "vv": "81d39e655e7a5e38e3faffb71b4cfbbf232cfe193ecf2c7c0e089c710b61318c",
+        "vh": "17aa7bcf8e65409d5fc37c8edf7b72955318faa8c3273273f03bf36021f1d945"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-2 Level-2A Surface Reflectance (B04, B08, B12, SCL)",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-2",
+      "endpoint_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/10/S/FH/2026/07/29/S2C_MSIL2A_20260729T183921_N0512_R070_T10SFH_20260729T233215.SAFE/GRANULE/L2A_T10SFH_A009907_20260729T185111/IMG_DATA/R10m/T10SFH_20260729T183921_B08_10m.tif",
+      "collection_id": "sentinel-2-l2a",
+      "granule_or_scene_id": "S2C_MSIL2A_20260729T183921_R070_T10SFH_20260729T233215",
+      "sensor": "Sentinel-2 MSI",
+      "product_version": "L2A Baseline N0512",
+      "acquisition_timestamp": "2026-07-29T18:39:21.025000Z",
+      "event_id": "CA_GANN_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          690640.0,
+          4212780.0,
+          706640.0,
+          4228780.0
+        ],
+        "center_lon": -120.734,
+        "center_lat": 38.113,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "PRE_FIRE_REFERENCE",
+      "local_file_path": "data/real/CA_GANN_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26207283,
+      "sha256_checksum": "51331e60cbdd788129eb2c930509aef885e1e7002b8f6078c363adbde26266d0",
+      "band_checksums": {
+        "B08": "485b0ac2f36485fa59f0c232e3cae6ef886d39f787276936949c750842899a52",
+        "SCL": "d6c2961d3e5368ab1d02b5fec52e3332b66872d2686a06ed56790425ba261a61"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-2 Level-2A Surface Reflectance (B04, B08, B12, SCL)",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-2",
+      "endpoint_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/10/S/FH/2026/08/30/S2A_MSIL2A_20260830T184831_N0512_R070_T10SFH_20260831T044811.SAFE/GRANULE/L2A_T10SFH_A058440_20260830T184827/IMG_DATA/R10m/T10SFH_20260830T184831_B08_10m.tif",
+      "collection_id": "sentinel-2-l2a",
+      "granule_or_scene_id": "S2A_MSIL2A_20260830T184831_R070_T10SFH_20260831T044811",
+      "sensor": "Sentinel-2 MSI",
+      "product_version": "L2A Baseline N0512",
+      "acquisition_timestamp": "2026-08-30T18:48:31.024000Z",
+      "event_id": "CA_GANN_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          690640.0,
+          4212780.0,
+          706640.0,
+          4228780.0
+        ],
+        "center_lon": -120.734,
+        "center_lat": 38.113,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_REFERENCE",
+      "local_file_path": "data/real/CA_GANN_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26207283,
+      "sha256_checksum": "51331e60cbdd788129eb2c930509aef885e1e7002b8f6078c363adbde26266d0",
+      "band_checksums": {
+        "B08": "2dc385d74bfb7b3ef03dac74584d96de1544f1724fe958c54ede92bc2f65e048",
+        "SCL": "530ff97758d366aa637e64554d038dab8a0acfa747e6eda18e486544783640c0"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "MODIS/Terra+Aqua Burned Area Monthly L3 Global 500m SIN Grid V061",
+      "provider": "NASA LP DAAC / Microsoft Planetary Computer STAC",
+      "endpoint_url": "https://modiseuwest.blob.core.windows.net/modis-061-cogs/MCD64A1/08/05/2026213/MCD64A1.A2026213.h08v05.061.2026286121320_Burn_Date.tif",
+      "collection_id": "MCD64A1.061 (modis-64A1-061)",
+      "granule_or_scene_id": "MCD64A1.A2026213.h08v05.061.2026286121320",
+      "sensor": "MODIS Terra + Aqua",
+      "product_version": "Collection 6.1 (V061)",
+      "acquisition_timestamp": "2026-DOY215-to-DOY222",
+      "event_id": "CA_GANN_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          690640.0,
+          4212780.0,
+          706640.0,
+          4228780.0
+        ],
+        "center_lon": -120.734,
+        "center_lat": 38.113,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "INDEPENDENT_BURNED_AREA_VALIDATION_AND_ANCILLARY_QA",
+      "local_file_path": "data/real/CA_GANN_2026/mcd64a1_ancillary.npz",
+      "file_format": "NPZ (Burn_Date, Burn_Date_Uncertainty, QA, First_Day, Last_Day on 800x800 grid)",
+      "file_size_bytes": 22435,
+      "sha256_checksum": "44252a9eb99016009c678d20ae9c79c304b878b7ce07a698c13d301cb0b25410",
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_PROVISIONAL_V1) Harmony AOI Subset",
+      "provider": "NASA ASF DAAC / NASA Harmony OGC API Coverages",
+      "endpoint_url": "https://harmony.earthdata.nasa.gov/C2854338529-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4260296005-ASF&subset=lat(38.039185:38.186794)&subset=lon(-120.827502:-120.640672)&crs=EPSG%3A32610&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+      "collection_id": "C2854338529-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_026_042_D_069_4005_DHDH_A_20260723T025606_20260723T025641_P05023_N_F_J_001",
+      "granule_concept_id": "G4260296005-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05023 (PROVISIONAL)",
+      "acquisition_timestamp": "2026-07-23T02:56:06.000Z",
+      "event_id": "CA_GANN_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          690640.0,
+          4212780.0,
+          706640.0,
+          4228780.0
+        ],
+        "center_lon": -120.734,
+        "center_lat": 38.113,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "PRE_FIRE_PRIMARY_CANDIDATE_HARMONY_SUBSET",
+      "local_file_path": null,
+      "file_format": "NetCDF4/HDF5 Subset (HHHH, HVHV, mask, numberOfLooks, rtcGammaToSigmaFactor)",
+      "estimated_size_bytes": 2684354,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "NASA Earthdata Login OAuth2 (urs.earthdata.nasa.gov) required; HTTP 303 redirect verified."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_PROVISIONAL_V1) Full Frame HDF5",
+      "provider": "NASA ASF Earthdata Cloud (nisar.asf.earthdatacloud.nasa.gov)",
+      "endpoint_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_026_042_D_069_4005_DHDH_A_20260723T025606_20260723T025641_P05023_N_F_J_001/NISAR_L2_PR_GCOV_026_042_D_069_4005_DHDH_A_20260723T025606_20260723T025641_P05023_N_F_J_001.h5",
+      "collection_id": "C2854338529-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_026_042_D_069_4005_DHDH_A_20260723T025606_20260723T025641_P05023_N_F_J_001",
+      "granule_concept_id": "G4260296005-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05023 (PROVISIONAL)",
+      "acquisition_timestamp": "2026-07-23T02:56:06.000Z",
+      "event_id": "CA_GANN_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          690640.0,
+          4212780.0,
+          706640.0,
+          4228780.0
+        ],
+        "center_lon": -120.734,
+        "center_lat": 38.113,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "PRE_FIRE_PRIMARY_CANDIDATE_FULL_GRANULE",
+      "local_file_path": null,
+      "file_format": "HDF5 (Full Frame ~80-240 km swath)",
+      "estimated_size_bytes": 7099341864,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_STORAGE",
+      "secondary_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "Requires NASA Earthdata Login AND exceeds local disk budget (6770.5 MB per granule vs 12.53 GB free disk)."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_PROVISIONAL_V1) Harmony AOI Subset",
+      "provider": "NASA ASF DAAC / NASA Harmony OGC API Coverages",
+      "endpoint_url": "https://harmony.earthdata.nasa.gov/C2854338529-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4284565052-ASF&subset=lat(38.039185:38.186794)&subset=lon(-120.827502:-120.640672)&crs=EPSG%3A32610&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+      "collection_id": "C2854338529-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_028_042_D_069_4005_DHDH_A_20260816T025605_20260816T025640_P05023_N_F_J_001",
+      "granule_concept_id": "G4284565052-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05023 (PROVISIONAL)",
+      "acquisition_timestamp": "2026-08-16T02:56:05.000Z",
+      "event_id": "CA_GANN_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          690640.0,
+          4212780.0,
+          706640.0,
+          4228780.0
+        ],
+        "center_lon": -120.734,
+        "center_lat": 38.113,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_IMMEDIATE_CANDIDATE_HARMONY_SUBSET",
+      "local_file_path": null,
+      "file_format": "NetCDF4/HDF5 Subset (HHHH, HVHV, mask, numberOfLooks, rtcGammaToSigmaFactor)",
+      "estimated_size_bytes": 2684354,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "NASA Earthdata Login OAuth2 (urs.earthdata.nasa.gov) required; HTTP 303 redirect verified."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_PROVISIONAL_V1) Full Frame HDF5",
+      "provider": "NASA ASF Earthdata Cloud (nisar.asf.earthdatacloud.nasa.gov)",
+      "endpoint_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_028_042_D_069_4005_DHDH_A_20260816T025605_20260816T025640_P05023_N_F_J_001/NISAR_L2_PR_GCOV_028_042_D_069_4005_DHDH_A_20260816T025605_20260816T025640_P05023_N_F_J_001.h5",
+      "collection_id": "C2854338529-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_028_042_D_069_4005_DHDH_A_20260816T025605_20260816T025640_P05023_N_F_J_001",
+      "granule_concept_id": "G4284565052-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05023 (PROVISIONAL)",
+      "acquisition_timestamp": "2026-08-16T02:56:05.000Z",
+      "event_id": "CA_GANN_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          690640.0,
+          4212780.0,
+          706640.0,
+          4228780.0
+        ],
+        "center_lon": -120.734,
+        "center_lat": 38.113,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_IMMEDIATE_CANDIDATE_FULL_GRANULE",
+      "local_file_path": null,
+      "file_format": "HDF5 (Full Frame ~80-240 km swath)",
+      "estimated_size_bytes": 7103599083,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_STORAGE",
+      "secondary_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "Requires NASA Earthdata Login AND exceeds local disk budget (6774.5 MB per granule vs 12.53 GB free disk)."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_V1) Harmony AOI Subset",
+      "provider": "NASA ASF DAAC / NASA Harmony OGC API Coverages",
+      "endpoint_url": "https://harmony.earthdata.nasa.gov/C3622241360-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4406462944-ASF&subset=lat(38.039185:38.186794)&subset=lon(-120.827502:-120.640672)&crs=EPSG%3A32610&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+      "collection_id": "C3622241360-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_034_042_D_069_4005_DHDH_A_20261027T025605_20261027T025640_P05036_N_F_J_001",
+      "granule_concept_id": "G4406462944-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05036 (VALIDATED_SCIENCE)",
+      "acquisition_timestamp": "2026-10-27T02:56:05.000Z",
+      "event_id": "CA_GANN_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          690640.0,
+          4212780.0,
+          706640.0,
+          4228780.0
+        ],
+        "center_lon": -120.734,
+        "center_lat": 38.113,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_VALIDATED_CANDIDATE_HARMONY_SUBSET",
+      "local_file_path": null,
+      "file_format": "NetCDF4/HDF5 Subset (HHHH, HVHV, mask, numberOfLooks, rtcGammaToSigmaFactor)",
+      "estimated_size_bytes": 2684354,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "NASA Earthdata Login OAuth2 (urs.earthdata.nasa.gov) required; HTTP 303 redirect verified."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_V1) Full Frame HDF5",
+      "provider": "NASA ASF Earthdata Cloud (nisar.asf.earthdatacloud.nasa.gov)",
+      "endpoint_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_V1/NISAR_L2_PR_GCOV_034_042_D_069_4005_DHDH_A_20261027T025605_20261027T025640_P05036_N_F_J_001/NISAR_L2_PR_GCOV_034_042_D_069_4005_DHDH_A_20261027T025605_20261027T025640_P05036_N_F_J_001.h5",
+      "collection_id": "C3622241360-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_034_042_D_069_4005_DHDH_A_20261027T025605_20261027T025640_P05036_N_F_J_001",
+      "granule_concept_id": "G4406462944-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05036 (VALIDATED_SCIENCE)",
+      "acquisition_timestamp": "2026-10-27T02:56:05.000Z",
+      "event_id": "CA_GANN_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          690640.0,
+          4212780.0,
+          706640.0,
+          4228780.0
+        ],
+        "center_lon": -120.734,
+        "center_lat": 38.113,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_VALIDATED_CANDIDATE_FULL_GRANULE",
+      "local_file_path": null,
+      "file_format": "HDF5 (Full Frame ~80-240 km swath)",
+      "estimated_size_bytes": 7095168532,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_STORAGE",
+      "secondary_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "Requires NASA Earthdata Login AND exceeds local disk budget (6766.5 MB per granule vs 12.53 GB free disk)."
+    },
+    {
+      "dataset_name": "Sentinel-1 Radiometrically Terrain Corrected (RTC) Backscatter",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-1",
+      "endpoint_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/8/7/IW/DV/S1C_IW_GRDH_1SDV_20260807T020631_20260807T020656_008883_0119EE_54E8/measurement/iw-vh.rtc.tiff",
+      "collection_id": "sentinel-1-rtc",
+      "granule_or_scene_id": "S1C_IW_GRDH_1SDV_20260807T020631_20260807T020656_008883_0119EE_rtc",
+      "sensor": "SENTINEL-1C C-band SAR (5.405 GHz)",
+      "product_version": "RTC Gamma0 (VV, VH) Orbit 35 ascending",
+      "acquisition_timestamp": "2026-08-07T02:06:44.121601Z",
+      "event_id": "CA_TIMBER_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          611720.0,
+          4000180.0,
+          627720.0,
+          4016180.0
+        ],
+        "center_lon": -121.668,
+        "center_lat": 36.211,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "PRE_FIRE_PRIMARY",
+      "local_file_path": "data/real/CA_TIMBER_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26161299,
+      "sha256_checksum": "f313c0f24df48dbf71ce9f340ff67a0e8f759d218b2f3ced6c8e353a0401c006",
+      "band_checksums": {
+        "vv": "0995a8aca77d05430a88a024cbf9ff80a83a419b85ab8df6c467053c21837288",
+        "vh": "2531ad2e35d58db1b5a1b8d7cc82ea141e8b89b0fd4b9c14717f8c184964624c"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-1 Radiometrically Terrain Corrected (RTC) Backscatter",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-1",
+      "endpoint_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/8/19/IW/DV/S1C_IW_GRDH_1SDV_20260819T020632_20260819T020657_009058_011FAD_29BB/measurement/iw-vh.rtc.tiff",
+      "collection_id": "sentinel-1-rtc",
+      "granule_or_scene_id": "S1C_IW_GRDH_1SDV_20260819T020632_20260819T020657_009058_011FAD_rtc",
+      "sensor": "SENTINEL-1C C-band SAR (5.405 GHz)",
+      "product_version": "RTC Gamma0 (VV, VH) Orbit 35 ascending",
+      "acquisition_timestamp": "2026-08-19T02:06:44.993825Z",
+      "event_id": "CA_TIMBER_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          611720.0,
+          4000180.0,
+          627720.0,
+          4016180.0
+        ],
+        "center_lon": -121.668,
+        "center_lat": 36.211,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "TEMPORAL_STEP_T1",
+      "local_file_path": "data/real/CA_TIMBER_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26161299,
+      "sha256_checksum": "f313c0f24df48dbf71ce9f340ff67a0e8f759d218b2f3ced6c8e353a0401c006",
+      "band_checksums": {
+        "vv": "d714c6595121fe710f5ccb255ba72d49a728d4eb9c48366096bf6cc72e03d9f5",
+        "vh": "5445940fee1d7476b2a2a1041bb547590742e46ce42c8875f525b88a60cc67b3"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-1 Radiometrically Terrain Corrected (RTC) Backscatter",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-1",
+      "endpoint_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/8/31/IW/DV/S1C_IW_GRDH_1SDV_20260831T020633_20260831T020658_009233_012587_12CF/measurement/iw-vh.rtc.tiff",
+      "collection_id": "sentinel-1-rtc",
+      "granule_or_scene_id": "S1C_IW_GRDH_1SDV_20260831T020633_20260831T020658_009233_012587_rtc",
+      "sensor": "SENTINEL-1C C-band SAR (5.405 GHz)",
+      "product_version": "RTC Gamma0 (VV, VH) Orbit 35 ascending",
+      "acquisition_timestamp": "2026-08-31T02:06:45.503717Z",
+      "event_id": "CA_TIMBER_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          611720.0,
+          4000180.0,
+          627720.0,
+          4016180.0
+        ],
+        "center_lon": -121.668,
+        "center_lat": 36.211,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_PRIMARY",
+      "local_file_path": "data/real/CA_TIMBER_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26161299,
+      "sha256_checksum": "f313c0f24df48dbf71ce9f340ff67a0e8f759d218b2f3ced6c8e353a0401c006",
+      "band_checksums": {
+        "vv": "78d954d723a1e8efc21d6e850086ed447e3f5ddb07bc9a81e587d8bc7727a774",
+        "vh": "9e791f0f9926499b576c45e0b05e6ab4ca4504a48ed01f3a9fbc43d33df1f3b3"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-1 Radiometrically Terrain Corrected (RTC) Backscatter",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-1",
+      "endpoint_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/9/12/IW/DV/S1C_IW_GRDH_1SDV_20260912T020633_20260912T020658_009408_012B64_2AB9/measurement/iw-vh.rtc.tiff",
+      "collection_id": "sentinel-1-rtc",
+      "granule_or_scene_id": "S1C_IW_GRDH_1SDV_20260912T020633_20260912T020658_009408_012B64_rtc",
+      "sensor": "SENTINEL-1C C-band SAR (5.405 GHz)",
+      "product_version": "RTC Gamma0 (VV, VH) Orbit 35 ascending",
+      "acquisition_timestamp": "2026-09-12T02:06:45.827900Z",
+      "event_id": "CA_TIMBER_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          611720.0,
+          4000180.0,
+          627720.0,
+          4016180.0
+        ],
+        "center_lon": -121.668,
+        "center_lat": 36.211,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_TEMPORAL_T3",
+      "local_file_path": "data/real/CA_TIMBER_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26161299,
+      "sha256_checksum": "f313c0f24df48dbf71ce9f340ff67a0e8f759d218b2f3ced6c8e353a0401c006",
+      "band_checksums": {
+        "vv": "eac14a7b29ade179cce196130efeb679203bcde5f9b63469fbd282b1323f16b4",
+        "vh": "7fb98950aaa7d8b1a9d93aac70e9a75b29b6ab8f166857f55fe9a3cb66a4b41c"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-2 Level-2A Surface Reflectance (B04, B08, B12, SCL)",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-2",
+      "endpoint_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/10/S/FF/2026/07/27/S2B_MSIL2A_20260727T184919_N0512_R113_T10SFF_20260727T224036.SAFE/GRANULE/L2A_T10SFF_A049045_20260727T185634/IMG_DATA/R10m/T10SFF_20260727T184919_B08_10m.tif",
+      "collection_id": "sentinel-2-l2a",
+      "granule_or_scene_id": "S2B_MSIL2A_20260727T184919_R113_T10SFF_20260727T224036",
+      "sensor": "Sentinel-2 MSI",
+      "product_version": "L2A Baseline N0512",
+      "acquisition_timestamp": "2026-07-27T18:49:19.024000Z",
+      "event_id": "CA_TIMBER_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          611720.0,
+          4000180.0,
+          627720.0,
+          4016180.0
+        ],
+        "center_lon": -121.668,
+        "center_lat": 36.211,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "PRE_FIRE_REFERENCE",
+      "local_file_path": "data/real/CA_TIMBER_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26161299,
+      "sha256_checksum": "f313c0f24df48dbf71ce9f340ff67a0e8f759d218b2f3ced6c8e353a0401c006",
+      "band_checksums": {
+        "B08": "e18457d35700ed0d12e44b8514302b6a91071481fc9936856350de4b2767c024",
+        "SCL": "bc9daa2c2e011df46f1193a3d0a20db78a4dc1d1ee7f37a5184105d818f5dac7"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-2 Level-2A Surface Reflectance (B04, B08, B12, SCL)",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-2",
+      "endpoint_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/10/S/FF/2026/08/26/S2B_MSIL2A_20260826T184919_N0512_R113_T10SFF_20260826T223721.SAFE/GRANULE/L2A_T10SFF_A049474_20260826T185818/IMG_DATA/R10m/T10SFF_20260826T184919_B08_10m.tif",
+      "collection_id": "sentinel-2-l2a",
+      "granule_or_scene_id": "S2B_MSIL2A_20260826T184919_R113_T10SFF_20260826T223721",
+      "sensor": "Sentinel-2 MSI",
+      "product_version": "L2A Baseline N0512",
+      "acquisition_timestamp": "2026-08-26T18:49:19.024000Z",
+      "event_id": "CA_TIMBER_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          611720.0,
+          4000180.0,
+          627720.0,
+          4016180.0
+        ],
+        "center_lon": -121.668,
+        "center_lat": 36.211,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_REFERENCE",
+      "local_file_path": "data/real/CA_TIMBER_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26161299,
+      "sha256_checksum": "f313c0f24df48dbf71ce9f340ff67a0e8f759d218b2f3ced6c8e353a0401c006",
+      "band_checksums": {
+        "B08": "78e59a52fe85f31cab23a820e8e388c4161d287c11cf0dd1bf0a6cc6b21cee49",
+        "SCL": "5d97bbe5e2de0b5510cfacd78e79de999a3852b837efc0b9d5623c3e24765414"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "MODIS/Terra+Aqua Burned Area Monthly L3 Global 500m SIN Grid V061",
+      "provider": "NASA LP DAAC / Microsoft Planetary Computer STAC",
+      "endpoint_url": "https://modiseuwest.blob.core.windows.net/modis-061-cogs/MCD64A1/08/05/2026213/MCD64A1.A2026213.h08v05.061.2026286121320_Burn_Date.tif",
+      "collection_id": "MCD64A1.061 (modis-64A1-061)",
+      "granule_or_scene_id": "MCD64A1.A2026213.h08v05.061.2026286121320",
+      "sensor": "MODIS Terra + Aqua",
+      "product_version": "Collection 6.1 (V061)",
+      "acquisition_timestamp": "2026-DOY219-to-DOY243",
+      "event_id": "CA_TIMBER_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          611720.0,
+          4000180.0,
+          627720.0,
+          4016180.0
+        ],
+        "center_lon": -121.668,
+        "center_lat": 36.211,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "INDEPENDENT_BURNED_AREA_VALIDATION_AND_ANCILLARY_QA",
+      "local_file_path": "data/real/CA_TIMBER_2026/mcd64a1_ancillary.npz",
+      "file_format": "NPZ (Burn_Date, Burn_Date_Uncertainty, QA, First_Day, Last_Day on 800x800 grid)",
+      "file_size_bytes": 33551,
+      "sha256_checksum": "4c8bc4e07f604083db3728155f4b183b8dbae542931c77209688732f3a706fbb",
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_PROVISIONAL_V1) Harmony AOI Subset",
+      "provider": "NASA ASF DAAC / NASA Harmony OGC API Coverages",
+      "endpoint_url": "https://harmony.earthdata.nasa.gov/C2854338529-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4260298818-ASF&subset=lat(36.137928:36.284119)&subset=lon(-121.758257:-121.577860)&crs=EPSG%3A32610&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+      "collection_id": "C2854338529-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_026_042_D_070_4005_DHDH_A_20260723T025640_20260723T025715_P05023_N_F_J_001",
+      "granule_concept_id": "G4260298818-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05023 (PROVISIONAL)",
+      "acquisition_timestamp": "2026-07-23T02:56:40.000Z",
+      "event_id": "CA_TIMBER_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          611720.0,
+          4000180.0,
+          627720.0,
+          4016180.0
+        ],
+        "center_lon": -121.668,
+        "center_lat": 36.211,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "PRE_FIRE_PRIMARY_CANDIDATE_HARMONY_SUBSET",
+      "local_file_path": null,
+      "file_format": "NetCDF4/HDF5 Subset (HHHH, HVHV, mask, numberOfLooks, rtcGammaToSigmaFactor)",
+      "estimated_size_bytes": 2684354,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "NASA Earthdata Login OAuth2 (urs.earthdata.nasa.gov) required; HTTP 303 redirect verified."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_PROVISIONAL_V1) Full Frame HDF5",
+      "provider": "NASA ASF Earthdata Cloud (nisar.asf.earthdatacloud.nasa.gov)",
+      "endpoint_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_026_042_D_070_4005_DHDH_A_20260723T025640_20260723T025715_P05023_N_F_J_001/NISAR_L2_PR_GCOV_026_042_D_070_4005_DHDH_A_20260723T025640_20260723T025715_P05023_N_F_J_001.h5",
+      "collection_id": "C2854338529-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_026_042_D_070_4005_DHDH_A_20260723T025640_20260723T025715_P05023_N_F_J_001",
+      "granule_concept_id": "G4260298818-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05023 (PROVISIONAL)",
+      "acquisition_timestamp": "2026-07-23T02:56:40.000Z",
+      "event_id": "CA_TIMBER_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          611720.0,
+          4000180.0,
+          627720.0,
+          4016180.0
+        ],
+        "center_lon": -121.668,
+        "center_lat": 36.211,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "PRE_FIRE_PRIMARY_CANDIDATE_FULL_GRANULE",
+      "local_file_path": null,
+      "file_format": "HDF5 (Full Frame ~80-240 km swath)",
+      "estimated_size_bytes": 6423587061,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_STORAGE",
+      "secondary_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "Requires NASA Earthdata Login AND exceeds local disk budget (6126.0 MB per granule vs 12.53 GB free disk)."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_PROVISIONAL_V1) Harmony AOI Subset",
+      "provider": "NASA ASF DAAC / NASA Harmony OGC API Coverages",
+      "endpoint_url": "https://harmony.earthdata.nasa.gov/C2854338529-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4311256123-ASF&subset=lat(36.137928:36.284119)&subset=lon(-121.758257:-121.577860)&crs=EPSG%3A32610&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+      "collection_id": "C2854338529-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_030_042_D_070_4005_DHDH_A_20260909T025638_20260909T025713_P05023_N_F_J_001",
+      "granule_concept_id": "G4311256123-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05023 (PROVISIONAL)",
+      "acquisition_timestamp": "2026-09-09T02:56:38.000Z",
+      "event_id": "CA_TIMBER_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          611720.0,
+          4000180.0,
+          627720.0,
+          4016180.0
+        ],
+        "center_lon": -121.668,
+        "center_lat": 36.211,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_IMMEDIATE_CANDIDATE_HARMONY_SUBSET",
+      "local_file_path": null,
+      "file_format": "NetCDF4/HDF5 Subset (HHHH, HVHV, mask, numberOfLooks, rtcGammaToSigmaFactor)",
+      "estimated_size_bytes": 2684354,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "NASA Earthdata Login OAuth2 (urs.earthdata.nasa.gov) required; HTTP 303 redirect verified."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_PROVISIONAL_V1) Full Frame HDF5",
+      "provider": "NASA ASF Earthdata Cloud (nisar.asf.earthdatacloud.nasa.gov)",
+      "endpoint_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_030_042_D_070_4005_DHDH_A_20260909T025638_20260909T025713_P05023_N_F_J_001/NISAR_L2_PR_GCOV_030_042_D_070_4005_DHDH_A_20260909T025638_20260909T025713_P05023_N_F_J_001.h5",
+      "collection_id": "C2854338529-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_030_042_D_070_4005_DHDH_A_20260909T025638_20260909T025713_P05023_N_F_J_001",
+      "granule_concept_id": "G4311256123-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05023 (PROVISIONAL)",
+      "acquisition_timestamp": "2026-09-09T02:56:38.000Z",
+      "event_id": "CA_TIMBER_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          611720.0,
+          4000180.0,
+          627720.0,
+          4016180.0
+        ],
+        "center_lon": -121.668,
+        "center_lat": 36.211,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_IMMEDIATE_CANDIDATE_FULL_GRANULE",
+      "local_file_path": null,
+      "file_format": "HDF5 (Full Frame ~80-240 km swath)",
+      "estimated_size_bytes": 6439808532,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_STORAGE",
+      "secondary_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "Requires NASA Earthdata Login AND exceeds local disk budget (6141.5 MB per granule vs 12.53 GB free disk)."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_V1) Harmony AOI Subset",
+      "provider": "NASA ASF DAAC / NASA Harmony OGC API Coverages",
+      "endpoint_url": "https://harmony.earthdata.nasa.gov/C3622241360-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4406466150-ASF&subset=lat(36.137928:36.284119)&subset=lon(-121.758257:-121.577860)&crs=EPSG%3A32610&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+      "collection_id": "C3622241360-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_034_042_D_070_4005_DHDH_A_20261027T025639_20261027T025714_P05036_N_F_J_001",
+      "granule_concept_id": "G4406466150-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05036 (VALIDATED_SCIENCE)",
+      "acquisition_timestamp": "2026-10-27T02:56:39.000Z",
+      "event_id": "CA_TIMBER_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          611720.0,
+          4000180.0,
+          627720.0,
+          4016180.0
+        ],
+        "center_lon": -121.668,
+        "center_lat": 36.211,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_VALIDATED_CANDIDATE_HARMONY_SUBSET",
+      "local_file_path": null,
+      "file_format": "NetCDF4/HDF5 Subset (HHHH, HVHV, mask, numberOfLooks, rtcGammaToSigmaFactor)",
+      "estimated_size_bytes": 2684354,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "NASA Earthdata Login OAuth2 (urs.earthdata.nasa.gov) required; HTTP 303 redirect verified."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_V1) Full Frame HDF5",
+      "provider": "NASA ASF Earthdata Cloud (nisar.asf.earthdatacloud.nasa.gov)",
+      "endpoint_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_V1/NISAR_L2_PR_GCOV_034_042_D_070_4005_DHDH_A_20261027T025639_20261027T025714_P05036_N_F_J_001/NISAR_L2_PR_GCOV_034_042_D_070_4005_DHDH_A_20261027T025639_20261027T025714_P05036_N_F_J_001.h5",
+      "collection_id": "C3622241360-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_034_042_D_070_4005_DHDH_A_20261027T025639_20261027T025714_P05036_N_F_J_001",
+      "granule_concept_id": "G4406466150-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05036 (VALIDATED_SCIENCE)",
+      "acquisition_timestamp": "2026-10-27T02:56:39.000Z",
+      "event_id": "CA_TIMBER_2026",
+      "split": "TRAIN",
+      "aoi": {
+        "crs": "EPSG:32610",
+        "bounds_utm_m": [
+          611720.0,
+          4000180.0,
+          627720.0,
+          4016180.0
+        ],
+        "center_lon": -121.668,
+        "center_lat": 36.211,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_VALIDATED_CANDIDATE_FULL_GRANULE",
+      "local_file_path": null,
+      "file_format": "HDF5 (Full Frame ~80-240 km swath)",
+      "estimated_size_bytes": 6432143441,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_STORAGE",
+      "secondary_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "Requires NASA Earthdata Login AND exceeds local disk budget (6134.2 MB per granule vs 12.53 GB free disk)."
+    },
+    {
+      "dataset_name": "Sentinel-1 Radiometrically Terrain Corrected (RTC) Backscatter",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-1",
+      "endpoint_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/9/13/IW/DV/S1D_IW_GRDH_1SDV_20260913T135910_20260913T135935_004560_0087C4_9C8E/measurement/iw-vh.rtc.tiff",
+      "collection_id": "sentinel-1-rtc",
+      "granule_or_scene_id": "S1D_IW_GRDH_1SDV_20260913T135910_20260913T135935_004560_0087C4_rtc",
+      "sensor": "SENTINEL-1D C-band SAR (5.405 GHz)",
+      "product_version": "RTC Gamma0 (VV, VH) Orbit 144 descending",
+      "acquisition_timestamp": "2026-09-13T13:59:23.018114Z",
+      "event_id": "CA_DOME_2026",
+      "split": "VAL",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          261360.0,
+          4157980.0,
+          277360.0,
+          4173980.0
+        ],
+        "center_lon": -119.613,
+        "center_lat": 37.612,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "PRE_FIRE_PRIMARY",
+      "local_file_path": "data/real/CA_DOME_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26023453,
+      "sha256_checksum": "36c84d432d3781f20396d42ed0704b4a88a1a03b4295de7197abd70a31563ba7",
+      "band_checksums": {
+        "vv": "e75c4e764ff09d15c93ef51c3a1fb42a94af355cd605e2663ac484577da828e3",
+        "vh": "018a7f2bd1a32da41e4976a96c06900b6ddb52c3e8ceeac95337942be6f981c3"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-1 Radiometrically Terrain Corrected (RTC) Backscatter",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-1",
+      "endpoint_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/10/1/IW/DV/S1C_IW_GRDH_1SDV_20261001T135854_20261001T135919_009692_0134D3_96FF/measurement/iw-vh.rtc.tiff",
+      "collection_id": "sentinel-1-rtc",
+      "granule_or_scene_id": "S1C_IW_GRDH_1SDV_20261001T135854_20261001T135919_009692_0134D3_rtc",
+      "sensor": "SENTINEL-1C C-band SAR (5.405 GHz)",
+      "product_version": "RTC Gamma0 (VV, VH) Orbit 144 descending",
+      "acquisition_timestamp": "2026-10-01T13:59:06.644130Z",
+      "event_id": "CA_DOME_2026",
+      "split": "VAL",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          261360.0,
+          4157980.0,
+          277360.0,
+          4173980.0
+        ],
+        "center_lon": -119.613,
+        "center_lat": 37.612,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "TEMPORAL_STEP_T1",
+      "local_file_path": "data/real/CA_DOME_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26023453,
+      "sha256_checksum": "36c84d432d3781f20396d42ed0704b4a88a1a03b4295de7197abd70a31563ba7",
+      "band_checksums": {
+        "vv": "11db6ef0ab483957da5cc8e0f542f6682e9bd1e9823a9d690bb068f96efacfc6",
+        "vh": "0a3a052aaaf96df209d143f84dab1f931893eb4208e24f53d172725d8c4c320d"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-1 Radiometrically Terrain Corrected (RTC) Backscatter",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-1",
+      "endpoint_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/10/7/IW/DV/S1D_IW_GRDH_1SDV_20261007T135910_20261007T135935_004910_0093EC_0408/measurement/iw-vh.rtc.tiff",
+      "collection_id": "sentinel-1-rtc",
+      "granule_or_scene_id": "S1D_IW_GRDH_1SDV_20261007T135910_20261007T135935_004910_0093EC_rtc",
+      "sensor": "SENTINEL-1D C-band SAR (5.405 GHz)",
+      "product_version": "RTC Gamma0 (VV, VH) Orbit 144 descending",
+      "acquisition_timestamp": "2026-10-07T13:59:23.260709Z",
+      "event_id": "CA_DOME_2026",
+      "split": "VAL",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          261360.0,
+          4157980.0,
+          277360.0,
+          4173980.0
+        ],
+        "center_lon": -119.613,
+        "center_lat": 37.612,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_PRIMARY",
+      "local_file_path": "data/real/CA_DOME_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26023453,
+      "sha256_checksum": "36c84d432d3781f20396d42ed0704b4a88a1a03b4295de7197abd70a31563ba7",
+      "band_checksums": {
+        "vv": "8e69c72758269a132b8f36f6cd02ad215058bfc04377a0a6c934d86c0ae89e55",
+        "vh": "f525d9e8251e5b64060a4a11ca666098f3ecbb6d588dab3b7af947961357013c"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-1 Radiometrically Terrain Corrected (RTC) Backscatter",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-1",
+      "endpoint_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/10/19/IW/DV/S1D_IW_GRDH_1SDV_20261019T135910_20261019T135935_005085_0099F2_6948/measurement/iw-vh.rtc.tiff",
+      "collection_id": "sentinel-1-rtc",
+      "granule_or_scene_id": "S1D_IW_GRDH_1SDV_20261019T135910_20261019T135935_005085_0099F2_rtc",
+      "sensor": "SENTINEL-1D C-band SAR (5.405 GHz)",
+      "product_version": "RTC Gamma0 (VV, VH) Orbit 144 descending",
+      "acquisition_timestamp": "2026-10-19T13:59:23.127607Z",
+      "event_id": "CA_DOME_2026",
+      "split": "VAL",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          261360.0,
+          4157980.0,
+          277360.0,
+          4173980.0
+        ],
+        "center_lon": -119.613,
+        "center_lat": 37.612,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_TEMPORAL_T3",
+      "local_file_path": "data/real/CA_DOME_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26023453,
+      "sha256_checksum": "36c84d432d3781f20396d42ed0704b4a88a1a03b4295de7197abd70a31563ba7",
+      "band_checksums": {
+        "vv": "808a3ba3679855cbd7628912e5e6a8defaa46b37de7204d7f3ef945762703571",
+        "vh": "d2689da812d561da62f7894b9602c4a6aed1a5671ad2d70e4f72af9ed9ded846"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-2 Level-2A Surface Reflectance (B04, B08, B12, SCL)",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-2",
+      "endpoint_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/11/S/KB/2026/09/12/S2B_MSIL2A_20260912T183919_N0512_R070_T11SKB_20260912T235112.SAFE/GRANULE/L2A_T11SKB_A049717_20260912T185056/IMG_DATA/R10m/T11SKB_20260912T183919_B08_10m.tif",
+      "collection_id": "sentinel-2-l2a",
+      "granule_or_scene_id": "S2B_MSIL2A_20260912T183919_R070_T11SKB_20260912T235112",
+      "sensor": "Sentinel-2 MSI",
+      "product_version": "L2A Baseline N0512",
+      "acquisition_timestamp": "2026-09-12T18:39:19.024000Z",
+      "event_id": "CA_DOME_2026",
+      "split": "VAL",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          261360.0,
+          4157980.0,
+          277360.0,
+          4173980.0
+        ],
+        "center_lon": -119.613,
+        "center_lat": 37.612,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "PRE_FIRE_REFERENCE",
+      "local_file_path": "data/real/CA_DOME_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26023453,
+      "sha256_checksum": "36c84d432d3781f20396d42ed0704b4a88a1a03b4295de7197abd70a31563ba7",
+      "band_checksums": {
+        "B08": "f4ff94d0792b88bc799129821eced9ac0ccacf80ac60d57e1ec87e9b1afa7b71",
+        "SCL": "7eeaabc358a1cd43a85633b23e11b138d684f8a23da381767cb623544ce22833"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-2 Level-2A Surface Reflectance (B04, B08, B12, SCL)",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-2",
+      "endpoint_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/11/S/KB/2026/10/07/S2C_MSIL2A_20261007T184251_N0513_R070_T11SKB_20261007T215811.SAFE/GRANULE/L2A_T11SKB_A010908_20261007T184954/IMG_DATA/R10m/T11SKB_20261007T184251_B08_10m.tif",
+      "collection_id": "sentinel-2-l2a",
+      "granule_or_scene_id": "S2C_MSIL2A_20261007T184251_R070_T11SKB_20261007T215811",
+      "sensor": "Sentinel-2 MSI",
+      "product_version": "L2A Baseline N0512",
+      "acquisition_timestamp": "2026-10-07T18:42:51.025000Z",
+      "event_id": "CA_DOME_2026",
+      "split": "VAL",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          261360.0,
+          4157980.0,
+          277360.0,
+          4173980.0
+        ],
+        "center_lon": -119.613,
+        "center_lat": 37.612,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_REFERENCE",
+      "local_file_path": "data/real/CA_DOME_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 26023453,
+      "sha256_checksum": "36c84d432d3781f20396d42ed0704b4a88a1a03b4295de7197abd70a31563ba7",
+      "band_checksums": {
+        "B08": "0eb9c910032b3c283c15d2c33c8dfc3459c2b493b0942356d407c0363c4b210a",
+        "SCL": "d2d30a624176908cac9957cb1e0051c1497f6737ec7dd9ec95043c8aa0110898"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "MODIS/Terra+Aqua Burned Area Monthly L3 Global 500m SIN Grid V061",
+      "provider": "NASA LP DAAC / Microsoft Planetary Computer STAC",
+      "endpoint_url": "https://modiseuwest.blob.core.windows.net/modis-061-cogs/MCD64A1/08/05/2026244/MCD64A1.A2026244.h08v05.061.2026314113209_Burn_Date.tif",
+      "collection_id": "MCD64A1.061 (modis-64A1-061)",
+      "granule_or_scene_id": "MCD64A1.A2026244.h08v05.061.2026314113209",
+      "sensor": "MODIS Terra + Aqua",
+      "product_version": "Collection 6.1 (V061)",
+      "acquisition_timestamp": "2026-DOY244-to-DOY273",
+      "event_id": "CA_DOME_2026",
+      "split": "VAL",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          261360.0,
+          4157980.0,
+          277360.0,
+          4173980.0
+        ],
+        "center_lon": -119.613,
+        "center_lat": 37.612,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "INDEPENDENT_BURNED_AREA_VALIDATION_AND_ANCILLARY_QA",
+      "local_file_path": "data/real/CA_DOME_2026/mcd64a1_ancillary.npz",
+      "file_format": "NPZ (Burn_Date, Burn_Date_Uncertainty, QA, First_Day, Last_Day on 800x800 grid)",
+      "file_size_bytes": 24630,
+      "sha256_checksum": "1b47f3d4951582022adef2f3332e6ce7923d0c9ca5e71cf76a92e5386826ae42",
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_PROVISIONAL_V1) Harmony AOI Subset",
+      "provider": "NASA ASF DAAC / NASA Harmony OGC API Coverages",
+      "endpoint_url": "https://harmony.earthdata.nasa.gov/C2854338529-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4311254441-ASF&subset=lat(37.537948:37.686026)&subset=lon(-119.706177:-119.520034)&crs=EPSG%3A32611&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+      "collection_id": "C2854338529-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_030_042_D_069_4005_DHDH_A_20260909T025604_20260909T025639_P05023_N_F_J_001",
+      "granule_concept_id": "G4311254441-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05023 (PROVISIONAL)",
+      "acquisition_timestamp": "2026-09-09T02:56:04.000Z",
+      "event_id": "CA_DOME_2026",
+      "split": "VAL",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          261360.0,
+          4157980.0,
+          277360.0,
+          4173980.0
+        ],
+        "center_lon": -119.613,
+        "center_lat": 37.612,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "PRE_FIRE_PRIMARY_CANDIDATE_HARMONY_SUBSET",
+      "local_file_path": null,
+      "file_format": "NetCDF4/HDF5 Subset (HHHH, HVHV, mask, numberOfLooks, rtcGammaToSigmaFactor)",
+      "estimated_size_bytes": 2684354,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "NASA Earthdata Login OAuth2 (urs.earthdata.nasa.gov) required; HTTP 303 redirect verified."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_PROVISIONAL_V1) Full Frame HDF5",
+      "provider": "NASA ASF Earthdata Cloud (nisar.asf.earthdatacloud.nasa.gov)",
+      "endpoint_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_030_042_D_069_4005_DHDH_A_20260909T025604_20260909T025639_P05023_N_F_J_001/NISAR_L2_PR_GCOV_030_042_D_069_4005_DHDH_A_20260909T025604_20260909T025639_P05023_N_F_J_001.h5",
+      "collection_id": "C2854338529-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_030_042_D_069_4005_DHDH_A_20260909T025604_20260909T025639_P05023_N_F_J_001",
+      "granule_concept_id": "G4311254441-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05023 (PROVISIONAL)",
+      "acquisition_timestamp": "2026-09-09T02:56:04.000Z",
+      "event_id": "CA_DOME_2026",
+      "split": "VAL",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          261360.0,
+          4157980.0,
+          277360.0,
+          4173980.0
+        ],
+        "center_lon": -119.613,
+        "center_lat": 37.612,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "PRE_FIRE_PRIMARY_CANDIDATE_FULL_GRANULE",
+      "local_file_path": null,
+      "file_format": "HDF5 (Full Frame ~80-240 km swath)",
+      "estimated_size_bytes": 7099299921,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_STORAGE",
+      "secondary_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "Requires NASA Earthdata Login AND exceeds local disk budget (6770.4 MB per granule vs 12.53 GB free disk)."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_PROVISIONAL_V1) Harmony AOI Subset",
+      "provider": "NASA ASF DAAC / NASA Harmony OGC API Coverages",
+      "endpoint_url": "https://harmony.earthdata.nasa.gov/C2854338529-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4340459382-ASF&subset=lat(37.537948:37.686026)&subset=lon(-119.706177:-119.520034)&crs=EPSG%3A32611&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+      "collection_id": "C2854338529-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_032_042_D_069_4005_DHDH_A_20261003T025605_20261003T025639_P05023_N_F_J_001",
+      "granule_concept_id": "G4340459382-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05023 (PROVISIONAL)",
+      "acquisition_timestamp": "2026-10-03T02:56:05.000Z",
+      "event_id": "CA_DOME_2026",
+      "split": "VAL",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          261360.0,
+          4157980.0,
+          277360.0,
+          4173980.0
+        ],
+        "center_lon": -119.613,
+        "center_lat": 37.612,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_IMMEDIATE_CANDIDATE_HARMONY_SUBSET",
+      "local_file_path": null,
+      "file_format": "NetCDF4/HDF5 Subset (HHHH, HVHV, mask, numberOfLooks, rtcGammaToSigmaFactor)",
+      "estimated_size_bytes": 2684354,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "NASA Earthdata Login OAuth2 (urs.earthdata.nasa.gov) required; HTTP 303 redirect verified."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_PROVISIONAL_V1) Full Frame HDF5",
+      "provider": "NASA ASF Earthdata Cloud (nisar.asf.earthdatacloud.nasa.gov)",
+      "endpoint_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_032_042_D_069_4005_DHDH_A_20261003T025605_20261003T025639_P05023_N_F_J_001/NISAR_L2_PR_GCOV_032_042_D_069_4005_DHDH_A_20261003T025605_20261003T025639_P05023_N_F_J_001.h5",
+      "collection_id": "C2854338529-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_032_042_D_069_4005_DHDH_A_20261003T025605_20261003T025639_P05023_N_F_J_001",
+      "granule_concept_id": "G4340459382-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05023 (PROVISIONAL)",
+      "acquisition_timestamp": "2026-10-03T02:56:05.000Z",
+      "event_id": "CA_DOME_2026",
+      "split": "VAL",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          261360.0,
+          4157980.0,
+          277360.0,
+          4173980.0
+        ],
+        "center_lon": -119.613,
+        "center_lat": 37.612,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_IMMEDIATE_CANDIDATE_FULL_GRANULE",
+      "local_file_path": null,
+      "file_format": "HDF5 (Full Frame ~80-240 km swath)",
+      "estimated_size_bytes": 6914404515,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_STORAGE",
+      "secondary_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "Requires NASA Earthdata Login AND exceeds local disk budget (6594.1 MB per granule vs 12.53 GB free disk)."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_V1) Harmony AOI Subset",
+      "provider": "NASA ASF DAAC / NASA Harmony OGC API Coverages",
+      "endpoint_url": "https://harmony.earthdata.nasa.gov/C3622241360-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4406462944-ASF&subset=lat(37.537948:37.686026)&subset=lon(-119.706177:-119.520034)&crs=EPSG%3A32611&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+      "collection_id": "C3622241360-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_034_042_D_069_4005_DHDH_A_20261027T025605_20261027T025640_P05036_N_F_J_001",
+      "granule_concept_id": "G4406462944-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05036 (VALIDATED_SCIENCE)",
+      "acquisition_timestamp": "2026-10-27T02:56:05.000Z",
+      "event_id": "CA_DOME_2026",
+      "split": "VAL",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          261360.0,
+          4157980.0,
+          277360.0,
+          4173980.0
+        ],
+        "center_lon": -119.613,
+        "center_lat": 37.612,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_VALIDATED_CANDIDATE_HARMONY_SUBSET",
+      "local_file_path": null,
+      "file_format": "NetCDF4/HDF5 Subset (HHHH, HVHV, mask, numberOfLooks, rtcGammaToSigmaFactor)",
+      "estimated_size_bytes": 2684354,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "NASA Earthdata Login OAuth2 (urs.earthdata.nasa.gov) required; HTTP 303 redirect verified."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_V1) Full Frame HDF5",
+      "provider": "NASA ASF Earthdata Cloud (nisar.asf.earthdatacloud.nasa.gov)",
+      "endpoint_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_V1/NISAR_L2_PR_GCOV_034_042_D_069_4005_DHDH_A_20261027T025605_20261027T025640_P05036_N_F_J_001/NISAR_L2_PR_GCOV_034_042_D_069_4005_DHDH_A_20261027T025605_20261027T025640_P05036_N_F_J_001.h5",
+      "collection_id": "C3622241360-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_034_042_D_069_4005_DHDH_A_20261027T025605_20261027T025640_P05036_N_F_J_001",
+      "granule_concept_id": "G4406462944-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05036 (VALIDATED_SCIENCE)",
+      "acquisition_timestamp": "2026-10-27T02:56:05.000Z",
+      "event_id": "CA_DOME_2026",
+      "split": "VAL",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          261360.0,
+          4157980.0,
+          277360.0,
+          4173980.0
+        ],
+        "center_lon": -119.613,
+        "center_lat": 37.612,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_VALIDATED_CANDIDATE_FULL_GRANULE",
+      "local_file_path": null,
+      "file_format": "HDF5 (Full Frame ~80-240 km swath)",
+      "estimated_size_bytes": 7095168532,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_STORAGE",
+      "secondary_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "Requires NASA Earthdata Login AND exceeds local disk budget (6766.5 MB per granule vs 12.53 GB free disk)."
+    },
+    {
+      "dataset_name": "Sentinel-1 Radiometrically Terrain Corrected (RTC) Backscatter",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-1",
+      "endpoint_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/8/3/IW/DV/S1D_IW_GRDH_1SDV_20260803T015102_20260803T015127_003955_0072BE_4C39/measurement/iw-vh.rtc.tiff",
+      "collection_id": "sentinel-1-rtc",
+      "granule_or_scene_id": "S1D_IW_GRDH_1SDV_20260803T015102_20260803T015127_003955_0072BE_rtc",
+      "sensor": "SENTINEL-1D C-band SAR (5.405 GHz)",
+      "product_version": "RTC Gamma0 (VV, VH) Orbit 64 ascending",
+      "acquisition_timestamp": "2026-08-03T01:51:14.864023Z",
+      "event_id": "CA_BUG_2026",
+      "split": "TEST",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          244920.0,
+          4404880.0,
+          260920.0,
+          4420880.0
+        ],
+        "center_lon": -119.887,
+        "center_lat": 39.83,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "PRE_FIRE_PRIMARY",
+      "local_file_path": "data/real/CA_BUG_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 20704291,
+      "sha256_checksum": "56b69365b2e1ae77461385bf71bf0cbf87bcb895d1a093bddafd7c36e6a59258",
+      "band_checksums": {
+        "vv": "8f4e3488550967eaa88900c2925fdbf59aea8c6f71179a8c2d9ff235332a607e",
+        "vh": "65f4bb40cf223a67d6309fd55e1d94e3528a85b1eb8c89c621088c263cd80aa0"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-1 Radiometrically Terrain Corrected (RTC) Backscatter",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-1",
+      "endpoint_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/8/15/IW/DV/S1D_IW_GRDH_1SDV_20260815T015102_20260815T015127_004130_0078C1_9DAC/measurement/iw-vh.rtc.tiff",
+      "collection_id": "sentinel-1-rtc",
+      "granule_or_scene_id": "S1D_IW_GRDH_1SDV_20260815T015102_20260815T015127_004130_0078C1_rtc",
+      "sensor": "SENTINEL-1D C-band SAR (5.405 GHz)",
+      "product_version": "RTC Gamma0 (VV, VH) Orbit 64 ascending",
+      "acquisition_timestamp": "2026-08-15T01:51:15.414238Z",
+      "event_id": "CA_BUG_2026",
+      "split": "TEST",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          244920.0,
+          4404880.0,
+          260920.0,
+          4420880.0
+        ],
+        "center_lon": -119.887,
+        "center_lat": 39.83,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "TEMPORAL_STEP_T1",
+      "local_file_path": "data/real/CA_BUG_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 20704291,
+      "sha256_checksum": "56b69365b2e1ae77461385bf71bf0cbf87bcb895d1a093bddafd7c36e6a59258",
+      "band_checksums": {
+        "vv": "e64b83cde40c153783b655f84923009794c4fe882c46500d500ae24176943c31",
+        "vh": "0f5cb750fc0b060fcc5282fe1c0569a5b6f0388d79f3b9a8b97784b8b2341da2"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-1 Radiometrically Terrain Corrected (RTC) Backscatter",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-1",
+      "endpoint_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/8/27/IW/DV/S1D_IW_GRDH_1SDV_20260827T015103_20260827T015128_004305_007EE4_B1D4/measurement/iw-vh.rtc.tiff",
+      "collection_id": "sentinel-1-rtc",
+      "granule_or_scene_id": "S1D_IW_GRDH_1SDV_20260827T015103_20260827T015128_004305_007EE4_rtc",
+      "sensor": "SENTINEL-1D C-band SAR (5.405 GHz)",
+      "product_version": "RTC Gamma0 (VV, VH) Orbit 64 ascending",
+      "acquisition_timestamp": "2026-08-27T01:51:16.072327Z",
+      "event_id": "CA_BUG_2026",
+      "split": "TEST",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          244920.0,
+          4404880.0,
+          260920.0,
+          4420880.0
+        ],
+        "center_lon": -119.887,
+        "center_lat": 39.83,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_PRIMARY",
+      "local_file_path": "data/real/CA_BUG_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 20704291,
+      "sha256_checksum": "56b69365b2e1ae77461385bf71bf0cbf87bcb895d1a093bddafd7c36e6a59258",
+      "band_checksums": {
+        "vv": "2b6344f1184cff963fa1019207ab022c3ed5826134a1e479be9cf2090fd75985",
+        "vh": "fbf00e84227d620ce8da27d9c2f75bec93f239bc5c3c0e5a0272dcd56f781ad5"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-1 Radiometrically Terrain Corrected (RTC) Backscatter",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-1",
+      "endpoint_url": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/9/8/IW/DV/S1D_IW_GRDH_1SDV_20260908T015103_20260908T015128_004480_008502_503F/measurement/iw-vh.rtc.tiff",
+      "collection_id": "sentinel-1-rtc",
+      "granule_or_scene_id": "S1D_IW_GRDH_1SDV_20260908T015103_20260908T015128_004480_008502_rtc",
+      "sensor": "SENTINEL-1D C-band SAR (5.405 GHz)",
+      "product_version": "RTC Gamma0 (VV, VH) Orbit 64 ascending",
+      "acquisition_timestamp": "2026-09-08T01:51:16.258823Z",
+      "event_id": "CA_BUG_2026",
+      "split": "TEST",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          244920.0,
+          4404880.0,
+          260920.0,
+          4420880.0
+        ],
+        "center_lon": -119.887,
+        "center_lat": 39.83,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_TEMPORAL_T3",
+      "local_file_path": "data/real/CA_BUG_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 20704291,
+      "sha256_checksum": "56b69365b2e1ae77461385bf71bf0cbf87bcb895d1a093bddafd7c36e6a59258",
+      "band_checksums": {
+        "vv": "425c3ec24b2a246ea983d171ac0f58cf4d502e01841e41be53f86dd6278d33d7",
+        "vh": "7e162c8c7eba04062b213482c6d0f22b3ffdd422a4c497e9667206901045913b"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-2 Level-2A Surface Reflectance (B04, B08, B12, SCL)",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-2",
+      "endpoint_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/10/T/GK/2026/08/06/S2B_MSIL2A_20260806T184919_N0512_R113_T10TGK_20260806T224126.SAFE/GRANULE/L2A_T10TGK_A049188_20260806T185546/IMG_DATA/R10m/T10TGK_20260806T184919_B08_10m.tif",
+      "collection_id": "sentinel-2-l2a",
+      "granule_or_scene_id": "S2B_MSIL2A_20260806T184919_R113_T10TGK_20260806T224126",
+      "sensor": "Sentinel-2 MSI",
+      "product_version": "L2A Baseline N0512",
+      "acquisition_timestamp": "2026-08-06T18:49:19.024000Z",
+      "event_id": "CA_BUG_2026",
+      "split": "TEST",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          244920.0,
+          4404880.0,
+          260920.0,
+          4420880.0
+        ],
+        "center_lon": -119.887,
+        "center_lat": 39.83,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "PRE_FIRE_REFERENCE",
+      "local_file_path": "data/real/CA_BUG_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 20704291,
+      "sha256_checksum": "56b69365b2e1ae77461385bf71bf0cbf87bcb895d1a093bddafd7c36e6a59258",
+      "band_checksums": {
+        "B08": "38a38ada8ce0a03ebb9dbc3ae36691d9753753eb99d79a7576444dff93a94c47",
+        "SCL": "582f503678c5671d118af634928e433f4464a5be5758ef0dc1b7b6523cc63d61"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "Sentinel-2 Level-2A Surface Reflectance (B04, B08, B12, SCL)",
+      "provider": "Microsoft Planetary Computer STAC / Copernicus Sentinel-2",
+      "endpoint_url": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/10/T/GK/2026/08/30/S2A_MSIL2A_20260830T184831_N0512_R070_T10TGK_20260831T044811.SAFE/GRANULE/L2A_T10TGK_A058440_20260830T184827/IMG_DATA/R10m/T10TGK_20260830T184831_B08_10m.tif",
+      "collection_id": "sentinel-2-l2a",
+      "granule_or_scene_id": "S2A_MSIL2A_20260830T184831_R070_T10TGK_20260831T044811",
+      "sensor": "Sentinel-2 MSI",
+      "product_version": "L2A Baseline N0512",
+      "acquisition_timestamp": "2026-08-30T18:48:31.024000Z",
+      "event_id": "CA_BUG_2026",
+      "split": "TEST",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          244920.0,
+          4404880.0,
+          260920.0,
+          4420880.0
+        ],
+        "center_lon": -119.887,
+        "center_lat": 39.83,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_REFERENCE",
+      "local_file_path": "data/real/CA_BUG_2026/stack.npz",
+      "file_format": "NPZ (float32 co-registered 800x800 grid)",
+      "file_size_bytes": 20704291,
+      "sha256_checksum": "56b69365b2e1ae77461385bf71bf0cbf87bcb895d1a093bddafd7c36e6a59258",
+      "band_checksums": {
+        "B08": "f2f87f27dda00413327d6069b04542d0fe54d58f2cb69bc7f175d030c2d90ca0",
+        "SCL": "ed0493af6f4208a1c5da586f0ab33ea84156cfbf081ac6cfd29420fb16961f0b"
+      },
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "MODIS/Terra+Aqua Burned Area Monthly L3 Global 500m SIN Grid V061",
+      "provider": "NASA LP DAAC / Microsoft Planetary Computer STAC",
+      "endpoint_url": "https://modiseuwest.blob.core.windows.net/modis-061-cogs/MCD64A1/08/05/2026213/MCD64A1.A2026213.h08v05.061.2026286121320_Burn_Date.tif",
+      "collection_id": "MCD64A1.061 (modis-64A1-061)",
+      "granule_or_scene_id": "MCD64A1.A2026213.h08v05.061.2026286121320",
+      "sensor": "MODIS Terra + Aqua",
+      "product_version": "Collection 6.1 (V061)",
+      "acquisition_timestamp": "2026-DOY219-to-DOY240",
+      "event_id": "CA_BUG_2026",
+      "split": "TEST",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          244920.0,
+          4404880.0,
+          260920.0,
+          4420880.0
+        ],
+        "center_lon": -119.887,
+        "center_lat": 39.83,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "INDEPENDENT_BURNED_AREA_VALIDATION_AND_ANCILLARY_QA",
+      "local_file_path": "data/real/CA_BUG_2026/mcd64a1_ancillary.npz",
+      "file_format": "NPZ (Burn_Date, Burn_Date_Uncertainty, QA, First_Day, Last_Day on 800x800 grid)",
+      "file_size_bytes": 37272,
+      "sha256_checksum": "a5504ee89cb24e1704acb8af57c8327dcf4169799bfe490660d67d238cce8547",
+      "download_status": "PROCESSED",
+      "validation_status": "VERIFIED",
+      "authentication_requirement": "Anonymous Planetary Computer SAS token (public)"
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_PROVISIONAL_V1) Harmony AOI Subset",
+      "provider": "NASA ASF DAAC / NASA Harmony OGC API Coverages",
+      "endpoint_url": "https://harmony.earthdata.nasa.gov/C2854338529-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4260295244-ASF&subset=lat(39.755668:39.904296)&subset=lon(-119.983690:-119.790916)&crs=EPSG%3A32611&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+      "collection_id": "C2854338529-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_026_042_D_068_4005_DHDH_A_20260723T025530_20260723T025607_P05023_N_F_J_001",
+      "granule_concept_id": "G4260295244-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05023 (PROVISIONAL)",
+      "acquisition_timestamp": "2026-07-23T02:55:30.000Z",
+      "event_id": "CA_BUG_2026",
+      "split": "TEST",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          244920.0,
+          4404880.0,
+          260920.0,
+          4420880.0
+        ],
+        "center_lon": -119.887,
+        "center_lat": 39.83,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "PRE_FIRE_PRIMARY_CANDIDATE_HARMONY_SUBSET",
+      "local_file_path": null,
+      "file_format": "NetCDF4/HDF5 Subset (HHHH, HVHV, mask, numberOfLooks, rtcGammaToSigmaFactor)",
+      "estimated_size_bytes": 2684354,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "NASA Earthdata Login OAuth2 (urs.earthdata.nasa.gov) required; HTTP 303 redirect verified."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_PROVISIONAL_V1) Full Frame HDF5",
+      "provider": "NASA ASF Earthdata Cloud (nisar.asf.earthdatacloud.nasa.gov)",
+      "endpoint_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_026_042_D_068_4005_DHDH_A_20260723T025530_20260723T025607_P05023_N_F_J_001/NISAR_L2_PR_GCOV_026_042_D_068_4005_DHDH_A_20260723T025530_20260723T025607_P05023_N_F_J_001.h5",
+      "collection_id": "C2854338529-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_026_042_D_068_4005_DHDH_A_20260723T025530_20260723T025607_P05023_N_F_J_001",
+      "granule_concept_id": "G4260295244-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05023 (PROVISIONAL)",
+      "acquisition_timestamp": "2026-07-23T02:55:30.000Z",
+      "event_id": "CA_BUG_2026",
+      "split": "TEST",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          244920.0,
+          4404880.0,
+          260920.0,
+          4420880.0
+        ],
+        "center_lon": -119.887,
+        "center_lat": 39.83,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "PRE_FIRE_PRIMARY_CANDIDATE_FULL_GRANULE",
+      "local_file_path": null,
+      "file_format": "HDF5 (Full Frame ~80-240 km swath)",
+      "estimated_size_bytes": 7199019499,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_STORAGE",
+      "secondary_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "Requires NASA Earthdata Login AND exceeds local disk budget (6865.5 MB per granule vs 12.53 GB free disk)."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_PROVISIONAL_V1) Harmony AOI Subset",
+      "provider": "NASA ASF DAAC / NASA Harmony OGC API Coverages",
+      "endpoint_url": "https://harmony.earthdata.nasa.gov/C2854338529-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4311241515-ASF&subset=lat(39.755668:39.904296)&subset=lon(-119.983690:-119.790916)&crs=EPSG%3A32611&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+      "collection_id": "C2854338529-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_030_042_D_068_4005_DHDH_A_20260909T025529_20260909T025605_P05023_N_F_J_001",
+      "granule_concept_id": "G4311241515-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05023 (PROVISIONAL)",
+      "acquisition_timestamp": "2026-09-09T02:55:29.000Z",
+      "event_id": "CA_BUG_2026",
+      "split": "TEST",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          244920.0,
+          4404880.0,
+          260920.0,
+          4420880.0
+        ],
+        "center_lon": -119.887,
+        "center_lat": 39.83,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_IMMEDIATE_CANDIDATE_HARMONY_SUBSET",
+      "local_file_path": null,
+      "file_format": "NetCDF4/HDF5 Subset (HHHH, HVHV, mask, numberOfLooks, rtcGammaToSigmaFactor)",
+      "estimated_size_bytes": 2684354,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "NASA Earthdata Login OAuth2 (urs.earthdata.nasa.gov) required; HTTP 303 redirect verified."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_PROVISIONAL_V1) Full Frame HDF5",
+      "provider": "NASA ASF Earthdata Cloud (nisar.asf.earthdatacloud.nasa.gov)",
+      "endpoint_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_030_042_D_068_4005_DHDH_A_20260909T025529_20260909T025605_P05023_N_F_J_001/NISAR_L2_PR_GCOV_030_042_D_068_4005_DHDH_A_20260909T025529_20260909T025605_P05023_N_F_J_001.h5",
+      "collection_id": "C2854338529-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_030_042_D_068_4005_DHDH_A_20260909T025529_20260909T025605_P05023_N_F_J_001",
+      "granule_concept_id": "G4311241515-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05023 (PROVISIONAL)",
+      "acquisition_timestamp": "2026-09-09T02:55:29.000Z",
+      "event_id": "CA_BUG_2026",
+      "split": "TEST",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          244920.0,
+          4404880.0,
+          260920.0,
+          4420880.0
+        ],
+        "center_lon": -119.887,
+        "center_lat": 39.83,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_IMMEDIATE_CANDIDATE_FULL_GRANULE",
+      "local_file_path": null,
+      "file_format": "HDF5 (Full Frame ~80-240 km swath)",
+      "estimated_size_bytes": 7009730560,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_STORAGE",
+      "secondary_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "Requires NASA Earthdata Login AND exceeds local disk budget (6685.0 MB per granule vs 12.53 GB free disk)."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_V1) Harmony AOI Subset",
+      "provider": "NASA ASF DAAC / NASA Harmony OGC API Coverages",
+      "endpoint_url": "https://harmony.earthdata.nasa.gov/C3622241360-ASF/ogc-api-coverages/1.0.0/collections/parameter_vars/coverage/rangeset?granuleId=G4406486031-ASF&subset=lat(39.755668:39.904296)&subset=lon(-119.983690:-119.790916)&crs=EPSG%3A32611&variable=%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHHHH,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FHVHV,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2Fmask,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FnumberOfLooks,%2Fscience%2FLSAR%2FGCOV%2Fgrids%2FfrequencyA%2FrtcGammaToSigmaFactor",
+      "collection_id": "C3622241360-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_034_042_D_068_4005_DHDH_A_20261027T025530_20261027T025606_P05036_N_F_J_001",
+      "granule_concept_id": "G4406486031-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05036 (VALIDATED_SCIENCE)",
+      "acquisition_timestamp": "2026-10-27T02:55:30.000Z",
+      "event_id": "CA_BUG_2026",
+      "split": "TEST",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          244920.0,
+          4404880.0,
+          260920.0,
+          4420880.0
+        ],
+        "center_lon": -119.887,
+        "center_lat": 39.83,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_VALIDATED_CANDIDATE_HARMONY_SUBSET",
+      "local_file_path": null,
+      "file_format": "NetCDF4/HDF5 Subset (HHHH, HVHV, mask, numberOfLooks, rtcGammaToSigmaFactor)",
+      "estimated_size_bytes": 2684354,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "NASA Earthdata Login OAuth2 (urs.earthdata.nasa.gov) required; HTTP 303 redirect verified."
+    },
+    {
+      "dataset_name": "NASA NISAR L2 GCOV (NISAR_L2_GCOV_V1) Full Frame HDF5",
+      "provider": "NASA ASF Earthdata Cloud (nisar.asf.earthdatacloud.nasa.gov)",
+      "endpoint_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_V1/NISAR_L2_PR_GCOV_034_042_D_068_4005_DHDH_A_20261027T025530_20261027T025606_P05036_N_F_J_001/NISAR_L2_PR_GCOV_034_042_D_068_4005_DHDH_A_20261027T025530_20261027T025606_P05036_N_F_J_001.h5",
+      "collection_id": "C3622241360-ASF",
+      "granule_or_scene_id": "NISAR_L2_PR_GCOV_034_042_D_068_4005_DHDH_A_20261027T025530_20261027T025606_P05036_N_F_J_001",
+      "granule_concept_id": "G4406486031-ASF",
+      "sensor": "NISAR L-band SAR (1.257 GHz, 24 cm)",
+      "product_version": "CRID P05036 (VALIDATED_SCIENCE)",
+      "acquisition_timestamp": "2026-10-27T02:55:30.000Z",
+      "event_id": "CA_BUG_2026",
+      "split": "TEST",
+      "aoi": {
+        "crs": "EPSG:32611",
+        "bounds_utm_m": [
+          244920.0,
+          4404880.0,
+          260920.0,
+          4420880.0
+        ],
+        "center_lon": -119.887,
+        "center_lat": 39.83,
+        "shape_px": [
+          800,
+          800
+        ],
+        "pixel_resolution_m": 20.0
+      },
+      "role": "POST_FIRE_VALIDATED_CANDIDATE_FULL_GRANULE",
+      "local_file_path": null,
+      "file_format": "HDF5 (Full Frame ~80-240 km swath)",
+      "estimated_size_bytes": 7001478266,
+      "sha256_checksum": null,
+      "download_status": "BLOCKED_STORAGE",
+      "secondary_status": "BLOCKED_AUTH",
+      "validation_status": "DISCOVERED",
+      "authentication_requirement": "Requires NASA Earthdata Login AND exceeds local disk budget (6677.1 MB per granule vs 12.53 GB free disk)."
+    }
+  ]
+}

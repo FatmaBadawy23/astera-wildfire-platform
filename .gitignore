@@ -15,6 +15,11 @@ node_modules/
 frontend/dist/
 *.log
 
+# Model weights / checkpoints
+models/checkpoints/*.pt
+models/checkpoints/*.pth
+models/checkpoints/*.bin
+
 # Large / generated data — satellite files never go into Git
 data/raw/*
 data/processed/*
@@ -24,8 +29,27 @@ data/outputs/*
 !data/outputs/.gitkeep
 # data/mock/ IS committed (small synthetic files only)
 
+# Generated real-data arrays and maps (reproducible from scripts; manifests stay tracked)
+data/real/*/stack.npz
+data/real/*/qa_*.png
+data/real/dataset/*.npz
+data/real/dataset/prepared/
+outputs/evaluation/real_predictions/
+outputs/evaluation/real_test_maps.png
+
 # OS / editors
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+
+# Publish trained checkpoints and real-data artifacts (stored via Git LFS, see .gitattributes)
+!models/checkpoints/*.pt
+!models/checkpoints/*.pth
+!models/checkpoints/*.bin
+!data/real/*/stack.npz
+!data/real/*/qa_*.png
+!data/real/dataset/*.npz
+!data/real/dataset/prepared/
+!outputs/evaluation/real_predictions/
+!outputs/evaluation/real_test_maps.png

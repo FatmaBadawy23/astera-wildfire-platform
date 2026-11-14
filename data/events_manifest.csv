@@ -1,0 +1,4 @@
+event_id,fire_name,country,state_region,center_lat,center_lon,fire_start_date,fire_containment_date,acres_burned,primary_vegetation,sar_pre_date,sar_post_date,split_assignment
+OR_ROWE_CREEK_2026,Rowe Creek Complex,USA,Oregon,44.78,-120.15,2026-07-15,2026-08-28,373800,Ponderosa Pine / Juniper / Sagebrush,2026-06-28,2026-08-25,TRAIN
+OR_HAY_CREEK_2026,Hay Creek Complex,USA,Oregon,45.35,-120.30,2026-07-16,2026-08-20,155200,Shrub-steppe / Rangeland Grasses,2026-06-28,2026-08-25,VAL
+WA_SPOKANE_2026,Spokane Complex Fire,USA,Washington,47.65,-117.40,2026-08-04,2026-08-22,48600,Inland Empire Mixed Conifer / WUI,2026-07-18,2026-08-29,TEST

@@ -1,0 +1,59 @@
+{
+  "pair_id": "pair_b81504968e",
+  "pre_upload_id": "upl_b86bbc09c5",
+  "post_upload_id": "upl_469d06f025",
+  "pre_filename": "custom_site_pre_dualpol.tif",
+  "post_filename": "custom_site_post_dualpol.tif",
+  "pre_date": "2024-09-01",
+  "post_date": "2024-08-01",
+  "area_name": null,
+  "compatible": false,
+  "status": "UNSUITABLE",
+  "checks": {
+    "crs_match": true,
+    "pre_crs": "EPSG:4326",
+    "post_crs": "EPSG:4326",
+    "spatial_overlap_percent": 100.0,
+    "dimensions_match": true,
+    "transform_match": true,
+    "resolution_match": true,
+    "date_order_valid": false,
+    "co_registered": false,
+    "dual_polarization_available": true
+  },
+  "target_grid": {
+    "crs": "EPSG:4326",
+    "width": 48,
+    "height": 48,
+    "resolution_m": 19.48,
+    "bounds": [
+      -121.92,
+      40.010400000000004,
+      -121.9104,
+      40.02
+    ],
+    "bounds_wgs84": [
+      -121.92,
+      40.0104,
+      -121.9104,
+      40.02
+    ],
+    "transform": [
+      0.0002,
+      0.0,
+      -121.92,
+      0.0,
+      -0.0002,
+      40.02
+    ]
+  },
+  "pre_local_path": "outputs/uploads/upl_b86bbc09c5/custom_site_pre_dualpol.tif",
+  "post_local_path": "outputs/uploads/upl_469d06f025/custom_site_post_dualpol.tif",
+  "matched_event_id": null,
+  "compatible_models": [],
+  "reasons": [
+    "DATE_ORDER_INVALID: Pre-fire acquisition date (2024-09-01) must be strictly earlier than Post-fire acquisition date (2024-08-01)."
+  ],
+  "warnings": [],
+  "created_at_utc": "2026-11-14T03:50:50.548022+00:00"
+}

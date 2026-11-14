@@ -1,0 +1,513 @@
+{
+  "created_at_utc": "2026-11-14T00:56:27.974087+00:00",
+  "dataset_version": "run_20261114_025000_phase_g",
+  "data_origin": "CROSS_SENSOR_PROTOTYPE",
+  "is_nisar": false,
+  "sensors": [
+    "sentinel-1-rtc (C-band, 20 m)",
+    "sentinel-2-l2a (optical dNBR reference, SCL land classes {4,5,7}, water SCL=6 excluded)",
+    "modis-64A1-061 (independent check, QA Bits 0=1, 1=1, 2=0 filtered)"
+  ],
+  "channels": [
+    "vv_pre_db",
+    "vh_pre_db",
+    "vv_post_db",
+    "vh_post_db",
+    "delta_vh_db"
+  ],
+  "scl_valid_land_classes": [
+    4,
+    5,
+    7
+  ],
+  "scl_water_class_excluded": 6,
+  "water_exclusion_audit": {
+    "CA_GANN_2026": {
+      "total_pixels": 640000,
+      "scl6_water_pixels_detected": 27522,
+      "scl6_water_pixels_in_valid_mask": 0,
+      "valid_land_pixels": 600831,
+      "valid_land_fraction": 0.938798
+    },
+    "CA_DOME_2026": {
+      "total_pixels": 640000,
+      "scl6_water_pixels_detected": 401,
+      "scl6_water_pixels_in_valid_mask": 0,
+      "valid_land_pixels": 608150,
+      "valid_land_fraction": 0.950234
+    },
+    "CA_BUG_2026": {
+      "total_pixels": 640000,
+      "scl6_water_pixels_detected": 16,
+      "scl6_water_pixels_in_valid_mask": 0,
+      "valid_land_pixels": 465828,
+      "valid_land_fraction": 0.727856
+    }
+  },
+  "label_definition": "Sentinel-2 dNBR >= threshold_calibrated (0.11, calibrated on TRAIN vs QA-filtered MCD64A1), masked by SCL land classes {4,5,7} (water SCL=6 excluded) and Sentinel-1 validity. USGS moderate-severity threshold (0.27) also tracked as sensitivity layer.",
+  "label_threshold": 0.11,
+  "label_threshold_usgs_moderate": 0.27,
+  "label_calibration": {
+    "selected": {
+      "threshold": 0.11,
+      "f1": 0.8474516307352128,
+      "precision": 0.8445756847881178,
+      "recall": 0.8503472299261166
+    },
+    "curve": [
+      {
+        "threshold": 0.02,
+        "precision": 0.5843836973785828,
+        "recall": 0.8898071930953385,
+        "f1": 0.7054565603616598
+      },
+      {
+        "threshold": 0.03,
+        "precision": 0.7331782043823929,
+        "recall": 0.8808435579419138,
+        "f1": 0.8002559980648966
+      },
+      {
+        "threshold": 0.04,
+        "precision": 0.7895363020135571,
+        "recall": 0.8760733065607597,
+        "f1": 0.8305567825666268
+      },
+      {
+        "threshold": 0.05,
+        "precision": 0.8095654859967051,
+        "recall": 0.87223491824011,
+        "f1": 0.839732567205306
+      },
+      {
+        "threshold": 0.06,
+        "precision": 0.8189313742907005,
+        "recall": 0.8693616738035544,
+        "f1": 0.8433933327952216
+      },
+      {
+        "threshold": 0.07,
+        "precision": 0.8249812540264239,
+        "recall": 0.8665771782299039,
+        "f1": 0.8452677880635614
+      },
+      {
+        "threshold": 0.08,
+        "precision": 0.8302714121111253,
+        "recall": 0.8633378447338643,
+        "f1": 0.8464818299487692
+      },
+      {
+        "threshold": 0.09,
+        "precision": 0.8347117227714242,
+        "recall": 0.8598988262962881,
+        "f1": 0.8471180957793272
+      },
+      {
+        "threshold": 0.1,
+        "precision": 0.839144862100854,
+        "recall": 0.8556499744847019,
+        "f1": 0.8473170490560649
+      },
+      {
+        "threshold": 0.11,
+        "precision": 0.8445756847881178,
+        "recall": 0.8503472299261166,
+        "f1": 0.8474516307352128
+      },
+      {
+        "threshold": 0.12,
+        "precision": 0.8504700089525514,
+        "recall": 0.8430920103836169,
+        "f1": 0.8467649385522168
+      },
+      {
+        "threshold": 0.13,
+        "precision": 0.8582981153626499,
+        "recall": 0.8336180692684875,
+        "f1": 0.8457780879274249
+      },
+      {
+        "threshold": 0.14,
+        "precision": 0.8669322242399391,
+        "recall": 0.8208937010494552,
+        "f1": 0.8432850704000637
+      },
+      {
+        "threshold": 0.15,
+        "precision": 0.8759715261131692,
+        "recall": 0.8027001841538906,
+        "f1": 0.8377367665447135
+      },
+      {
+        "threshold": 0.16,
+        "precision": 0.8847179590399034,
+        "recall": 0.7801912537995607,
+        "f1": 0.8291733968426142
+      },
+      {
+        "threshold": 0.17,
+        "precision": 0.8937979699574771,
+        "recall": 0.7531672250449292,
+        "f1": 0.817478522104021
+      },
+      {
+        "threshold": 0.18,
+        "precision": 0.902292251718843,
+        "recall": 0.7235694792660469,
+        "f1": 0.8031078194164835
+      },
+      {
+        "threshold": 0.19,
+        "precision": 0.9099801448259752,
+        "recall": 0.691464578110093,
+        "f1": 0.7858142437499213
+      },
+      {
+        "threshold": 0.2,
+        "precision": 0.9179765382297028,
+        "recall": 0.6588937454238868,
+        "f1": 0.7671512435176276
+      },
+      {
+        "threshold": 0.21,
+        "precision": 0.9252678380994569,
+        "recall": 0.6256351090501653,
+        "f1": 0.7465071181325409
+      },
+      {
+        "threshold": 0.22,
+        "precision": 0.9323763343333565,
+        "recall": 0.5930088083246433,
+        "f1": 0.7249413455931215
+      },
+      {
+        "threshold": 0.23,
+        "precision": 0.9393433809762156,
+        "recall": 0.5621242040336358,
+        "f1": 0.7033487177707604
+      },
+      {
+        "threshold": 0.24,
+        "precision": 0.9466048164232136,
+        "recall": 0.5319939650773224,
+        "f1": 0.6811693015724207
+      },
+      {
+        "threshold": 0.25,
+        "precision": 0.9525540543380051,
+        "recall": 0.5029065252601451,
+        "f1": 0.6582736163446669
+      },
+      {
+        "threshold": 0.26,
+        "precision": 0.9580033114064528,
+        "recall": 0.4749950078764616,
+        "f1": 0.6350974517191255
+      },
+      {
+        "threshold": 0.27,
+        "precision": 0.9614632983794089,
+        "recall": 0.44754942202303033,
+        "f1": 0.6107856050627546
+      },
+      {
+        "threshold": 0.28,
+        "precision": 0.9652430193856552,
+        "recall": 0.4214572563289033,
+        "f1": 0.5867290600072587
+      },
+      {
+        "threshold": 0.29,
+        "precision": 0.9675198732482858,
+        "recall": 0.39291340329702024,
+        "f1": 0.5588683145429155
+      },
+      {
+        "threshold": 0.3,
+        "precision": 0.9698335953489752,
+        "recall": 0.362716602693528,
+        "f1": 0.5279722255863712
+      },
+      {
+        "threshold": 0.31,
+        "precision": 0.9713116085642809,
+        "recall": 0.3316545006767101,
+        "f1": 0.49447159715847544
+      },
+      {
+        "threshold": 0.32,
+        "precision": 0.9719251336898396,
+        "recall": 0.29840695791085176,
+        "f1": 0.4566195318202652
+      },
+      {
+        "threshold": 0.33,
+        "precision": 0.9718425145289351,
+        "recall": 0.2634288123183422,
+        "f1": 0.4145021645021646
+      },
+      {
+        "threshold": 0.34,
+        "precision": 0.9712226805101218,
+        "recall": 0.2272636506844756,
+        "f1": 0.3683373039061446
+      },
+      {
+        "threshold": 0.35,
+        "precision": 0.9699101211410708,
+        "recall": 0.19274034301435514,
+        "f1": 0.3215769746888159
+      },
+      {
+        "threshold": 0.36,
+        "precision": 0.96764764498771,
+        "recall": 0.16158949213463203,
+        "f1": 0.27693331432102286
+      },
+      {
+        "threshold": 0.37,
+        "precision": 0.966347687400319,
+        "recall": 0.13443234008564264,
+        "f1": 0.23602968387838177
+      },
+      {
+        "threshold": 0.38,
+        "precision": 0.96387171561051,
+        "recall": 0.11069201925850325,
+        "f1": 0.1985790196429638
+      },
+      {
+        "threshold": 0.39,
+        "precision": 0.9607428302773859,
+        "recall": 0.090679150673382,
+        "f1": 0.16571718195641158
+      },
+      {
+        "threshold": 0.4,
+        "precision": 0.9557329462989841,
+        "recall": 0.07305140777883784,
+        "f1": 0.1357284194904774
+      }
+    ]
+  },
+  "patch_size": 128,
+  "stride": 64,
+  "max_samples": 10000,
+  "samples": {
+    "TRAIN": 121,
+    "VAL": 121,
+    "TEST": 94
+  },
+  "total_samples": 336,
+  "split_files": {
+    "TRAIN": {
+      "path": "data/acquisitions/run_20261114_025000_phase_g/dataset/train.npz",
+      "bytes": 34437165,
+      "sha256": "16a7f674bea7adf8eb19748b51d5f7701bba62442ac8fa271094aca9391e71f7",
+      "samples": 121,
+      "nominal_patch_pixels": 1982464,
+      "valid_patch_pixels": 1839696,
+      "invalid_patch_pixels": 142768,
+      "burned_valid_patch_pixels": 362389,
+      "unburned_valid_patch_pixels": 1477307,
+      "positive_pixel_fraction_valid": 0.197
+    },
+    "VAL": {
+      "path": "data/acquisitions/run_20261114_025000_phase_g/dataset/val.npz",
+      "bytes": 34556746,
+      "sha256": "efa65e140180545782b3596835a0f695b1621a7909f46e85ef2641732f111d56",
+      "samples": 121,
+      "nominal_patch_pixels": 1982464,
+      "valid_patch_pixels": 1877088,
+      "invalid_patch_pixels": 105376,
+      "burned_valid_patch_pixels": 167643,
+      "unburned_valid_patch_pixels": 1709445,
+      "positive_pixel_fraction_valid": 0.0893
+    },
+    "TEST": {
+      "path": "data/acquisitions/run_20261114_025000_phase_g/dataset/test.npz",
+      "bytes": 24679116,
+      "sha256": "03e68a2a9e5339a86e82de5f7d47d4c426ff43e48f4a2fd1206a6bf2ee4d0817",
+      "samples": 94,
+      "nominal_patch_pixels": 1540096,
+      "valid_patch_pixels": 1441577,
+      "invalid_patch_pixels": 98519,
+      "burned_valid_patch_pixels": 775811,
+      "unburned_valid_patch_pixels": 665766,
+      "positive_pixel_fraction_valid": 0.5382
+    }
+  },
+  "prepared_files": {
+    "CA_GANN_2026": {
+      "path": "data/acquisitions/run_20261114_025000_phase_g/dataset/prepared/CA_GANN_2026.npz",
+      "bytes": 29902738,
+      "sha256": "8342c3845fc0d736102c5efe9206fce6e16687c82ddacb0406a58c7f3eba78e2"
+    },
+    "CA_DOME_2026": {
+      "path": "data/acquisitions/run_20261114_025000_phase_g/dataset/prepared/CA_DOME_2026.npz",
+      "bytes": 29601818,
+      "sha256": "a335d0f0b1c887f59059e406382117f5a98c1fe9d8123ef6286707366079e2ac"
+    },
+    "CA_BUG_2026": {
+      "path": "data/acquisitions/run_20261114_025000_phase_g/dataset/prepared/CA_BUG_2026.npz",
+      "bytes": 22203819,
+      "sha256": "225039e45740c204237198b02d13d35ca98ca6531193b439371d2df966364be8"
+    }
+  },
+  "normalization": {
+    "mean": [
+      -10.103472709655762,
+      -16.615419387817383,
+      -10.152118682861328,
+      -16.86798095703125,
+      -0.25256624817848206
+    ],
+    "std": [
+      2.8118209838867188,
+      3.555358648300171,
+      2.810258150100708,
+      3.50883412361145,
+      2.091676950454712
+    ],
+    "fitted_on": "TRAIN (valid_mask > 0 land pixels only)"
+  },
+  "events": {
+    "CA_GANN_2026": {
+      "split": "TRAIN",
+      "name": "Gann Fire",
+      "pre_datetime": "2026-07-26T14:07:11.382189Z",
+      "post_datetime": "2026-08-31T14:07:13.244101Z",
+      "n_s1_dates": 4,
+      "valid_fraction": 0.9387984375,
+      "water_pixels_excluded": 27522,
+      "mcd_fraction_valid": 0.15002887667247528,
+      "pre_item": "S1C_IW_GRDH_1SDV_20260726T140658_20260726T140723_008715_011453_rtc",
+      "post_item": "S1C_IW_GRDH_1SDV_20260831T140700_20260831T140725_009240_0125C1_rtc"
+    },
+    "CA_DOME_2026": {
+      "split": "VAL",
+      "name": "Dome Fire",
+      "pre_datetime": "2026-09-13T13:59:23.018114Z",
+      "post_datetime": "2026-10-19T13:59:23.127607Z",
+      "n_s1_dates": 4,
+      "valid_fraction": 0.950234375,
+      "water_pixels_excluded": 401,
+      "mcd_fraction_valid": 0.056962920332154894,
+      "pre_item": "S1D_IW_GRDH_1SDV_20260913T135910_20260913T135935_004560_0087C4_rtc",
+      "post_item": "S1D_IW_GRDH_1SDV_20261019T135910_20261019T135935_005085_0099F2_rtc"
+    },
+    "CA_BUG_2026": {
+      "split": "TEST",
+      "name": "Bug Fire",
+      "pre_datetime": "2026-08-03T01:51:14.864023Z",
+      "post_datetime": "2026-09-08T01:51:16.258823Z",
+      "n_s1_dates": 4,
+      "valid_fraction": 0.72785625,
+      "water_pixels_excluded": 16,
+      "mcd_fraction_valid": 0.7459534420429859,
+      "pre_item": "S1D_IW_GRDH_1SDV_20260803T015102_20260803T015127_003955_0072BE_rtc",
+      "post_item": "S1D_IW_GRDH_1SDV_20260908T015103_20260908T015128_004480_008502_rtc"
+    }
+  },
+  "excluded_events": {
+    "CA_TIMBER_2026": {
+      "reason": "Excluded from supervised SAR training: C-band VH backscatter change is physically inverted (delta_VH burned - unburned = +0.0668 dB, ROC-AUC = 0.4876 < 0.50) due to steep coastal topography and overlapping Timber/Plaskett fire complex.",
+      "include_in_training": false
+    }
+  },
+  "agreement": {
+    "CA_GANN_2026": {
+      "dnbr_calibrated_vs_mcd": {
+        "true_positives": 76652,
+        "false_positives": 14106,
+        "false_negatives": 13490,
+        "true_negatives": 535752,
+        "precision": 0.8445756847881178,
+        "recall": 0.8503472299261166,
+        "f1": 0.8474516307352128,
+        "iou": 0.7352850894021947
+      },
+      "dnbr_usgs_027_vs_mcd": {
+        "true_positives": 40343,
+        "false_positives": 1617,
+        "false_negatives": 49799,
+        "true_negatives": 548241,
+        "precision": 0.9614632983794089,
+        "recall": 0.44754942202303033,
+        "f1": 0.6107856050627546,
+        "iou": 0.4396625944049085
+      },
+      "label_calibrated_fraction_valid": 0.15105412337246246,
+      "label_usgs_027_fraction_valid": 0.06983660962899717,
+      "mcd_fraction_valid": 0.15002887667247528,
+      "valid_fraction": 0.9387984375,
+      "water_pixels_excluded": 27522
+    },
+    "CA_DOME_2026": {
+      "dnbr_calibrated_vs_mcd": {
+        "true_positives": 22548,
+        "false_positives": 19880,
+        "false_negatives": 12094,
+        "true_negatives": 585478,
+        "precision": 0.5314415008956349,
+        "recall": 0.6508862074937937,
+        "f1": 0.5851304009342155,
+        "iou": 0.41355782986684275
+      },
+      "dnbr_usgs_027_vs_mcd": {
+        "true_positives": 7723,
+        "false_positives": 4494,
+        "false_negatives": 26919,
+        "true_negatives": 600864,
+        "precision": 0.6321519194564951,
+        "recall": 0.2229374747416431,
+        "f1": 0.3296271794105722,
+        "iou": 0.1973374897792314
+      },
+      "label_calibrated_fraction_valid": 0.06976568280851764,
+      "label_usgs_027_fraction_valid": 0.020088793883088055,
+      "mcd_fraction_valid": 0.056962920332154894,
+      "valid_fraction": 0.950234375,
+      "water_pixels_excluded": 401
+    },
+    "CA_BUG_2026": {
+      "dnbr_calibrated_vs_mcd": {
+        "true_positives": 226939,
+        "false_positives": 6631,
+        "false_negatives": 120547,
+        "true_negatives": 285883,
+        "precision": 0.9716102239157426,
+        "recall": 0.6530881819699211,
+        "f1": 0.7811260876748541,
+        "iou": 0.6408588122004875
+      },
+      "dnbr_usgs_027_vs_mcd": {
+        "true_positives": 4734,
+        "false_positives": 47,
+        "false_negatives": 342752,
+        "true_negatives": 292467,
+        "precision": 0.9901694206233006,
+        "recall": 0.01362357044600358,
+        "f1": 0.02687734019933743,
+        "iou": 0.013621728008563216
+      },
+      "label_calibrated_fraction_valid": 0.5014082451033429,
+      "label_usgs_027_fraction_valid": 0.010263444876649751,
+      "mcd_fraction_valid": 0.7459534420429859,
+      "valid_fraction": 0.72785625,
+      "water_pixels_excluded": 16
+    }
+  },
+  "splits": {
+    "TRAIN": [
+      "CA_GANN_2026"
+    ],
+    "VAL": [
+      "CA_DOME_2026"
+    ],
+    "TEST": [
+      "CA_BUG_2026"
+    ]
+  }
+}

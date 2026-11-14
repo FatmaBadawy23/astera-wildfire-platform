@@ -1,0 +1,71 @@
+[
+  {
+    "event_id": "OR_ROWE_CREEK_2026",
+    "fire_name": "Rowe Creek Complex",
+    "country": "USA",
+    "state_region": "Oregon",
+    "coordinates": {
+      "center_lat": 44.78,
+      "center_lon": -120.15,
+      "bbox": [-120.60, 44.45, -119.70, 45.10]
+    },
+    "fire_start_date": "2026-07-15",
+    "fire_containment_date": "2026-08-28",
+    "acres_burned": 373800,
+    "primary_vegetation": "Ponderosa Pine, Western Juniper, Mountain Big Sagebrush",
+    "terrain": "Basin and Range dissected plateaus, canyons, volcanic rimrock",
+    "sar_pre_date": "2026-06-28",
+    "sar_post_date": "2026-08-25",
+    "optical_pre_date": "2026-07-01",
+    "optical_post_date": "2026-08-28",
+    "nisar_mode": "GCOV_L_DUAL_POL_RTC",
+    "split_assignment": "TRAIN",
+    "notes": "Largest complex in 2026 Oregon season. Extensive volume scattering loss in L-band HV."
+  },
+  {
+    "event_id": "OR_HAY_CREEK_2026",
+    "fire_name": "Hay Creek Complex",
+    "country": "USA",
+    "state_region": "Oregon",
+    "coordinates": {
+      "center_lat": 45.35,
+      "center_lon": -120.30,
+      "bbox": [-120.70, 45.10, -119.90, 45.60]
+    },
+    "fire_start_date": "2026-07-16",
+    "fire_containment_date": "2026-08-20",
+    "acres_burned": 155200,
+    "primary_vegetation": "Shrub-steppe, dry forest fringe, annual rangeland grasses",
+    "terrain": "John Day River canyon system, undulating basalt plateau",
+    "sar_pre_date": "2026-06-28",
+    "sar_post_date": "2026-08-25",
+    "optical_pre_date": "2026-07-02",
+    "optical_post_date": "2026-08-26",
+    "nisar_mode": "GCOV_L_DUAL_POL_RTC",
+    "split_assignment": "VAL",
+    "notes": "Adjacent northern complex with differing soil moisture and vegetation density."
+  },
+  {
+    "event_id": "WA_SPOKANE_2026",
+    "fire_name": "Spokane Complex Fire",
+    "country": "USA",
+    "state_region": "Washington",
+    "coordinates": {
+      "center_lat": 47.65,
+      "center_lon": -127.40,
+      "bbox": [-117.65, 47.50, -117.15, 47.85]
+    },
+    "fire_start_date": "2026-08-04",
+    "fire_containment_date": "2026-08-22",
+    "acres_burned": 48600,
+    "primary_vegetation": "Inland Empire mixed conifer, Douglas fir, urban-wildland interface",
+    "terrain": "Rolling hills, Columbia plateau transition",
+    "sar_pre_date": "2026-07-18",
+    "sar_post_date": "2026-08-29",
+    "optical_pre_date": "2026-07-20",
+    "optical_post_date": "2026-08-30",
+    "nisar_mode": "GCOV_L_DUAL_POL_RTC",
+    "split_assignment": "TEST",
+    "notes": "Completely held-out wildfire event reserved exclusively for independent generalization testing."
+  }
+]

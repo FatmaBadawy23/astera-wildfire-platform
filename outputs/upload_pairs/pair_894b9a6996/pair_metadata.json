@@ -1,0 +1,62 @@
+{
+  "pair_id": "pair_894b9a6996",
+  "pre_upload_id": "upl_634668ae0d",
+  "post_upload_id": "upl_67a209b604",
+  "pre_filename": "CA_GANN_2026_sentinel1_pre_dualpol_vv_vh_db.tif",
+  "post_filename": "CA_GANN_2026_sentinel1_post_dualpol_vv_vh_db.tif",
+  "pre_date": "2024-07-04",
+  "post_date": "2024-08-09",
+  "area_name": "CA_GANN_2026 (Lake Fire (Training TRAIN))",
+  "compatible": true,
+  "status": "SUITABLE",
+  "checks": {
+    "crs_match": true,
+    "pre_crs": "EPSG:32610",
+    "post_crs": "EPSG:32610",
+    "spatial_overlap_percent": 100.0,
+    "dimensions_match": true,
+    "transform_match": true,
+    "resolution_match": true,
+    "date_order_valid": true,
+    "co_registered": false,
+    "dual_polarization_available": true
+  },
+  "target_grid": {
+    "crs": "EPSG:32610",
+    "width": 800,
+    "height": 800,
+    "resolution_m": 20.0,
+    "bounds": [
+      690640.0,
+      4212780.0,
+      706640.0,
+      4228780.0
+    ],
+    "bounds_wgs84": [
+      -120.827502,
+      38.039185,
+      -120.640672,
+      38.186794
+    ],
+    "transform": [
+      20.0,
+      0.0,
+      690640.0,
+      0.0,
+      -20.0,
+      4228780.0
+    ]
+  },
+  "pre_local_path": "outputs/uploads/upl_634668ae0d/CA_GANN_2026_sentinel1_pre_dualpol_vv_vh_db.tif",
+  "post_local_path": "outputs/uploads/upl_67a209b604/CA_GANN_2026_sentinel1_post_dualpol_vv_vh_db.tif",
+  "matched_event_id": "CA_GANN_2026",
+  "compatible_models": [
+    "unet",
+    "lightgbm",
+    "log_ratio",
+    "cusum"
+  ],
+  "reasons": [],
+  "warnings": [],
+  "created_at_utc": "2026-11-14T04:24:48.630237+00:00"
+}

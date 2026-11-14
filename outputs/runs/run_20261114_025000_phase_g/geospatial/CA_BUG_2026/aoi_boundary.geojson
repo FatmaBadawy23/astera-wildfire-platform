@@ -1,0 +1,60 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "event_id": "CA_BUG_2026",
+        "fire_name": "Bug Fire",
+        "native_crs": "EPSG:32611",
+        "bounds_utm": [
+          244920.0,
+          4404880.0,
+          260920.0,
+          4420880.0
+        ],
+        "bounds_wgs84": [
+          -119.98369,
+          39.755668,
+          -119.790916,
+          39.904296
+        ],
+        "split": "TEST",
+        "include_in_training": true,
+        "primary_model": "unet",
+        "predicted_burned_area_km2": 129.932,
+        "dnbr_reference_burned_area_km2": 93.428,
+        "dnbr_usgs_027_burned_area_km2": 1.9124,
+        "mcd64a1_burned_area_km2": 138.9944,
+        "firms_hotspots_count": 1676
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -119.98369,
+              39.755668
+            ],
+            [
+              -119.790916,
+              39.755668
+            ],
+            [
+              -119.790916,
+              39.904296
+            ],
+            [
+              -119.98369,
+              39.904296
+            ],
+            [
+              -119.98369,
+              39.755668
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

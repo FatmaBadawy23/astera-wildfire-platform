@@ -1,0 +1,224 @@
+{
+  "event": {
+    "event_id": "CA_TIMBER_2026",
+    "name": "Timber Fire",
+    "region": "Monterey County, California",
+    "split": "TRAIN",
+    "center_lon": -121.668,
+    "center_lat": 36.211,
+    "reported_start": "2026-08-09",
+    "reported_acres": 25435,
+    "mcd_burn_start_doy": 219,
+    "mcd_burn_end_doy": 243,
+    "mcd_items": [
+      "MCD64A1.A2026213.h08v05.061.2026286121320"
+    ],
+    "s1_relative_orbit": 35,
+    "s1_pass": "ascending",
+    "s1_dates": [
+      {
+        "date": "2026-08-07",
+        "role": "pre"
+      },
+      {
+        "date": "2026-08-19",
+        "role": "mid"
+      },
+      {
+        "date": "2026-08-31",
+        "role": "post"
+      },
+      {
+        "date": "2026-09-12",
+        "role": "post2"
+      }
+    ],
+    "s2_dates": [
+      {
+        "date": "2026-07-27",
+        "role": "pre"
+      },
+      {
+        "date": "2026-08-26",
+        "role": "post"
+      }
+    ],
+    "aoi_half_m": 8000.0,
+    "include_in_training": false,
+    "notes": "Excluded from training: the MCD64A1 label in this AOI aggregates the overlapping Timber/Plaskett complex, and Sentinel-1 VH showed no coherent scar (median log-ratio +0.07 dB inside vs -0.08 dB outside). Retained as acquisition evidence only.",
+    "provenance": {}
+  },
+  "grid": {
+    "crs": "EPSG:32610",
+    "transform": [
+      20.0,
+      0.0,
+      611720.0,
+      0.0,
+      -20.0,
+      4016180.0
+    ],
+    "width": 800,
+    "height": 800,
+    "res_m": 20.0,
+    "bounds": [
+      611720.0,
+      4000180.0,
+      627720.0,
+      4016180.0
+    ]
+  },
+  "sensor": "Sentinel-1 RTC (C-band) + Sentinel-2 L2A + MCD64A1",
+  "data_origin": "CROSS_SENSOR_PROTOTYPE",
+  "is_nisar": false,
+  "acquired_at_utc": "2026-11-13T16:42:06Z",
+  "s1": [
+    {
+      "role": "pre",
+      "requested_date": "2026-08-07",
+      "item_id": "S1C_IW_GRDH_1SDV_20260807T020631_20260807T020656_008883_0119EE_rtc",
+      "datetime": "2026-08-07T02:06:44.121601Z",
+      "relative_orbit": 35,
+      "orbit_state": "ascending",
+      "platform": "sentinel-1c",
+      "assets": {
+        "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/8/7/IW/DV/S1C_IW_GRDH_1SDV_20260807T020631_20260807T020656_008883_0119EE_54E8/measurement/iw-vv.rtc.tiff",
+        "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/8/7/IW/DV/S1C_IW_GRDH_1SDV_20260807T020631_20260807T020656_008883_0119EE_54E8/measurement/iw-vh.rtc.tiff"
+      },
+      "valid_fraction_vh": 1.0,
+      "checksums": {
+        "vv": "0995a8aca77d05430a88a024cbf9ff80a83a419b85ab8df6c467053c21837288",
+        "vh": "2531ad2e35d58db1b5a1b8d7cc82ea141e8b89b0fd4b9c14717f8c184964624c"
+      }
+    },
+    {
+      "role": "mid",
+      "requested_date": "2026-08-19",
+      "item_id": "S1C_IW_GRDH_1SDV_20260819T020632_20260819T020657_009058_011FAD_rtc",
+      "datetime": "2026-08-19T02:06:44.993825Z",
+      "relative_orbit": 35,
+      "orbit_state": "ascending",
+      "platform": "sentinel-1c",
+      "assets": {
+        "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/8/19/IW/DV/S1C_IW_GRDH_1SDV_20260819T020632_20260819T020657_009058_011FAD_29BB/measurement/iw-vv.rtc.tiff",
+        "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/8/19/IW/DV/S1C_IW_GRDH_1SDV_20260819T020632_20260819T020657_009058_011FAD_29BB/measurement/iw-vh.rtc.tiff"
+      },
+      "valid_fraction_vh": 1.0,
+      "checksums": {
+        "vv": "d714c6595121fe710f5ccb255ba72d49a728d4eb9c48366096bf6cc72e03d9f5",
+        "vh": "5445940fee1d7476b2a2a1041bb547590742e46ce42c8875f525b88a60cc67b3"
+      }
+    },
+    {
+      "role": "post",
+      "requested_date": "2026-08-31",
+      "item_id": "S1C_IW_GRDH_1SDV_20260831T020633_20260831T020658_009233_012587_rtc",
+      "datetime": "2026-08-31T02:06:45.503717Z",
+      "relative_orbit": 35,
+      "orbit_state": "ascending",
+      "platform": "sentinel-1c",
+      "assets": {
+        "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/8/31/IW/DV/S1C_IW_GRDH_1SDV_20260831T020633_20260831T020658_009233_012587_12CF/measurement/iw-vv.rtc.tiff",
+        "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/8/31/IW/DV/S1C_IW_GRDH_1SDV_20260831T020633_20260831T020658_009233_012587_12CF/measurement/iw-vh.rtc.tiff"
+      },
+      "valid_fraction_vh": 1.0,
+      "checksums": {
+        "vv": "78d954d723a1e8efc21d6e850086ed447e3f5ddb07bc9a81e587d8bc7727a774",
+        "vh": "9e791f0f9926499b576c45e0b05e6ab4ca4504a48ed01f3a9fbc43d33df1f3b3"
+      }
+    },
+    {
+      "role": "post2",
+      "requested_date": "2026-09-12",
+      "item_id": "S1C_IW_GRDH_1SDV_20260912T020633_20260912T020658_009408_012B64_rtc",
+      "datetime": "2026-09-12T02:06:45.827900Z",
+      "relative_orbit": 35,
+      "orbit_state": "ascending",
+      "platform": "sentinel-1c",
+      "assets": {
+        "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/9/12/IW/DV/S1C_IW_GRDH_1SDV_20260912T020633_20260912T020658_009408_012B64_2AB9/measurement/iw-vv.rtc.tiff",
+        "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2026/9/12/IW/DV/S1C_IW_GRDH_1SDV_20260912T020633_20260912T020658_009408_012B64_2AB9/measurement/iw-vh.rtc.tiff"
+      },
+      "valid_fraction_vh": 1.0,
+      "checksums": {
+        "vv": "eac14a7b29ade179cce196130efeb679203bcde5f9b63469fbd282b1323f16b4",
+        "vh": "7fb98950aaa7d8b1a9d93aac70e9a75b29b6ab8f166857f55fe9a3cb66a4b41c"
+      }
+    }
+  ],
+  "s2": [
+    {
+      "role": "pre",
+      "requested_date": "2026-07-27",
+      "item_id": "S2B_MSIL2A_20260727T184919_R113_T10SFF_20260727T224036",
+      "datetime": "2026-07-27T18:49:19.024000Z",
+      "cloud_cover_scene": 1.074694,
+      "scl_valid_fraction": 0.9966859375,
+      "assets": {
+        "B04": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/10/S/FF/2026/07/27/S2B_MSIL2A_20260727T184919_N0512_R113_T10SFF_20260727T224036.SAFE/GRANULE/L2A_T10SFF_A049045_20260727T185634/IMG_DATA/R10m/T10SFF_20260727T184919_B04_10m.tif",
+        "B08": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/10/S/FF/2026/07/27/S2B_MSIL2A_20260727T184919_N0512_R113_T10SFF_20260727T224036.SAFE/GRANULE/L2A_T10SFF_A049045_20260727T185634/IMG_DATA/R10m/T10SFF_20260727T184919_B08_10m.tif",
+        "B12": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/10/S/FF/2026/07/27/S2B_MSIL2A_20260727T184919_N0512_R113_T10SFF_20260727T224036.SAFE/GRANULE/L2A_T10SFF_A049045_20260727T185634/IMG_DATA/R20m/T10SFF_20260727T184919_B12_20m.tif",
+        "SCL": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/10/S/FF/2026/07/27/S2B_MSIL2A_20260727T184919_N0512_R113_T10SFF_20260727T224036.SAFE/GRANULE/L2A_T10SFF_A049045_20260727T185634/IMG_DATA/R20m/T10SFF_20260727T184919_SCL_20m.tif"
+      },
+      "checksums": {
+        "B08": "e18457d35700ed0d12e44b8514302b6a91071481fc9936856350de4b2767c024",
+        "SCL": "bc9daa2c2e011df46f1193a3d0a20db78a4dc1d1ee7f37a5184105d818f5dac7"
+      }
+    },
+    {
+      "role": "post",
+      "requested_date": "2026-08-26",
+      "item_id": "S2B_MSIL2A_20260826T184919_R113_T10SFF_20260826T223721",
+      "datetime": "2026-08-26T18:49:19.024000Z",
+      "cloud_cover_scene": 0.239436,
+      "scl_valid_fraction": 0.905725,
+      "assets": {
+        "B04": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/10/S/FF/2026/08/26/S2B_MSIL2A_20260826T184919_N0512_R113_T10SFF_20260826T223721.SAFE/GRANULE/L2A_T10SFF_A049474_20260826T185818/IMG_DATA/R10m/T10SFF_20260826T184919_B04_10m.tif",
+        "B08": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/10/S/FF/2026/08/26/S2B_MSIL2A_20260826T184919_N0512_R113_T10SFF_20260826T223721.SAFE/GRANULE/L2A_T10SFF_A049474_20260826T185818/IMG_DATA/R10m/T10SFF_20260826T184919_B08_10m.tif",
+        "B12": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/10/S/FF/2026/08/26/S2B_MSIL2A_20260826T184919_N0512_R113_T10SFF_20260826T223721.SAFE/GRANULE/L2A_T10SFF_A049474_20260826T185818/IMG_DATA/R20m/T10SFF_20260826T184919_B12_20m.tif",
+        "SCL": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/10/S/FF/2026/08/26/S2B_MSIL2A_20260826T184919_N0512_R113_T10SFF_20260826T223721.SAFE/GRANULE/L2A_T10SFF_A049474_20260826T185818/IMG_DATA/R20m/T10SFF_20260826T184919_SCL_20m.tif"
+      },
+      "checksums": {
+        "B08": "78e59a52fe85f31cab23a820e8e388c4161d287c11cf0dd1bf0a6cc6b21cee49",
+        "SCL": "5d97bbe5e2de0b5510cfacd78e79de999a3852b837efc0b9d5623c3e24765414"
+      }
+    }
+  ],
+  "mcd64a1": [
+    {
+      "item_id": "MCD64A1.A2026213.h08v05.061.2026286121320",
+      "asset": "https://modiseuwest.blob.core.windows.net/modis-061-cogs/MCD64A1/08/05/2026213/MCD64A1.A2026213.h08v05.061.2026286121320_Burn_Date.tif",
+      "burn_start_doy": 219,
+      "burn_end_doy": 243,
+      "burned_pixels": 182015,
+      "burned_fraction": 0.2843984375,
+      "checksum": "99d3db724bfe779ebca04f1fa41856ddd2f283a9e01a33792103216204c648dc"
+    }
+  ],
+  "qc": {
+    "mcd_burn_fraction": 0.2843984375
+  },
+  "arrays": [
+    "mcd_burn_date",
+    "mcd_burn_mask",
+    "mcd_burn_mask_MCD64A1.A2026213.h08v05.061.2026286121320",
+    "s1_mid_vh",
+    "s1_mid_vv",
+    "s1_post2_vh",
+    "s1_post2_vv",
+    "s1_post_vh",
+    "s1_post_vv",
+    "s1_pre_vh",
+    "s1_pre_vv",
+    "s2_post_B04",
+    "s2_post_B08",
+    "s2_post_B12",
+    "s2_post_SCL",
+    "s2_pre_B04",
+    "s2_pre_B08",
+    "s2_pre_B12",
+    "s2_pre_SCL"
+  ],
+  "stack_sha256": "f313c0f24df48dbf71ce9f340ff67a0e8f759d218b2f3ced6c8e353a0401c006",
+  "stack_bytes": 26161299
+}
